@@ -8,6 +8,5 @@ target 'TEE8ACADEMY' do
   # Pods for TEE8ACADEMY
   pod 'Firebase/Analytics'
   pod 'IQKeyboardManagerSwift'
-
-
+  pod 'Toaster'
 end

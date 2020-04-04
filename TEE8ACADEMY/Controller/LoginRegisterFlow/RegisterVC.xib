@@ -39,7 +39,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                 </imageView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPX-6T-dkS">
-                    <rect key="frame" x="0.0" y="200" width="375" height="446.5"/>
+                    <rect key="frame" x="0.0" y="200" width="375" height="466.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKR-j1-EYo">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="451"/>
@@ -68,7 +68,7 @@
                                     </constraints>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hwP-A7-OuD">
                                     <rect key="frame" x="20" y="167" width="335" height="40"/>
@@ -78,7 +78,7 @@
                                     </constraints>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qah-Hm-Wj2">
                                     <rect key="frame" x="20" y="223" width="335" height="40"/>
@@ -98,7 +98,7 @@
                                     </constraints>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dhk-mK-hq1">
                                     <rect key="frame" x="20" y="335" width="335" height="40"/>
@@ -108,7 +108,7 @@
                                     </constraints>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Real Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qNT-S8-WNG">
                                     <rect key="frame" x="20" y="391" width="335" height="40"/>
@@ -118,7 +118,7 @@
                                     </constraints>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
                                 </textField>
                             </subviews>
                             <constraints>
@@ -165,7 +165,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFd-qb-hTG">
-                    <rect key="frame" x="20" y="742.5" width="335" height="37.5"/>
+                    <rect key="frame" x="20" y="762.5" width="335" height="37.5"/>
                     <string key="text">Hotline 0919188158 - 0888777158/198
 WWW.TEE8.EDU.VN</string>
                     <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand Medium" pointSize="15"/>
@@ -173,7 +173,7 @@ WWW.TEE8.EDU.VN</string>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rf6-LT-k8J">
-                    <rect key="frame" x="20" y="676.5" width="335" height="36"/>
+                    <rect key="frame" x="20" y="696.5" width="335" height="36"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VoN-fW-kGA">
                             <rect key="frame" x="0.0" y="0.0" width="157.5" height="36"/>
@@ -181,6 +181,9 @@ WWW.TEE8.EDU.VN</string>
                             <state key="normal" title="Continue" backgroundImage="bg_button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="tapOnContinue:" destination="-1" eventType="touchUpInside" id="WPa-vA-hTQ"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84q-Ei-E7F">
                             <rect key="frame" x="177.5" y="0.0" width="157.5" height="36"/>
@@ -197,7 +200,7 @@ WWW.TEE8.EDU.VN</string>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lFd-qb-hTG" secondAttribute="bottom" constant="20" id="0YK-4G-m9O"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lFd-qb-hTG" secondAttribute="bottom" id="0YK-4G-m9O"/>
                 <constraint firstItem="GPX-6T-dkS" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0lK-r4-OPQ"/>
                 <constraint firstAttribute="trailing" secondItem="oN3-OE-J5c" secondAttribute="trailing" id="0nX-tW-6dQ"/>
                 <constraint firstItem="oN3-OE-J5c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="23h-y2-1bF"/>

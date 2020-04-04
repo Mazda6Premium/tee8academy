@@ -24,6 +24,8 @@
 		A85B800E2438302900CC4DCC /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B800D2438302900CC4DCC /* LessonViewController.swift */; };
 		A85B8010243830BA00CC4DCC /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B800F243830BA00CC4DCC /* ShopViewController.swift */; };
 		A8A700412438BC3200B2139D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A700402438BC3200B2139D /* User.swift */; };
+		A8A700442438C2B700B2139D /* BuyCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A700422438C2B700B2139D /* BuyCourseVC.swift */; };
+		A8A700452438C2B700B2139D /* BuyCourseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A700432438C2B700B2139D /* BuyCourseVC.xib */; };
 		DC2DC9B24EA360C2984C95A3 /* Pods_TEE8ACADEMY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77AEEF61AD4E30056EE1D3 /* Pods_TEE8ACADEMY.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		A85B800D2438302900CC4DCC /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
 		A85B800F243830BA00CC4DCC /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		A8A700402438BC3200B2139D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A8A700422438C2B700B2139D /* BuyCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCourseVC.swift; sourceTree = "<group>"; };
+		A8A700432438C2B700B2139D /* BuyCourseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyCourseVC.xib; sourceTree = "<group>"; };
 		EAAD0E2A462139679C3A5074 /* Pods-TEE8ACADEMY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TEE8ACADEMY.release.xcconfig"; path = "Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +82,8 @@
 				A85B7FF32438268E00CC4DCC /* ViewController.swift */,
 				A823C74624388A0300F749C2 /* RegisterVC.swift */,
 				A823C74724388A0300F749C2 /* RegisterVC.xib */,
+				A8A700422438C2B700B2139D /* BuyCourseVC.swift */,
+				A8A700432438C2B700B2139D /* BuyCourseVC.xib */,
 			);
 			path = LoginRegisterFlow;
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 				A823C74924388A0300F749C2 /* RegisterVC.xib in Resources */,
 				A823C7432438839C00F749C2 /* Quicksand-Light.ttf in Resources */,
 				A85B7FF92438268F00CC4DCC /* Assets.xcassets in Resources */,
+				A8A700452438C2B700B2139D /* BuyCourseVC.xib in Resources */,
 				A85B7FF72438268E00CC4DCC /* Main.storyboard in Resources */,
 				A823C7412438839C00F749C2 /* Quicksand-Medium.ttf in Resources */,
 				A823C7442438839C00F749C2 /* Quicksand-Bold.ttf in Resources */,
@@ -314,6 +321,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -324,6 +332,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A85B7FF42438268E00CC4DCC /* ViewController.swift in Sources */,
+				A8A700442438C2B700B2139D /* BuyCourseVC.swift in Sources */,
 				A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */,
 				A85B8010243830BA00CC4DCC /* ShopViewController.swift in Sources */,
 				A85B7FF02438268E00CC4DCC /* AppDelegate.swift in Sources */,
