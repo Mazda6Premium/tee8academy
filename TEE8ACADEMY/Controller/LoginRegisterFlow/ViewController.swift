@@ -10,13 +10,15 @@ import UIKit
 
 class ViewController: BaseViewController {
     
-    @IBOutlet weak var imgLogo: UIImageView!
+    @IBOutlet weak var imgFrame: UIImageView!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
-    @IBOutlet weak var imgLogoTopConstraint: NSLayoutConstraint!
+//    @IBOutlet weak var imgLogoTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var lblLogin: UILabel!
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var btnForget: UIButton!
+    
+    var imgLogo = UIImageView()
     
     // Screen height.
     public var screenHeight: CGFloat {
@@ -31,9 +33,13 @@ class ViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        animationLogo()
+    }
+    
+    func animationLogo() {
         self.view.layoutIfNeeded()
-        UIView.animate(withDuration: 2.5, animations: {
-            self.imgLogoTopConstraint.constant = 20
+        UIView.animate(withDuration: 3, animations: {
+            self.imgLogo.frame = self.imgFrame.frame
             self.view.layoutIfNeeded()
         }) { (_) in
             self.view.layoutIfNeeded()
@@ -46,10 +52,11 @@ class ViewController: BaseViewController {
     
     func setupView() {
         roundCorner(views: [txtEmail, txtPassword], radius: 8)
+        changeAlpha(views: [txtEmail, txtPassword, lblLogin, btnForget, btnRegister], alpha: 0)
         
-        changeAlpha(views: [txtEmail, txtPassword,lblLogin,btnForget,btnRegister], alpha: 0)
-        
-        imgLogoTopConstraint.constant =  screenHeight
+        imgLogo.image = UIImage(named: "logo")
+        imgLogo.frame = CGRect(x: 30, y: screenHeight, width: imgFrame.frame.width, height: imgFrame.frame.height)
+        view.addSubview(imgLogo)
     }
     
     func changeAlpha(views : [UIView], alpha : CGFloat) {
