@@ -18,6 +18,9 @@ class RegisterVC: BaseViewController {
     @IBOutlet weak var txtPhone: UITextField!
     @IBOutlet weak var txtRealName: UITextField!
     
+    @IBOutlet weak var btnContinue: UIButton!
+    @IBOutlet weak var btnContactSupport: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +29,6 @@ class RegisterVC: BaseViewController {
     }
     
     func setupView() {
-        roundCorner(views: [txtEmail, txtUsername, txtPassword, txtConfirmPassword, txtAddress, txtPhone, txtRealName], radius: 8)
+        roundCorner(views: [txtEmail, txtUsername, txtPassword, txtConfirmPassword, txtAddress, txtPhone, txtRealName, btnContinue, btnContactSupport], radius: 8)
     }
 }
