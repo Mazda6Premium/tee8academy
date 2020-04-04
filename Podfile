@@ -6,6 +6,7 @@ target 'TEE8ACADEMY' do
   use_frameworks!
 
   # Pods for TEE8ACADEMY
-pod 'Firebase/Analytics'
-
+  pod 'Firebase/Analytics'
+  pod 'IQKeyboardManagerSwift'
+  pod 'Toaster'
 end
