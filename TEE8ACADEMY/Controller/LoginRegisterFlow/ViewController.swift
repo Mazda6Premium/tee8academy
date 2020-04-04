@@ -18,6 +18,7 @@ class ViewController: BaseViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupView()
+        
     }
     
     func setupView() {
