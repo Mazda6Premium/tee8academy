@@ -11,4 +11,21 @@ import Foundation
 
 class BaseViewController: UIViewController {
     
+    func roundCorner(views: [UIView], radius: CGFloat) {
+        views.forEach { (view) in
+            view.layer.masksToBounds = true
+            view.layer.cornerRadius = radius
+        }
+    }
+    
+    func addBorder(views: [UIView], width: CGFloat, color: CGColor) {
+        views.forEach { (view) in
+            view.layer.borderWidth = width
+            view.layer.borderColor = color
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }

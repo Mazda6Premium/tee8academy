@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		A823C73424383DAF00F749C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A823C73324383DAF00F749C2 /* GoogleService-Info.plist */; };
+		A823C7412438839C00F749C2 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A823C73D2438839C00F749C2 /* Quicksand-Medium.ttf */; };
+		A823C7422438839C00F749C2 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A823C73E2438839C00F749C2 /* Quicksand-Regular.ttf */; };
+		A823C7432438839C00F749C2 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A823C73F2438839C00F749C2 /* Quicksand-Light.ttf */; };
+		A823C7442438839C00F749C2 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A823C7402438839C00F749C2 /* Quicksand-Bold.ttf */; };
+		A823C74824388A0300F749C2 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823C74624388A0300F749C2 /* RegisterVC.swift */; };
+		A823C74924388A0300F749C2 /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A823C74724388A0300F749C2 /* RegisterVC.xib */; };
 		A85B7FF02438268E00CC4DCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B7FEF2438268E00CC4DCC /* AppDelegate.swift */; };
 		A85B7FF22438268E00CC4DCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B7FF12438268E00CC4DCC /* SceneDelegate.swift */; };
 		A85B7FF42438268E00CC4DCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B7FF32438268E00CC4DCC /* ViewController.swift */; };
@@ -24,6 +30,12 @@
 		5D0F17786205A1FAF2E65BC2 /* Pods-TEE8ACADEMY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TEE8ACADEMY.debug.xcconfig"; path = "Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY.debug.xcconfig"; sourceTree = "<group>"; };
 		7D77AEEF61AD4E30056EE1D3 /* Pods_TEE8ACADEMY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TEE8ACADEMY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A823C73324383DAF00F749C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A823C73D2438839C00F749C2 /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
+		A823C73E2438839C00F749C2 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
+		A823C73F2438839C00F749C2 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
+		A823C7402438839C00F749C2 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		A823C74624388A0300F749C2 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		A823C74724388A0300F749C2 /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
 		A85B7FEC2438268E00CC4DCC /* TEE8ACADEMY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TEE8ACADEMY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85B7FEF2438268E00CC4DCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A85B7FF12438268E00CC4DCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +70,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A823C73B2438832E00F749C2 /* LoginRegisterFlow */ = {
+			isa = PBXGroup;
+			children = (
+				A85B7FF32438268E00CC4DCC /* ViewController.swift */,
+				A823C74624388A0300F749C2 /* RegisterVC.swift */,
+				A823C74724388A0300F749C2 /* RegisterVC.xib */,
+			);
+			path = LoginRegisterFlow;
+			sourceTree = "<group>";
+		};
+		A823C73C2438837900F749C2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A823C7402438839C00F749C2 /* Quicksand-Bold.ttf */,
+				A823C73F2438839C00F749C2 /* Quicksand-Light.ttf */,
+				A823C73D2438839C00F749C2 /* Quicksand-Medium.ttf */,
+				A823C73E2438839C00F749C2 /* Quicksand-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		A85B7FE32438268E00CC4DCC = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +112,7 @@
 		A85B7FEE2438268E00CC4DCC /* TEE8ACADEMY */ = {
 			isa = PBXGroup;
 			children = (
+				A823C73C2438837900F749C2 /* Fonts */,
 				A85B800C24382EBE00CC4DCC /* Extensions */,
 				A85B80062438276900CC4DCC /* Base */,
 				A85B80052438275200CC4DCC /* Model */,
@@ -97,6 +131,7 @@
 		A85B80032438273B00CC4DCC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A823C73B2438832E00F749C2 /* LoginRegisterFlow */,
 				A85B800B243827C600CC4DCC /* Shop */,
 				A85B800A243827BF00CC4DCC /* Lesson */,
 				A85B8009243827B200CC4DCC /* Home */,
@@ -130,7 +165,6 @@
 		A85B8009243827B200CC4DCC /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				A85B7FF32438268E00CC4DCC /* ViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -164,7 +198,6 @@
 				5D0F17786205A1FAF2E65BC2 /* Pods-TEE8ACADEMY.debug.xcconfig */,
 				EAAD0E2A462139679C3A5074 /* Pods-TEE8ACADEMY.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -229,9 +262,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A85B7FFC2438268F00CC4DCC /* LaunchScreen.storyboard in Resources */,
+				A823C7422438839C00F749C2 /* Quicksand-Regular.ttf in Resources */,
 				A823C73424383DAF00F749C2 /* GoogleService-Info.plist in Resources */,
+				A823C74924388A0300F749C2 /* RegisterVC.xib in Resources */,
+				A823C7432438839C00F749C2 /* Quicksand-Light.ttf in Resources */,
 				A85B7FF92438268F00CC4DCC /* Assets.xcassets in Resources */,
 				A85B7FF72438268E00CC4DCC /* Main.storyboard in Resources */,
+				A823C7412438839C00F749C2 /* Quicksand-Medium.ttf in Resources */,
+				A823C7442438839C00F749C2 /* Quicksand-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,20 +304,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -297,6 +326,7 @@
 				A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */,
 				A85B8010243830BA00CC4DCC /* ShopViewController.swift in Sources */,
 				A85B7FF02438268E00CC4DCC /* AppDelegate.swift in Sources */,
+				A823C74824388A0300F749C2 /* RegisterVC.swift in Sources */,
 				A85B800E2438302900CC4DCC /* LessonViewController.swift in Sources */,
 				A85B7FF22438268E00CC4DCC /* SceneDelegate.swift in Sources */,
 			);
