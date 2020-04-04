@@ -16,6 +16,13 @@ class Course {
         self.name = name
         self.price = price
     }
+    
+    func asDictionary() -> [String: Any] {
+        return [
+            "name": self.name,
+            "price": self.price
+        ]
+    }
 }
 
 class User {
@@ -27,8 +34,10 @@ class User {
     var phone = ""
     var realName = ""
     var course = [Course]()
+    var phoneId = ""
+    var phoneModel = ""
     
-    init(email: String, username: String, password: String, confirmPassword: String, address: String, phone: String, realName: String, course: [Course]) {
+    init(email: String, username: String, password: String, confirmPassword: String, address: String, phone: String, realName: String, course: [Course], phoneId: String, phoneModel: String) {
         self.email = email
         self.username = username
         self.password = password
@@ -37,5 +46,21 @@ class User {
         self.phone = phone
         self.realName = realName
         self.course = course
+        self.phoneId = phoneId
+        self.phoneModel = phoneModel
+    }
+    
+    func asDictionary() -> [String: Any] {
+        return [
+            "email": self.email,
+            "username": self.username,
+            "password": self.password,
+            "address": self.address,
+            "phone": self.phone,
+            "realName": self.realName,
+            "course": self.course.map({$0.asDictionary()}),
+            "phoneId": self.phoneId,
+            "phoneModel": self.phoneModel
+        ]
     }
 }

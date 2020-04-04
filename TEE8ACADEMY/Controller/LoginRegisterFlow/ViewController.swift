@@ -32,7 +32,7 @@ class ViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.view.layoutIfNeeded()
-        UIView.animate(withDuration: 1.5, animations: {
+        UIView.animate(withDuration: 2.5, animations: {
             self.imgLogoTopConstraint.constant = 20
             self.view.layoutIfNeeded()
         }) { (_) in

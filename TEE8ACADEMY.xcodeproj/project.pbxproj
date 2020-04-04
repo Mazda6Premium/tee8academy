@@ -26,6 +26,9 @@
 		A8A700412438BC3200B2139D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A700402438BC3200B2139D /* User.swift */; };
 		A8A700442438C2B700B2139D /* BuyCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A700422438C2B700B2139D /* BuyCourseVC.swift */; };
 		A8A700452438C2B700B2139D /* BuyCourseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A700432438C2B700B2139D /* BuyCourseVC.xib */; };
+		A8A700482438C62600B2139D /* SendReceiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A700462438C62600B2139D /* SendReceiveVC.swift */; };
+		A8A700492438C62600B2139D /* SendReceiveVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A700472438C62600B2139D /* SendReceiveVC.xib */; };
+		A8A7004B2438C6EF00B2139D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A7004A2438C6EF00B2139D /* Extensions.swift */; };
 		DC2DC9B24EA360C2984C95A3 /* Pods_TEE8ACADEMY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77AEEF61AD4E30056EE1D3 /* Pods_TEE8ACADEMY.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,9 @@
 		A8A700402438BC3200B2139D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A8A700422438C2B700B2139D /* BuyCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCourseVC.swift; sourceTree = "<group>"; };
 		A8A700432438C2B700B2139D /* BuyCourseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyCourseVC.xib; sourceTree = "<group>"; };
+		A8A700462438C62600B2139D /* SendReceiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendReceiveVC.swift; sourceTree = "<group>"; };
+		A8A700472438C62600B2139D /* SendReceiveVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendReceiveVC.xib; sourceTree = "<group>"; };
+		A8A7004A2438C6EF00B2139D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EAAD0E2A462139679C3A5074 /* Pods-TEE8ACADEMY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TEE8ACADEMY.release.xcconfig"; path = "Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +90,8 @@
 				A823C74724388A0300F749C2 /* RegisterVC.xib */,
 				A8A700422438C2B700B2139D /* BuyCourseVC.swift */,
 				A8A700432438C2B700B2139D /* BuyCourseVC.xib */,
+				A8A700462438C62600B2139D /* SendReceiveVC.swift */,
+				A8A700472438C62600B2139D /* SendReceiveVC.xib */,
 			);
 			path = LoginRegisterFlow;
 			sourceTree = "<group>";
@@ -197,6 +205,7 @@
 		A85B800C24382EBE00CC4DCC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A8A7004A2438C6EF00B2139D /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -279,6 +288,7 @@
 				A8A700452438C2B700B2139D /* BuyCourseVC.xib in Resources */,
 				A85B7FF72438268E00CC4DCC /* Main.storyboard in Resources */,
 				A823C7412438839C00F749C2 /* Quicksand-Medium.ttf in Resources */,
+				A8A700492438C62600B2139D /* SendReceiveVC.xib in Resources */,
 				A823C7442438839C00F749C2 /* Quicksand-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A700482438C62600B2139D /* SendReceiveVC.swift in Sources */,
 				A85B7FF42438268E00CC4DCC /* ViewController.swift in Sources */,
 				A8A700442438C2B700B2139D /* BuyCourseVC.swift in Sources */,
 				A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */,
@@ -355,6 +366,7 @@
 				A8A700412438BC3200B2139D /* User.swift in Sources */,
 				A823C74824388A0300F749C2 /* RegisterVC.swift in Sources */,
 				A85B800E2438302900CC4DCC /* LessonViewController.swift in Sources */,
+				A8A7004B2438C6EF00B2139D /* Extensions.swift in Sources */,
 				A85B7FF22438268E00CC4DCC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
