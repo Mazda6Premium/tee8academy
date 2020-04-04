@@ -14,6 +14,7 @@
 		A85B7FF92438268F00CC4DCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A85B7FF82438268F00CC4DCC /* Assets.xcassets */; };
 		A85B7FFC2438268F00CC4DCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A85B7FFA2438268F00CC4DCC /* LaunchScreen.storyboard */; };
 		A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B80072438277C00CC4DCC /* BaseViewController.swift */; };
+		A85B800E2438302900CC4DCC /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B800D2438302900CC4DCC /* LessonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A85B7FFB2438268F00CC4DCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A85B7FFD2438268F00CC4DCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A85B80072438277C00CC4DCC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A85B800D2438302900CC4DCC /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +67,6 @@
 				A85B80032438273B00CC4DCC /* Controller */,
 				A85B7FEF2438268E00CC4DCC /* AppDelegate.swift */,
 				A85B7FF12438268E00CC4DCC /* SceneDelegate.swift */,
-				A85B7FF32438268E00CC4DCC /* ViewController.swift */,
 				A85B7FF82438268F00CC4DCC /* Assets.xcassets */,
 				A85B7FFA2438268F00CC4DCC /* LaunchScreen.storyboard */,
 				A85B7FFD2438268F00CC4DCC /* Info.plist */,
@@ -109,6 +110,7 @@
 		A85B8009243827B200CC4DCC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A85B7FF32438268E00CC4DCC /* ViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -116,6 +118,7 @@
 		A85B800A243827BF00CC4DCC /* Lesson */ = {
 			isa = PBXGroup;
 			children = (
+				A85B800D2438302900CC4DCC /* LessonViewController.swift */,
 			);
 			path = Lesson;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				A85B7FF42438268E00CC4DCC /* ViewController.swift in Sources */,
 				A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */,
 				A85B7FF02438268E00CC4DCC /* AppDelegate.swift in Sources */,
+				A85B800E2438302900CC4DCC /* LessonViewController.swift in Sources */,
 				A85B7FF22438268E00CC4DCC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
