@@ -58,6 +58,7 @@
 		A85B7FEE2438268E00CC4DCC /* TEE8ACADEMY */ = {
 			isa = PBXGroup;
 			children = (
+				A85B800C24382EBE00CC4DCC /* Extensions */,
 				A85B80062438276900CC4DCC /* Base */,
 				A85B80052438275200CC4DCC /* Model */,
 				A85B80042438274900CC4DCC /* View */,
@@ -124,6 +125,13 @@
 			children = (
 			);
 			path = Shop;
+			sourceTree = "<group>";
+		};
+		A85B800C24382EBE00CC4DCC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
