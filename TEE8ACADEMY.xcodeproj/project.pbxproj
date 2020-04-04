@@ -12,6 +12,8 @@
 		A823C7422438839C00F749C2 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A823C73E2438839C00F749C2 /* Quicksand-Regular.ttf */; };
 		A823C7432438839C00F749C2 /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A823C73F2438839C00F749C2 /* Quicksand-Light.ttf */; };
 		A823C7442438839C00F749C2 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A823C7402438839C00F749C2 /* Quicksand-Bold.ttf */; };
+		A823C74824388A0300F749C2 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823C74624388A0300F749C2 /* RegisterVC.swift */; };
+		A823C74924388A0300F749C2 /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A823C74724388A0300F749C2 /* RegisterVC.xib */; };
 		A85B7FF02438268E00CC4DCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B7FEF2438268E00CC4DCC /* AppDelegate.swift */; };
 		A85B7FF22438268E00CC4DCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B7FF12438268E00CC4DCC /* SceneDelegate.swift */; };
 		A85B7FF42438268E00CC4DCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B7FF32438268E00CC4DCC /* ViewController.swift */; };
@@ -32,6 +34,8 @@
 		A823C73E2438839C00F749C2 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 		A823C73F2438839C00F749C2 /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
 		A823C7402438839C00F749C2 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
+		A823C74624388A0300F749C2 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		A823C74724388A0300F749C2 /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
 		A85B7FEC2438268E00CC4DCC /* TEE8ACADEMY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TEE8ACADEMY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85B7FEF2438268E00CC4DCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A85B7FF12438268E00CC4DCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				A85B7FF32438268E00CC4DCC /* ViewController.swift */,
+				A823C74624388A0300F749C2 /* RegisterVC.swift */,
+				A823C74724388A0300F749C2 /* RegisterVC.xib */,
 			);
 			path = LoginRegisterFlow;
 			sourceTree = "<group>";
@@ -258,6 +264,7 @@
 				A85B7FFC2438268F00CC4DCC /* LaunchScreen.storyboard in Resources */,
 				A823C7422438839C00F749C2 /* Quicksand-Regular.ttf in Resources */,
 				A823C73424383DAF00F749C2 /* GoogleService-Info.plist in Resources */,
+				A823C74924388A0300F749C2 /* RegisterVC.xib in Resources */,
 				A823C7432438839C00F749C2 /* Quicksand-Light.ttf in Resources */,
 				A85B7FF92438268F00CC4DCC /* Assets.xcassets in Resources */,
 				A85B7FF72438268E00CC4DCC /* Main.storyboard in Resources */,
@@ -319,6 +326,7 @@
 				A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */,
 				A85B8010243830BA00CC4DCC /* ShopViewController.swift in Sources */,
 				A85B7FF02438268E00CC4DCC /* AppDelegate.swift in Sources */,
+				A823C74824388A0300F749C2 /* RegisterVC.swift in Sources */,
 				A85B800E2438302900CC4DCC /* LessonViewController.swift in Sources */,
 				A85B7FF22438268E00CC4DCC /* SceneDelegate.swift in Sources */,
 			);

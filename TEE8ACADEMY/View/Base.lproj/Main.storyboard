@@ -28,16 +28,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="dAo-CP-xeu">
-                                <rect key="frame" x="30" y="64" width="354" height="340.5"/>
+                                <rect key="frame" x="30" y="64" width="354" height="313.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN/ĐĂNG NHẬP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVi-Bq-1vV">
-                                <rect key="frame" x="20" y="434.5" width="374" height="19"/>
+                                <rect key="frame" x="20" y="407.5" width="374" height="19"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                 <color key="textColor" red="0.52549019607843139" green="0.52549019607843139" blue="0.52549019607843139" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Vv-bs-Whw">
-                                <rect key="frame" x="20" y="473.5" width="374" height="40"/>
+                                <rect key="frame" x="20" y="446.5" width="374" height="40"/>
                                 <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gI5-6W-mAb"/>
@@ -47,7 +47,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iyw-SZ-mcd">
-                                <rect key="frame" x="20" y="533.5" width="374" height="40"/>
+                                <rect key="frame" x="20" y="506.5" width="374" height="40"/>
                                 <color key="backgroundColor" red="0.88627450980392153" green="0.88627450980392153" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kEf-y3-6Kg"/>
@@ -57,18 +57,24 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qE-bD-2A0">
-                                <rect key="frame" x="20" y="593.5" width="374" height="31"/>
+                                <rect key="frame" x="20" y="566.5" width="129" height="31"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                 <state key="normal" title="Register/Đăng ký">
                                     <color key="titleColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tapOnRegister:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ejf-dR-1gZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2v-mF-ITS">
-                                <rect key="frame" x="20" y="634.5" width="374" height="31"/>
+                                <rect key="frame" x="20" y="607.5" width="171" height="31"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                 <state key="normal" title="Forget your password ?">
                                     <color key="titleColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tapOnForgetPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ajg-iT-1WF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64u-3Z-jk0">
                                 <rect key="frame" x="20" y="824.5" width="374" height="37.5"/>
@@ -86,11 +92,10 @@ WWW.TEE8.EDU.VN</string>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="64u-3Z-jk0" secondAttribute="trailing" constant="20" id="DAk-uT-JMF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gVi-Bq-1vV" secondAttribute="trailing" constant="20" id="DeX-2S-Uga"/>
                             <constraint firstItem="7Vv-bs-Whw" firstAttribute="top" secondItem="gVi-Bq-1vV" secondAttribute="bottom" constant="20" id="GaO-Qk-dus"/>
-                            <constraint firstItem="dAo-CP-xeu" firstAttribute="height" secondItem="hNA-R0-Xk2" secondAttribute="height" multiplier="0.38" id="GgL-uW-O1j"/>
+                            <constraint firstItem="dAo-CP-xeu" firstAttribute="height" secondItem="hNA-R0-Xk2" secondAttribute="height" multiplier="0.35" id="GgL-uW-O1j"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dAo-CP-xeu" secondAttribute="trailing" constant="30" id="NQp-y9-wwb"/>
                             <constraint firstItem="7Vv-bs-Whw" firstAttribute="leading" secondItem="gVi-Bq-1vV" secondAttribute="leading" id="SaI-6y-FJt"/>
                             <constraint firstItem="hNA-R0-Xk2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Scw-OI-3W6"/>
-                            <constraint firstItem="u2v-mF-ITS" firstAttribute="trailing" secondItem="7qE-bD-2A0" secondAttribute="trailing" id="SiN-gL-Kqe"/>
                             <constraint firstItem="gVi-Bq-1vV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Uod-Kz-von"/>
                             <constraint firstItem="gVi-Bq-1vV" firstAttribute="top" secondItem="dAo-CP-xeu" secondAttribute="bottom" constant="30" id="VQG-8v-atE"/>
                             <constraint firstItem="dAo-CP-xeu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="XDg-FI-0f5"/>
@@ -105,11 +110,15 @@ WWW.TEE8.EDU.VN</string>
                             <constraint firstItem="dAo-CP-xeu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="oxc-JY-94z"/>
                             <constraint firstItem="iyw-SZ-mcd" firstAttribute="leading" secondItem="7Vv-bs-Whw" secondAttribute="leading" id="rIR-ah-2lx"/>
                             <constraint firstItem="64u-3Z-jk0" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sK1-DJ-KHo"/>
-                            <constraint firstItem="7qE-bD-2A0" firstAttribute="trailing" secondItem="gVi-Bq-1vV" secondAttribute="trailing" id="suC-Ci-UOb"/>
                             <constraint firstItem="7qE-bD-2A0" firstAttribute="top" secondItem="iyw-SZ-mcd" secondAttribute="bottom" constant="20" id="ux4-eg-Vsu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imgLogo" destination="dAo-CP-xeu" id="Pa8-s2-R7b"/>
+                        <outlet property="txtEmail" destination="7Vv-bs-Whw" id="YJg-gh-kld"/>
+                        <outlet property="txtPassword" destination="iyw-SZ-mcd" id="VYM-nZ-4ZU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
