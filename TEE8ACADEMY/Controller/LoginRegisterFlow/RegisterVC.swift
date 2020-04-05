@@ -60,6 +60,7 @@ class RegisterVC: BaseViewController {
             let vc = BuyCourseVC(nibName: "BuyCourseVC", bundle: nil)
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .overFullScreen
+            vc.user = self.user
             self.present(vc, animated: true, completion: nil)
         }
     }

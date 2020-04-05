@@ -16,8 +16,14 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SendReceiveVC" customModule="TEE8ACADEMY" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SendReceiptVC" customModule="TEE8ACADEMY" customModuleProvider="target">
             <connections>
+                <outlet property="btnContactSupport" destination="XMG-Sm-dt0" id="rZH-pq-JK7"/>
+                <outlet property="btnPaypal" destination="9W0-Ya-aRv" id="Pg9-Nn-3y4"/>
+                <outlet property="btnSubmit" destination="pHT-iY-7uH" id="9vg-6N-bTI"/>
+                <outlet property="btnVCB" destination="XrM-ua-c2r" id="E55-ih-jkE"/>
+                <outlet property="imgReceipt" destination="Gyy-MV-7pD" id="OaY-L3-e90"/>
+                <outlet property="lblTitle" destination="f4x-WT-fYc" id="7Dj-61-ZJN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
