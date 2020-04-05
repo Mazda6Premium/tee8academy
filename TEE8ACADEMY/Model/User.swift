@@ -34,10 +34,12 @@ class User {
     var phone = ""
     var realName = ""
     var course = [Course]()
+    var paymentMethod = ""
+    var imagePayment = ""
     var phoneId = ""
     var phoneModel = ""
     
-    init(email: String, username: String, password: String, confirmPassword: String, address: String, phone: String, realName: String, course: [Course], phoneId: String, phoneModel: String) {
+    init(email: String, username: String, password: String, confirmPassword: String, address: String, phone: String, realName: String, course: [Course], paymentMethod: String, imagePayment: String, phoneId: String, phoneModel: String) {
         self.email = email
         self.username = username
         self.password = password
@@ -48,6 +50,8 @@ class User {
         self.course = course
         self.phoneId = phoneId
         self.phoneModel = phoneModel
+        self.paymentMethod = paymentMethod
+        self.imagePayment = imagePayment
     }
     
     func asDictionary() -> [String: Any] {
@@ -59,6 +63,8 @@ class User {
             "phone": self.phone,
             "realName": self.realName,
             "course": self.course.map({$0.asDictionary()}),
+            "paymentMethod": self.paymentMethod,
+            "imagePayment": self.imagePayment,
             "phoneId": self.phoneId,
             "phoneModel": self.phoneModel
         ]

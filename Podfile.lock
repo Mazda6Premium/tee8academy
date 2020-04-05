@@ -1,11 +1,25 @@
 PODS:
+  - Firebase (6.17.0):
+    - Firebase/Core (= 6.17.0)
   - Firebase/Analytics (6.17.0):
     - Firebase/Core
+  - Firebase/Auth (6.17.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (~> 6.4.3)
   - Firebase/Core (6.17.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.2.2)
   - Firebase/CoreOnly (6.17.0):
     - FirebaseCore (= 6.6.2)
+  - Firebase/Database (6.17.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (~> 6.1.4)
+  - Firebase/Messaging (6.17.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 4.2.1)
+  - Firebase/Storage (6.17.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 3.5.0)
   - FirebaseAnalytics (6.2.2):
     - FirebaseCore (~> 6.6)
     - FirebaseInstanceID (~> 4.3)
@@ -15,6 +29,14 @@ PODS:
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (= 0.3.9011)
+  - FirebaseAnalyticsInterop (1.5.0)
+  - FirebaseAuth (6.4.3):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 6.6)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.5)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseAuthInterop (1.1.0)
   - FirebaseCore (6.6.2):
     - FirebaseCoreDiagnostics (~> 1.2)
     - FirebaseCoreDiagnosticsInterop (~> 1.2)
@@ -27,6 +49,10 @@ PODS:
     - GoogleUtilities/Logger (~> 6.5)
     - nanopb (~> 0.3.901)
   - FirebaseCoreDiagnosticsInterop (1.2.0)
+  - FirebaseDatabase (6.1.4):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 6.0)
+    - leveldb-library (~> 1.22)
   - FirebaseInstallations (1.1.0):
     - FirebaseCore (~> 6.6)
     - GoogleUtilities/UserDefaults (~> 6.5)
@@ -36,6 +62,19 @@ PODS:
     - FirebaseInstallations (~> 1.0)
     - GoogleUtilities/Environment (~> 6.5)
     - GoogleUtilities/UserDefaults (~> 6.5)
+  - FirebaseMessaging (4.2.1):
+    - FirebaseAnalyticsInterop (~> 1.5)
+    - FirebaseCore (~> 6.6)
+    - FirebaseInstanceID (~> 4.3)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.5)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Reachability (~> 6.5)
+    - GoogleUtilities/UserDefaults (~> 6.5)
+    - Protobuf (>= 3.9.2, ~> 3.9)
+  - FirebaseStorage (3.5.0):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 6.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleAppMeasurement (6.2.2):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -64,55 +103,95 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.5.1):
     - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.3.1)
   - IQKeyboardManagerSwift (6.5.5)
+  - JGProgressHUD (2.1)
+  - leveldb-library (1.22)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
   - PromisesObjC (1.2.8)
+  - Protobuf (3.11.4)
+  - SDWebImage (5.7.0):
+    - SDWebImage/Core (= 5.7.0)
+  - SDWebImage/Core (5.7.0)
+  - SimpleImageViewer (1.1.1)
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
+  - Firebase
   - Firebase/Analytics
+  - Firebase/Auth
+  - Firebase/Database
+  - Firebase/Messaging
+  - Firebase/Storage
   - IQKeyboardManagerSwift
+  - JGProgressHUD
+  - SDWebImage
+  - SimpleImageViewer
   - Toast-Swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Firebase
     - FirebaseAnalytics
+    - FirebaseAnalyticsInterop
+    - FirebaseAuth
+    - FirebaseAuthInterop
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseCoreDiagnosticsInterop
+    - FirebaseDatabase
     - FirebaseInstallations
     - FirebaseInstanceID
+    - FirebaseMessaging
+    - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
+    - GTMSessionFetcher
     - IQKeyboardManagerSwift
+    - JGProgressHUD
+    - leveldb-library
     - nanopb
     - PromisesObjC
+    - Protobuf
+    - SDWebImage
+    - SimpleImageViewer
     - Toast-Swift
 
 SPEC CHECKSUMS:
   Firebase: 2672e5636b42f977177716317e68346ae5e9de25
   FirebaseAnalytics: cf95d3aab897612783020fbd98401d5366f135ee
+  FirebaseAnalyticsInterop: 3f86269c38ae41f47afeb43ebf32a001f58fcdae
+  FirebaseAuth: 5ce2b03a3d7fe56b7a6e4c5ec7ff1522890b1d6f
+  FirebaseAuthInterop: a0f37ae05833af156e72028f648d313f7e7592e9
   FirebaseCore: a1dd9dd6355a8356dd30a8f076839e242285a81c
   FirebaseCoreDiagnostics: 5e78803ab276bc5b50340e3c539c06c3de35c649
   FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
+  FirebaseDatabase: 0144e0706a4761f1b0e8679572eba8095ddb59be
   FirebaseInstallations: 575cd32f2aec0feeb0e44f5d0110a09e5e60b47b
   FirebaseInstanceID: 031d7d0c8e7b5c030bbeb4d2a690550375e83fec
+  FirebaseMessaging: 9e23f9d603b1fb71ccbeb48d79bf0d4ba0272c84
+  FirebaseStorage: 6c5263796af3b1be82ed173598aade47535fe125
   GoogleAppMeasurement: d0560d915abf15e692e8538ba1d58442217b6aff
   GoogleDataTransport: 47fe3b8e1673e5187dfd615656a3c5034f150d69
   GoogleDataTransportCCTSupport: 36f69887fd212db6d7ef4dd45ba44523717a434e
   GoogleUtilities: 06eb53bb579efe7099152735900dd04bf09e7275
+  GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
+  leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
+  Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
+  SDWebImage: a99471f452bdfa0ca52ddf5b1adf2b61cab1d1eb
+  SimpleImageViewer: 34c3a2cde2d9ac022146772cefc27fca14b0c8b1
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 94095adfdf34ccf0c60f0c3341acf313f5c11d76
+PODFILE CHECKSUM: 64c192e90f13b1ee2823e801c94038aca07730a3
 
 COCOAPODS: 1.6.1

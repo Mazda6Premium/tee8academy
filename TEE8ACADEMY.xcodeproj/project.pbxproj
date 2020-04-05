@@ -25,6 +25,7 @@
 		A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B80072438277C00CC4DCC /* BaseViewController.swift */; };
 		A85B800E2438302900CC4DCC /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B800D2438302900CC4DCC /* LessonViewController.swift */; };
 		A85B8010243830BA00CC4DCC /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B800F243830BA00CC4DCC /* ShopViewController.swift */; };
+		A88A42CE2439D99A0013BAFB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A42CD2439D99A0013BAFB /* Constant.swift */; };
 		A8A700412438BC3200B2139D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A700402438BC3200B2139D /* User.swift */; };
 		A8A700442438C2B700B2139D /* BuyCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A700422438C2B700B2139D /* BuyCourseVC.swift */; };
 		A8A700452438C2B700B2139D /* BuyCourseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A700432438C2B700B2139D /* BuyCourseVC.xib */; };
@@ -57,6 +58,7 @@
 		A85B80072438277C00CC4DCC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A85B800D2438302900CC4DCC /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
 		A85B800F243830BA00CC4DCC /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		A88A42CD2439D99A0013BAFB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A8A700402438BC3200B2139D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A8A700422438C2B700B2139D /* BuyCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCourseVC.swift; sourceTree = "<group>"; };
 		A8A700432438C2B700B2139D /* BuyCourseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyCourseVC.xib; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				A8A7004A2438C6EF00B2139D /* Extensions.swift */,
+				A88A42CD2439D99A0013BAFB /* Constant.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -343,10 +346,16 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SimpleImageViewer/SimpleImageViewer.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -354,10 +363,16 @@
 				"${PODS_ROOT}/Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleImageViewer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,6 +396,7 @@
 				A8A700412438BC3200B2139D /* User.swift in Sources */,
 				A823C74824388A0300F749C2 /* RegisterVC.swift in Sources */,
 				A85B800E2438302900CC4DCC /* LessonViewController.swift in Sources */,
+				A88A42CE2439D99A0013BAFB /* Constant.swift in Sources */,
 				A8A7004B2438C6EF00B2139D /* Extensions.swift in Sources */,
 				A85B7FF22438268E00CC4DCC /* SceneDelegate.swift in Sources */,
 				014665E52438CC11008661E2 /* BuyCourseCell.swift in Sources */,

@@ -9,4 +9,12 @@ target 'TEE8ACADEMY' do
   pod 'Firebase/Analytics'
   pod 'IQKeyboardManagerSwift'
   pod 'Toast-Swift'
+  pod 'Firebase'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Messaging'
+  pod 'SDWebImage'
+  pod 'JGProgressHUD'
+  pod 'SimpleImageViewer'
 end
