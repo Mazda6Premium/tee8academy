@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import JGProgressHUD
 
 class SendReceiptVC: BaseViewController {
     
@@ -55,12 +57,24 @@ class SendReceiptVC: BaseViewController {
         addBorder(views: [btnPaypal], width: 1, color: #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1))
         addBorder(views: [btnVCB], width: 0, color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
         paymentMethod = "Paypal"
+        
+        let vc = PopupPaymentVC(nibName: "PopupPaymentVC", bundle: nil)
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        vc.payment = .paypal
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func tapOnVCB(_ sender: Any) {
         addBorder(views: [btnVCB], width: 1, color: #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1))
         addBorder(views: [btnPaypal], width: 0, color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
         paymentMethod = "Vietcombank"
+        
+        let vc = PopupPaymentVC(nibName: "PopupPaymentVC", bundle: nil)
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        vc.payment = .vcb
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func tapOnUpload(_ sender: Any) {
@@ -71,6 +85,7 @@ class SendReceiptVC: BaseViewController {
     }
     
     @IBAction func tapOnSubmit(_ sender: Any) {
+        
         if paymentMethod == "" {
             showToast(message: "Bạn chưa chọn phương thức thanh toán.")
             return
@@ -86,20 +101,21 @@ class SendReceiptVC: BaseViewController {
             return
         }
         
-        
+        showProgressLoading()
     }
+    
+
 }
 
 extension SendReceiptVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        dismiss(animated: true) {
-            if let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                self.imgReceipt.image = chosenImage
-                self.chooseImage = chosenImage
-                self.imgReceipt.isHidden = false
-                self.btnUpload.isHidden = true
-                self.lblUpload.isHidden = true
-            }
+        if let chosenImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.imgReceipt.image = chosenImage
+            self.chooseImage = chosenImage
+            self.imgReceipt.isHidden = false
+            self.btnUpload.isHidden = true
+            self.lblUpload.isHidden = true
         }
+        dismiss(animated: true, completion: nil)
     }
 }

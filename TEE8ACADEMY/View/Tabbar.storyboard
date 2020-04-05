@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tee Store-->
+        <scene sceneID="QQc-25-2Ov">
+            <objects>
+                <viewController id="bWu-xH-R6a" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SZt-OE-XPa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="tH7-HJ-Uvd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_button" translatesAutoresizingMaskIntoConstraints="NO" id="iog-uR-hCX">
+                                <rect key="frame" x="0.0" y="110" width="414" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="xdO-pl-FlB"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="academic" translatesAutoresizingMaskIntoConstraints="NO" id="vhg-Yy-41V">
+                                <rect key="frame" x="10" y="10" width="207" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="3Pb-3K-onA"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LP5-zr-quq">
+                                <rect key="frame" x="0.0" y="110" width="414" height="703"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tH7-HJ-Uvd" firstAttribute="leading" secondItem="LLt-7l-YPO" secondAttribute="leading" id="232-y1-YQb"/>
+                            <constraint firstItem="LP5-zr-quq" firstAttribute="trailing" secondItem="LLt-7l-YPO" secondAttribute="trailing" id="3TT-sb-iJU"/>
+                            <constraint firstItem="LP5-zr-quq" firstAttribute="top" secondItem="vhg-Yy-41V" secondAttribute="bottom" id="5Sv-eK-pE7"/>
+                            <constraint firstItem="tH7-HJ-Uvd" firstAttribute="top" secondItem="SZt-OE-XPa" secondAttribute="top" id="5ni-gv-tTZ"/>
+                            <constraint firstItem="tH7-HJ-Uvd" firstAttribute="bottom" secondItem="LLt-7l-YPO" secondAttribute="bottom" id="6Vk-gm-Ta7"/>
+                            <constraint firstItem="tH7-HJ-Uvd" firstAttribute="trailing" secondItem="LLt-7l-YPO" secondAttribute="trailing" id="7nI-rh-tFc"/>
+                            <constraint firstItem="iog-uR-hCX" firstAttribute="top" secondItem="vhg-Yy-41V" secondAttribute="bottom" id="Wz5-C9-fqc"/>
+                            <constraint firstItem="LP5-zr-quq" firstAttribute="leading" secondItem="LLt-7l-YPO" secondAttribute="leading" id="bAi-Bc-NcY"/>
+                            <constraint firstItem="iog-uR-hCX" firstAttribute="leading" secondItem="LLt-7l-YPO" secondAttribute="leading" id="fB1-Fj-3Ad"/>
+                            <constraint firstItem="vhg-Yy-41V" firstAttribute="top" secondItem="SZt-OE-XPa" secondAttribute="top" constant="10" id="mjW-YR-m9F"/>
+                            <constraint firstItem="LLt-7l-YPO" firstAttribute="bottom" secondItem="LP5-zr-quq" secondAttribute="bottom" id="nhE-Pm-POw"/>
+                            <constraint firstItem="vhg-Yy-41V" firstAttribute="leading" secondItem="LLt-7l-YPO" secondAttribute="leading" constant="10" id="wYb-up-Nd1"/>
+                            <constraint firstItem="iog-uR-hCX" firstAttribute="trailing" secondItem="LLt-7l-YPO" secondAttribute="trailing" id="wsr-Wt-4NG"/>
+                            <constraint firstItem="vhg-Yy-41V" firstAttribute="width" secondItem="SZt-OE-XPa" secondAttribute="width" multiplier="0.5" id="xzD-zK-s6q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LLt-7l-YPO"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tee Store" image="cart" selectedImage="cartfill" id="a7Z-3V-Bar"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9jz-LU-b6s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-314.49275362318843" y="328.79464285714283"/>
+        </scene>
+        <!--Tee Academy-->
+        <scene sceneID="BX8-Ic-MxF">
+            <objects>
+                <viewController id="eYp-Id-ccl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c6h-sb-CUT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="QCx-Ah-JBd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="academic" translatesAutoresizingMaskIntoConstraints="NO" id="H63-ez-VMR">
+                                <rect key="frame" x="10" y="10" width="207" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="syD-YD-whQ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_button" translatesAutoresizingMaskIntoConstraints="NO" id="UsW-eg-nZX">
+                                <rect key="frame" x="0.0" y="110" width="414" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="Oez-56-UVg"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="URI-Ok-uI3">
+                                <rect key="frame" x="0.0" y="112" width="414" height="701"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="osz-h0-yxW" firstAttribute="bottom" secondItem="QCx-Ah-JBd" secondAttribute="bottom" id="0sx-XT-s3G"/>
+                            <constraint firstItem="QCx-Ah-JBd" firstAttribute="top" secondItem="c6h-sb-CUT" secondAttribute="top" id="5Rt-vc-qgK"/>
+                            <constraint firstItem="osz-h0-yxW" firstAttribute="trailing" secondItem="UsW-eg-nZX" secondAttribute="trailing" id="Ch0-8I-wl0"/>
+                            <constraint firstItem="osz-h0-yxW" firstAttribute="bottom" secondItem="URI-Ok-uI3" secondAttribute="bottom" id="H5H-qi-Yb8"/>
+                            <constraint firstItem="H63-ez-VMR" firstAttribute="width" secondItem="c6h-sb-CUT" secondAttribute="width" multiplier="0.5" id="J87-Du-Ti4"/>
+                            <constraint firstItem="UsW-eg-nZX" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" id="O5E-TP-6eG"/>
+                            <constraint firstItem="URI-Ok-uI3" firstAttribute="top" secondItem="UsW-eg-nZX" secondAttribute="bottom" id="SQ7-n5-Gxu"/>
+                            <constraint firstItem="osz-h0-yxW" firstAttribute="trailing" secondItem="URI-Ok-uI3" secondAttribute="trailing" id="VC1-ZK-S4b"/>
+                            <constraint firstItem="UsW-eg-nZX" firstAttribute="top" secondItem="H63-ez-VMR" secondAttribute="bottom" id="cmU-Zx-rd1"/>
+                            <constraint firstItem="URI-Ok-uI3" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" id="ecP-yk-bqc"/>
+                            <constraint firstItem="H63-ez-VMR" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" constant="10" id="mxG-bw-NmF"/>
+                            <constraint firstItem="QCx-Ah-JBd" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" id="ob2-QB-tdl"/>
+                            <constraint firstItem="osz-h0-yxW" firstAttribute="trailing" secondItem="QCx-Ah-JBd" secondAttribute="trailing" id="s4V-ak-dXO"/>
+                            <constraint firstItem="H63-ez-VMR" firstAttribute="top" secondItem="c6h-sb-CUT" secondAttribute="top" constant="10" id="zTJ-EY-OFT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="osz-h0-yxW"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tee Academy" image="video" selectedImage="videofill" id="Drq-Rn-5z8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="inf-dq-eSi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-314.49275362318843" y="-319.41964285714283"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="2bU-oK-ABg">
+            <objects>
+                <tabBarController id="m3v-Qw-TYY" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="leJ-ih-Xsd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="eYp-Id-ccl" kind="relationship" relationship="viewControllers" id="3Iv-03-Tpt"/>
+                        <segue destination="bWu-xH-R6a" kind="relationship" relationship="viewControllers" id="Un1-ZQ-Vkm"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="irV-U8-cTk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1233" y="5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="academic" width="176" height="65"/>
+        <image name="bg" width="540" height="898"/>
+        <image name="bg_button" width="129" height="22"/>
+        <image name="cart" width="24" height="24"/>
+        <image name="cartfill" width="24" height="24"/>
+        <image name="video" width="24" height="24"/>
+        <image name="videofill" width="24" height="24"/>
+    </resources>
+</document>

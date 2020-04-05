@@ -9,8 +9,11 @@
 import UIKit
 import Foundation
 import Toast_Swift
+import JGProgressHUD
 
 class BaseViewController: UIViewController {
+    
+    let hud = JGProgressHUD(style: .dark)
     
     func roundCorner(views: [UIView], radius: CGFloat) {
         views.forEach { (view) in
@@ -36,5 +39,51 @@ class BaseViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+}
+
+
+extension BaseViewController {
+    func showLoading() {
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
+    }
+    
+    func showProgressLoading() {
+        hud.indicatorView = JGProgressHUDPieIndicatorView()
+        hud.detailTextLabel.text = "0% complete"
+        hud.textLabel.text = "Uploading"
+        hud.show(in: self.view)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(400)) {
+            self.incrementHUD(self.hud, progress: 0)
+        }
+    }
+    
+    func incrementHUD(_ hud: JGProgressHUD, progress previousProgress: Int) {
+        let progress = previousProgress + 1
+        hud.progress = Float(progress)/100.0
+        hud.detailTextLabel.text = "\(progress)% complete"
+        
+        if progress == 100 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
+                UIView.animate(withDuration: 0.1, animations: {
+                    hud.textLabel.text = "Success"
+                    hud.detailTextLabel.text = nil
+                    hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+                })
+                
+                hud.dismiss(afterDelay: 1.0)
+            }
+        }
+        else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(20)) {
+                self.incrementHUD(hud, progress: progress)
+            }
+        }
+    }
+    
+    func hideLoading() {
+        hud.dismiss()
     }
 }

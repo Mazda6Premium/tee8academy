@@ -26,6 +26,9 @@
 		A85B800E2438302900CC4DCC /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B800D2438302900CC4DCC /* LessonViewController.swift */; };
 		A85B8010243830BA00CC4DCC /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B800F243830BA00CC4DCC /* ShopViewController.swift */; };
 		A88A42CE2439D99A0013BAFB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A42CD2439D99A0013BAFB /* Constant.swift */; };
+		A88A42D0243A08230013BAFB /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A88A42CF243A08230013BAFB /* Tabbar.storyboard */; };
+		A88A42D4243A14B00013BAFB /* PopupPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A42D2243A14B00013BAFB /* PopupPaymentVC.swift */; };
+		A88A42D5243A14B00013BAFB /* PopupPaymentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88A42D3243A14B00013BAFB /* PopupPaymentVC.xib */; };
 		A8A700412438BC3200B2139D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A700402438BC3200B2139D /* User.swift */; };
 		A8A700442438C2B700B2139D /* BuyCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A700422438C2B700B2139D /* BuyCourseVC.swift */; };
 		A8A700452438C2B700B2139D /* BuyCourseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A700432438C2B700B2139D /* BuyCourseVC.xib */; };
@@ -59,6 +62,9 @@
 		A85B800D2438302900CC4DCC /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
 		A85B800F243830BA00CC4DCC /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		A88A42CD2439D99A0013BAFB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		A88A42CF243A08230013BAFB /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
+		A88A42D2243A14B00013BAFB /* PopupPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPaymentVC.swift; sourceTree = "<group>"; };
+		A88A42D3243A14B00013BAFB /* PopupPaymentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupPaymentVC.xib; sourceTree = "<group>"; };
 		A8A700402438BC3200B2139D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A8A700422438C2B700B2139D /* BuyCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCourseVC.swift; sourceTree = "<group>"; };
 		A8A700432438C2B700B2139D /* BuyCourseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyCourseVC.xib; sourceTree = "<group>"; };
@@ -100,6 +106,7 @@
 		A823C73B2438832E00F749C2 /* LoginRegisterFlow */ = {
 			isa = PBXGroup;
 			children = (
+				A88A42D1243A14720013BAFB /* Popup */,
 				A812A52A243984CE009E3552 /* TableCell */,
 				A85B7FF32438268E00CC4DCC /* ViewController.swift */,
 				A823C74624388A0300F749C2 /* RegisterVC.swift */,
@@ -175,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				A85B7FF52438268E00CC4DCC /* Main.storyboard */,
+				A88A42CF243A08230013BAFB /* Tabbar.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,6 +233,15 @@
 				A88A42CD2439D99A0013BAFB /* Constant.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A88A42D1243A14720013BAFB /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				A88A42D2243A14B00013BAFB /* PopupPaymentVC.swift */,
+				A88A42D3243A14B00013BAFB /* PopupPaymentVC.xib */,
+			);
+			path = Popup;
 			sourceTree = "<group>";
 		};
 		C347418AB13050789E3343B6 /* Pods */ = {
@@ -298,6 +315,7 @@
 			files = (
 				A85B7FFC2438268F00CC4DCC /* LaunchScreen.storyboard in Resources */,
 				A823C7422438839C00F749C2 /* Quicksand-Regular.ttf in Resources */,
+				A88A42D0243A08230013BAFB /* Tabbar.storyboard in Resources */,
 				A823C73424383DAF00F749C2 /* GoogleService-Info.plist in Resources */,
 				014665E62438CC11008661E2 /* BuyCourseCell.xib in Resources */,
 				A823C74924388A0300F749C2 /* RegisterVC.xib in Resources */,
@@ -307,6 +325,7 @@
 				A85B7FF72438268E00CC4DCC /* Main.storyboard in Resources */,
 				A823C7412438839C00F749C2 /* Quicksand-Medium.ttf in Resources */,
 				A8A700492438C62600B2139D /* SendReceiptVC.xib in Resources */,
+				A88A42D5243A14B00013BAFB /* PopupPaymentVC.xib in Resources */,
 				A823C7442438839C00F749C2 /* Quicksand-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +410,7 @@
 				A85B7FF42438268E00CC4DCC /* ViewController.swift in Sources */,
 				A8A700442438C2B700B2139D /* BuyCourseVC.swift in Sources */,
 				A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */,
+				A88A42D4243A14B00013BAFB /* PopupPaymentVC.swift in Sources */,
 				A85B8010243830BA00CC4DCC /* ShopViewController.swift in Sources */,
 				A85B7FF02438268E00CC4DCC /* AppDelegate.swift in Sources */,
 				A8A700412438BC3200B2139D /* User.swift in Sources */,

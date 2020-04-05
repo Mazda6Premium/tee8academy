@@ -203,6 +203,6 @@ WWW.TEE8.EDU.VN</string>
         <image name="bg_button" width="129" height="22"/>
         <image name="paypal" width="223" height="60"/>
         <image name="plus" width="39" height="39"/>
-        <image name="vcb" width="230" height="227"/>
+        <image name="vcb" width="233" height="117"/>
     </resources>
 </document>
