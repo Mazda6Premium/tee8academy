@@ -90,7 +90,7 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
             cell.viewBackground.backgroundColor = #colorLiteral(red: 0.6392156863, green: 0, blue: 0, alpha: 1)
             let course = arrayCourse[0]
             cell.lblCourse.text = course.name
-            cell.lblPrice.text = "Giá tiền: \(formatMoney(course.price)) VNĐ"
+            cell.lblPrice.text = "Price: \(formatMoney(course.price)) VND"
             cell.imgDiscount.image = UIImage(named: "saving20")
             cell.imgDiscount.isHidden = false
 
@@ -98,7 +98,7 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
             cell.viewBackground.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
             let course = arrayCourse[indexPath.row]
             cell.lblCourse.text = course.name
-            cell.lblPrice.text = "Giá tiền: \(formatMoney(course.price)) VNĐ"
+            cell.lblPrice.text = "Price: \(formatMoney(course.price)) VND"
             cell.imgDiscount.isHidden = true
         }
         

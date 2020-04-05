@@ -67,29 +67,29 @@ class RegisterVC: BaseViewController {
     
     func checkLogic() {
         if txtEmail.text == "" || txtUsername.text == "" || txtPassword.text == "" || txtConfirmPassword.text == "" || txtAddress.text == "" || txtPhone.text == "" || txtRealName.text == "" {
-            showToast(message: "Bạn cần điền đầy đủ thông tin")
+            showToast(message: "Bạn cần điền đầy đủ thông tin.")
         } else {
             if !txtEmail.text!.isValidEmail {
                 txtEmail.textColor = .red
-                showToast(message: "Email không đúng định dạng")
+                showToast(message: "Email không đúng định dạng.")
                 return
             }
             
             if txtPassword.text!.count < 6 {
                 txtPassword.textColor = .red
-                showToast(message: "Mật khẩu của bạn cần tối thiểu 6 ký tự")
+                showToast(message: "Mật khẩu của bạn cần tối thiểu 6 ký tự.")
                 return
             }
             
             if txtPassword.text! != txtConfirmPassword.text! {
                 txtConfirmPassword.textColor = .red
-                showToast(message: "Xác nhận mật khẩu không trùng khớp")
+                showToast(message: "Xác nhận mật khẩu không trùng khớp.")
                 return
             }
             
             if txtPhone.text!.count != 10 || !txtPhone.text!.hasPrefix("0") || txtPhone.text!.hasPrefix("00") {
                 txtPhone.textColor = .red
-                showToast(message: "Số điện thoại không đúng định dạng")
+                showToast(message: "Số điện thoại không đúng định dạng.")
                 return
             }
             
