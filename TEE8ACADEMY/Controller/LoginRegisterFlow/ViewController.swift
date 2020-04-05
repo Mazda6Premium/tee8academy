@@ -59,7 +59,12 @@ class ViewController: BaseViewController {
     }
     
     @IBAction func tapOnRegister(_ sender: Any) {
-        let vc = RegisterVC(nibName: "RegisterVC", bundle: nil)
+//        let vc = RegisterVC(nibName: "RegisterVC", bundle: nil)
+//        vc.modalTransitionStyle = .crossDissolve
+//        vc.modalPresentationStyle = .overFullScreen
+//        self.present(vc, animated: true, completion: nil)
+        
+        let vc = BuyCourseVC(nibName: "BuyCourseVC", bundle: nil)
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overFullScreen
         self.present(vc, animated: true, completion: nil)

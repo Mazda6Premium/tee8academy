@@ -9,7 +9,7 @@
 import UIKit
 
 class BuyCourseVC: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var arrayCourse = [
@@ -24,22 +24,28 @@ class BuyCourseVC: UIViewController {
         Course(name: "PROFESSIONAL TOOLKIT", price: 0)
     ]
     
+    // Screen width.
+    public var screenWidth: CGFloat {
+        return UIScreen.main.bounds.width
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setUpTableView()
     }
-
+    
     func setUpTableView() {
         let courseCell_xib = UINib(nibName: "BuyCourseCell", bundle: nil)
         tableView.register(courseCell_xib, forCellReuseIdentifier: "courseCell")
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.allowsMultipleSelection = true
         tableView.separatorStyle = .none
     }
-
+    
 }
 
 extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
@@ -63,5 +69,24 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! BuyCourseCell
+        cell.selectionStyle = .none
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 1) {
+            cell.viewBackgroundWidth.constant = self.screenWidth - 40
+            self.view.layoutIfNeeded()
+        }
+
+    }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! BuyCourseCell
+        cell.selectionStyle = .none
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 1) {
+            cell.viewBackgroundWidth.constant = 10
+            self.view.layoutIfNeeded()
+        }
+    }
 }
