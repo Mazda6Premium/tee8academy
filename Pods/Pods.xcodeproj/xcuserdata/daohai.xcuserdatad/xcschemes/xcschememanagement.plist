@@ -100,7 +100,7 @@
 			<key>orderHint</key>
 			<integer>14</integer>
 		</dict>
-		<key>Toaster.xcscheme</key>
+		<key>Toast-Swift.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>15</integer>

@@ -92,5 +92,13 @@ extension UIDevice {
 
         return mapToDevice(identifier: identifier)
     }()
-
+}
+ 
+func formatMoney(_ money: Double) -> String {
+    let numFormatter = NumberFormatter()
+    numFormatter.numberStyle = .decimal
+    numFormatter.groupingSeparator = "."
+    numFormatter.decimalSeparator = ","
+    let text = numFormatter.string(from: NSNumber.init(value: money))!
+    return text
 }

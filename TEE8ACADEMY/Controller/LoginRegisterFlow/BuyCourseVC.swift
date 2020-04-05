@@ -9,22 +9,94 @@
 import UIKit
 
 class BuyCourseVC: UIViewController {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var arrayCourse = [
+        Course(name: "ALL COURSE", price: 40000000),
+        Course(name: "PHOENIXBROWS", price: 10000000),
+        Course(name: "MICROBLADING", price: 8000000),
+        Course(name: "SWINGBROWS", price: 8000000),
+        Course(name: "QUICKLIPS", price: 8000000),
+        Course(name: "REMOVAL", price: 8000000),
+        Course(name: "ALL PMU THEORY", price: 0),
+        Course(name: "COLOR SCHEMES", price: 0),
+        Course(name: "PROFESSIONAL TOOLKIT", price: 0)
+    ]
+    
+    // Screen width.
+    public var screenWidth: CGFloat {
+        return UIScreen.main.bounds.width
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        setUpTableView()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setUpTableView() {
+        let courseCell_xib = UINib(nibName: "BuyCourseCell", bundle: nil)
+        tableView.register(courseCell_xib, forCellReuseIdentifier: "courseCell")
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.allowsMultipleSelection = true
+        tableView.separatorStyle = .none
     }
-    */
+    
+}
 
+extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrayCourse.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell") as! BuyCourseCell
+        cell.backgroundColor = .clear
+
+        switch indexPath.row {
+        case 0:
+            cell.viewBackground.backgroundColor = #colorLiteral(red: 0.6392156863, green: 0, blue: 0, alpha: 1)
+            let course = arrayCourse[0]
+            cell.lblCourse.text = course.name
+            cell.lblPrice.text = "Giá tiền: \(formatMoney(course.price))"
+            cell.imgDiscount.image = UIImage(named: "saving20")
+
+        default:
+            cell.viewBackground.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
+            let course = arrayCourse[indexPath.row]
+            cell.lblCourse.text = course.name
+            cell.lblPrice.text = "Giá tiền: \(formatMoney(course.price))"
+            cell.imgDiscount.isHidden = true
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! BuyCourseCell
+        cell.selectionStyle = .none
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 1) {
+            cell.viewBackgroundWidth.constant = self.screenWidth - 40
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! BuyCourseCell
+        cell.selectionStyle = .none
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 1) {
+            cell.viewBackgroundWidth.constant = 10
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
 }

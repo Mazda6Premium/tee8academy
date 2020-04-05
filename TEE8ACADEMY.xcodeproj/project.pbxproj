@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		014665E52438CC11008661E2 /* BuyCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014665E32438CC11008661E2 /* BuyCourseCell.swift */; };
+		014665E62438CC11008661E2 /* BuyCourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014665E42438CC11008661E2 /* BuyCourseCell.xib */; };
 		A823C73424383DAF00F749C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A823C73324383DAF00F749C2 /* GoogleService-Info.plist */; };
 		A823C7412438839C00F749C2 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A823C73D2438839C00F749C2 /* Quicksand-Medium.ttf */; };
 		A823C7422438839C00F749C2 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A823C73E2438839C00F749C2 /* Quicksand-Regular.ttf */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		014665E32438CC11008661E2 /* BuyCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCourseCell.swift; sourceTree = "<group>"; };
+		014665E42438CC11008661E2 /* BuyCourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyCourseCell.xib; sourceTree = "<group>"; };
 		5D0F17786205A1FAF2E65BC2 /* Pods-TEE8ACADEMY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TEE8ACADEMY.debug.xcconfig"; path = "Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY.debug.xcconfig"; sourceTree = "<group>"; };
 		7D77AEEF61AD4E30056EE1D3 /* Pods_TEE8ACADEMY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TEE8ACADEMY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A823C73324383DAF00F749C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -82,9 +86,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A812A52A243984CE009E3552 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				014665E32438CC11008661E2 /* BuyCourseCell.swift */,
+				014665E42438CC11008661E2 /* BuyCourseCell.xib */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
 		A823C73B2438832E00F749C2 /* LoginRegisterFlow */ = {
 			isa = PBXGroup;
 			children = (
+				A812A52A243984CE009E3552 /* TableCell */,
 				A85B7FF32438268E00CC4DCC /* ViewController.swift */,
 				A823C74624388A0300F749C2 /* RegisterVC.swift */,
 				A823C74724388A0300F749C2 /* RegisterVC.xib */,
@@ -282,6 +296,7 @@
 				A85B7FFC2438268F00CC4DCC /* LaunchScreen.storyboard in Resources */,
 				A823C7422438839C00F749C2 /* Quicksand-Regular.ttf in Resources */,
 				A823C73424383DAF00F749C2 /* GoogleService-Info.plist in Resources */,
+				014665E62438CC11008661E2 /* BuyCourseCell.xib in Resources */,
 				A823C74924388A0300F749C2 /* RegisterVC.xib in Resources */,
 				A823C7432438839C00F749C2 /* Quicksand-Light.ttf in Resources */,
 				A85B7FF92438268F00CC4DCC /* Assets.xcassets in Resources */,
@@ -331,7 +346,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
-				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -342,7 +357,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +383,7 @@
 				A85B800E2438302900CC4DCC /* LessonViewController.swift in Sources */,
 				A8A7004B2438C6EF00B2139D /* Extensions.swift in Sources */,
 				A85B7FF22438268E00CC4DCC /* SceneDelegate.swift in Sources */,
+				014665E52438CC11008661E2 /* BuyCourseCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
