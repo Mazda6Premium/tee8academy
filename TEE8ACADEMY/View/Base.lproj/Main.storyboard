@@ -57,7 +57,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qE-bD-2A0">
-                                <rect key="frame" x="20" y="565.5" width="129" height="31"/>
+                                <rect key="frame" x="20" y="641.5" width="129" height="31"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                 <state key="normal" title="Register/Đăng ký">
                                     <color key="titleColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,7 +67,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2v-mF-ITS">
-                                <rect key="frame" x="20" y="606.5" width="171" height="31"/>
+                                <rect key="frame" x="20" y="682.5" width="171" height="31"/>
                                 <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                                 <state key="normal" title="Forget your password ?">
                                     <color key="titleColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -84,6 +84,17 @@ WWW.TEE8.EDU.VN</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyG-wg-OBf">
+                                <rect key="frame" x="117" y="575.5" width="180" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="HFk-mB-FvM"/>
+                                    <constraint firstAttribute="height" constant="36" id="Wzr-zy-Mww"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                                <state key="normal" title="Login" backgroundImage="bg_button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -91,11 +102,13 @@ WWW.TEE8.EDU.VN</string>
                             <constraint firstItem="64u-3Z-jk0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7jm-Yi-bxx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="64u-3Z-jk0" secondAttribute="trailing" constant="20" id="DAk-uT-JMF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gVi-Bq-1vV" secondAttribute="trailing" constant="20" id="DeX-2S-Uga"/>
+                            <constraint firstItem="7qE-bD-2A0" firstAttribute="top" secondItem="KyG-wg-OBf" secondAttribute="bottom" constant="30" id="FcO-xR-q8M"/>
                             <constraint firstItem="7Vv-bs-Whw" firstAttribute="top" secondItem="gVi-Bq-1vV" secondAttribute="bottom" constant="20" id="GaO-Qk-dus"/>
                             <constraint firstItem="dAo-CP-xeu" firstAttribute="height" secondItem="hNA-R0-Xk2" secondAttribute="height" multiplier="0.36" id="GgL-uW-O1j"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dAo-CP-xeu" secondAttribute="trailing" constant="30" id="NQp-y9-wwb"/>
                             <constraint firstItem="7Vv-bs-Whw" firstAttribute="leading" secondItem="gVi-Bq-1vV" secondAttribute="leading" id="SaI-6y-FJt"/>
                             <constraint firstItem="hNA-R0-Xk2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Scw-OI-3W6"/>
+                            <constraint firstItem="KyG-wg-OBf" firstAttribute="centerX" secondItem="hNA-R0-Xk2" secondAttribute="centerX" id="TE3-7s-RJX"/>
                             <constraint firstItem="gVi-Bq-1vV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Uod-Kz-von"/>
                             <constraint firstItem="gVi-Bq-1vV" firstAttribute="top" secondItem="dAo-CP-xeu" secondAttribute="bottom" constant="30" id="VQG-8v-atE"/>
                             <constraint firstItem="dAo-CP-xeu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="XDg-FI-0f5"/>
@@ -103,6 +116,7 @@ WWW.TEE8.EDU.VN</string>
                             <constraint firstItem="iyw-SZ-mcd" firstAttribute="top" secondItem="7Vv-bs-Whw" secondAttribute="bottom" constant="20" id="ZII-hS-gGq"/>
                             <constraint firstItem="iyw-SZ-mcd" firstAttribute="trailing" secondItem="7Vv-bs-Whw" secondAttribute="trailing" id="edI-nE-TaB"/>
                             <constraint firstAttribute="bottom" secondItem="hNA-R0-Xk2" secondAttribute="bottom" id="fHY-nf-TAN"/>
+                            <constraint firstItem="KyG-wg-OBf" firstAttribute="top" secondItem="iyw-SZ-mcd" secondAttribute="bottom" constant="30" id="i8C-Pc-erU"/>
                             <constraint firstItem="hNA-R0-Xk2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="je4-0n-DLQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Vv-bs-Whw" secondAttribute="trailing" constant="20" id="k44-ew-dZu"/>
                             <constraint firstItem="hNA-R0-Xk2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mnG-73-ikt"/>
@@ -110,12 +124,12 @@ WWW.TEE8.EDU.VN</string>
                             <constraint firstItem="dAo-CP-xeu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="oxc-JY-94z"/>
                             <constraint firstItem="iyw-SZ-mcd" firstAttribute="leading" secondItem="7Vv-bs-Whw" secondAttribute="leading" id="rIR-ah-2lx"/>
                             <constraint firstItem="64u-3Z-jk0" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sK1-DJ-KHo"/>
-                            <constraint firstItem="7qE-bD-2A0" firstAttribute="top" secondItem="iyw-SZ-mcd" secondAttribute="bottom" constant="20" id="ux4-eg-Vsu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="btnForget" destination="u2v-mF-ITS" id="r0W-2A-hKA"/>
+                        <outlet property="btnLogin" destination="KyG-wg-OBf" id="JxJ-de-Rqo"/>
                         <outlet property="btnRegister" destination="7qE-bD-2A0" id="FzW-4p-jHv"/>
                         <outlet property="imgFrame" destination="dAo-CP-xeu" id="pgA-HI-NPu"/>
                         <outlet property="lblLogin" destination="gVi-Bq-1vV" id="EVZ-Ki-Jea"/>
@@ -130,5 +144,6 @@ WWW.TEE8.EDU.VN</string>
     </scenes>
     <resources>
         <image name="bg" width="540" height="898"/>
+        <image name="bg_button" width="129" height="22"/>
     </resources>
 </document>

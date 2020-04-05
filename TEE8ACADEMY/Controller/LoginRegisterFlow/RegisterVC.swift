@@ -45,7 +45,7 @@ class RegisterVC: BaseViewController {
         checkLogic()
         if user != nil {
             print(user?.asDictionary())
-            let vc = BuyCourseVC(nibName: "BuyCourseVC", bundle: nil)
+            let vc = SendReceiveVC(nibName: "SendReceiveVC", bundle: nil)
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
