@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Toaster
+import Toast_Swift
 
 class RegisterVC: BaseViewController {
     
@@ -38,6 +38,18 @@ class RegisterVC: BaseViewController {
         txtPassword.delegate = self
         txtConfirmPassword.delegate = self
         txtPhone.delegate = self
+        
+        fakeData()
+    }
+    
+    func fakeData() {
+        txtEmail.text = "trung@gmail.com"
+        txtUsername.text = "abc"
+        txtPassword.text = "123456"
+        txtConfirmPassword.text = "123456"
+        txtAddress.text = "abc"
+        txtPhone.text = "0942556886"
+        txtRealName.text = "abc"
     }
     
     @IBAction func tapOnContinue(_ sender: Any) {
@@ -45,7 +57,7 @@ class RegisterVC: BaseViewController {
         checkLogic()
         if user != nil {
             print(user?.asDictionary())
-            let vc = SendReceiveVC(nibName: "SendReceiveVC", bundle: nil)
+            let vc = BuyCourseVC(nibName: "BuyCourseVC", bundle: nil)
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
@@ -53,30 +65,30 @@ class RegisterVC: BaseViewController {
     }
     
     func checkLogic() {
-        if txtEmail.text == "" && txtUsername.text == "" && txtPassword.text == "" && txtConfirmPassword.text == "" && txtAddress.text == "" && txtPhone.text == "" && txtRealName.text == "" {
-            Toast(text: "Bạn cần điền đầy đủ thông tin").show()
+        if txtEmail.text == "" || txtUsername.text == "" || txtPassword.text == "" || txtConfirmPassword.text == "" || txtAddress.text == "" || txtPhone.text == "" || txtRealName.text == "" {
+            showToast(message: "Bạn cần điền đầy đủ thông tin")
         } else {
             if !txtEmail.text!.isValidEmail {
                 txtEmail.textColor = .red
-                Toast(text: "Định dạng email không hợp lệ").show()
+                showToast(message: "Email không đúng định dạng")
                 return
             }
             
             if txtPassword.text!.count < 6 {
                 txtPassword.textColor = .red
-                Toast(text: "Mật khẩu của bạn cần tối thiểu 6 ký tự").show()
+                showToast(message: "Mật khẩu của bạn cần tối thiểu 6 ký tự")
                 return
             }
             
             if txtPassword.text! != txtConfirmPassword.text! {
                 txtConfirmPassword.textColor = .red
-                Toast(text: "Xác nhận mật khẩu không trùng khớp").show()
+                showToast(message: "Xác nhận mật khẩu không trùng khớp")
                 return
             }
             
             if txtPhone.text!.count != 10 || !txtPhone.text!.hasPrefix("0") || txtPhone.text!.hasPrefix("00") {
                 txtPhone.textColor = .red
-                Toast(text: "Số điện thoại không đúng định dạng").show()
+                showToast(message: "Số điện thoại không đúng định dạng")
                 return
             }
             

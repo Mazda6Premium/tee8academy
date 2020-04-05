@@ -14,13 +14,18 @@ class BuyCourseCell: UITableViewCell {
     @IBOutlet weak var viewBackground: UIView!
     @IBOutlet weak var lblCourse: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
+    @IBOutlet weak var imgDiscount: UIImageView!
     @IBOutlet weak var viewBackgroundWidth: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         viewBackground.layer.masksToBounds = true
-        viewBackground.layer.cornerRadius = 10
+        viewBackground.layer.cornerRadius = 6
+        
+        imgDiscount.layer.masksToBounds = true
+        imgDiscount.layer.cornerRadius = 6
+
     }
     
     

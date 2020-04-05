@@ -86,9 +86,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A812A52A243984CE009E3552 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				014665E32438CC11008661E2 /* BuyCourseCell.swift */,
+				014665E42438CC11008661E2 /* BuyCourseCell.xib */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
 		A823C73B2438832E00F749C2 /* LoginRegisterFlow */ = {
 			isa = PBXGroup;
 			children = (
+				A812A52A243984CE009E3552 /* TableCell */,
 				A85B7FF32438268E00CC4DCC /* ViewController.swift */,
 				A823C74624388A0300F749C2 /* RegisterVC.swift */,
 				A823C74724388A0300F749C2 /* RegisterVC.xib */,
@@ -96,8 +106,6 @@
 				A8A700432438C2B700B2139D /* BuyCourseVC.xib */,
 				A8A700462438C62600B2139D /* SendReceiveVC.swift */,
 				A8A700472438C62600B2139D /* SendReceiveVC.xib */,
-				014665E32438CC11008661E2 /* BuyCourseCell.swift */,
-				014665E42438CC11008661E2 /* BuyCourseCell.xib */,
 			);
 			path = LoginRegisterFlow;
 			sourceTree = "<group>";
@@ -333,9 +341,24 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

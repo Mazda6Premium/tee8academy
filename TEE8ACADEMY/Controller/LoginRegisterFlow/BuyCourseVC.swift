@@ -55,15 +55,22 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell") as! BuyCourseCell
+        cell.backgroundColor = .clear
+
         switch indexPath.row {
         case 0:
             cell.viewBackground.backgroundColor = #colorLiteral(red: 0.6392156863, green: 0, blue: 0, alpha: 1)
-            cell.lblPrice.text = "\(arrayCourse[0].price)"
-            cell.lblCourse.text = arrayCourse[0].name
+            let course = arrayCourse[0]
+            cell.lblCourse.text = course.name
+            cell.lblPrice.text = "Giá tiền: \(formatMoney(course.price))"
+            cell.imgDiscount.image = UIImage(named: "saving20")
+
         default:
-            cell.viewBackground.backgroundColor = #colorLiteral(red: 0.05882352941, green: 0.6549019608, blue: 0.8784313725, alpha: 1)
-            cell.lblCourse.text = arrayCourse[indexPath.row].name
-            cell.lblPrice.text = "\(arrayCourse[indexPath.row].price)"
+            cell.viewBackground.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
+            let course = arrayCourse[indexPath.row]
+            cell.lblCourse.text = course.name
+            cell.lblPrice.text = "Giá tiền: \(formatMoney(course.price))"
+            cell.imgDiscount.isHidden = true
         }
         
         return cell
@@ -77,7 +84,6 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
             cell.viewBackgroundWidth.constant = self.screenWidth - 40
             self.view.layoutIfNeeded()
         }
-
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -88,5 +94,9 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
             cell.viewBackgroundWidth.constant = 10
             self.view.layoutIfNeeded()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 }
