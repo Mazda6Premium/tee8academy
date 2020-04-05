@@ -18,6 +18,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SendReceiptVC" customModule="TEE8ACADEMY" customModuleProvider="target">
             <connections>
+                <outlet property="btnBack" destination="ofv-b8-gIQ" id="IAn-Tq-nty"/>
                 <outlet property="btnContactSupport" destination="XMG-Sm-dt0" id="rZH-pq-JK7"/>
                 <outlet property="btnPaypal" destination="9W0-Ya-aRv" id="Pg9-Nn-3y4"/>
                 <outlet property="btnSubmit" destination="pHT-iY-7uH" id="9vg-6N-bTI"/>
@@ -31,17 +32,30 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="820"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="u21-lI-z0J">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="820"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                 </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="STX-Ff-u1A">
-                    <rect key="frame" x="20" y="726.5" width="374" height="36"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="STX-Ff-u1A">
+                    <rect key="frame" x="20" y="736.5" width="374" height="36"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofv-b8-gIQ">
+                            <rect key="frame" x="0.0" y="0.0" width="182" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="7mE-S8-T3M"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                            <state key="normal" title="Back" backgroundImage="bg_button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="tapOnBack:" destination="-1" eventType="touchUpInside" id="4qm-8d-jAw"/>
+                            </connections>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHT-iY-7uH">
-                            <rect key="frame" x="0.0" y="0.0" width="177" height="36"/>
+                            <rect key="frame" x="192" y="0.0" width="182" height="36"/>
                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
                             <state key="normal" title="Submit" backgroundImage="bg_button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,13 +63,6 @@
                             <connections>
                                 <action selector="tapOnSubmit:" destination="-1" eventType="touchUpInside" id="dJW-XQ-zbi"/>
                             </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-Sm-dt0">
-                            <rect key="frame" x="197" y="0.0" width="177" height="36"/>
-                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                            <state key="normal" title="Contact Support" backgroundImage="bg_button">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
                         </button>
                     </subviews>
                     <constraints>
@@ -69,7 +76,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nq6-HO-lwx">
-                    <rect key="frame" x="0.0" y="84" width="414" height="612.5"/>
+                    <rect key="frame" x="0.0" y="84" width="414" height="632.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wK0-Vq-lMO">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="610"/>
@@ -164,32 +171,45 @@ Thank you</string>
                     </constraints>
                 </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeQ-K7-qmH">
-                    <rect key="frame" x="20" y="782.5" width="374" height="37.5"/>
+                    <rect key="frame" x="20" y="828.5" width="374" height="37.5"/>
                     <string key="text">Hotline 0919188158 - 0888777158/198
 WWW.TEE8.EDU.VN</string>
                     <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand Medium" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-Sm-dt0">
+                    <rect key="frame" x="20" y="782.5" width="374" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="2R1-52-T38"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                    <state key="normal" title="Contact Support" backgroundImage="bg_button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="f4x-WT-fYc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="1dS-mo-tdc"/>
+                <constraint firstItem="ZeQ-K7-qmH" firstAttribute="top" secondItem="XMG-Sm-dt0" secondAttribute="bottom" constant="10" id="5aj-oE-z6j"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZeQ-K7-qmH" secondAttribute="trailing" constant="20" id="AWu-su-7M1"/>
                 <constraint firstItem="f4x-WT-fYc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="BMj-5s-d4P"/>
                 <constraint firstItem="nq6-HO-lwx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DdA-Ey-Y8V"/>
+                <constraint firstItem="XMG-Sm-dt0" firstAttribute="top" secondItem="STX-Ff-u1A" secondAttribute="bottom" constant="10" id="FNi-ty-SPW"/>
                 <constraint firstItem="STX-Ff-u1A" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="FPc-S7-d0O"/>
-                <constraint firstItem="ZeQ-K7-qmH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="G9g-cn-DqE"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZeQ-K7-qmH" secondAttribute="trailing" constant="20" id="Km0-5v-e0Y"/>
-                <constraint firstItem="STX-Ff-u1A" firstAttribute="top" secondItem="nq6-HO-lwx" secondAttribute="bottom" constant="30" id="Q8R-5K-Ar4"/>
-                <constraint firstItem="ZeQ-K7-qmH" firstAttribute="top" secondItem="STX-Ff-u1A" secondAttribute="bottom" constant="20" id="Qjb-wE-c3t"/>
+                <constraint firstItem="XMG-Sm-dt0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Fuf-Hn-sxH"/>
+                <constraint firstItem="STX-Ff-u1A" firstAttribute="top" secondItem="nq6-HO-lwx" secondAttribute="bottom" constant="20" id="Q8R-5K-Ar4"/>
                 <constraint firstItem="wK0-Vq-lMO" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Uyg-gE-CJP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f4x-WT-fYc" secondAttribute="trailing" constant="20" id="VNa-0L-DFj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XMG-Sm-dt0" secondAttribute="trailing" constant="20" id="al1-ow-htE"/>
                 <constraint firstItem="nq6-HO-lwx" firstAttribute="top" secondItem="f4x-WT-fYc" secondAttribute="bottom" constant="10" id="ePb-Jv-ZV0"/>
                 <constraint firstItem="u21-lI-z0J" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fuR-fR-6nE"/>
                 <constraint firstItem="u21-lI-z0J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gTB-pP-gLx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="u21-lI-z0J" secondAttribute="trailing" id="i8i-SS-7rj"/>
+                <constraint firstItem="ZeQ-K7-qmH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="l3p-KK-jU2"/>
                 <constraint firstAttribute="bottom" secondItem="u21-lI-z0J" secondAttribute="bottom" id="lmS-1B-EOJ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZeQ-K7-qmH" secondAttribute="bottom" id="r9A-Qk-ZhC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZeQ-K7-qmH" secondAttribute="bottom" id="nCG-RV-caN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="STX-Ff-u1A" secondAttribute="trailing" constant="20" id="snk-Ox-wfL"/>
                 <constraint firstItem="nq6-HO-lwx" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="u9W-IB-xze"/>
             </constraints>

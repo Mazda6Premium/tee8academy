@@ -13,6 +13,8 @@ class BuyCourseVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnContinue: UIButton!
+    @IBOutlet weak var btnSupport: UIButton!
+    @IBOutlet weak var btnBack: UIButton!
     
     var user: User?
     var arrayCourse = [
@@ -42,7 +44,7 @@ class BuyCourseVC: BaseViewController {
     }
     
     func setupView() {
-        roundCorner(views: [btnContinue], radius: 8)
+        roundCorner(views: [btnContinue, btnSupport, btnBack], radius: 8)
         
         if let user = user {
             lblTitle.text = "Welcome \(user.realName) to Tee 8 Academy, please choice your course belows:"
@@ -73,6 +75,10 @@ class BuyCourseVC: BaseViewController {
         } else {
             showToast(message: "Bạn cần chọn ít nhất 1 khoá học")
         }
+    }
+    
+    @IBAction func tapOnBack(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 

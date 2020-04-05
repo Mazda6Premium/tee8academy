@@ -21,6 +21,7 @@ class RegisterVC: BaseViewController {
     
     @IBOutlet weak var btnContinue: UIButton!
     @IBOutlet weak var btnContactSupport: UIButton!
+    @IBOutlet weak var btnBack: UIButton!
     
     var user: User?
     
@@ -32,7 +33,7 @@ class RegisterVC: BaseViewController {
     }
     
     func setupView() {
-        roundCorner(views: [txtEmail, txtUsername, txtPassword, txtConfirmPassword, txtAddress, txtPhone, txtRealName, btnContinue, btnContactSupport], radius: 8)
+        roundCorner(views: [txtEmail, txtUsername, txtPassword, txtConfirmPassword, txtAddress, txtPhone, txtRealName, btnContinue, btnContactSupport, btnBack], radius: 8)
         
         txtEmail.delegate = self
         txtPassword.delegate = self
@@ -98,6 +99,10 @@ class RegisterVC: BaseViewController {
 
             user = User(email: txtEmail.text!, username: txtUsername.text!, password: txtPassword.text!, confirmPassword: txtConfirmPassword.text!, address: txtAddress.text!, phone: txtPhone.text!, realName: txtRealName.text!, course: [Course](), paymentMethod: "", imagePayment: "", phoneId: phoneId, phoneModel: phoneModel)
         }
+    }
+    
+    @IBAction func tapOnBack(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 

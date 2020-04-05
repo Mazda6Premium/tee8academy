@@ -20,6 +20,8 @@ class SendReceiptVC: BaseViewController {
     @IBOutlet weak var btnContactSupport: UIButton!
     @IBOutlet weak var btnUpload: UIButton!
     @IBOutlet weak var lblUpload: UILabel!
+    @IBOutlet weak var btnBack: UIButton!
+    
     
     var user: User?
     var imagePicker = UIImagePickerController()
@@ -34,7 +36,7 @@ class SendReceiptVC: BaseViewController {
     }
     
     func setupView() {
-        roundCorner(views: [btnSubmit, btnContactSupport, btnPaypal, btnVCB, imgReceipt], radius: 8)
+        roundCorner(views: [btnSubmit, btnContactSupport, btnPaypal, btnVCB, imgReceipt, btnBack], radius: 8)
         
         addBorder(views: [imgReceipt], width: 1, color: #colorLiteral(red: 0.5704585314, green: 0.5704723597, blue: 0.5704649091, alpha: 1))
         
@@ -104,7 +106,9 @@ class SendReceiptVC: BaseViewController {
         showProgressLoading()
     }
     
-
+    @IBAction func tapOnBack(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension SendReceiptVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
