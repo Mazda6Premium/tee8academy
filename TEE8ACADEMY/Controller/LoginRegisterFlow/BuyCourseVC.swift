@@ -66,17 +66,24 @@ class BuyCourseVC: BaseViewController {
     }
     
     @IBAction func tapOnContinue(_ sender: Any) {
+        user?.course.removeAll()
         view.endEditing(true)
         if arrayChooseCourse.count != 0 {
             user?.course.append(contentsOf: arrayChooseCourse)
-            print(user?.asDictionary())
+            dump(user?.course)
             let vc = SendReceiptVC(nibName: "SendReceiptVC", bundle: nil)
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .overFullScreen
             vc.user = self.user
-            self.present(vc, animated: true, completion: nil)
+            self.present(vc, animated: true) {
+                self.arrayChooseCourse.removeAll()
+                self.arrayCourse.forEach { (course) in
+                    course.isSelected = false
+                }
+                self.tableView.reloadData()
+            }
         } else {
-            showToast(message: "Bạn cần chọn ít nhất 1 khoá học")
+            showToast(message: "Bạn cần chọn ít nhất 1 khoá học có phí")
         }
     }
     
@@ -94,44 +101,33 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell") as! BuyCourseCell
         cell.backgroundColor = .clear
         let totalRows = arrayCourse.count
+        let course = arrayCourse[indexPath.row]
+        switch course.isSelected {
+        case true:
+            animationRunCell(cell: cell)
+        case false:
+            animationBackCell(cell: cell)
+        }
 
         switch indexPath.row {
         case 0:
             cell.viewBackground.backgroundColor = #colorLiteral(red: 0.6392156863, green: 0, blue: 0, alpha: 1)
-            let course = arrayCourse[0]
             cell.lblCourse.text = course.name
             cell.lblPrice.text = "Price: \(formatMoney(course.price)) VND"
             cell.imgDiscount.image = UIImage(named: "saving20")
             cell.imgDiscount.isHidden = false
-            
-            // RUN ANIMATION IN FIRST CASE
-            switch course.isSelected {
-            case true:
-                animationRunCell(cell: cell)
-            case false:
-                animationBackCell(cell: cell)
-            }
         
         case 1..<totalRows-3 :
             cell.viewBackground.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
-            let course = arrayCourse[indexPath.row]
             cell.lblCourse.text = course.name
             cell.lblPrice.text = "Price: \(formatMoney(course.price)) VND"
             cell.imgDiscount.isHidden = true
-            
-            // RUN ANIMATION IN 1...6 CASE
-            switch course.isSelected {
-            case true:
-                animationRunCell(cell: cell)
-            case false:
-                animationBackCell(cell: cell)
-            }
             
         default:
             cell.viewBackground.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
             let course = arrayCourse[indexPath.row]
             cell.lblCourse.text = course.name
-            cell.lblPrice.text = "Tặng kèm"
+            cell.lblPrice.text = "Khoá học tặng kèm"
             cell.imgDiscount.isHidden = true
         }
         
@@ -140,7 +136,7 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
     
     func animationRunCell(cell: BuyCourseCell) {
         self.view.layoutIfNeeded()
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.3) {
             cell.viewBackgroundWidth.constant = self.screenWidth - 40
             cell.lblCourse.textColor = .white
             cell.lblPrice.textColor = .white
@@ -150,7 +146,7 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
     
     func animationBackCell (cell: BuyCourseCell) {
         self.view.layoutIfNeeded()
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.3) {
             cell.viewBackgroundWidth.constant = 10
             cell.lblCourse.textColor = .black
             cell.lblPrice.textColor = .black
@@ -217,9 +213,6 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
         default:
             break
         }
-        
-
-        dump(arrayChooseCourse)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -44,9 +44,10 @@ class BaseViewController: UIViewController {
 
 
 extension BaseViewController {
-    func showLoading() {
+    func showLoading(time: Double) {
         hud.textLabel.text = "Loading"
         hud.show(in: self.view)
+        hud.dismiss(afterDelay: time)
     }
     
     func showProgressLoading() {
@@ -81,9 +82,5 @@ extension BaseViewController {
                 self.incrementHUD(hud, progress: progress)
             }
         }
-    }
-    
-    func hideLoading() {
-        hud.dismiss()
     }
 }
