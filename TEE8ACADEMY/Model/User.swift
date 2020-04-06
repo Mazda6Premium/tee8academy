@@ -11,6 +11,7 @@ import Foundation
 class Course {
     var name = ""
     var price = 0.0
+    var isSelected = false
     
     init(name: String, price: Double) {
         self.name = name

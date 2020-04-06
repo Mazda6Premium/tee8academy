@@ -28,7 +28,10 @@ class BuyCourseVC: BaseViewController {
         Course(name: "COLOR SCHEMES", price: 0),
         Course(name: "PROFESSIONAL TOOLKIT", price: 0)
     ]
+    
+
     var arrayChooseCourse = [Course]()
+    
     
     // Screen width.
     public var screenWidth: CGFloat {
@@ -90,6 +93,7 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell") as! BuyCourseCell
         cell.backgroundColor = .clear
+        let totalRows = arrayCourse.count
 
         switch indexPath.row {
         case 0:
@@ -99,21 +103,42 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
             cell.lblPrice.text = "Price: \(formatMoney(course.price)) VND"
             cell.imgDiscount.image = UIImage(named: "saving20")
             cell.imgDiscount.isHidden = false
-
-        default:
+            
+            // RUN ANIMATION IN FIRST CASE
+            switch course.isSelected {
+            case true:
+                animationRunCell(cell: cell)
+            case false:
+                animationBackCell(cell: cell)
+            }
+        
+        case 1..<totalRows-3 :
             cell.viewBackground.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
             let course = arrayCourse[indexPath.row]
             cell.lblCourse.text = course.name
             cell.lblPrice.text = "Price: \(formatMoney(course.price)) VND"
+            cell.imgDiscount.isHidden = true
+            
+            // RUN ANIMATION IN 1...6 CASE
+            switch course.isSelected {
+            case true:
+                animationRunCell(cell: cell)
+            case false:
+                animationBackCell(cell: cell)
+            }
+            
+        default:
+            cell.viewBackground.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
+            let course = arrayCourse[indexPath.row]
+            cell.lblCourse.text = course.name
+            cell.lblPrice.text = "Tặng kèm"
             cell.imgDiscount.isHidden = true
         }
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! BuyCourseCell
-        cell.selectionStyle = .none
+    func animationRunCell(cell: BuyCourseCell) {
         self.view.layoutIfNeeded()
         UIView.animate(withDuration: 1) {
             cell.viewBackgroundWidth.constant = self.screenWidth - 40
@@ -121,16 +146,9 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
             cell.lblPrice.textColor = .white
             self.view.layoutIfNeeded()
         }
-        
-        // APPEND COURSE
-        let course = arrayCourse[indexPath.row]
-        let chooseCourse = Course(name: course.name, price: course.price)
-        arrayChooseCourse.append(chooseCourse)
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! BuyCourseCell
-        cell.selectionStyle = .none
+    func animationBackCell (cell: BuyCourseCell) {
         self.view.layoutIfNeeded()
         UIView.animate(withDuration: 1) {
             cell.viewBackgroundWidth.constant = 10
@@ -138,12 +156,70 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
             cell.lblPrice.textColor = .black
             self.view.layoutIfNeeded()
         }
-        
-        // REMOVE COURSE
-        let courseName = arrayCourse[indexPath.row].name
-        if let indexObject = arrayChooseCourse.firstIndex(where: {$0.name == courseName}) {
-            arrayChooseCourse.remove(at: indexObject)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let totalRows = arrayCourse.count
+        let course = arrayCourse[indexPath.row]
+        let chooseCourse = Course(name: course.name, price: course.price)
+
+        switch indexPath.row {
+        case 0: // FIRST CASE
+            if course.isSelected == true { // DIDSELECT AND REMOVE
+                course.isSelected = false
+                tableView.reloadData()
+
+                if let indexObject = arrayChooseCourse.firstIndex(where: {$0.name == "All COURSE"}) {
+                    arrayChooseCourse.remove(at: indexObject)
+                }
+            } else { // SELECT AND APPEND
+                course.isSelected = true
+                for row in 1...totalRows-3 {
+                    arrayCourse[row].isSelected = false
+                    tableView.reloadData()
+
+                }
+                
+                if arrayChooseCourse.isEmpty {
+                    arrayChooseCourse.append(chooseCourse)
+                } else {
+                    arrayChooseCourse.removeAll()
+                    arrayChooseCourse.append(chooseCourse)
+                }
+            }
+        case 1..<totalRows-3: // 1...6 CASE
+            if course.isSelected == true { // DIDSELECT AND REMOVE
+                course.isSelected = false
+                tableView.reloadData()
+
+                
+                let courseName = arrayCourse[indexPath.row].name
+                if let indexObject = arrayChooseCourse.firstIndex(where: {$0.name == courseName}) {
+                    arrayChooseCourse.remove(at: indexObject)
+                }
+                
+            } else { //SELECT AND APPEND
+                course.isSelected = true
+                arrayCourse[0].isSelected = false
+                tableView.reloadData()
+
+                
+                if arrayChooseCourse.isEmpty {
+                    arrayChooseCourse.append(chooseCourse)
+                } else {
+                    if let indexObject = arrayChooseCourse.firstIndex(where: {$0.name == "ALL COURSE"}) {
+                        arrayChooseCourse.remove(at: indexObject)
+                    }
+                    arrayChooseCourse.append(chooseCourse)
+                }
+            }
+
+        default:
+            break
         }
+        
+
+        dump(arrayChooseCourse)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

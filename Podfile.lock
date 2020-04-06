@@ -134,7 +134,7 @@ DEPENDENCIES:
   - Toast-Swift
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Firebase
     - FirebaseAnalytics
     - FirebaseAnalyticsInterop
@@ -194,4 +194,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 64c192e90f13b1ee2823e801c94038aca07730a3
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.9.1
