@@ -39,8 +39,9 @@ class User {
     var imagePayment = ""
     var phoneId = ""
     var phoneModel = ""
+    var time = 0.0
     
-    init(email: String, username: String, password: String, confirmPassword: String, address: String, phone: String, realName: String, course: [Course], paymentMethod: String, imagePayment: String, phoneId: String, phoneModel: String) {
+    init(email: String, username: String, password: String, confirmPassword: String, address: String, phone: String, realName: String, course: [Course], paymentMethod: String, imagePayment: String, phoneId: String, phoneModel: String, time: Double) {
         self.email = email
         self.username = username
         self.password = password
@@ -53,6 +54,7 @@ class User {
         self.phoneModel = phoneModel
         self.paymentMethod = paymentMethod
         self.imagePayment = imagePayment
+        self.time = time
     }
     
     func asDictionary() -> [String: Any] {
@@ -67,7 +69,8 @@ class User {
             "paymentMethod": self.paymentMethod,
             "imagePayment": self.imagePayment,
             "phoneId": self.phoneId,
-            "phoneModel": self.phoneModel
+            "phoneModel": self.phoneModel,
+            "time": self.time
         ]
     }
 }

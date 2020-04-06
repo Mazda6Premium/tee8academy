@@ -87,23 +87,70 @@ class SendReceiptVC: BaseViewController {
     }
     
     @IBAction func tapOnSubmit(_ sender: Any) {
-        
+        showLoading()
         if paymentMethod == "" {
             showToast(message: "Bạn chưa chọn phương thức thanh toán.")
+            hideLoading()
             return
         }
         
         guard let image = chooseImage else {
             showToast(message: "Bạn chưa tải lên hoá đơn thanh toán.")
+            hideLoading()
             return
         }
         
         guard let imageData = image.jpegData(compressionQuality: 0.1) else {
             showToast(message: "Có lỗi xảy ra, vui lòng thử lại sau.")
+            hideLoading()
             return
         }
         
-        showProgressLoading()
+        postData(imageData: imageData)
+    }
+    
+    func postData(imageData: Data) {
+        guard let userData = user else {
+            showToast(message: "Có lỗi xảy ra, vui lòng thử lại sau.")
+            hideLoading()
+            return
+        }
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let dateCreate = dateFormatter.string(from: date)
+        let time = date.timeIntervalSince1970 * 1000
+        
+        let imageName = "\(userData.realName)-\(userData.email)-\(userData.phone)-\(dateCreate)-\(time)"
+        let imageStorage = storageReference.child("ImagePayment").child(imageName)
+        imageStorage.putData(imageData, metadata: nil) { (metaData, error) in
+            if error != nil {
+                self.showToast(message: "Có lỗi xảy ra trong quá trình tải ảnh, vui lòng thử lại sau.")
+                self.hideLoading()
+                return
+            }
+            
+            imageStorage.downloadURL { (url, error) in
+                guard let imageUrl = url else {
+                    self.showToast(message: "Có lỗi xảy ra, vui lòng thử lại sau.")
+                    self.hideLoading()
+                    return
+                }
+                
+                
+                let postId = databaseReference.childByAutoId().key!
+                userData.imagePayment = "\(imageUrl)"
+                userData.time = time
+                databaseReference.child("Receipt").child(postId).setValue(userData.asDictionary())
+                self.showLoadingSuccess()
+                self.showToast(message: "Thanh toán của bạn đã được gửi đến quản trị viên, vui lòng chờ đợi trong ít phút để được kích hoạt tài khoản, xin chân thành cảm ơn.")
+                _ = Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(self.dismissView), userInfo: nil, repeats: false)
+            }
+        }
+    }
+    
+    @objc func dismissView() {
+        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func tapOnBack(_ sender: Any) {
