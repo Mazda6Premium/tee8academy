@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Quicksand-Bold.ttf">
+            <string>Quicksand-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdminPopupVC" customModule="TEE8ACADEMY" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewA" destination="8ii-eJ-6Al" id="YbW-52-V5p"/>
+                <outlet property="viewB" destination="hml-yh-oNY" id="KDJ-aa-bMZ"/>
+                <outlet property="viewC" destination="kM4-gQ-0vc" id="uXI-Qh-EHM"/>
+                <outlet property="viewD" destination="Uhn-T5-Ptw" id="X3E-Po-3Am"/>
+                <outlet property="viewPopup" destination="qI8-PO-udA" id="tdl-MU-7Yo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qI8-PO-udA">
+                    <rect key="frame" x="10" y="298" width="394" height="310"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="25M-ll-lou">
+                            <rect key="frame" x="10" y="10" width="374" height="140"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ii-eJ-6Al">
+                                    <rect key="frame" x="0.0" y="0.0" width="182" height="140"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWa-sO-bpb">
+                                            <rect key="frame" x="8" y="50" width="166" height="40"/>
+                                            <string key="text">Kích hoạt tài khoản
+&amp; xem đơn hàng</string>
+                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="nWa-sO-bpb" firstAttribute="centerX" secondItem="8ii-eJ-6Al" secondAttribute="centerX" id="5Xx-uO-eLZ"/>
+                                        <constraint firstItem="nWa-sO-bpb" firstAttribute="leading" secondItem="8ii-eJ-6Al" secondAttribute="leading" constant="8" id="Lg8-TI-2BS"/>
+                                        <constraint firstAttribute="trailing" secondItem="nWa-sO-bpb" secondAttribute="trailing" constant="8" id="NxR-1L-jOd"/>
+                                        <constraint firstItem="nWa-sO-bpb" firstAttribute="centerY" secondItem="8ii-eJ-6Al" secondAttribute="centerY" id="nPi-X3-Ofh"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hml-yh-oNY">
+                                    <rect key="frame" x="192" y="0.0" width="182" height="140"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quản lý tài khoản  &amp; thống kế" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ou-wR-269">
+                                            <rect key="frame" x="8" y="50" width="166" height="40"/>
+                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="1ou-wR-269" firstAttribute="leading" secondItem="hml-yh-oNY" secondAttribute="leading" constant="8" id="E4E-a5-I9U"/>
+                                        <constraint firstItem="1ou-wR-269" firstAttribute="centerX" secondItem="hml-yh-oNY" secondAttribute="centerX" id="c8R-aJ-dqC"/>
+                                        <constraint firstAttribute="trailing" secondItem="1ou-wR-269" secondAttribute="trailing" constant="8" id="m0M-oI-bqP"/>
+                                        <constraint firstItem="1ou-wR-269" firstAttribute="centerY" secondItem="hml-yh-oNY" secondAttribute="centerY" id="syO-AG-zsU"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="140" id="Ihc-j7-OQL"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="W63-H8-1dF">
+                            <rect key="frame" x="10" y="160" width="374" height="140"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kM4-gQ-0vc">
+                                    <rect key="frame" x="0.0" y="0.0" width="182" height="140"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đăng khoá học" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luI-3y-jZa">
+                                            <rect key="frame" x="8" y="60" width="166" height="20"/>
+                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="luI-3y-jZa" firstAttribute="centerX" secondItem="kM4-gQ-0vc" secondAttribute="centerX" id="2sz-fw-Pur"/>
+                                        <constraint firstItem="luI-3y-jZa" firstAttribute="leading" secondItem="kM4-gQ-0vc" secondAttribute="leading" constant="8" id="GDg-eE-Yx6"/>
+                                        <constraint firstItem="luI-3y-jZa" firstAttribute="centerY" secondItem="kM4-gQ-0vc" secondAttribute="centerY" id="Ll5-4q-cSW"/>
+                                        <constraint firstAttribute="trailing" secondItem="luI-3y-jZa" secondAttribute="trailing" constant="8" id="bPX-Bb-Xx7"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uhn-T5-Ptw">
+                                    <rect key="frame" x="192" y="0.0" width="182" height="140"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đăng sản phẩm" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eid-bC-uMf">
+                                            <rect key="frame" x="8" y="60" width="166" height="20"/>
+                                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Eid-bC-uMf" firstAttribute="leading" secondItem="Uhn-T5-Ptw" secondAttribute="leading" constant="8" id="ShA-vt-cNG"/>
+                                        <constraint firstAttribute="trailing" secondItem="Eid-bC-uMf" secondAttribute="trailing" constant="8" id="eKg-m0-6zY"/>
+                                        <constraint firstItem="Eid-bC-uMf" firstAttribute="centerX" secondItem="Uhn-T5-Ptw" secondAttribute="centerX" id="myK-O6-Ywq"/>
+                                        <constraint firstItem="Eid-bC-uMf" firstAttribute="centerY" secondItem="Uhn-T5-Ptw" secondAttribute="centerY" id="p3S-sv-c8k"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="140" id="ZGp-iW-x86"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="W63-H8-1dF" firstAttribute="leading" secondItem="qI8-PO-udA" secondAttribute="leading" constant="10" id="04G-OR-SwH"/>
+                        <constraint firstAttribute="trailing" secondItem="W63-H8-1dF" secondAttribute="trailing" constant="10" id="SHJ-1X-f8s"/>
+                        <constraint firstItem="25M-ll-lou" firstAttribute="top" secondItem="qI8-PO-udA" secondAttribute="top" constant="10" id="V66-P9-rse"/>
+                        <constraint firstAttribute="trailing" secondItem="25M-ll-lou" secondAttribute="trailing" constant="10" id="WT8-4f-736"/>
+                        <constraint firstItem="25M-ll-lou" firstAttribute="leading" secondItem="qI8-PO-udA" secondAttribute="leading" constant="10" id="Wbx-mK-q45"/>
+                        <constraint firstItem="W63-H8-1dF" firstAttribute="top" secondItem="25M-ll-lou" secondAttribute="bottom" constant="10" id="faE-4b-yz9"/>
+                        <constraint firstAttribute="bottom" secondItem="W63-H8-1dF" secondAttribute="bottom" constant="10" id="mKB-kr-UWA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="qI8-PO-udA" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="EBE-MM-kGO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qI8-PO-udA" secondAttribute="trailing" constant="10" id="EZN-Jt-zWa"/>
+                <constraint firstItem="qI8-PO-udA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="X7P-pR-E1J"/>
+                <constraint firstItem="qI8-PO-udA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ryE-jE-EMB"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
+        </view>
+    </objects>
+</document>
