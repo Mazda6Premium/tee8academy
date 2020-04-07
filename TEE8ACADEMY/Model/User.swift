@@ -12,6 +12,10 @@ class Course {
     var name = ""
     var price = 0.0
     var isSelected = false
+    var image = ""
+    var video = ""
+    var description = ""
+    var time = 0.0
     
     init(name: String, price: Double) {
         self.name = name
@@ -21,6 +25,10 @@ class Course {
     init(fromDict: [String: Any]) {
         self.name = fromDict["name"] as? String ?? ""
         self.price = fromDict["price"] as? Double ?? 0.0
+        self.image = fromDict["imageUrl"] as? String ?? ""
+        self.video = fromDict["linkVid"] as? String ?? ""
+        self.description = fromDict["description"] as? String ?? ""
+        self.time = fromDict["time"] as? Double ?? 0.0
     }
     
     func asDictionary() -> [String: Any] {

@@ -79,12 +79,13 @@ class PushCourseVC: BaseViewController {
         
         guard let name = txtName.text else { return }
         guard let description = tvDescription.text else { return }
-        guard let price = txtPrice.text else { return }
+        guard let price = Double(txtPrice.text!.digits) else { return }
+        let time = Date().millisecondsSince1970
         
         switch txtType.text {
         case "Video":
             guard let video = txtLinkVid.text else { return }
-            let value = ["name": name, "description": description, "price" : price, "linkVideo" : video] as [String : Any]
+            let value = ["name": name, "description": description, "price" : price , "linkVideo" : video, "time" : time] as [String : Any]
             databaseReference.child("Courses").child(name).setValue(value)
             startTimer()
             showLoadingSuccess(1)
@@ -102,7 +103,7 @@ class PushCourseVC: BaseViewController {
                         self.showToast(message: "Có lỗi xảy ra, vui lòng thử lại sau.")
                         return
                     }
-                    let value = ["name": name, "description": description, "price" : price, "imageUrl" : "\(String(describing: imageUrl))" ] as [String : Any]
+                    let value = ["name": name, "description": description, "price" : price , "imageUrl" : "\(String(describing: imageUrl))" , "time" : time] as [String : Any]
                     databaseReference.child("Courses").child(name).setValue(value)
                     self.startTimer()
                     self.showLoadingSuccess(1)
@@ -127,6 +128,9 @@ class PushCourseVC: BaseViewController {
         tvDescription.text = ""
         courseImage = nil
         imgCourse.image = UIImage(named: "placeholder")
+        
+        txtLinkVid.isUserInteractionEnabled = false
+        imgCourse.isUserInteractionEnabled = false
         
         timer?.invalidate()
         timer = nil
