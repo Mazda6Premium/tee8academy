@@ -18,6 +18,7 @@ class PushCourseVC: BaseViewController {
     @IBOutlet weak var txtLinkVid: UITextField!
     @IBOutlet weak var txtType: UITextField!
     @IBOutlet weak var tvDescription: UITextView!
+    @IBOutlet weak var btnPost: UIButton!
     
     var courseImage : UIImage?
     var timer : Timer?
@@ -30,7 +31,7 @@ class PushCourseVC: BaseViewController {
     }
     
     func setUpView() {
-        roundCorner(views: [txtName, tvDescription, imgCourse, txtPrice, txtLinkVid, txtType], radius: 10)
+        roundCorner(views: [txtName, tvDescription, imgCourse, txtPrice, txtLinkVid, txtType, btnPost], radius: 8)
         
         viewPush.layer.cornerRadius = 10
         viewPush.layer.masksToBounds = true
@@ -44,6 +45,10 @@ class PushCourseVC: BaseViewController {
         imgCourse.isUserInteractionEnabled = false
         
         txtType.delegate = self
+        
+        if txtPrice.text == "0" {
+            txtPrice.text = ""
+        }
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(chooseImage))
         imgCourse.addGestureRecognizer(tapGesture)
@@ -153,6 +158,9 @@ class PushCourseVC: BaseViewController {
         
         self.present(actionSheet, animated: true) { () -> Void in
         }
+    }
+    @IBAction func tapOnBack(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 

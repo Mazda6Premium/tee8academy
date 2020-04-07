@@ -15,6 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PushCourseVC" customModule="TEE8ACADEMY" customModuleProvider="target">
             <connections>
+                <outlet property="btnPost" destination="fBP-hi-o4S" id="gy3-vb-Jey"/>
                 <outlet property="imgCourse" destination="iFt-Rd-xSc" id="Iot-Yr-Zbg"/>
                 <outlet property="tvDescription" destination="KJO-U0-XEx" id="zXP-rr-K7y"/>
                 <outlet property="txtLinkVid" destination="QqX-Tp-VPa" id="Dis-vJ-LJE"/>
@@ -55,6 +56,9 @@
                     <state key="normal" title="Back" backgroundImage="bg_button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="tapOnBack:" destination="-1" eventType="touchUpInside" id="O4Z-4L-vE0"/>
+                    </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_button" translatesAutoresizingMaskIntoConstraints="NO" id="JWM-4B-aCf">
                     <rect key="frame" x="0.0" y="874" width="414" height="22"/>
