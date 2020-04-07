@@ -7,9 +7,15 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Quicksand-Bold.ttf">
+            <string>Quicksand-Bold</string>
+        </array>
+    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterAccount_Receipt" customModule="TEE8ACADEMY" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterAccountVC">
             <connections>
+                <outlet property="pageView" destination="3V1-pj-VQ3" id="D61-wa-JlA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,18 +39,51 @@
                         <constraint firstAttribute="height" constant="2" id="2RF-xS-Z5i"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3V1-pj-VQ3" customClass="FSPagerView" customModule="FSPagerView">
+                    <rect key="frame" x="0.0" y="112" width="414" height="714"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJa-JH-piG">
+                    <rect key="frame" x="0.0" y="826" width="414" height="36"/>
+                    <color key="backgroundColor" red="0.10196078431372549" green="0.35686274509803922" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="ucJ-VZ-wLO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                    <state key="normal" title="Back" backgroundImage="bg_button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_button" translatesAutoresizingMaskIntoConstraints="NO" id="hPh-B5-pQ4">
+                    <rect key="frame" x="0.0" y="859" width="414" height="37"/>
+                    <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="AZ3-Yl-s9J" secondAttribute="bottom" id="0Ex-WW-ATd"/>
+                <constraint firstAttribute="trailing" secondItem="hPh-B5-pQ4" secondAttribute="trailing" id="1s8-UZ-WmM"/>
+                <constraint firstItem="3V1-pj-VQ3" firstAttribute="top" secondItem="hve-qF-1Ej" secondAttribute="bottom" id="29M-la-wAo"/>
+                <constraint firstItem="3V1-pj-VQ3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3Dd-XX-BKF"/>
+                <constraint firstItem="AJa-JH-piG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4wC-3R-nqF"/>
                 <constraint firstItem="AZ3-Yl-s9J" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="A4u-bz-FfI"/>
+                <constraint firstItem="hPh-B5-pQ4" firstAttribute="top" secondItem="AJa-JH-piG" secondAttribute="bottom" constant="-3" id="AEx-ea-2ej"/>
+                <constraint firstItem="3V1-pj-VQ3" firstAttribute="top" secondItem="hve-qF-1Ej" secondAttribute="bottom" id="GSS-dm-vFl"/>
+                <constraint firstItem="AJa-JH-piG" firstAttribute="top" secondItem="3V1-pj-VQ3" secondAttribute="bottom" id="Gpa-nj-bdY"/>
+                <constraint firstItem="3V1-pj-VQ3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="K5y-Vl-6sP"/>
+                <constraint firstAttribute="bottom" secondItem="hPh-B5-pQ4" secondAttribute="bottom" id="KL5-zX-amS"/>
+                <constraint firstItem="3V1-pj-VQ3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KlL-Bf-eMg"/>
+                <constraint firstItem="AJa-JH-piG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="QuO-4a-u9h"/>
                 <constraint firstItem="hve-qF-1Ej" firstAttribute="top" secondItem="3VI-0v-ouJ" secondAttribute="bottom" id="WbN-Vy-yeq"/>
                 <constraint firstItem="3VI-0v-ouJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="Zea-B2-Yxl"/>
+                <constraint firstItem="3V1-pj-VQ3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aL3-eI-TMn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hve-qF-1Ej" secondAttribute="trailing" id="f4a-tO-7rl"/>
                 <constraint firstItem="3VI-0v-ouJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="gRg-1i-gRs"/>
+                <constraint firstItem="AJa-JH-piG" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ipr-rp-Uyf"/>
                 <constraint firstItem="AZ3-Yl-s9J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="khC-Dp-4kN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AZ3-Yl-s9J" secondAttribute="trailing" id="ocs-Si-VgS"/>
                 <constraint firstItem="hve-qF-1Ej" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s52-v6-QZo"/>
+                <constraint firstItem="hPh-B5-pQ4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uxr-jI-h0h"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>

@@ -27,6 +27,7 @@ class SendReceiptVC: BaseViewController {
     var imagePicker = UIImagePickerController()
     var paymentMethod = ""
     var chooseImage: UIImage?
+    var totalBill = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,6 @@ class SendReceiptVC: BaseViewController {
         addBorder(views: [imgReceipt], width: 1, color: #colorLiteral(red: 0.5704585314, green: 0.5704723597, blue: 0.5704649091, alpha: 1))
         
         if let user = user {
-            var totalBill = 0.0
             user.course.forEach { (course) in
                 totalBill += course.price
             }
@@ -117,7 +117,7 @@ class SendReceiptVC: BaseViewController {
         }
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         let dateCreate = dateFormatter.string(from: date)
         let time = date.timeIntervalSince1970 * 1000
         
@@ -141,6 +141,8 @@ class SendReceiptVC: BaseViewController {
                 let postId = databaseReference.childByAutoId().key!
                 userData.imagePayment = "\(imageUrl)"
                 userData.time = time
+                userData.totalPayment = self.totalBill
+                userData.postId = postId
                 databaseReference.child("Receipt").child(postId).setValue(userData.asDictionary())
                 self.showLoadingSuccess()
                 self.showToast(message: "Thanh toán của bạn đã được gửi đến quản trị viên, vui lòng chờ đợi trong ít phút để được kích hoạt tài khoản, xin chân thành cảm ơn.")

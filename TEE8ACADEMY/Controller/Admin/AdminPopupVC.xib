@@ -46,7 +46,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="nWa-sO-bpb" firstAttribute="centerX" secondItem="8ii-eJ-6Al" secondAttribute="centerX" id="5Xx-uO-eLZ"/>
                                         <constraint firstItem="nWa-sO-bpb" firstAttribute="leading" secondItem="8ii-eJ-6Al" secondAttribute="leading" constant="8" id="Lg8-TI-2BS"/>
@@ -64,7 +64,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="1ou-wR-269" firstAttribute="leading" secondItem="hml-yh-oNY" secondAttribute="leading" constant="8" id="E4E-a5-I9U"/>
                                         <constraint firstItem="1ou-wR-269" firstAttribute="centerX" secondItem="hml-yh-oNY" secondAttribute="centerX" id="c8R-aJ-dqC"/>
@@ -90,7 +90,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="luI-3y-jZa" firstAttribute="centerX" secondItem="kM4-gQ-0vc" secondAttribute="centerX" id="2sz-fw-Pur"/>
                                         <constraint firstItem="luI-3y-jZa" firstAttribute="leading" secondItem="kM4-gQ-0vc" secondAttribute="leading" constant="8" id="GDg-eE-Yx6"/>
@@ -108,7 +108,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="Eid-bC-uMf" firstAttribute="leading" secondItem="Uhn-T5-Ptw" secondAttribute="leading" constant="8" id="ShA-vt-cNG"/>
                                         <constraint firstAttribute="trailing" secondItem="Eid-bC-uMf" secondAttribute="trailing" constant="8" id="eKg-m0-6zY"/>
@@ -122,7 +122,7 @@
                             </constraints>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="W63-H8-1dF" firstAttribute="leading" secondItem="qI8-PO-udA" secondAttribute="leading" constant="10" id="04G-OR-SwH"/>
                         <constraint firstAttribute="trailing" secondItem="W63-H8-1dF" secondAttribute="trailing" constant="10" id="SHJ-1X-f8s"/>

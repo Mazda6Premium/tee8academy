@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "876A01D8C0D701A923B9DF8138CAD214"
+               BlueprintIdentifier = "172D1837DDB85FBB978EB39D83462F79"
                BuildableName = "Pods_TEE8ACADEMY.framework"
                BlueprintName = "Pods-TEE8ACADEMY"
                ReferencedContainer = "container:Pods.xcodeproj">

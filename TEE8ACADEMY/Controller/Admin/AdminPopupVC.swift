@@ -53,6 +53,10 @@ class AdminPopupVC: BaseViewController {
                 self.viewA.alpha = 1
             }
         }
+        let vc = RegisterAccountVC(nibName: "RegisterAccountVC", bundle: nil)
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     
     @objc func tapOnViewB() {

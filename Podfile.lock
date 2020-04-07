@@ -75,6 +75,7 @@ PODS:
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 6.0)
     - GTMSessionFetcher/Core (~> 1.1)
+  - FSPagerView (0.8.3)
   - GoogleAppMeasurement (6.2.2):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
     - GoogleUtilities/MethodSwizzler (~> 6.0)
@@ -119,6 +120,7 @@ PODS:
   - SDWebImage/Core (5.7.0)
   - SimpleImageViewer (1.1.1)
   - Toast-Swift (5.0.1)
+  - XCDYouTubeKit (2.12.0)
 
 DEPENDENCIES:
   - Firebase
@@ -127,14 +129,16 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Messaging
   - Firebase/Storage
+  - FSPagerView
   - IQKeyboardManagerSwift
   - JGProgressHUD
   - SDWebImage
   - SimpleImageViewer
   - Toast-Swift
+  - XCDYouTubeKit
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Firebase
     - FirebaseAnalytics
     - FirebaseAnalyticsInterop
@@ -148,6 +152,7 @@ SPEC REPOS:
     - FirebaseInstanceID
     - FirebaseMessaging
     - FirebaseStorage
+    - FSPagerView
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
@@ -162,6 +167,7 @@ SPEC REPOS:
     - SDWebImage
     - SimpleImageViewer
     - Toast-Swift
+    - XCDYouTubeKit
 
 SPEC CHECKSUMS:
   Firebase: 2672e5636b42f977177716317e68346ae5e9de25
@@ -177,6 +183,7 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 031d7d0c8e7b5c030bbeb4d2a690550375e83fec
   FirebaseMessaging: 9e23f9d603b1fb71ccbeb48d79bf0d4ba0272c84
   FirebaseStorage: 6c5263796af3b1be82ed173598aade47535fe125
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   GoogleAppMeasurement: d0560d915abf15e692e8538ba1d58442217b6aff
   GoogleDataTransport: 47fe3b8e1673e5187dfd615656a3c5034f150d69
   GoogleDataTransportCCTSupport: 36f69887fd212db6d7ef4dd45ba44523717a434e
@@ -191,7 +198,8 @@ SPEC CHECKSUMS:
   SDWebImage: a99471f452bdfa0ca52ddf5b1adf2b61cab1d1eb
   SimpleImageViewer: 34c3a2cde2d9ac022146772cefc27fca14b0c8b1
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  XCDYouTubeKit: cdad9e696f991aac2739c5b25586c81f1301ba30
 
-PODFILE CHECKSUM: 64c192e90f13b1ee2823e801c94038aca07730a3
+PODFILE CHECKSUM: 892f554f20a55388aadbd066922534e0af3dc776
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.6.1

@@ -34,12 +34,5 @@ class BuyCourseCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    override func prepareForReuse() {
-        viewBackgroundWidth.constant = 10
-        lblCourse.textColor = .black
-        lblPrice.textColor = .black
-//        self.layoutIfNeeded()
-    }
 }
 
