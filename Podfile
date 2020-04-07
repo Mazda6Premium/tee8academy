@@ -19,4 +19,5 @@ target 'TEE8ACADEMY' do
   pod 'SimpleImageViewer'
   pod 'FSPagerView'
   pod "XCDYouTubeKit"
+  pod 'ActionSheetPicker-3.0'
 end
