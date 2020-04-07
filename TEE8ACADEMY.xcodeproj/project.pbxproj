@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		014665E52438CC11008661E2 /* BuyCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014665E32438CC11008661E2 /* BuyCourseCell.swift */; };
 		014665E62438CC11008661E2 /* BuyCourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014665E42438CC11008661E2 /* BuyCourseCell.xib */; };
+		A80CECE4243C2374001785DC /* RegisterAccount+Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80CECE2243C2374001785DC /* RegisterAccount+Receipt.swift */; };
+		A80CECE5243C2374001785DC /* RegisterAccount+Receipt.xib in Resources */ = {isa = PBXBuildFile; fileRef = A80CECE3243C2374001785DC /* RegisterAccount+Receipt.xib */; };
+		A80CECE7243C23DE001785DC /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80CECE6243C23DE001785DC /* SegmentedControl.swift */; };
 		A821AB16243B8AFB0063A194 /* AcademyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821AB15243B8AFB0063A194 /* AcademyVC.swift */; };
 		A821AB18243B8B1E0063A194 /* StoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821AB17243B8B1E0063A194 /* StoreVC.swift */; };
 		A821AB1C243B8BB40063A194 /* AdminPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821AB1A243B8BB40063A194 /* AdminPopupVC.swift */; };
@@ -45,6 +48,9 @@
 		014665E42438CC11008661E2 /* BuyCourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyCourseCell.xib; sourceTree = "<group>"; };
 		5D0F17786205A1FAF2E65BC2 /* Pods-TEE8ACADEMY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TEE8ACADEMY.debug.xcconfig"; path = "Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY.debug.xcconfig"; sourceTree = "<group>"; };
 		7D77AEEF61AD4E30056EE1D3 /* Pods_TEE8ACADEMY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TEE8ACADEMY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A80CECE2243C2374001785DC /* RegisterAccount+Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RegisterAccount+Receipt.swift"; sourceTree = "<group>"; };
+		A80CECE3243C2374001785DC /* RegisterAccount+Receipt.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "RegisterAccount+Receipt.xib"; sourceTree = "<group>"; };
+		A80CECE6243C23DE001785DC /* SegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		A821AB15243B8AFB0063A194 /* AcademyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyVC.swift; sourceTree = "<group>"; };
 		A821AB17243B8B1E0063A194 /* StoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreVC.swift; sourceTree = "<group>"; };
 		A821AB1A243B8BB40063A194 /* AdminPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPopupVC.swift; sourceTree = "<group>"; };
@@ -98,6 +104,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A80CECE1243C233E001785DC /* RegisterAccount+Receipt */ = {
+			isa = PBXGroup;
+			children = (
+				A80CECE2243C2374001785DC /* RegisterAccount+Receipt.swift */,
+				A80CECE3243C2374001785DC /* RegisterAccount+Receipt.xib */,
+			);
+			path = "RegisterAccount+Receipt";
+			sourceTree = "<group>";
+		};
 		A812A52A243984CE009E3552 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +127,7 @@
 			children = (
 				A821AB1A243B8BB40063A194 /* AdminPopupVC.swift */,
 				A821AB1B243B8BB40063A194 /* AdminPopupVC.xib */,
+				A80CECE1243C233E001785DC /* RegisterAccount+Receipt */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -237,6 +253,7 @@
 			children = (
 				A8A7004A2438C6EF00B2139D /* Extensions.swift */,
 				A88A42CD2439D99A0013BAFB /* Constant.swift */,
+				A80CECE6243C23DE001785DC /* SegmentedControl.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -324,6 +341,7 @@
 				A88A42D0243A08230013BAFB /* Tabbar.storyboard in Resources */,
 				A823C73424383DAF00F749C2 /* GoogleService-Info.plist in Resources */,
 				014665E62438CC11008661E2 /* BuyCourseCell.xib in Resources */,
+				A80CECE5243C2374001785DC /* RegisterAccount+Receipt.xib in Resources */,
 				A823C74924388A0300F749C2 /* RegisterVC.xib in Resources */,
 				A823C7432438839C00F749C2 /* Quicksand-Light.ttf in Resources */,
 				A85B7FF92438268F00CC4DCC /* Assets.xcassets in Resources */,
@@ -387,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8A700482438C62600B2139D /* SendReceiveVC.swift in Sources */,
+				A80CECE4243C2374001785DC /* RegisterAccount+Receipt.swift in Sources */,
 				A85B7FF42438268E00CC4DCC /* ViewController.swift in Sources */,
 				A8A700442438C2B700B2139D /* BuyCourseVC.swift in Sources */,
 				A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */,
@@ -397,6 +416,7 @@
 				A8A700412438BC3200B2139D /* User.swift in Sources */,
 				A821AB18243B8B1E0063A194 /* StoreVC.swift in Sources */,
 				A823C74824388A0300F749C2 /* RegisterVC.swift in Sources */,
+				A80CECE7243C23DE001785DC /* SegmentedControl.swift in Sources */,
 				A88A42CE2439D99A0013BAFB /* Constant.swift in Sources */,
 				A8A7004B2438C6EF00B2139D /* Extensions.swift in Sources */,
 				A85B7FF22438268E00CC4DCC /* SceneDelegate.swift in Sources */,

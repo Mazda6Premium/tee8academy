@@ -36,8 +36,10 @@ class BuyCourseCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        super.prepareForReuse()
-        self.layer.removeAllAnimations()
+        viewBackgroundWidth.constant = 10
+        lblCourse.textColor = .black
+        lblPrice.textColor = .black
+//        self.layoutIfNeeded()
     }
 }
 

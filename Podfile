@@ -17,4 +17,6 @@ target 'TEE8ACADEMY' do
   pod 'SDWebImage'
   pod 'JGProgressHUD'
   pod 'SimpleImageViewer'
+  pod 'FSPagerView'
+  pod "XCDYouTubeKit"
 end
