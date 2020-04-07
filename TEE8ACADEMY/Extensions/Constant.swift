@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 
 let databaseReference = Database.database().reference()
 let storageReference = Storage.storage().reference()
+let auth = Auth.auth()

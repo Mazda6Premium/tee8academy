@@ -8,6 +8,8 @@
 
 import UIKit
 import FSPagerView
+import FirebaseDatabase
+import FirebaseStorage
 
 class RegisterAccountVC: BaseViewController {
     
@@ -67,6 +69,59 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "registerAccountCell", at: index) as! RegisterAccountCell
         cell.user = arrayUser[index]
         cell.parentVC = self
+        
+        cell.btnActive.addTarget(self, action: #selector(tapOnActive), for: .touchUpInside)
+        cell.btnActive.tag = index
+        
+        cell.btnCancel.addTarget(self, action: #selector(tapOnCancel), for: .touchUpInside)
+        cell.btnCancel.tag = index
+        
         return cell
+    }
+    
+    @objc func tapOnActive(sender: UIButton) {
+        showLoading()
+        let user = arrayUser[sender.tag]
+        let email = user.email
+        let password = user.password
+        auth.createUser(withEmail: email, password: password) { (auth, error) in
+            if error != nil {
+                self.showToast(message: "Có lỗi xảy ra, vui lòng thử lại sau.")
+                self.hideLoading()
+                return
+            }
+            
+            if let userRegister = auth {
+                user.userId = userRegister.user.uid
+                print(user.asDictionary())
+                databaseReference.child("Users").child(user.userId).setValue(user.asDictionary())
+                self.deleteImage(index: sender.tag)
+                databaseReference.child("Receipt").child(user.postId).removeValue()
+                self.arrayUser.removeAll()
+                self.getDataFromFirebase()
+                self.pageView.reloadData()
+            }
+        }
+    }
+    
+    @objc func tapOnCancel(sender: UIButton) {
+        showLoading()
+        let user = arrayUser[sender.tag]
+        deleteImage(index: sender.tag)
+        databaseReference.child("Receipt").child(user.postId).removeValue()
+        self.arrayUser.removeAll()
+        self.getDataFromFirebase()
+        self.pageView.reloadData()
+    }
+    
+    func deleteImage(index: Int) {
+        let url = arrayUser[index].imagePayment
+        let storageRef = Storage.storage().reference(forURL: url)
+        //Removes image from storage
+        storageRef.delete { error in
+            if let error = error {
+                print(error)
+            }
+        }
     }
 }

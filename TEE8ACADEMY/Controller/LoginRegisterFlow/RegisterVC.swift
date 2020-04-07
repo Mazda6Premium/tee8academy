@@ -97,7 +97,7 @@ class RegisterVC: BaseViewController {
             guard let phoneId = UIDevice.current.identifierForVendor?.uuidString else {return}
             let phoneModel = UIDevice.modelName
 
-            user = User(email: txtEmail.text!, username: txtUsername.text!, password: txtPassword.text!, confirmPassword: txtConfirmPassword.text!, address: txtAddress.text!, phone: txtPhone.text!, realName: txtRealName.text!, course: [Course](), paymentMethod: "", imagePayment: "", phoneId: phoneId, phoneModel: phoneModel, time: 0, totalPayment: 0, postId: "")
+            user = User(email: txtEmail.text!, username: txtUsername.text!, password: txtPassword.text!, confirmPassword: txtConfirmPassword.text!, address: txtAddress.text!, phone: txtPhone.text!, realName: txtRealName.text!, course: [Course](), paymentMethod: "", imagePayment: "", phoneId: phoneId, phoneModel: phoneModel, time: 0, totalPayment: 0, postId: "", userId: "")
         }
     }
     

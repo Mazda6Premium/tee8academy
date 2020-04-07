@@ -47,10 +47,11 @@ class User {
     var time = 0.0
     var totalPayment = 0.0
     var postId = ""
+    var userId = ""
     
     init() {}
     
-    init(email: String, username: String, password: String, confirmPassword: String, address: String, phone: String, realName: String, course: [Course], paymentMethod: String, imagePayment: String, phoneId: String, phoneModel: String, time: Double, totalPayment: Double, postId: String) {
+    init(email: String, username: String, password: String, confirmPassword: String, address: String, phone: String, realName: String, course: [Course], paymentMethod: String, imagePayment: String, phoneId: String, phoneModel: String, time: Double, totalPayment: Double, postId: String, userId: String) {
         self.email = email
         self.username = username
         self.password = password
@@ -66,6 +67,7 @@ class User {
         self.time = time
         self.totalPayment = totalPayment
         self.postId = postId
+        self.userId = userId
     }
     
     func asDictionary() -> [String: Any] {
@@ -83,7 +85,8 @@ class User {
             "phoneModel": self.phoneModel,
             "time": self.time,
             "totalPayment": self.totalPayment,
-            "postId": self.postId
+            "postId": self.postId,
+            "userId": self.userId
         ]
     }
 }
@@ -104,6 +107,7 @@ extension User {
         user.phoneId = dict["phoneId"] as? String ?? ""
         user.phoneModel = dict["phoneModel"] as? String ?? ""
         user.password = dict["password"] as? String ?? ""
+        user.userId = dict["userId"] as? String ?? ""
         if let course = dict["course"] as? [[String: Any]] {
             user.course = course.map({Course(fromDict: $0)})
         }

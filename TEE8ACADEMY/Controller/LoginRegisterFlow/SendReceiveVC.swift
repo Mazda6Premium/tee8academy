@@ -117,12 +117,12 @@ class SendReceiptVC: BaseViewController {
         }
         let date = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = "ddMMyyyy"
         let dateCreate = dateFormatter.string(from: date)
         let time = date.timeIntervalSince1970 * 1000
         
         let imageName = "\(userData.realName)-\(userData.email)-\(userData.phone)-\(dateCreate)-\(time)"
-        let imageStorage = storageReference.child("ImagePayment").child(imageName)
+        let imageStorage = storageReference.child("Receipt").child(imageName)
         imageStorage.putData(imageData, metadata: nil) { (metaData, error) in
             if error != nil {
                 self.showToast(message: "Có lỗi xảy ra trong quá trình tải ảnh, vui lòng thử lại sau.")
