@@ -27,7 +27,9 @@ class RegisterAccountVC: BaseViewController {
     
     func getDataFromFirebase() {
         showLoading()
+        var haveData = false
         databaseReference.child("Receipt").observe(.childAdded) { (snapshot) in
+            haveData = true
             databaseReference.child("Receipt").child(snapshot.key).observeSingleEvent(of: .value) { (snapshot1) in
                 if let dict = snapshot1.value as? [String: Any] {
                     let user = User.getUserData(dict: dict, key: snapshot1.key)
@@ -41,6 +43,10 @@ class RegisterAccountVC: BaseViewController {
                     self.showLoadingSuccess(1)
                 }
             }
+        }
+        
+        if !haveData {
+            hideLoading()
         }
     }
     
@@ -95,8 +101,11 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
                 user.userId = userRegister.user.uid
                 print(user.asDictionary())
                 databaseReference.child("Users").child(user.userId).setValue(user.asDictionary())
+                databaseReference.child("EmailAlreadyUsing").setValue(["\(user.email)": true])
+                
                 self.deleteImage(index: sender.tag)
                 databaseReference.child("Receipt").child(user.postId).removeValue()
+                
                 self.arrayUser.removeAll()
                 self.getDataFromFirebase()
                 self.pageView.reloadData()
@@ -109,6 +118,7 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
         let user = arrayUser[sender.tag]
         deleteImage(index: sender.tag)
         databaseReference.child("Receipt").child(user.postId).removeValue()
+        
         self.arrayUser.removeAll()
         self.getDataFromFirebase()
         self.pageView.reloadData()
