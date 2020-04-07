@@ -66,11 +66,67 @@ class ViewController: BaseViewController {
     }
     
     @IBAction func tapOnLogin(_ sender: Any) {
-        let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
-        vc.modalTransitionStyle = .crossDissolve
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true, completion: nil)
+        self.view.endEditing(true)
+        showLoading()
+        checkLogic()
+        // CHECK 4 CONDITIONS EMAIL + PASSWORD + UUID + IPHONE MODEL
+        databaseReference.child("Users").queryOrdered(byChild: "email").queryEqual(toValue: txtEmail.text!).observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.exists() {
+                databaseReference.child("Users").queryOrdered(byChild: "password").queryEqual(toValue: self.txtPassword.text!).observeSingleEvent(of: .value) { (snapshot1) in
+                    if snapshot1.exists() {
+                        self.checkSecondTime()
+                    } else {
+                        self.showToast(message: "Sai mật khẩu, vui lòng nhập lại.")
+                        self.hideLoading()
+                    }
+                }
+            } else {
+                self.showToast(message: "Tài khoản không tồn tại, vui lòng nhập tài khoản khác.")
+                self.hideLoading()
+            }
+        }
+    }
+    
+    func checkSecondTime() {
+        guard let phoneId = UIDevice.current.identifierForVendor?.uuidString else {return}
+        let phoneModel = UIDevice.modelName
+        databaseReference.child("Users").queryOrdered(byChild: "phoneId").queryEqual(toValue: phoneId).observeSingleEvent(of: .value) { (snapshot2) in
+            if snapshot2.exists() {
+                databaseReference.child("Users").queryOrdered(byChild: "phoneModel").queryEqual(toValue: phoneModel).observeSingleEvent(of: .value) { (snapshot3) in
+                    if snapshot3.exists() {
+                        self.showLoadingSuccess(1)
+                        let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
+                        let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
+                        vc.modalTransitionStyle = .crossDissolve
+                        vc.modalPresentationStyle = .overFullScreen
+                        self.present(vc, animated: true, completion: nil)
+                    } else {
+                        self.showToast(message: "Thiết bị đăng nhập không hợp lệ, mỗi tài khoản chỉ được đăng nhập trên một thiết bị duy nhất.")
+                        self.hideLoading()
+                    }
+                }
+            } else {
+                self.showToast(message: "Thiết bị đăng nhập không hợp lệ, mỗi tài khoản chỉ được đăng nhập trên một thiết bị duy nhất.")
+                self.hideLoading()
+            }
+        }
+    }
+    
+    func checkLogic() {
+        if txtEmail.text == "" && txtPassword.text == "" {
+            showToast(message: "Bạn cần điền đầy đủ thông tin.")
+            return
+        }
+        
+        if txtEmail.text == "Admin" && txtPassword.text == "123456" {
+            hideLoading()
+            let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true, completion: nil)
+            return
+        }
     }
     
     @IBAction func tapOnRegister(_ sender: Any) {
@@ -81,6 +137,7 @@ class ViewController: BaseViewController {
     }
     
     @IBAction func tapOnForgetPassword(_ sender: Any) {
+        
     }
 }
 

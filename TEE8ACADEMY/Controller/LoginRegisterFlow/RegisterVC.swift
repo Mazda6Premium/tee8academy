@@ -64,6 +64,7 @@ class RegisterVC: BaseViewController {
             databaseReference.child("Users").queryOrdered(byChild: "email").queryEqual(toValue: user!.email).observeSingleEvent(of: .value) { (snapshot) in
                 if snapshot.exists() {
                     self.showToast(message: "Email đã tồn tại, vui lòng nhập email khác.")
+                    self.txtEmail.textColor = .red
                     self.hideLoading()
                 } else {
                     let vc = BuyCourseVC(nibName: "BuyCourseVC", bundle: nil)
