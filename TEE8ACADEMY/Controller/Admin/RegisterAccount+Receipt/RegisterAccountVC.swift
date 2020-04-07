@@ -27,26 +27,27 @@ class RegisterAccountVC: BaseViewController {
     
     func getDataFromFirebase() {
         showLoading()
-        var haveData = false
-        databaseReference.child("Receipt").observe(.childAdded) { (snapshot) in
-            haveData = true
-            databaseReference.child("Receipt").child(snapshot.key).observeSingleEvent(of: .value) { (snapshot1) in
-                if let dict = snapshot1.value as? [String: Any] {
-                    let user = User.getUserData(dict: dict, key: snapshot1.key)
-                    self.arrayUser.append(user)
-                    self.arrayUser.sort(by: { (user1, user2) -> Bool in
-                        return Int64(user1.time) > Int64(user2.time)
-                    })
-                    DispatchQueue.main.async {
-                        self.pageView.reloadData()
-                    }
-                    self.showLoadingSuccess(1)
-                }
-            }
-        }
         
-        if !haveData {
-            hideLoading()
+        databaseReference.child("Receipt").queryOrdered(byChild: "userId").queryEqual(toValue: "").observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.exists() {
+                databaseReference.child("Receipt").observe(.childAdded) { (snapshot) in
+                    databaseReference.child("Receipt").child(snapshot.key).observeSingleEvent(of: .value) { (snapshot1) in
+                        if let dict = snapshot1.value as? [String: Any] {
+                            let user = User.getUserData(dict: dict, key: snapshot1.key)
+                            self.arrayUser.append(user)
+                            self.arrayUser.sort(by: { (user1, user2) -> Bool in
+                                return Int64(user1.time) > Int64(user2.time)
+                            })
+                            DispatchQueue.main.async {
+                                self.pageView.reloadData()
+                            }
+                            self.showLoadingSuccess(1)
+                        }
+                    }
+                }
+            } else {
+                self.hideLoading()
+            }
         }
     }
     
@@ -88,29 +89,17 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
     @objc func tapOnActive(sender: UIButton) {
         showLoading()
         let user = arrayUser[sender.tag]
-        let email = user.email
-        let password = user.password
-        auth.createUser(withEmail: email, password: password) { (auth, error) in
-            if error != nil {
-                self.showToast(message: "Có lỗi xảy ra, vui lòng thử lại sau.")
-                self.hideLoading()
-                return
-            }
-            
-            if let userRegister = auth {
-                user.userId = userRegister.user.uid
-                print(user.asDictionary())
-                databaseReference.child("Users").child(user.userId).setValue(user.asDictionary())
-                databaseReference.child("EmailAlreadyUsing").setValue(["\(user.email)": true])
-                
-                self.deleteImage(index: sender.tag)
-                databaseReference.child("Receipt").child(user.postId).removeValue()
-                
-                self.arrayUser.removeAll()
-                self.getDataFromFirebase()
-                self.pageView.reloadData()
-            }
-        }
+        user.userId = databaseReference.childByAutoId().key!
+        print(user.asDictionary())
+        databaseReference.child("Users").child(user.userId).setValue(user.asDictionary())
+        
+        self.deleteImage(index: sender.tag)
+        databaseReference.child("Receipt").child(user.postId).removeValue()
+        
+        self.arrayUser.removeAll()
+        self.getDataFromFirebase()
+        self.pageView.reloadData()
+        
     }
     
     @objc func tapOnCancel(sender: UIButton) {

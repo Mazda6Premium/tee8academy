@@ -55,14 +55,25 @@ class RegisterVC: BaseViewController {
     
     @IBAction func tapOnContinue(_ sender: Any) {
         view.endEditing(true)
+        showLoading()
         checkLogic()
         if user != nil {
             print(user?.asDictionary())
-            let vc = BuyCourseVC(nibName: "BuyCourseVC", bundle: nil)
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .overFullScreen
-            vc.user = self.user
-            self.present(vc, animated: true, completion: nil)
+            // CHECK EMAIL EXISTS OR NOT
+            // IF NOT -> CONTINUE
+            databaseReference.child("Users").queryOrdered(byChild: "email").queryEqual(toValue: user!.email).observeSingleEvent(of: .value) { (snapshot) in
+                if snapshot.exists() {
+                    self.showToast(message: "Email đã tồn tại, vui lòng nhập email khác.")
+                    self.hideLoading()
+                } else {
+                    let vc = BuyCourseVC(nibName: "BuyCourseVC", bundle: nil)
+                    vc.modalTransitionStyle = .crossDissolve
+                    vc.modalPresentationStyle = .overFullScreen
+                    vc.user = self.user
+                    self.hideLoading()
+                    self.present(vc, animated: true, completion: nil)
+                }
+            }
         }
     }
     
