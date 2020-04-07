@@ -49,10 +49,10 @@ extension BaseViewController {
         hud.show(in: self.view)
     }
     
-    func showLoadingSuccess() {
+    func showLoadingSuccess(_ delay: Double = 3) {
         hud.indicatorView = JGProgressHUDSuccessIndicatorView()
         hud.show(in: self.view)
-        hud.dismiss(afterDelay: 3)
+        hud.dismiss(afterDelay: delay)
     }
     
     func hideLoading() {

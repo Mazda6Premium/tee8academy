@@ -137,12 +137,12 @@ class SendReceiptVC: BaseViewController {
                     return
                 }
                 
-                
                 let postId = databaseReference.childByAutoId().key!
                 userData.imagePayment = "\(imageUrl)"
                 userData.time = time
                 userData.totalPayment = self.totalBill
                 userData.postId = postId
+                userData.paymentMethod = self.paymentMethod
                 databaseReference.child("Receipt").child(postId).setValue(userData.asDictionary())
                 self.showLoadingSuccess()
                 self.showToast(message: "Thanh toán của bạn đã được gửi đến quản trị viên, vui lòng chờ đợi trong ít phút để được kích hoạt tài khoản, xin chân thành cảm ơn.")

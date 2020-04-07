@@ -39,7 +39,7 @@
                         <constraint firstAttribute="height" constant="2" id="2RF-xS-Z5i"/>
                     </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3V1-pj-VQ3" customClass="FSPagerView" customModule="FSPagerView">
+                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="3V1-pj-VQ3" customClass="FSPagerView" customModule="FSPagerView">
                     <rect key="frame" x="0.0" y="112" width="414" height="714"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
@@ -53,6 +53,9 @@
                     <state key="normal" title="Back" backgroundImage="bg_button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="tapOnBack:" destination="-1" eventType="touchUpInside" id="ba2-u0-1eS"/>
+                    </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_button" translatesAutoresizingMaskIntoConstraints="NO" id="hPh-B5-pQ4">
                     <rect key="frame" x="0.0" y="859" width="414" height="37"/>

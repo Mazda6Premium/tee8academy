@@ -18,6 +18,11 @@ class Course {
         self.price = price
     }
     
+    init(fromDict: [String: Any]) {
+        self.name = fromDict["name"] as? String ?? ""
+        self.price = fromDict["price"] as? Double ?? 0.0
+    }
+    
     func asDictionary() -> [String: Any] {
         return [
             "name": self.name,
@@ -42,6 +47,8 @@ class User {
     var time = 0.0
     var totalPayment = 0.0
     var postId = ""
+    
+    init() {}
     
     init(email: String, username: String, password: String, confirmPassword: String, address: String, phone: String, realName: String, course: [Course], paymentMethod: String, imagePayment: String, phoneId: String, phoneModel: String, time: Double, totalPayment: Double, postId: String) {
         self.email = email
@@ -78,5 +85,29 @@ class User {
             "totalPayment": self.totalPayment,
             "postId": self.postId
         ]
+    }
+}
+
+extension User {
+    static func getUserData(dict : [String : Any], key: String) -> User {
+        let user = User()
+        user.email = dict["email"] as? String ?? ""
+        user.username = dict["username"] as? String ?? ""
+        user.address = dict["address"] as? String ?? ""
+        user.phone = dict["phone"] as? String ?? ""
+        user.realName = dict["realName"] as? String ?? ""
+        user.paymentMethod = dict["paymentMethod"] as? String ?? ""
+        user.imagePayment = dict["imagePayment"] as? String ?? ""
+        user.time = dict["time"] as? Double ?? 0.0
+        user.totalPayment = dict["totalPayment"] as? Double ?? 0.0
+        user.postId = dict["postId"] as? String ?? ""
+        user.phoneId = dict["phoneId"] as? String ?? ""
+        user.phoneModel = dict["phoneModel"] as? String ?? ""
+        user.password = dict["password"] as? String ?? ""
+        if let course = dict["course"] as? [[String: Any]] {
+            user.course = course.map({Course(fromDict: $0)})
+        }
+        
+        return user
     }
 }
