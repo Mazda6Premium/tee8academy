@@ -28,19 +28,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="academic" translatesAutoresizingMaskIntoConstraints="NO" id="3VI-0v-ouJ">
-                    <rect key="frame" x="10" y="10" width="176" height="100"/>
+                    <rect key="frame" x="10" y="14" width="176" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="JQe-kL-Oh9"/>
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_button" translatesAutoresizingMaskIntoConstraints="NO" id="hve-qF-1Ej">
-                    <rect key="frame" x="0.0" y="110" width="414" height="2"/>
+                    <rect key="frame" x="0.0" y="114" width="414" height="2"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="2RF-xS-Z5i"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="3V1-pj-VQ3" customClass="FSPagerView" customModule="FSPagerView">
-                    <rect key="frame" x="0.0" y="112" width="414" height="714"/>
+                    <rect key="frame" x="0.0" y="116" width="414" height="710"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJa-JH-piG">
@@ -78,7 +78,7 @@
                 <constraint firstItem="3V1-pj-VQ3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KlL-Bf-eMg"/>
                 <constraint firstItem="AJa-JH-piG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="QuO-4a-u9h"/>
                 <constraint firstItem="hve-qF-1Ej" firstAttribute="top" secondItem="3VI-0v-ouJ" secondAttribute="bottom" id="WbN-Vy-yeq"/>
-                <constraint firstItem="3VI-0v-ouJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="Zea-B2-Yxl"/>
+                <constraint firstItem="3VI-0v-ouJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="14" id="Zea-B2-Yxl"/>
                 <constraint firstItem="3V1-pj-VQ3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aL3-eI-TMn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hve-qF-1Ej" secondAttribute="trailing" id="f4a-tO-7rl"/>
                 <constraint firstItem="3VI-0v-ouJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="gRg-1i-gRs"/>

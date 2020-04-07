@@ -35,37 +35,23 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="academic" translatesAutoresizingMaskIntoConstraints="NO" id="R72-tq-Pgo">
-                    <rect key="frame" x="10" y="10" width="176" height="100"/>
+                    <rect key="frame" x="10" y="14" width="176" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="hks-80-O4m"/>
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_button" translatesAutoresizingMaskIntoConstraints="NO" id="xDM-Qv-nlm">
-                    <rect key="frame" x="0.0" y="118" width="414" height="2"/>
+                    <rect key="frame" x="0.0" y="122" width="414" height="2"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="YA6-OF-XWj"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EF1-hD-2x5">
-                    <rect key="frame" x="0.0" y="841" width="414" height="36"/>
-                    <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="36" id="wcz-S2-6Zf"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
-                    <state key="normal" title="Back" backgroundImage="bg_button">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="tapOnBack:" destination="-1" eventType="touchUpInside" id="O4Z-4L-vE0"/>
-                    </connections>
-                </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_button" translatesAutoresizingMaskIntoConstraints="NO" id="JWM-4B-aCf">
-                    <rect key="frame" x="0.0" y="874" width="414" height="22"/>
+                    <rect key="frame" x="0.0" y="856" width="414" height="40"/>
                     <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gN6-bb-ymR">
-                    <rect key="frame" x="10" y="125" width="394" height="253"/>
+                    <rect key="frame" x="10" y="129" width="394" height="253"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Tên khoá học" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R6c-Ls-sn3">
                             <rect key="frame" x="5" y="5" width="259" height="36"/>
@@ -73,7 +59,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="efR-Zh-dQP"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="iFt-Rd-xSc">
@@ -89,13 +75,13 @@
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Link Video" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QqX-Tp-VPa">
                                     <rect key="frame" x="0.0" y="0.0" width="189.5" height="36"/>
                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Giá tiền" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tzM-ic-oGW" customClass="CurrencyTextField" customModule="TEE8ACADEMY" customModuleProvider="target">
                                     <rect key="frame" x="194.5" y="0.0" width="189.5" height="36"/>
                                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                             </subviews>
@@ -110,6 +96,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="PBx-D7-CjN"/>
                             </constraints>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
                             <state key="normal" title="Đăng" backgroundImage="bg_button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -124,7 +111,7 @@
                                 <constraint firstAttribute="width" constant="120" id="XAm-tJ-CdX"/>
                                 <constraint firstAttribute="height" constant="36" id="teb-on-J8G"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KJO-U0-XEx">
@@ -134,7 +121,7 @@
                                 <constraint firstAttribute="height" constant="120" id="YRh-Ga-tlN"/>
                             </constraints>
                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                     </subviews>
@@ -159,26 +146,44 @@
                         <constraint firstItem="Ttk-IC-w8V" firstAttribute="top" secondItem="gN6-bb-ymR" secondAttribute="top" constant="5" id="uoV-o5-w60"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EF1-hD-2x5">
+                    <rect key="frame" x="0.0" y="823" width="414" height="36"/>
+                    <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="wbB-GU-3Dd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                    <state key="normal" title="Back" backgroundImage="bg_button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapOnBack:" destination="-1" eventType="touchUpInside" id="O4Z-4L-vE0"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="JWM-4B-aCf" secondAttribute="bottom" id="2NX-y4-plo"/>
                 <constraint firstAttribute="trailing" secondItem="xDM-Qv-nlm" secondAttribute="trailing" id="2lu-Jd-AtG"/>
+                <constraint firstItem="EF1-hD-2x5" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ACB-dN-LBc"/>
                 <constraint firstItem="R72-tq-Pgo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Ag6-tX-buw"/>
                 <constraint firstItem="JWM-4B-aCf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CEe-u6-1Ic"/>
                 <constraint firstItem="xI6-Gd-RAl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DPV-CL-Aot"/>
                 <constraint firstItem="gN6-bb-ymR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="FMr-e5-I9D"/>
                 <constraint firstItem="xI6-Gd-RAl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ksp-N6-cYr"/>
                 <constraint firstAttribute="bottom" secondItem="xI6-Gd-RAl" secondAttribute="bottom" id="LUi-kP-air"/>
-                <constraint firstItem="JWM-4B-aCf" firstAttribute="top" secondItem="EF1-hD-2x5" secondAttribute="bottom" constant="-3" id="MtA-fO-1U8"/>
-                <constraint firstItem="EF1-hD-2x5" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="NTR-4W-bet"/>
                 <constraint firstItem="xDM-Qv-nlm" firstAttribute="top" secondItem="R72-tq-Pgo" secondAttribute="bottom" constant="8" symbolic="YES" id="QiI-u9-yWG"/>
+                <constraint firstItem="JWM-4B-aCf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YVq-oj-GYS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gN6-bb-ymR" secondAttribute="trailing" constant="10" id="apc-NS-lfk"/>
+                <constraint firstAttribute="trailing" secondItem="JWM-4B-aCf" secondAttribute="trailing" id="fbZ-g0-Knu"/>
                 <constraint firstItem="xDM-Qv-nlm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fkw-Jc-o2I"/>
+                <constraint firstItem="JWM-4B-aCf" firstAttribute="top" secondItem="EF1-hD-2x5" secondAttribute="bottom" constant="-3" id="hJJ-JC-nyp"/>
+                <constraint firstItem="EF1-hD-2x5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="i2M-Hv-vIm"/>
                 <constraint firstAttribute="bottom" secondItem="JWM-4B-aCf" secondAttribute="bottom" id="i9b-FM-kjp"/>
                 <constraint firstItem="gN6-bb-ymR" firstAttribute="top" secondItem="xDM-Qv-nlm" secondAttribute="bottom" constant="5" id="iQ8-VO-XNQ"/>
-                <constraint firstItem="R72-tq-Pgo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="oAX-3g-ERB"/>
+                <constraint firstItem="EF1-hD-2x5" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-3" id="lUI-cC-adT"/>
+                <constraint firstItem="R72-tq-Pgo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="14" id="oAX-3g-ERB"/>
                 <constraint firstAttribute="trailing" secondItem="JWM-4B-aCf" secondAttribute="trailing" id="vUQ-FI-ljs"/>
-                <constraint firstItem="EF1-hD-2x5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="y3N-TT-6WE"/>
                 <constraint firstItem="xI6-Gd-RAl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yte-a9-aj5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
