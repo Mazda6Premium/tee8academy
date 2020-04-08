@@ -24,6 +24,10 @@ class AcademyVC: UIViewController {
         let tapGes = UITapGestureRecognizer(target: self, action: #selector(tapOnAdmin))
         imgAdmin.isUserInteractionEnabled = true
         imgAdmin.addGestureRecognizer(tapGes)
+        
+        if let user = SessionData.shared.userData {
+            print(user.email)
+        }
     }
     
     @objc func tapOnAdmin() {

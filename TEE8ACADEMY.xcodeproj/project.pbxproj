@@ -43,6 +43,7 @@
 		A88A42D0243A08230013BAFB /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A88A42CF243A08230013BAFB /* Tabbar.storyboard */; };
 		A88A42D4243A14B00013BAFB /* PopupPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A42D2243A14B00013BAFB /* PopupPaymentVC.swift */; };
 		A88A42D5243A14B00013BAFB /* PopupPaymentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88A42D3243A14B00013BAFB /* PopupPaymentVC.xib */; };
+		A899AA23243E2AF80032DCDA /* SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899AA22243E2AF80032DCDA /* SessionData.swift */; };
 		A8A700412438BC3200B2139D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A700402438BC3200B2139D /* User.swift */; };
 		A8A700442438C2B700B2139D /* BuyCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A700422438C2B700B2139D /* BuyCourseVC.swift */; };
 		A8A700452438C2B700B2139D /* BuyCourseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A700432438C2B700B2139D /* BuyCourseVC.xib */; };
@@ -93,6 +94,7 @@
 		A88A42CF243A08230013BAFB /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		A88A42D2243A14B00013BAFB /* PopupPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPaymentVC.swift; sourceTree = "<group>"; };
 		A88A42D3243A14B00013BAFB /* PopupPaymentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupPaymentVC.xib; sourceTree = "<group>"; };
+		A899AA22243E2AF80032DCDA /* SessionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionData.swift; sourceTree = "<group>"; };
 		A8A700402438BC3200B2139D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A8A700422438C2B700B2139D /* BuyCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCourseVC.swift; sourceTree = "<group>"; };
 		A8A700432438C2B700B2139D /* BuyCourseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyCourseVC.xib; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				A85B80072438277C00CC4DCC /* BaseViewController.swift */,
+				A899AA22243E2AF80032DCDA /* SessionData.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				A80CECE7243C23DE001785DC /* SegmentedControl.swift in Sources */,
 				A88A42CE2439D99A0013BAFB /* Constant.swift in Sources */,
 				A8A7004B2438C6EF00B2139D /* Extensions.swift in Sources */,
+				A899AA23243E2AF80032DCDA /* SessionData.swift in Sources */,
 				A85B7FF22438268E00CC4DCC /* SceneDelegate.swift in Sources */,
 				01000FA1243C89E7004733A2 /* CurrencyTextField.swift in Sources */,
 				A810224C243DDC250089AE63 /* ForgetPasswordVC.swift in Sources */,
