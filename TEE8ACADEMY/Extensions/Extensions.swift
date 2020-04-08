@@ -157,3 +157,9 @@ extension Date {
     }
 }
 
+extension String {
+    var isInt: Bool {
+        return Int64(self) != nil
+    }
+}
+

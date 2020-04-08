@@ -69,6 +69,14 @@ class ViewController: BaseViewController {
         self.view.endEditing(true)
         showLoading()
         checkLogic()
+        if txtEmail.text!.isInt {
+            checkPhone()
+        } else {
+            checkEmail()
+        }
+    }
+    
+    func checkEmail() {
         // CHECK 4 CONDITIONS EMAIL + PASSWORD + UUID + IPHONE MODEL
         databaseReference.child("Users").queryOrdered(byChild: "email").queryEqual(toValue: txtEmail.text!).observeSingleEvent(of: .value) { (snapshot) in
             if snapshot.exists() {
@@ -81,7 +89,25 @@ class ViewController: BaseViewController {
                     }
                 }
             } else {
-                self.showToast(message: "Tài khoản không tồn tại, vui lòng nhập tài khoản khác.")
+                self.showToast(message: "Tài khoản không tồn tại hoặc chưa được phê duyệt, vui lòng nhập tài khoản khác.")
+                self.hideLoading()
+            }
+        }
+    }
+    
+    func checkPhone() {
+        databaseReference.child("Users").queryOrdered(byChild: "phone").queryEqual(toValue: self.txtEmail.text!).observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.exists() {
+                databaseReference.child("Users").queryOrdered(byChild: "password").queryEqual(toValue: self.txtPassword.text!).observeSingleEvent(of: .value) { (snapshot1) in
+                    if snapshot1.exists() {
+                        self.checkSecondTime()
+                    } else {
+                        self.showToast(message: "Sai mật khẩu, vui lòng nhập lại.")
+                        self.hideLoading()
+                    }
+                }
+            } else {
+                self.showToast(message: "Số điện thoại không tồn tại hoặc chưa được phê duyệt, vui lòng nhập tài khoản khác.")
                 self.hideLoading()
             }
         }

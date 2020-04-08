@@ -67,13 +67,25 @@ class RegisterVC: BaseViewController {
                     self.txtEmail.textColor = .red
                     self.hideLoading()
                 } else {
-                    let vc = BuyCourseVC(nibName: "BuyCourseVC", bundle: nil)
-                    vc.modalTransitionStyle = .crossDissolve
-                    vc.modalPresentationStyle = .overFullScreen
-                    vc.user = self.user
-                    self.hideLoading()
-                    self.present(vc, animated: true, completion: nil)
+                    self.checkPhone()
                 }
+            }
+        }
+    }
+    
+    func checkPhone() {
+        databaseReference.child("Users").queryOrdered(byChild: "phone").queryEqual(toValue: self.user!.phone).observeSingleEvent(of: .value) { (snapshot1) in
+            if snapshot1.exists() {
+                self.showToast(message: "Số điện thoại đã tồn tại, vui lòng nhập số điện thoại khác.")
+                self.txtPhone.textColor = .red
+                self.hideLoading()
+            } else {
+                let vc = BuyCourseVC(nibName: "BuyCourseVC", bundle: nil)
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                vc.user = self.user
+                self.hideLoading()
+                self.present(vc, animated: true, completion: nil)
             }
         }
     }
@@ -103,7 +115,7 @@ class RegisterVC: BaseViewController {
                 return
             }
             
-            if txtPhone.text!.count != 10 || !txtPhone.text!.hasPrefix("0") || txtPhone.text!.hasPrefix("00") {
+            if !txtPhone.text!.hasPrefix("0") || txtPhone.text!.hasPrefix("00") {
                 txtPhone.textColor = .red
                 showToast(message: "Số điện thoại không đúng định dạng.")
                 hideLoading()
