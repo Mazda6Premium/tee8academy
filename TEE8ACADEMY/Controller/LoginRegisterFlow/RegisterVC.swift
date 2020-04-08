@@ -93,6 +93,8 @@ class RegisterVC: BaseViewController {
     func checkLogic() {
         if txtEmail.text == "" || txtUsername.text == "" || txtPassword.text == "" || txtConfirmPassword.text == "" || txtAddress.text == "" || txtPhone.text == "" || txtRealName.text == "" {
             showToast(message: "Bạn cần điền đầy đủ thông tin.")
+            hideLoading()
+            return
         } else {
             if !txtEmail.text!.isValidEmail {
                 txtEmail.textColor = .red

@@ -125,7 +125,9 @@ class ViewController: BaseViewController {
                         let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
                         vc.modalTransitionStyle = .crossDissolve
                         vc.modalPresentationStyle = .overFullScreen
-                        self.present(vc, animated: true, completion: nil)
+                        self.present(vc, animated: true) {
+                            self.clearData()
+                        }
                     } else {
                         self.showToast(message: "Thiết bị đăng nhập không hợp lệ, mỗi tài khoản chỉ được đăng nhập trên một thiết bị duy nhất.")
                         self.hideLoading()
@@ -150,7 +152,9 @@ class ViewController: BaseViewController {
             let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true, completion: nil)
+            self.present(vc, animated: true) {
+                self.clearData()
+            }
             return
         }
     }
@@ -159,11 +163,23 @@ class ViewController: BaseViewController {
         let vc = RegisterVC(nibName: "RegisterVC", bundle: nil)
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true, completion: nil)
+        self.present(vc, animated: true) {
+            self.clearData()
+        }
     }
     
     @IBAction func tapOnForgetPassword(_ sender: Any) {
-        
+        let vc = ForgetPasswordVC(nibName: "ForgetPasswordVC", bundle: nil)
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true) {
+            self.clearData()
+        }
+    }
+    
+    func clearData() {
+        txtEmail.text = ""
+        txtPassword.text = ""
     }
 }
 

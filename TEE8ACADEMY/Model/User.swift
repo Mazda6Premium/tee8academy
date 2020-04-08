@@ -97,10 +97,30 @@ class User {
             "userId": self.userId
         ]
     }
+    
+    init(dict: [String: Any]) {
+        self.email = dict["email"] as? String ?? ""
+        self.username = dict["username"] as? String ?? ""
+        self.address = dict["address"] as? String ?? ""
+        self.phone = dict["phone"] as? String ?? ""
+        self.realName = dict["realName"] as? String ?? ""
+        self.paymentMethod = dict["paymentMethod"] as? String ?? ""
+        self.imagePayment = dict["imagePayment"] as? String ?? ""
+        self.time = dict["time"] as? Double ?? 0.0
+        self.totalPayment = dict["totalPayment"] as? Double ?? 0.0
+        self.postId = dict["postId"] as? String ?? ""
+        self.phoneId = dict["phoneId"] as? String ?? ""
+        self.phoneModel = dict["phoneModel"] as? String ?? ""
+        self.password = dict["password"] as? String ?? ""
+        self.userId = dict["userId"] as? String ?? ""
+        if let course = dict["course"] as? [[String: Any]] {
+            self.course = course.map({Course(fromDict: $0)})
+        }
+    }
 }
 
 extension User {
-    static func getUserData(dict : [String : Any], key: String) -> User {
+    static func getUserData(dict : [String : Any], key: String = "") -> User {
         let user = User()
         user.email = dict["email"] as? String ?? ""
         user.username = dict["username"] as? String ?? ""

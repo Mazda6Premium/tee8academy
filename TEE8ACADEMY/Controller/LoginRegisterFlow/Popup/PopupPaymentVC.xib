@@ -33,10 +33,10 @@
                     <rect key="frame" x="10" y="393" width="394" height="120"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kOi-62-UXD">
-                            <rect key="frame" x="6" y="10" width="100" height="100"/>
+                            <rect key="frame" x="6" y="20" width="80" height="80"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zr3-xQ-F4a">
-                                    <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                    <rect key="frame" x="10" y="10" width="60" height="60"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -44,25 +44,25 @@
                                 <constraint firstAttribute="trailing" secondItem="zr3-xQ-F4a" secondAttribute="trailing" constant="10" id="4fi-pa-sDr"/>
                                 <constraint firstItem="zr3-xQ-F4a" firstAttribute="leading" secondItem="kOi-62-UXD" secondAttribute="leading" constant="10" id="OS6-cn-stu"/>
                                 <constraint firstAttribute="bottom" secondItem="zr3-xQ-F4a" secondAttribute="bottom" constant="10" id="TG3-M7-Lx3"/>
-                                <constraint firstAttribute="width" constant="100" id="gZG-Xd-AO4"/>
+                                <constraint firstAttribute="width" constant="80" id="gZG-Xd-AO4"/>
                                 <constraint firstItem="zr3-xQ-F4a" firstAttribute="top" secondItem="kOi-62-UXD" secondAttribute="top" constant="10" id="huX-A7-EsB"/>
-                                <constraint firstAttribute="height" constant="100" id="kkq-Kh-Sl3"/>
+                                <constraint firstAttribute="height" constant="80" id="kkq-Kh-Sl3"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên TK: Hoang Vinh" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h48-i5-AFx">
-                            <rect key="frame" x="116" y="12" width="268" height="17.5"/>
+                            <rect key="frame" x="96" y="12" width="288" height="17.5"/>
                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                             <color key="textColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpX-Kb-XNS">
-                            <rect key="frame" x="116" y="51.5" width="237" height="17.5"/>
+                            <rect key="frame" x="96" y="51.5" width="257" height="17.5"/>
                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                             <color key="textColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chi nhánh: Nam Sài Gòn" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tE-iC-mUP">
-                            <rect key="frame" x="116" y="90.5" width="268" height="17.5"/>
+                            <rect key="frame" x="96" y="90.5" width="288" height="17.5"/>
                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                             <color key="textColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>

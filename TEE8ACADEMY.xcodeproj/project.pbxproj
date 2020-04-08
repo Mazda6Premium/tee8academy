@@ -17,6 +17,10 @@
 		A80CECE7243C23DE001785DC /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80CECE6243C23DE001785DC /* SegmentedControl.swift */; };
 		A80CECF3243C354B001785DC /* RegisterAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80CECF1243C354B001785DC /* RegisterAccountCell.swift */; };
 		A80CECF4243C354B001785DC /* RegisterAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A80CECF2243C354B001785DC /* RegisterAccountCell.xib */; };
+		A810224C243DDC250089AE63 /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A810224A243DDC250089AE63 /* ForgetPasswordVC.swift */; };
+		A810224D243DDC250089AE63 /* ForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A810224B243DDC250089AE63 /* ForgetPasswordVC.xib */; };
+		A8102250243DFCC60089AE63 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A810224E243DFCC60089AE63 /* ChangePasswordVC.swift */; };
+		A8102251243DFCC60089AE63 /* ChangePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A810224F243DFCC60089AE63 /* ChangePasswordVC.xib */; };
 		A821AB16243B8AFB0063A194 /* AcademyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821AB15243B8AFB0063A194 /* AcademyVC.swift */; };
 		A821AB18243B8B1E0063A194 /* StoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821AB17243B8B1E0063A194 /* StoreVC.swift */; };
 		A821AB1C243B8BB40063A194 /* AdminPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821AB1A243B8BB40063A194 /* AdminPopupVC.swift */; };
@@ -61,6 +65,10 @@
 		A80CECE6243C23DE001785DC /* SegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		A80CECF1243C354B001785DC /* RegisterAccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAccountCell.swift; sourceTree = "<group>"; };
 		A80CECF2243C354B001785DC /* RegisterAccountCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterAccountCell.xib; sourceTree = "<group>"; };
+		A810224A243DDC250089AE63 /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
+		A810224B243DDC250089AE63 /* ForgetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordVC.xib; sourceTree = "<group>"; };
+		A810224E243DFCC60089AE63 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		A810224F243DFCC60089AE63 /* ChangePasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordVC.xib; sourceTree = "<group>"; };
 		A821AB15243B8AFB0063A194 /* AcademyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyVC.swift; sourceTree = "<group>"; };
 		A821AB17243B8B1E0063A194 /* StoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreVC.swift; sourceTree = "<group>"; };
 		A821AB1A243B8BB40063A194 /* AdminPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPopupVC.swift; sourceTree = "<group>"; };
@@ -174,6 +182,8 @@
 				A8A700432438C2B700B2139D /* BuyCourseVC.xib */,
 				A8A700462438C62600B2139D /* SendReceiveVC.swift */,
 				A8A700472438C62600B2139D /* SendReceiptVC.xib */,
+				A810224A243DDC250089AE63 /* ForgetPasswordVC.swift */,
+				A810224B243DDC250089AE63 /* ForgetPasswordVC.xib */,
 			);
 			path = LoginRegisterFlow;
 			sourceTree = "<group>";
@@ -294,6 +304,8 @@
 			children = (
 				A88A42D2243A14B00013BAFB /* PopupPaymentVC.swift */,
 				A88A42D3243A14B00013BAFB /* PopupPaymentVC.xib */,
+				A810224E243DFCC60089AE63 /* ChangePasswordVC.swift */,
+				A810224F243DFCC60089AE63 /* ChangePasswordVC.xib */,
 			);
 			path = Popup;
 			sourceTree = "<group>";
@@ -379,8 +391,10 @@
 				A85B7FF92438268F00CC4DCC /* Assets.xcassets in Resources */,
 				A8A700452438C2B700B2139D /* BuyCourseVC.xib in Resources */,
 				A85B7FF72438268E00CC4DCC /* Main.storyboard in Resources */,
+				A810224D243DDC250089AE63 /* ForgetPasswordVC.xib in Resources */,
 				A823C7412438839C00F749C2 /* Quicksand-Medium.ttf in Resources */,
 				A8A700492438C62600B2139D /* SendReceiptVC.xib in Resources */,
+				A8102251243DFCC60089AE63 /* ChangePasswordVC.xib in Resources */,
 				A821AB1D243B8BB40063A194 /* AdminPopupVC.xib in Resources */,
 				A88A42D5243A14B00013BAFB /* PopupPaymentVC.xib in Resources */,
 				A823C7442438839C00F749C2 /* Quicksand-Bold.ttf in Resources */,
@@ -440,6 +454,7 @@
 				A8A700482438C62600B2139D /* SendReceiveVC.swift in Sources */,
 				A80CECE4243C2374001785DC /* RegisterAccountVC.swift in Sources */,
 				A85B7FF42438268E00CC4DCC /* ViewController.swift in Sources */,
+				A8102250243DFCC60089AE63 /* ChangePasswordVC.swift in Sources */,
 				A8A700442438C2B700B2139D /* BuyCourseVC.swift in Sources */,
 				A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */,
 				A821AB16243B8AFB0063A194 /* AcademyVC.swift in Sources */,
@@ -456,6 +471,7 @@
 				A8A7004B2438C6EF00B2139D /* Extensions.swift in Sources */,
 				A85B7FF22438268E00CC4DCC /* SceneDelegate.swift in Sources */,
 				01000FA1243C89E7004733A2 /* CurrencyTextField.swift in Sources */,
+				A810224C243DDC250089AE63 /* ForgetPasswordVC.swift in Sources */,
 				014665E52438CC11008661E2 /* BuyCourseCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
