@@ -138,9 +138,12 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="pu4-vW-Fbe"/>
                     </constraints>
+                    <connections>
+                        <action selector="tapOnSegment:" destination="-1" eventType="valueChanged" id="E9o-od-RVs"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIj-xi-xTo">
-                    <rect key="frame" x="10" y="436" width="394" height="253"/>
+                    <rect key="frame" x="10" y="204" width="394" height="253"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Tên video" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-0k-tNE">
                             <rect key="frame" x="5" y="5" width="259" height="36"/>
@@ -182,7 +185,6 @@
                             <rect key="frame" x="5" y="171" width="259" height="36"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="Tck-Oj-1xy"/>
                                 <constraint firstAttribute="height" constant="36" id="qGc-NQ-9cG"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
@@ -206,7 +208,6 @@
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="ECE-h6-Zop"/>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="XKm-DB-Ou1"/>
                                 <constraint firstAttribute="height" constant="36" id="vjU-YQ-ZhQ"/>
                                 <constraint firstAttribute="width" constant="120" id="ynD-pg-4gF"/>
                             </constraints>
@@ -258,7 +259,7 @@
                 <constraint firstItem="B0y-sK-FlV" firstAttribute="top" secondItem="xDM-Qv-nlm" secondAttribute="bottom" constant="20" id="ZKZ-05-xc0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gN6-bb-ymR" secondAttribute="trailing" constant="10" id="apc-NS-lfk"/>
                 <constraint firstItem="wbS-Zm-hLM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="cqR-pj-NGJ"/>
-                <constraint firstItem="uIj-xi-xTo" firstAttribute="top" secondItem="B0y-sK-FlV" secondAttribute="bottom" constant="252" id="du1-lK-MvS"/>
+                <constraint firstItem="uIj-xi-xTo" firstAttribute="top" secondItem="B0y-sK-FlV" secondAttribute="bottom" constant="20" id="du1-lK-MvS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uIj-xi-xTo" secondAttribute="trailing" constant="10" id="eSJ-Tq-bP9"/>
                 <constraint firstItem="uIj-xi-xTo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="fR6-wq-l6V"/>
                 <constraint firstAttribute="trailing" secondItem="JWM-4B-aCf" secondAttribute="trailing" id="fbZ-g0-Knu"/>

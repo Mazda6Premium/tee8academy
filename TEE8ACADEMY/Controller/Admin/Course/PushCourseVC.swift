@@ -44,22 +44,7 @@ class PushCourseVC: BaseViewController {
     
     func setUpView() {
         roundCorner(views: [txtName, txtPrice, tvDescriptionCourse, btnPost, txtNameVideo, imgCourse, txtLinkVid, txtType, txtChooseCourse, tvDescriptionVideo, btnPostVideo], radius: 8)
-        
-        viewPush.layer.cornerRadius = 10
-        viewPush.layer.masksToBounds = true
-        viewPush.layer.shadowOpacity = 0.5
-        viewPush.layer.shadowOffset = CGSize(width: 2, height: 2)
-        viewPush.layer.shadowColor = UIColor.darkGray.cgColor
-        viewPush.clipsToBounds = false
-        viewPush.backgroundColor = .white
-        
-        viewPushVideo.layer.cornerRadius = 10
-        viewPushVideo.layer.masksToBounds = true
-        viewPushVideo.layer.shadowOpacity = 0.5
-        viewPushVideo.layer.shadowOffset = CGSize(width: 2, height: 2)
-        viewPushVideo.layer.shadowColor = UIColor.darkGray.cgColor
-        viewPushVideo.clipsToBounds = false
-        viewPushVideo.backgroundColor = .white
+        addShadow(views: [viewPush, viewPushVideo])
         
         txtLinkVid.isUserInteractionEnabled = false
         imgCourse.isUserInteractionEnabled = false
@@ -100,8 +85,22 @@ class PushCourseVC: BaseViewController {
         
         segmentedControl.borderColor = .clear
         segmentedControl.thumbColor = #colorLiteral(red: 0.1019607843, green: 0.3568627451, blue: 0.3921568627, alpha: 1)
-        segmentedControl.font = UIFont(name: "OpenSans-SemiBold", size: 14)
+        segmentedControl.font = UIFont(name: "Quicksand-Bold", size: 16)
     }
+    
+    @IBAction func tapOnSegment(_ sender: Any) {
+        switch segmentedControl.selectedIndex {
+        case 0:
+            viewPush.isHidden = false
+            viewPushVideo.isHidden = true
+        case 1:
+            viewPush.isHidden = true
+            viewPushVideo.isHidden = false
+        default:
+            break
+        }
+    }
+    
     
     @IBAction func tapOnPostCourse(_ sender: Any) {
         self.view.endEditing(true)
@@ -182,7 +181,7 @@ class PushCourseVC: BaseViewController {
                         return
                     }
                     let value = ["type": type, "course" : nameCourseChoose , "id" : id , "name": nameVideoOrImage, "description": description, "imageUrl" : "\(String(describing: imageUrl))" , "time" : time] as [String : Any]
-                    databaseReference.child("Courses").child("Video").child(id).setValue(value)
+                    databaseReference.child("Video").child(id).setValue(value)
                     self.startTimer()
                     self.showLoadingSuccess(1)
                 })
@@ -216,7 +215,6 @@ class PushCourseVC: BaseViewController {
         
         timer?.invalidate()
         timer = nil
-        
     }
     
     @objc func chooseImage() {
@@ -277,8 +275,8 @@ extension PushCourseVC : UITextFieldDelegate {
             }, origin: txtType)
             
         case txtChooseCourse:
-            for i in 0..<arrayCourse.count {
-                arrayNameCourse.append(arrayCourse[i].name)
+            arrayCourse.forEach { (course) in
+                arrayNameCourse.append(course.name)
             }
             
             if let indexObject = arrayNameCourse.firstIndex(of: "ALL COURSE") {
