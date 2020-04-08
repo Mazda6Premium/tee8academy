@@ -16,10 +16,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PushCourseVC" customModule="TEE8ACADEMY" customModuleProvider="target">
             <connections>
                 <outlet property="btnPost" destination="fBP-hi-o4S" id="gy3-vb-Jey"/>
-                <outlet property="tvDescription" destination="KJO-U0-XEx" id="zXP-rr-K7y"/>
+                <outlet property="btnPostVideo" destination="wbS-Zm-hLM" id="5eN-v7-tbP"/>
+                <outlet property="imgCourse" destination="dPg-bn-kcc" id="0Ns-Cl-Zlb"/>
+                <outlet property="segmentedControl" destination="B0y-sK-FlV" id="iCQ-mc-mJU"/>
+                <outlet property="tvDescriptionCourse" destination="KJO-U0-XEx" id="MDM-Qv-BBx"/>
+                <outlet property="tvDescriptionVideo" destination="Op5-Cd-qXY" id="bKL-ZK-vlk"/>
+                <outlet property="txtChooseCourse" destination="kkV-IC-Klw" id="8FR-q5-9OD"/>
+                <outlet property="txtLinkVid" destination="aBX-RY-29p" id="zIw-e4-c8X"/>
                 <outlet property="txtName" destination="R6c-Ls-sn3" id="M3h-Rq-s7g"/>
+                <outlet property="txtNameVideo" destination="jFJ-0k-tNE" id="Abm-98-SU9"/>
+                <outlet property="txtPrice" destination="Brg-Ez-fcL" id="Qmi-fI-wTp"/>
+                <outlet property="txtType" destination="K3s-Re-1vB" id="7DY-iJ-4pq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewPush" destination="gN6-bb-ymR" id="NEE-Eo-iGs"/>
+                <outlet property="viewPushVideo" destination="uIj-xi-xTo" id="cgc-AD-Exo"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -88,7 +98,7 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="tapOnPost:" destination="-1" eventType="touchUpInside" id="Nlf-fn-Da0"/>
+                                <action selector="tapOnPostCourse:" destination="-1" eventType="touchUpInside" id="R0p-Bh-cR0"/>
                             </connections>
                         </button>
                     </subviews>
@@ -130,7 +140,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIj-xi-xTo">
-                    <rect key="frame" x="10" y="436" width="394" height="212"/>
+                    <rect key="frame" x="10" y="436" width="394" height="253"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Tên video" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-0k-tNE">
                             <rect key="frame" x="5" y="5" width="259" height="36"/>
@@ -172,42 +182,58 @@
                             <rect key="frame" x="5" y="171" width="259" height="36"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="Tck-Oj-1xy"/>
                                 <constraint firstAttribute="height" constant="36" id="qGc-NQ-9cG"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbS-Zm-hLM">
-                            <rect key="frame" x="269" y="171" width="120" height="36"/>
+                            <rect key="frame" x="5" y="212" width="384" height="36"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="120" id="QHB-TU-gv9"/>
-                                <constraint firstAttribute="height" constant="36" id="t7K-Ph-JKf"/>
+                                <constraint firstAttribute="height" constant="36" id="DGL-hI-xHL"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
                             <state key="normal" title="Đăng" backgroundImage="bg_button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="tapOnPost:" destination="-1" eventType="touchUpInside" id="nxa-Wy-dpQ"/>
+                                <action selector="tapOnPostVideo:" destination="-1" eventType="touchUpInside" id="Ghj-hQ-hO9"/>
                             </connections>
                         </button>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chọn loại" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3s-Re-1vB">
+                            <rect key="frame" x="269" y="171" width="120" height="36"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="ECE-h6-Zop"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="XKm-DB-Ou1"/>
+                                <constraint firstAttribute="height" constant="36" id="vjU-YQ-ZhQ"/>
+                                <constraint firstAttribute="width" constant="120" id="ynD-pg-4gF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="wbS-Zm-hLM" secondAttribute="trailing" constant="5" id="2I7-iB-Wqu"/>
+                        <constraint firstItem="K3s-Re-1vB" firstAttribute="top" secondItem="dPg-bn-kcc" secondAttribute="bottom" constant="5" id="2Rd-9L-zpT"/>
                         <constraint firstItem="dPg-bn-kcc" firstAttribute="leading" secondItem="Op5-Cd-qXY" secondAttribute="trailing" constant="5" id="3Gg-km-I2n"/>
+                        <constraint firstAttribute="trailing" secondItem="wbS-Zm-hLM" secondAttribute="trailing" constant="5" id="3o6-hK-ViV"/>
+                        <constraint firstItem="aBX-RY-29p" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="DE3-9Y-SBp"/>
                         <constraint firstAttribute="trailing" secondItem="dPg-bn-kcc" secondAttribute="trailing" constant="5" id="E7A-Pk-riJ"/>
+                        <constraint firstItem="wbS-Zm-hLM" firstAttribute="top" secondItem="aBX-RY-29p" secondAttribute="bottom" constant="5" id="IaC-vD-E0i"/>
+                        <constraint firstAttribute="bottom" secondItem="wbS-Zm-hLM" secondAttribute="bottom" constant="5" id="Je7-oz-qq6"/>
+                        <constraint firstItem="wbS-Zm-hLM" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="K4m-oZ-A0N"/>
                         <constraint firstItem="Op5-Cd-qXY" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="LuU-hk-meg"/>
-                        <constraint firstItem="wbS-Zm-hLM" firstAttribute="leading" secondItem="aBX-RY-29p" secondAttribute="trailing" constant="5" id="Nbz-Lo-g50"/>
                         <constraint firstItem="aBX-RY-29p" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="Oee-yT-FZP"/>
                         <constraint firstItem="aBX-RY-29p" firstAttribute="top" secondItem="Op5-Cd-qXY" secondAttribute="bottom" constant="5" id="Pe4-DQ-Hiy"/>
-                        <constraint firstItem="wbS-Zm-hLM" firstAttribute="top" secondItem="dPg-bn-kcc" secondAttribute="bottom" constant="5" id="Td3-mK-nwS"/>
                         <constraint firstAttribute="trailing" secondItem="kkV-IC-Klw" secondAttribute="trailing" constant="5" id="Udz-RE-sR4"/>
                         <constraint firstItem="kkV-IC-Klw" firstAttribute="leading" secondItem="jFJ-0k-tNE" secondAttribute="trailing" constant="5" id="ZxR-LA-PZB"/>
-                        <constraint firstAttribute="bottom" secondItem="aBX-RY-29p" secondAttribute="bottom" constant="5" id="bhP-ce-G9i"/>
                         <constraint firstItem="jFJ-0k-tNE" firstAttribute="top" secondItem="uIj-xi-xTo" secondAttribute="top" constant="5" id="c64-LE-FFx"/>
                         <constraint firstItem="dPg-bn-kcc" firstAttribute="top" secondItem="jFJ-0k-tNE" secondAttribute="bottom" constant="5" id="eKb-pw-Mwg"/>
                         <constraint firstItem="kkV-IC-Klw" firstAttribute="top" secondItem="uIj-xi-xTo" secondAttribute="top" constant="5" id="fMV-oZ-duc"/>
+                        <constraint firstAttribute="trailing" secondItem="K3s-Re-1vB" secondAttribute="trailing" constant="5" id="jdz-ai-fqo"/>
+                        <constraint firstItem="K3s-Re-1vB" firstAttribute="leading" secondItem="aBX-RY-29p" secondAttribute="trailing" constant="5" id="nOg-wI-VQf"/>
                         <constraint firstItem="Op5-Cd-qXY" firstAttribute="top" secondItem="jFJ-0k-tNE" secondAttribute="bottom" constant="5" id="s9k-uw-Uas"/>
                         <constraint firstItem="jFJ-0k-tNE" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="xor-sj-P0H"/>
                     </constraints>
@@ -218,7 +244,9 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="B0y-sK-FlV" secondAttribute="trailing" constant="20" id="0gj-yL-YFT"/>
                 <constraint firstAttribute="bottom" secondItem="JWM-4B-aCf" secondAttribute="bottom" id="2NX-y4-plo"/>
                 <constraint firstAttribute="trailing" secondItem="xDM-Qv-nlm" secondAttribute="trailing" id="2lu-Jd-AtG"/>
+                <constraint firstAttribute="trailing" secondItem="wbS-Zm-hLM" secondAttribute="trailing" constant="15" id="6qx-vo-JYQ"/>
                 <constraint firstItem="EF1-hD-2x5" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ACB-dN-LBc"/>
+                <constraint firstItem="wbS-Zm-hLM" firstAttribute="top" secondItem="aBX-RY-29p" secondAttribute="bottom" constant="5" id="ADT-7a-f4O"/>
                 <constraint firstItem="R72-tq-Pgo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Ag6-tX-buw"/>
                 <constraint firstItem="JWM-4B-aCf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CEe-u6-1Ic"/>
                 <constraint firstItem="xI6-Gd-RAl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DPV-CL-Aot"/>
@@ -229,6 +257,7 @@
                 <constraint firstItem="JWM-4B-aCf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YVq-oj-GYS"/>
                 <constraint firstItem="B0y-sK-FlV" firstAttribute="top" secondItem="xDM-Qv-nlm" secondAttribute="bottom" constant="20" id="ZKZ-05-xc0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gN6-bb-ymR" secondAttribute="trailing" constant="10" id="apc-NS-lfk"/>
+                <constraint firstItem="wbS-Zm-hLM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="cqR-pj-NGJ"/>
                 <constraint firstItem="uIj-xi-xTo" firstAttribute="top" secondItem="B0y-sK-FlV" secondAttribute="bottom" constant="252" id="du1-lK-MvS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uIj-xi-xTo" secondAttribute="trailing" constant="10" id="eSJ-Tq-bP9"/>
                 <constraint firstItem="uIj-xi-xTo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="fR6-wq-l6V"/>
