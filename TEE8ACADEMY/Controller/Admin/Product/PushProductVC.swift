@@ -17,6 +17,7 @@ class PushProductVC: BaseViewController {
     @IBOutlet weak var tvDescription: UITextView!
     @IBOutlet weak var imgProduct: UIImageView!
     @IBOutlet weak var txtPrice: UITextField!
+    @IBOutlet weak var txtPriceSale: CurrencyTextField!
     @IBOutlet weak var btnPost: UIButton!
     
     var imageProduct : UIImage?
@@ -37,6 +38,10 @@ class PushProductVC: BaseViewController {
         
         if txtPrice.text == "0" {
             txtPrice.text = ""
+        }
+        
+        if txtPriceSale.text == "0" {
+            txtPriceSale.text = ""
         }
         
         imgProduct.isUserInteractionEnabled = true
@@ -87,9 +92,21 @@ class PushProductVC: BaseViewController {
             return
         }
         
+        if txtPriceSale.text == "" {
+            txtPriceSale.text = "0"
+        } else {
+            let sale = Double(txtPriceSale.text!.digits)!
+            if sale > 100.0 {
+                showToast(message: "Số bạn nhập không hợp lệ")
+                hideLoading()
+                return
+            }
+        }
+        
         guard let name = txtName.text else { return }
         guard let description = tvDescription.text else { return }
         guard let price = Double(txtPrice.text!.digits) else { return }
+        guard let sale = Double(txtPriceSale.text!.digits) else { return }
         guard let type = txtType.text else { return }
         let time = Date().millisecondsSince1970
         let id = databaseReference.childByAutoId().key!
@@ -107,7 +124,7 @@ class PushProductVC: BaseViewController {
                     self.showToast(message: "Có lỗi xảy ra, vui lòng thử lại sau.")
                     return
                 }
-                let value = ["type": type , "id" : id , "name": name, "description": description, "price" : price , "imageUrl" : "\(String(describing: imageUrl))" , "time" : time] as [String : Any]
+                let value = ["type": type , "id" : id , "name": name, "description": description, "price" : price, "sale" : sale , "imageUrl" : "\(String(describing: imageUrl))" , "time" : time] as [String : Any]
                 databaseReference.child("Products").child(id).setValue(value)
                 self.startTimer()
                 self.showLoadingSuccess(1)
@@ -126,6 +143,7 @@ class PushProductVC: BaseViewController {
         txtName.text = ""
         tvDescription.text = ""
         txtPrice.text = ""
+        txtPriceSale.text = ""
         txtType.text = ""
         
         imageProduct = nil

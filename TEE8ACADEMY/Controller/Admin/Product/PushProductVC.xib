@@ -20,6 +20,7 @@
                 <outlet property="tvDescription" destination="3SI-pW-axR" id="44Q-rb-oWM"/>
                 <outlet property="txtName" destination="6tk-Dd-3Cs" id="XFU-EW-4GD"/>
                 <outlet property="txtPrice" destination="tzZ-8G-Ye5" id="GdM-IT-XIn"/>
+                <outlet property="txtPriceSale" destination="fmC-hq-GdZ" id="SGi-Mp-Mpb"/>
                 <outlet property="txtType" destination="GDe-S1-hp2" id="PuA-0c-vJK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewPush" destination="rIQ-2p-AFm" id="0z1-o6-m71"/>
@@ -46,7 +47,7 @@
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIQ-2p-AFm">
-                    <rect key="frame" x="0.0" y="129" width="414" height="212"/>
+                    <rect key="frame" x="0.0" y="129" width="414" height="253"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Tên sản phẩm" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6tk-Dd-3Cs">
                             <rect key="frame" x="5" y="5" width="279" height="36"/>
@@ -84,20 +85,30 @@
                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Giá tiền" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tzZ-8G-Ye5" customClass="CurrencyTextField" customModule="TEE8ACADEMY" customModuleProvider="target">
-                            <rect key="frame" x="5" y="171" width="279" height="36"/>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qTY-s9-7S7">
+                            <rect key="frame" x="5" y="171" width="404" height="36"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Giá tiền" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tzZ-8G-Ye5" customClass="CurrencyTextField" customModule="TEE8ACADEMY" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="199.5" height="36"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="% Sale" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fmC-hq-GdZ" customClass="CurrencyTextField" customModule="TEE8ACADEMY" customModuleProvider="target">
+                                    <rect key="frame" x="204.5" y="0.0" width="199.5" height="36"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="36" id="9HP-cH-EE7"/>
+                                <constraint firstAttribute="height" constant="36" id="yUR-gm-9oe"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                        </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urw-20-SX1">
-                            <rect key="frame" x="289" y="171" width="120" height="36"/>
+                            <rect key="frame" x="5" y="212" width="404" height="36"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="120" id="X4A-tl-06u"/>
-                                <constraint firstAttribute="height" constant="36" id="ovC-gZ-oxC"/>
+                                <constraint firstAttribute="height" constant="36" id="hn8-Rb-hxf"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
                             <state key="normal" title="Đăng" backgroundImage="bg_button">
@@ -110,22 +121,23 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="urw-20-SX1" secondAttribute="bottom" constant="5" id="3zD-XO-HiJ"/>
+                        <constraint firstAttribute="trailing" secondItem="qTY-s9-7S7" secondAttribute="trailing" constant="5" id="00q-b7-DMu"/>
                         <constraint firstAttribute="trailing" secondItem="Qao-Mb-rZe" secondAttribute="trailing" constant="5" id="A9H-yr-1qr"/>
                         <constraint firstItem="3SI-pW-axR" firstAttribute="top" secondItem="6tk-Dd-3Cs" secondAttribute="bottom" constant="5" id="D74-Yc-u8L"/>
                         <constraint firstAttribute="trailing" secondItem="GDe-S1-hp2" secondAttribute="trailing" constant="5" id="EUg-1h-gI1"/>
                         <constraint firstItem="6tk-Dd-3Cs" firstAttribute="leading" secondItem="rIQ-2p-AFm" secondAttribute="leading" constant="5" id="G1q-io-E36"/>
-                        <constraint firstItem="urw-20-SX1" firstAttribute="leading" secondItem="tzZ-8G-Ye5" secondAttribute="trailing" constant="5" id="IFJ-tO-A4Y"/>
                         <constraint firstItem="Qao-Mb-rZe" firstAttribute="top" secondItem="6tk-Dd-3Cs" secondAttribute="bottom" constant="5" id="PV3-Rm-qE3"/>
-                        <constraint firstItem="urw-20-SX1" firstAttribute="top" secondItem="Qao-Mb-rZe" secondAttribute="bottom" constant="5" id="Ruv-6p-lWn"/>
-                        <constraint firstAttribute="trailing" secondItem="urw-20-SX1" secondAttribute="trailing" constant="5" id="YBU-RW-jS5"/>
+                        <constraint firstAttribute="trailing" secondItem="urw-20-SX1" secondAttribute="trailing" constant="5" id="Tfl-HZ-n8t"/>
                         <constraint firstItem="GDe-S1-hp2" firstAttribute="leading" secondItem="6tk-Dd-3Cs" secondAttribute="trailing" constant="5" id="ZZS-hL-GGa"/>
                         <constraint firstItem="Qao-Mb-rZe" firstAttribute="leading" secondItem="3SI-pW-axR" secondAttribute="trailing" constant="5" id="eiO-l6-4Ql"/>
+                        <constraint firstAttribute="bottom" secondItem="urw-20-SX1" secondAttribute="bottom" constant="5" id="ggb-lf-Fvd"/>
+                        <constraint firstItem="qTY-s9-7S7" firstAttribute="leading" secondItem="rIQ-2p-AFm" secondAttribute="leading" constant="5" id="gh3-OF-MRl"/>
                         <constraint firstItem="6tk-Dd-3Cs" firstAttribute="top" secondItem="rIQ-2p-AFm" secondAttribute="top" constant="5" id="kvO-lT-cjO"/>
+                        <constraint firstItem="urw-20-SX1" firstAttribute="leading" secondItem="rIQ-2p-AFm" secondAttribute="leading" constant="5" id="mLH-rJ-lmT"/>
+                        <constraint firstItem="urw-20-SX1" firstAttribute="top" secondItem="qTY-s9-7S7" secondAttribute="bottom" constant="5" id="oij-Rs-1xE"/>
+                        <constraint firstItem="qTY-s9-7S7" firstAttribute="top" secondItem="3SI-pW-axR" secondAttribute="bottom" constant="5" id="rc5-pN-8xZ"/>
                         <constraint firstItem="GDe-S1-hp2" firstAttribute="top" secondItem="rIQ-2p-AFm" secondAttribute="top" constant="5" id="rov-Ls-gKl"/>
-                        <constraint firstItem="tzZ-8G-Ye5" firstAttribute="leading" secondItem="rIQ-2p-AFm" secondAttribute="leading" constant="5" id="uoc-Oo-3zv"/>
                         <constraint firstItem="3SI-pW-axR" firstAttribute="leading" secondItem="rIQ-2p-AFm" secondAttribute="leading" constant="5" id="vQZ-yI-RFv"/>
-                        <constraint firstItem="tzZ-8G-Ye5" firstAttribute="top" secondItem="3SI-pW-axR" secondAttribute="bottom" constant="5" id="y5g-Rv-UPI"/>
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_button" translatesAutoresizingMaskIntoConstraints="NO" id="bTa-Gd-EsV">
