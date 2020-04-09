@@ -22,8 +22,8 @@ class AcademyVC: UIViewController {
     }
     
     func setupCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
         
         let nib = UINib(nibName: "HeaderCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "headerCell")
@@ -50,12 +50,4 @@ class AcademyVC: UIViewController {
     }
 }
 
-extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
-    }
-}
+
