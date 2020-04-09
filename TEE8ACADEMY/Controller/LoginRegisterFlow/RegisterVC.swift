@@ -21,6 +21,7 @@ class RegisterVC: BaseViewController {
     
     @IBOutlet weak var btnContinue: UIButton!
     @IBOutlet weak var btnContactSupport: UIButton!
+    @IBOutlet weak var btnBack: UIButton!
     
     var user: User?
     
@@ -32,7 +33,7 @@ class RegisterVC: BaseViewController {
     }
     
     func setupView() {
-        roundCorner(views: [txtEmail, txtUsername, txtPassword, txtConfirmPassword, txtAddress, txtPhone, txtRealName, btnContinue, btnContactSupport], radius: 8)
+        roundCorner(views: [txtEmail, txtUsername, txtPassword, txtConfirmPassword, txtAddress, txtPhone, txtRealName, btnContinue, btnContactSupport, btnBack], radius: 8)
         
         txtEmail.delegate = self
         txtPassword.delegate = self
@@ -54,49 +55,84 @@ class RegisterVC: BaseViewController {
     
     @IBAction func tapOnContinue(_ sender: Any) {
         view.endEditing(true)
+        showLoading()
         checkLogic()
         if user != nil {
             print(user?.asDictionary())
-            let vc = BuyCourseVC(nibName: "BuyCourseVC", bundle: nil)
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true, completion: nil)
+            // CHECK EMAIL EXISTS OR NOT
+            // IF NOT -> CONTINUE
+            databaseReference.child("Users").queryOrdered(byChild: "email").queryEqual(toValue: user!.email).observeSingleEvent(of: .value) { (snapshot) in
+                if snapshot.exists() {
+                    self.showToast(message: "Email đã tồn tại, vui lòng nhập email khác.")
+                    self.txtEmail.textColor = .red
+                    self.hideLoading()
+                } else {
+                    self.checkPhone()
+                }
+            }
+        }
+    }
+    
+    func checkPhone() {
+        databaseReference.child("Users").queryOrdered(byChild: "phone").queryEqual(toValue: self.user!.phone).observeSingleEvent(of: .value) { (snapshot1) in
+            if snapshot1.exists() {
+                self.showToast(message: "Số điện thoại đã tồn tại, vui lòng nhập số điện thoại khác.")
+                self.txtPhone.textColor = .red
+                self.hideLoading()
+            } else {
+                let vc = BuyCourseVC(nibName: "BuyCourseVC", bundle: nil)
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                vc.user = self.user
+                self.hideLoading()
+                self.present(vc, animated: true, completion: nil)
+            }
         }
     }
     
     func checkLogic() {
         if txtEmail.text == "" || txtUsername.text == "" || txtPassword.text == "" || txtConfirmPassword.text == "" || txtAddress.text == "" || txtPhone.text == "" || txtRealName.text == "" {
-            showToast(message: "Bạn cần điền đầy đủ thông tin")
+            showToast(message: "Bạn cần điền đầy đủ thông tin.")
+            hideLoading()
+            return
         } else {
             if !txtEmail.text!.isValidEmail {
                 txtEmail.textColor = .red
-                showToast(message: "Email không đúng định dạng")
+                showToast(message: "Email không đúng định dạng.")
+                hideLoading()
                 return
             }
             
             if txtPassword.text!.count < 6 {
                 txtPassword.textColor = .red
-                showToast(message: "Mật khẩu của bạn cần tối thiểu 6 ký tự")
+                showToast(message: "Mật khẩu của bạn cần tối thiểu 6 ký tự.")
+                hideLoading()
                 return
             }
             
             if txtPassword.text! != txtConfirmPassword.text! {
                 txtConfirmPassword.textColor = .red
-                showToast(message: "Xác nhận mật khẩu không trùng khớp")
+                showToast(message: "Xác nhận mật khẩu không trùng khớp.")
+                hideLoading()
                 return
             }
             
-            if txtPhone.text!.count != 10 || !txtPhone.text!.hasPrefix("0") || txtPhone.text!.hasPrefix("00") {
+            if !txtPhone.text!.hasPrefix("0") || txtPhone.text!.hasPrefix("00") {
                 txtPhone.textColor = .red
-                showToast(message: "Số điện thoại không đúng định dạng")
+                showToast(message: "Số điện thoại không đúng định dạng.")
+                hideLoading()
                 return
             }
             
             guard let phoneId = UIDevice.current.identifierForVendor?.uuidString else {return}
             let phoneModel = UIDevice.modelName
 
-            user = User(email: txtEmail.text!, username: txtUsername.text!, password: txtPassword.text!, confirmPassword: txtConfirmPassword.text!, address: txtAddress.text!, phone: txtPhone.text!, realName: txtRealName.text!, course: [Course](), phoneId: phoneId, phoneModel: phoneModel)
+            user = User(email: txtEmail.text!, username: txtUsername.text!, password: txtPassword.text!, confirmPassword: txtConfirmPassword.text!, address: txtAddress.text!, phone: txtPhone.text!, realName: txtRealName.text!, course: [Course](), paymentMethod: "", imagePayment: "", phoneId: phoneId, phoneModel: phoneModel, time: 0, totalPayment: 0, postId: "", userId: "")
         }
+    }
+    
+    @IBAction func tapOnBack(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
