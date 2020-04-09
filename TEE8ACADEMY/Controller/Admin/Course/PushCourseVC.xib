@@ -59,7 +59,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gN6-bb-ymR">
                     <rect key="frame" x="10" y="204" width="394" height="212"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Tên khoá học" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R6c-Ls-sn3">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Tên khoá học" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R6c-Ls-sn3">
                             <rect key="frame" x="5" y="5" width="384" height="36"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
@@ -145,7 +145,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIj-xi-xTo">
                     <rect key="frame" x="10" y="204" width="394" height="253"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Tên video" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-0k-tNE">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Tên video" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-0k-tNE">
                             <rect key="frame" x="5" y="5" width="259" height="36"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
@@ -155,10 +155,10 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="dPg-bn-kcc">
-                            <rect key="frame" x="269" y="46" width="120" height="120"/>
+                            <rect key="frame" x="269" y="87" width="120" height="120"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="120" id="pj2-AJ-qXC"/>
-                                <constraint firstAttribute="width" constant="120" id="wlZ-us-ALk"/>
+                                <constraint firstAttribute="height" constant="120" id="3MB-fE-Hbr"/>
+                                <constraint firstAttribute="width" constant="120" id="l7p-Dv-hFH"/>
                             </constraints>
                         </imageView>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chọn khoá học" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kkV-IC-Klw">
@@ -204,12 +204,10 @@
                             </connections>
                         </button>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chọn loại" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3s-Re-1vB">
-                            <rect key="frame" x="269" y="171" width="120" height="36"/>
+                            <rect key="frame" x="269" y="46" width="120" height="36"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="ECE-h6-Zop"/>
-                                <constraint firstAttribute="height" constant="36" id="vjU-YQ-ZhQ"/>
-                                <constraint firstAttribute="width" constant="120" id="ynD-pg-4gF"/>
+                                <constraint firstAttribute="height" constant="36" id="t1Q-xW-6Nv"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -217,11 +215,10 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstItem="K3s-Re-1vB" firstAttribute="top" secondItem="dPg-bn-kcc" secondAttribute="bottom" constant="5" id="2Rd-9L-zpT"/>
-                        <constraint firstItem="dPg-bn-kcc" firstAttribute="leading" secondItem="Op5-Cd-qXY" secondAttribute="trailing" constant="5" id="3Gg-km-I2n"/>
+                        <constraint firstItem="dPg-bn-kcc" firstAttribute="leading" secondItem="aBX-RY-29p" secondAttribute="trailing" constant="5" id="0Lt-oK-p1d"/>
                         <constraint firstAttribute="trailing" secondItem="wbS-Zm-hLM" secondAttribute="trailing" constant="5" id="3o6-hK-ViV"/>
+                        <constraint firstItem="K3s-Re-1vB" firstAttribute="width" secondItem="kkV-IC-Klw" secondAttribute="width" id="BZm-Eo-jcd"/>
                         <constraint firstItem="aBX-RY-29p" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="DE3-9Y-SBp"/>
-                        <constraint firstAttribute="trailing" secondItem="dPg-bn-kcc" secondAttribute="trailing" constant="5" id="E7A-Pk-riJ"/>
                         <constraint firstItem="wbS-Zm-hLM" firstAttribute="top" secondItem="aBX-RY-29p" secondAttribute="bottom" constant="5" id="IaC-vD-E0i"/>
                         <constraint firstAttribute="bottom" secondItem="wbS-Zm-hLM" secondAttribute="bottom" constant="5" id="Je7-oz-qq6"/>
                         <constraint firstItem="wbS-Zm-hLM" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="K4m-oZ-A0N"/>
@@ -229,12 +226,14 @@
                         <constraint firstItem="aBX-RY-29p" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="Oee-yT-FZP"/>
                         <constraint firstItem="aBX-RY-29p" firstAttribute="top" secondItem="Op5-Cd-qXY" secondAttribute="bottom" constant="5" id="Pe4-DQ-Hiy"/>
                         <constraint firstAttribute="trailing" secondItem="kkV-IC-Klw" secondAttribute="trailing" constant="5" id="Udz-RE-sR4"/>
+                        <constraint firstAttribute="trailing" secondItem="dPg-bn-kcc" secondAttribute="trailing" constant="5" id="X7T-3x-eOW"/>
+                        <constraint firstItem="dPg-bn-kcc" firstAttribute="top" secondItem="K3s-Re-1vB" secondAttribute="bottom" constant="5" id="ZEd-bS-XkU"/>
+                        <constraint firstAttribute="trailing" secondItem="K3s-Re-1vB" secondAttribute="trailing" constant="5" id="ZL8-Pq-vW4"/>
+                        <constraint firstItem="K3s-Re-1vB" firstAttribute="top" secondItem="kkV-IC-Klw" secondAttribute="bottom" constant="5" id="ZPr-Gx-br6"/>
                         <constraint firstItem="kkV-IC-Klw" firstAttribute="leading" secondItem="jFJ-0k-tNE" secondAttribute="trailing" constant="5" id="ZxR-LA-PZB"/>
                         <constraint firstItem="jFJ-0k-tNE" firstAttribute="top" secondItem="uIj-xi-xTo" secondAttribute="top" constant="5" id="c64-LE-FFx"/>
-                        <constraint firstItem="dPg-bn-kcc" firstAttribute="top" secondItem="jFJ-0k-tNE" secondAttribute="bottom" constant="5" id="eKb-pw-Mwg"/>
                         <constraint firstItem="kkV-IC-Klw" firstAttribute="top" secondItem="uIj-xi-xTo" secondAttribute="top" constant="5" id="fMV-oZ-duc"/>
-                        <constraint firstAttribute="trailing" secondItem="K3s-Re-1vB" secondAttribute="trailing" constant="5" id="jdz-ai-fqo"/>
-                        <constraint firstItem="K3s-Re-1vB" firstAttribute="leading" secondItem="aBX-RY-29p" secondAttribute="trailing" constant="5" id="nOg-wI-VQf"/>
+                        <constraint firstItem="dPg-bn-kcc" firstAttribute="leading" secondItem="Op5-Cd-qXY" secondAttribute="trailing" constant="5" id="j6r-sZ-7Ee"/>
                         <constraint firstItem="Op5-Cd-qXY" firstAttribute="top" secondItem="jFJ-0k-tNE" secondAttribute="bottom" constant="5" id="s9k-uw-Uas"/>
                         <constraint firstItem="jFJ-0k-tNE" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="xor-sj-P0H"/>
                     </constraints>

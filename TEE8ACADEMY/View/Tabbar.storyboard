@@ -112,24 +112,23 @@
                                     <constraint firstAttribute="width" constant="60" id="p7X-P8-e2L"/>
                                 </constraints>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="945-6Z-nIJ">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rD4-3N-2B0">
                                 <rect key="frame" x="0.0" y="112" width="414" height="701"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rq9-JI-fXY">
-                                    <size key="itemSize" width="148" height="133"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mi3-iW-xug">
+                                    <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="M3a-ic-Dhr">
-                                        <rect key="frame" x="0.0" y="0.0" width="148" height="133"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Qzg-0w-Q52">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Op0-Vu-TCr">
-                                            <rect key="frame" x="0.0" y="0.0" width="148" height="133"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2B4-CW-Oyg">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="148" height="133"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -138,26 +137,26 @@
                         <constraints>
                             <constraint firstItem="osz-h0-yxW" firstAttribute="bottom" secondItem="QCx-Ah-JBd" secondAttribute="bottom" id="0sx-XT-s3G"/>
                             <constraint firstItem="QCx-Ah-JBd" firstAttribute="top" secondItem="c6h-sb-CUT" secondAttribute="top" id="5Rt-vc-qgK"/>
-                            <constraint firstItem="osz-h0-yxW" firstAttribute="trailing" secondItem="945-6Z-nIJ" secondAttribute="trailing" id="6Qy-9I-FT4"/>
                             <constraint firstItem="osz-h0-yxW" firstAttribute="trailing" secondItem="EYW-ip-quS" secondAttribute="trailing" constant="10" id="BUI-J8-6vz"/>
                             <constraint firstItem="osz-h0-yxW" firstAttribute="trailing" secondItem="UsW-eg-nZX" secondAttribute="trailing" id="Ch0-8I-wl0"/>
                             <constraint firstItem="H63-ez-VMR" firstAttribute="width" secondItem="c6h-sb-CUT" secondAttribute="width" multiplier="0.5" id="J87-Du-Ti4"/>
                             <constraint firstItem="UsW-eg-nZX" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" id="O5E-TP-6eG"/>
                             <constraint firstItem="UsW-eg-nZX" firstAttribute="top" secondItem="EYW-ip-quS" secondAttribute="bottom" id="Pua-0T-fxk"/>
-                            <constraint firstItem="945-6Z-nIJ" firstAttribute="top" secondItem="UsW-eg-nZX" secondAttribute="bottom" id="Wic-1y-rYC"/>
-                            <constraint firstItem="945-6Z-nIJ" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" id="X4G-vA-ha6"/>
                             <constraint firstItem="UsW-eg-nZX" firstAttribute="top" secondItem="H63-ez-VMR" secondAttribute="bottom" id="cmU-Zx-rd1"/>
-                            <constraint firstItem="osz-h0-yxW" firstAttribute="bottom" secondItem="945-6Z-nIJ" secondAttribute="bottom" id="jbv-lx-JKp"/>
+                            <constraint firstItem="rD4-3N-2B0" firstAttribute="top" secondItem="UsW-eg-nZX" secondAttribute="bottom" id="gTc-cf-zyK"/>
+                            <constraint firstItem="osz-h0-yxW" firstAttribute="trailing" secondItem="rD4-3N-2B0" secondAttribute="trailing" id="kZ0-Z0-L37"/>
                             <constraint firstItem="H63-ez-VMR" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" constant="10" id="mxG-bw-NmF"/>
+                            <constraint firstItem="rD4-3N-2B0" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" id="oEU-aQ-mtM"/>
                             <constraint firstItem="QCx-Ah-JBd" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" id="ob2-QB-tdl"/>
                             <constraint firstItem="osz-h0-yxW" firstAttribute="trailing" secondItem="QCx-Ah-JBd" secondAttribute="trailing" id="s4V-ak-dXO"/>
                             <constraint firstItem="H63-ez-VMR" firstAttribute="top" secondItem="c6h-sb-CUT" secondAttribute="top" constant="10" id="zTJ-EY-OFT"/>
+                            <constraint firstItem="osz-h0-yxW" firstAttribute="bottom" secondItem="rD4-3N-2B0" secondAttribute="bottom" id="zYA-ai-a7F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="osz-h0-yxW"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tee Academy" image="video" selectedImage="videofill" id="Drq-Rn-5z8"/>
                     <connections>
-                        <outlet property="collectionView" destination="945-6Z-nIJ" id="G3m-ib-5iD"/>
+                        <outlet property="collectionView" destination="rD4-3N-2B0" id="S77-U0-XEF"/>
                         <outlet property="imgAdmin" destination="EYW-ip-quS" id="8h4-Mq-pZw"/>
                     </connections>
                 </viewController>

@@ -29,16 +29,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qI8-PO-udA">
-                    <rect key="frame" x="10" y="278" width="394" height="350"/>
+                    <rect key="frame" x="10" y="288" width="394" height="330"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="25M-ll-lou">
-                            <rect key="frame" x="10" y="10" width="374" height="160"/>
+                            <rect key="frame" x="10" y="10" width="374" height="150"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ii-eJ-6Al">
-                                    <rect key="frame" x="0.0" y="0.0" width="182" height="160"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="182" height="150"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWa-sO-bpb">
-                                            <rect key="frame" x="8" y="60" width="166" height="40"/>
+                                            <rect key="frame" x="8" y="55" width="166" height="40"/>
                                             <string key="text">Kích hoạt tài khoản
 &amp; xem đơn hàng</string>
                                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
@@ -55,10 +55,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hml-yh-oNY">
-                                    <rect key="frame" x="192" y="0.0" width="182" height="160"/>
+                                    <rect key="frame" x="192" y="0.0" width="182" height="150"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quản lý tài khoản  &amp; thống kê" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ou-wR-269">
-                                            <rect key="frame" x="8" y="60" width="166" height="40"/>
+                                            <rect key="frame" x="8" y="55" width="166" height="40"/>
                                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -74,17 +74,17 @@
                                 </view>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="160" id="Ihc-j7-OQL"/>
+                                <constraint firstAttribute="height" constant="150" id="Ihc-j7-OQL"/>
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="W63-H8-1dF">
-                            <rect key="frame" x="10" y="180" width="374" height="160"/>
+                            <rect key="frame" x="10" y="170" width="374" height="150"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kM4-gQ-0vc">
-                                    <rect key="frame" x="0.0" y="0.0" width="182" height="160"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="182" height="150"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Khoá học" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luI-3y-jZa">
-                                            <rect key="frame" x="8" y="70" width="166" height="20"/>
+                                            <rect key="frame" x="8" y="65" width="166" height="20"/>
                                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -99,10 +99,10 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uhn-T5-Ptw">
-                                    <rect key="frame" x="192" y="0.0" width="182" height="160"/>
+                                    <rect key="frame" x="192" y="0.0" width="182" height="150"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sản phẩm" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eid-bC-uMf">
-                                            <rect key="frame" x="8" y="70" width="166" height="20"/>
+                                            <rect key="frame" x="8" y="65" width="166" height="20"/>
                                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -118,7 +118,7 @@
                                 </view>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="160" id="ZGp-iW-x86"/>
+                                <constraint firstAttribute="height" constant="150" id="ZGp-iW-x86"/>
                             </constraints>
                         </stackView>
                     </subviews>

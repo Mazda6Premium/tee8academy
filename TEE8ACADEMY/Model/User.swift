@@ -14,6 +14,7 @@ class Course {
     var isSelected = false
     var description = ""
     var time = 0.0
+    var video = [Video]()
     
     init(name: String, price: Double) {
         self.name = name
@@ -25,6 +26,9 @@ class Course {
         self.price = fromDict["price"] as? Double ?? 0.0
         self.description = fromDict["description"] as? String ?? ""
         self.time = fromDict["time"] as? Double ?? 0.0
+        if let video = fromDict["Videos"] as? [String: Any] {
+            self.video.append(Video(dict: video))
+        }
     }
     
     func asDictionary() -> [String: Any] {

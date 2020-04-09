@@ -165,8 +165,8 @@ class PushCourseVC: BaseViewController {
         switch txtType.text {
         case "Video":
             guard let video = txtLinkVid.text else { return }
-            let value = ["type": type, "course" : nameCourseChoose ,"id" : id , "name": nameVideoOrImage, "description": description, "linkVideo" : video, "time" : time] as [String : Any]
-            databaseReference.child("Video").child(id).setValue(value)
+            let videoPost = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: video, time: time, type: type, imageUrl: "")
+            databaseReference.child("Courses").child(nameCourseChoose).child("Videos").child(id).setValue(videoPost.asDistionary())
             startTimer()
             showLoadingSuccess(1)
         case "Ảnh":
@@ -183,8 +183,9 @@ class PushCourseVC: BaseViewController {
                         self.showToast(message: "Có lỗi xảy ra, vui lòng thử lại sau.")
                         return
                     }
-                    let value = ["type": type, "course" : nameCourseChoose , "id" : id , "name": nameVideoOrImage, "description": description, "imageUrl" : "\(String(describing: imageUrl))" , "time" : time] as [String : Any]
-                    databaseReference.child("Video").child(id).setValue(value)
+                    
+                    let videoPost = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: "", time: time, type: type, imageUrl: "\(imageUrl)")
+                    databaseReference.child("Courses").child(nameCourseChoose).child("Videos").child(id).setValue(videoPost.asDistionary())
                     self.startTimer()
                     self.showLoadingSuccess(1)
                 })
