@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -97,10 +98,6 @@
                                     <constraint firstAttribute="height" constant="2" id="Oez-56-UVg"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="URI-Ok-uI3">
-                                <rect key="frame" x="0.0" y="112" width="414" height="701"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="admin" translatesAutoresizingMaskIntoConstraints="NO" id="EYW-ip-quS">
                                 <rect key="frame" x="344" y="50" width="60" height="60"/>
                                 <constraints>
@@ -108,21 +105,42 @@
                                     <constraint firstAttribute="width" constant="60" id="p7X-P8-e2L"/>
                                 </constraints>
                             </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="945-6Z-nIJ">
+                                <rect key="frame" x="0.0" y="112" width="414" height="701"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rq9-JI-fXY">
+                                    <size key="itemSize" width="148" height="133"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="M3a-ic-Dhr">
+                                        <rect key="frame" x="0.0" y="0.0" width="148" height="133"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Op0-Vu-TCr">
+                                            <rect key="frame" x="0.0" y="0.0" width="148" height="133"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="148" height="133"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="osz-h0-yxW" firstAttribute="bottom" secondItem="QCx-Ah-JBd" secondAttribute="bottom" id="0sx-XT-s3G"/>
                             <constraint firstItem="QCx-Ah-JBd" firstAttribute="top" secondItem="c6h-sb-CUT" secondAttribute="top" id="5Rt-vc-qgK"/>
+                            <constraint firstItem="osz-h0-yxW" firstAttribute="trailing" secondItem="945-6Z-nIJ" secondAttribute="trailing" id="6Qy-9I-FT4"/>
                             <constraint firstItem="osz-h0-yxW" firstAttribute="trailing" secondItem="EYW-ip-quS" secondAttribute="trailing" constant="10" id="BUI-J8-6vz"/>
                             <constraint firstItem="osz-h0-yxW" firstAttribute="trailing" secondItem="UsW-eg-nZX" secondAttribute="trailing" id="Ch0-8I-wl0"/>
-                            <constraint firstItem="osz-h0-yxW" firstAttribute="bottom" secondItem="URI-Ok-uI3" secondAttribute="bottom" id="H5H-qi-Yb8"/>
                             <constraint firstItem="H63-ez-VMR" firstAttribute="width" secondItem="c6h-sb-CUT" secondAttribute="width" multiplier="0.5" id="J87-Du-Ti4"/>
                             <constraint firstItem="UsW-eg-nZX" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" id="O5E-TP-6eG"/>
                             <constraint firstItem="UsW-eg-nZX" firstAttribute="top" secondItem="EYW-ip-quS" secondAttribute="bottom" id="Pua-0T-fxk"/>
-                            <constraint firstItem="URI-Ok-uI3" firstAttribute="top" secondItem="UsW-eg-nZX" secondAttribute="bottom" id="SQ7-n5-Gxu"/>
-                            <constraint firstItem="osz-h0-yxW" firstAttribute="trailing" secondItem="URI-Ok-uI3" secondAttribute="trailing" id="VC1-ZK-S4b"/>
+                            <constraint firstItem="945-6Z-nIJ" firstAttribute="top" secondItem="UsW-eg-nZX" secondAttribute="bottom" id="Wic-1y-rYC"/>
+                            <constraint firstItem="945-6Z-nIJ" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" id="X4G-vA-ha6"/>
                             <constraint firstItem="UsW-eg-nZX" firstAttribute="top" secondItem="H63-ez-VMR" secondAttribute="bottom" id="cmU-Zx-rd1"/>
-                            <constraint firstItem="URI-Ok-uI3" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" id="ecP-yk-bqc"/>
+                            <constraint firstItem="osz-h0-yxW" firstAttribute="bottom" secondItem="945-6Z-nIJ" secondAttribute="bottom" id="jbv-lx-JKp"/>
                             <constraint firstItem="H63-ez-VMR" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" constant="10" id="mxG-bw-NmF"/>
                             <constraint firstItem="QCx-Ah-JBd" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" id="ob2-QB-tdl"/>
                             <constraint firstItem="osz-h0-yxW" firstAttribute="trailing" secondItem="QCx-Ah-JBd" secondAttribute="trailing" id="s4V-ak-dXO"/>
@@ -132,8 +150,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Tee Academy" image="video" selectedImage="videofill" id="Drq-Rn-5z8"/>
                     <connections>
+                        <outlet property="collectionView" destination="945-6Z-nIJ" id="G3m-ib-5iD"/>
                         <outlet property="imgAdmin" destination="EYW-ip-quS" id="8h4-Mq-pZw"/>
-                        <outlet property="tableView" destination="URI-Ok-uI3" id="Sdb-Y4-T97"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inf-dq-eSi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

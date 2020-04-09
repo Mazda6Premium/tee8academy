@@ -32,6 +32,8 @@
 		A823C7442438839C00F749C2 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A823C7402438839C00F749C2 /* Quicksand-Bold.ttf */; };
 		A823C74824388A0300F749C2 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823C74624388A0300F749C2 /* RegisterVC.swift */; };
 		A823C74924388A0300F749C2 /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A823C74724388A0300F749C2 /* RegisterVC.xib */; };
+		A83ABBF1243F495E0039E64C /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83ABBEF243F495E0039E64C /* HeaderCell.swift */; };
+		A83ABBF2243F495E0039E64C /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83ABBF0243F495E0039E64C /* HeaderCell.xib */; };
 		A85B7FF02438268E00CC4DCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B7FEF2438268E00CC4DCC /* AppDelegate.swift */; };
 		A85B7FF22438268E00CC4DCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B7FF12438268E00CC4DCC /* SceneDelegate.swift */; };
 		A85B7FF42438268E00CC4DCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B7FF32438268E00CC4DCC /* ViewController.swift */; };
@@ -50,6 +52,8 @@
 		A8A700482438C62600B2139D /* SendReceiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A700462438C62600B2139D /* SendReceiveVC.swift */; };
 		A8A700492438C62600B2139D /* SendReceiptVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A700472438C62600B2139D /* SendReceiptVC.xib */; };
 		A8A7004B2438C6EF00B2139D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A7004A2438C6EF00B2139D /* Extensions.swift */; };
+		A8D91CF6243F4C240087A86E /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D91CF4243F4C240087A86E /* VideoCell.swift */; };
+		A8D91CF7243F4C240087A86E /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D91CF5243F4C240087A86E /* VideoCell.xib */; };
 		DC2DC9B24EA360C2984C95A3 /* Pods_TEE8ACADEMY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77AEEF61AD4E30056EE1D3 /* Pods_TEE8ACADEMY.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +85,8 @@
 		A823C7402438839C00F749C2 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
 		A823C74624388A0300F749C2 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		A823C74724388A0300F749C2 /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
+		A83ABBEF243F495E0039E64C /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		A83ABBF0243F495E0039E64C /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		A85B7FEC2438268E00CC4DCC /* TEE8ACADEMY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TEE8ACADEMY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85B7FEF2438268E00CC4DCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A85B7FF12438268E00CC4DCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +107,8 @@
 		A8A700462438C62600B2139D /* SendReceiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendReceiveVC.swift; sourceTree = "<group>"; };
 		A8A700472438C62600B2139D /* SendReceiptVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendReceiptVC.xib; sourceTree = "<group>"; };
 		A8A7004A2438C6EF00B2139D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A8D91CF4243F4C240087A86E /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		A8D91CF5243F4C240087A86E /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
 		EAAD0E2A462139679C3A5074 /* Pods-TEE8ACADEMY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TEE8ACADEMY.release.xcconfig"; path = "Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +209,17 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		A83ABBEE243F49230039E64C /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				A83ABBEF243F495E0039E64C /* HeaderCell.swift */,
+				A83ABBF0243F495E0039E64C /* HeaderCell.xib */,
+				A8D91CF4243F4C240087A86E /* VideoCell.swift */,
+				A8D91CF5243F4C240087A86E /* VideoCell.xib */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
 		A85B7FE32438268E00CC4DCC = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +297,7 @@
 		A85B800A243827BF00CC4DCC /* Academy */ = {
 			isa = PBXGroup;
 			children = (
+				A83ABBEE243F49230039E64C /* CollectionCell */,
 				A821AB15243B8AFB0063A194 /* AcademyVC.swift */,
 			);
 			path = Academy;
@@ -395,9 +415,11 @@
 				A8A700452438C2B700B2139D /* BuyCourseVC.xib in Resources */,
 				A85B7FF72438268E00CC4DCC /* Main.storyboard in Resources */,
 				A810224D243DDC250089AE63 /* ForgetPasswordVC.xib in Resources */,
+				A8D91CF7243F4C240087A86E /* VideoCell.xib in Resources */,
 				A823C7412438839C00F749C2 /* Quicksand-Medium.ttf in Resources */,
 				A8A700492438C62600B2139D /* SendReceiptVC.xib in Resources */,
 				A8102251243DFCC60089AE63 /* ChangePasswordVC.xib in Resources */,
+				A83ABBF2243F495E0039E64C /* HeaderCell.xib in Resources */,
 				A821AB1D243B8BB40063A194 /* AdminPopupVC.xib in Resources */,
 				A88A42D5243A14B00013BAFB /* PopupPaymentVC.xib in Resources */,
 				A823C7442438839C00F749C2 /* Quicksand-Bold.ttf in Resources */,
@@ -458,6 +480,8 @@
 				A80CECE4243C2374001785DC /* RegisterAccountVC.swift in Sources */,
 				A85B7FF42438268E00CC4DCC /* ViewController.swift in Sources */,
 				A8102250243DFCC60089AE63 /* ChangePasswordVC.swift in Sources */,
+				A83ABBF1243F495E0039E64C /* HeaderCell.swift in Sources */,
+				A8D91CF6243F4C240087A86E /* VideoCell.swift in Sources */,
 				A8A700442438C2B700B2139D /* BuyCourseVC.swift in Sources */,
 				A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */,
 				A821AB16243B8AFB0063A194 /* AcademyVC.swift in Sources */,

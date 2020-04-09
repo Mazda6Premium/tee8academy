@@ -11,13 +11,24 @@ import UIKit
 class AcademyVC: UIViewController {
     
     @IBOutlet weak var imgAdmin: UIImageView!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         setupView()
+        setupCollectionView()
+    }
+    
+    func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        let nib = UINib(nibName: "HeaderCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "headerCell")
+        
+        
     }
     
     func setupView() {
