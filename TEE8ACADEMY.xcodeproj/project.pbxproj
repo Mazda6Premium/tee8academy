@@ -24,6 +24,7 @@
 		A810224D243DDC250089AE63 /* ForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A810224B243DDC250089AE63 /* ForgetPasswordVC.xib */; };
 		A8102250243DFCC60089AE63 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A810224E243DFCC60089AE63 /* ChangePasswordVC.swift */; };
 		A8102251243DFCC60089AE63 /* ChangePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A810224F243DFCC60089AE63 /* ChangePasswordVC.xib */; };
+		A819AFDB243F4FED009AB1A6 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819AFDA243F4FED009AB1A6 /* Video.swift */; };
 		A821AB16243B8AFB0063A194 /* AcademyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821AB15243B8AFB0063A194 /* AcademyVC.swift */; };
 		A821AB18243B8B1E0063A194 /* StoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821AB17243B8B1E0063A194 /* StoreVC.swift */; };
 		A821AB1C243B8BB40063A194 /* AdminPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821AB1A243B8BB40063A194 /* AdminPopupVC.swift */; };
@@ -80,6 +81,7 @@
 		A810224B243DDC250089AE63 /* ForgetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordVC.xib; sourceTree = "<group>"; };
 		A810224E243DFCC60089AE63 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		A810224F243DFCC60089AE63 /* ChangePasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordVC.xib; sourceTree = "<group>"; };
+		A819AFDA243F4FED009AB1A6 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		A821AB15243B8AFB0063A194 /* AcademyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyVC.swift; sourceTree = "<group>"; };
 		A821AB17243B8B1E0063A194 /* StoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreVC.swift; sourceTree = "<group>"; };
 		A821AB1A243B8BB40063A194 /* AdminPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPopupVC.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 			children = (
 				A8A700402438BC3200B2139D /* User.swift */,
 				0146B5E0243F1550000453E7 /* Product.swift */,
+				A819AFDA243F4FED009AB1A6 /* Video.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				A85B7FF42438268E00CC4DCC /* ViewController.swift in Sources */,
 				A8102250243DFCC60089AE63 /* ChangePasswordVC.swift in Sources */,
 				A83ABBF1243F495E0039E64C /* HeaderCell.swift in Sources */,
+				A819AFDB243F4FED009AB1A6 /* Video.swift in Sources */,
 				A8D91CF6243F4C240087A86E /* VideoCell.swift in Sources */,
 				A8A700442438C2B700B2139D /* BuyCourseVC.swift in Sources */,
 				A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */,
