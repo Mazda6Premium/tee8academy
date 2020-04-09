@@ -25,26 +25,26 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqU-PK-Zuf">
                         <rect key="frame" x="0.0" y="10" width="295" height="250"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CWX-2U-jQc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CWX-2U-jQc">
                                 <rect key="frame" x="0.0" y="0.0" width="295" height="250"/>
                             </imageView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dey-QK-M52">
                                 <rect key="frame" x="0.0" y="195" width="295" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwf-73-hts">
-                                        <rect key="frame" x="10" y="34.5" width="235" height="12.5"/>
+                                        <rect key="frame" x="10" y="35" width="235" height="12"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="10"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJr-u6-k1G">
-                                        <rect key="frame" x="10" y="8" width="275" height="20"/>
+                                        <rect key="frame" x="10" y="8" width="275" height="19"/>
                                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grK-qO-XQQ">
-                                        <rect key="frame" x="255" y="34.5" width="30" height="12.5"/>
+                                        <rect key="frame" x="255" y="35" width="30" height="12"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="Y0q-0Q-m8E"/>
                                         </constraints>
@@ -70,11 +70,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="CWX-2U-jQc" secondAttribute="bottom" id="68c-v7-1Aw"/>
+                            <constraint firstAttribute="trailing" secondItem="dey-QK-M52" secondAttribute="trailing" id="75l-cP-Boy"/>
                             <constraint firstAttribute="bottom" secondItem="dey-QK-M52" secondAttribute="bottom" id="IUk-jO-iOh"/>
                             <constraint firstItem="dey-QK-M52" firstAttribute="leading" secondItem="dqU-PK-Zuf" secondAttribute="leading" id="WZQ-nC-g5v"/>
                             <constraint firstItem="CWX-2U-jQc" firstAttribute="top" secondItem="dqU-PK-Zuf" secondAttribute="top" id="YjK-if-QfP"/>
                             <constraint firstAttribute="trailing" secondItem="CWX-2U-jQc" secondAttribute="trailing" id="eAt-cc-UOe"/>
-                            <constraint firstAttribute="trailing" secondItem="dey-QK-M52" secondAttribute="trailing" id="mVS-P9-N8Y"/>
                             <constraint firstItem="CWX-2U-jQc" firstAttribute="leading" secondItem="dqU-PK-Zuf" secondAttribute="leading" id="uG8-Hf-CiF"/>
                         </constraints>
                     </view>

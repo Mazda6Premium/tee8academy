@@ -15,6 +15,9 @@ class HeaderCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        btnTitle.layer.cornerRadius = 10
+        btnTitle.layer.masksToBounds = true
     }
 
 }

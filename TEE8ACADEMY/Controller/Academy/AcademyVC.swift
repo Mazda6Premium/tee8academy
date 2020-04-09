@@ -33,8 +33,8 @@ class AcademyVC: BaseViewController {
     }
     
     func setupCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
         
         let headerCell_xib = UINib(nibName: "HeaderCell", bundle: nil)
         collectionView.register(headerCell_xib, forCellWithReuseIdentifier: "headerCell")

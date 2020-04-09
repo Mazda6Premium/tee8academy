@@ -19,6 +19,25 @@ class VideoCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    
+        // ROUND CORNER
+        
+        imgVideo.layer.cornerRadius = 10
+        imgVideo.layer.masksToBounds = true
+        
+        addShadow(views: [viewCell])
     }
 
+}
+
+func addShadow(views: [UIView]) {
+    views.forEach { (view) in
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
+        view.layer.shadowOpacity = 0.5
+        view.layer.shadowOffset = CGSize(width: 2, height: 2)
+        view.layer.shadowColor = UIColor.darkGray.cgColor
+        view.clipsToBounds = false
+        view.backgroundColor = .white
+    }
 }

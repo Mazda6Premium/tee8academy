@@ -40,13 +40,13 @@
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jRG-Fn-US9">
-                                <rect key="frame" x="0.0" y="120" width="414" height="693"/>
+                                <rect key="frame" x="0.0" y="112" width="414" height="701"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3pI-LZ-xfE">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3pI-LZ-xfE">
                                     <size key="itemSize" width="207" height="159"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
@@ -61,7 +61,7 @@
                             <constraint firstItem="iog-uR-hCX" firstAttribute="top" secondItem="vhg-Yy-41V" secondAttribute="bottom" id="Wz5-C9-fqc"/>
                             <constraint firstItem="iog-uR-hCX" firstAttribute="leading" secondItem="LLt-7l-YPO" secondAttribute="leading" id="fB1-Fj-3Ad"/>
                             <constraint firstItem="vhg-Yy-41V" firstAttribute="top" secondItem="SZt-OE-XPa" secondAttribute="top" constant="10" id="mjW-YR-m9F"/>
-                            <constraint firstItem="jRG-Fn-US9" firstAttribute="top" secondItem="iog-uR-hCX" secondAttribute="bottom" constant="8" symbolic="YES" id="sao-ao-t1M"/>
+                            <constraint firstItem="jRG-Fn-US9" firstAttribute="top" secondItem="iog-uR-hCX" secondAttribute="bottom" id="sao-ao-t1M"/>
                             <constraint firstItem="LLt-7l-YPO" firstAttribute="bottom" secondItem="jRG-Fn-US9" secondAttribute="bottom" id="spw-Aw-7it"/>
                             <constraint firstItem="LLt-7l-YPO" firstAttribute="trailing" secondItem="jRG-Fn-US9" secondAttribute="trailing" id="tfO-Ch-Msh"/>
                             <constraint firstItem="iog-uR-hCX" firstAttribute="top" secondItem="AmS-aB-KHx" secondAttribute="bottom" id="vEZ-K6-nPM"/>
