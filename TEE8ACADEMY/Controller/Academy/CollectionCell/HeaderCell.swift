@@ -9,7 +9,9 @@
 import UIKit
 
 class HeaderCell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var btnTitle: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -28,7 +28,8 @@ class AcademyVC: UIViewController {
         let nib = UINib(nibName: "HeaderCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "headerCell")
         
-        
+        let nib1 = UINib(nibName: "VideoCell", bundle: nil)
+        collectionView.register(nib1, forCellWithReuseIdentifier: "videoCell")
     }
     
     func setupView() {
@@ -46,5 +47,15 @@ class AcademyVC: UIViewController {
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true, completion: nil)
+    }
+}
+
+extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
     }
 }
