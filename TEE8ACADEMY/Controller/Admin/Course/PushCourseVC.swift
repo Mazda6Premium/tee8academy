@@ -46,6 +46,9 @@ class PushCourseVC: BaseViewController {
         roundCorner(views: [txtName, txtPrice, tvDescriptionCourse, btnPost, txtNameVideo, imgCourse, txtLinkVid, txtType, txtChooseCourse, tvDescriptionVideo, btnPostVideo], radius: 8)
         addShadow(views: [viewPush, viewPushVideo])
         
+        viewPush.isHidden = false
+        viewPushVideo.isHidden = true
+        
         txtLinkVid.isUserInteractionEnabled = false
         imgCourse.isUserInteractionEnabled = false
         

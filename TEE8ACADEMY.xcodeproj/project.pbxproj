@@ -10,6 +10,8 @@
 		01000FA1243C89E7004733A2 /* CurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01000FA0243C89E7004733A2 /* CurrencyTextField.swift */; };
 		014665E52438CC11008661E2 /* BuyCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014665E32438CC11008661E2 /* BuyCourseCell.swift */; };
 		014665E62438CC11008661E2 /* BuyCourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014665E42438CC11008661E2 /* BuyCourseCell.xib */; };
+		0146B5D4243EC12B000453E7 /* PushProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0146B5D2243EC12B000453E7 /* PushProductVC.swift */; };
+		0146B5D5243EC12B000453E7 /* PushProductVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0146B5D3243EC12B000453E7 /* PushProductVC.xib */; };
 		01B56D3F243C6B6100B0D804 /* PushCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B56D3D243C6B6100B0D804 /* PushCourseVC.swift */; };
 		01B56D40243C6B6100B0D804 /* PushCourseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01B56D3E243C6B6100B0D804 /* PushCourseVC.xib */; };
 		A80CECE4243C2374001785DC /* RegisterAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80CECE2243C2374001785DC /* RegisterAccountVC.swift */; };
@@ -57,6 +59,8 @@
 		01000FA0243C89E7004733A2 /* CurrencyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTextField.swift; sourceTree = "<group>"; };
 		014665E32438CC11008661E2 /* BuyCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCourseCell.swift; sourceTree = "<group>"; };
 		014665E42438CC11008661E2 /* BuyCourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyCourseCell.xib; sourceTree = "<group>"; };
+		0146B5D2243EC12B000453E7 /* PushProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushProductVC.swift; sourceTree = "<group>"; };
+		0146B5D3243EC12B000453E7 /* PushProductVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PushProductVC.xib; sourceTree = "<group>"; };
 		01B56D3D243C6B6100B0D804 /* PushCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushCourseVC.swift; sourceTree = "<group>"; };
 		01B56D3E243C6B6100B0D804 /* PushCourseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PushCourseVC.xib; sourceTree = "<group>"; };
 		5D0F17786205A1FAF2E65BC2 /* Pods-TEE8ACADEMY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TEE8ACADEMY.debug.xcconfig"; path = "Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0146B5D1243EC0EE000453E7 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				0146B5D2243EC12B000453E7 /* PushProductVC.swift */,
+				0146B5D3243EC12B000453E7 /* PushProductVC.xib */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
 		01B56D3C243C6AE200B0D804 /* Course */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +180,7 @@
 				A821AB1A243B8BB40063A194 /* AdminPopupVC.swift */,
 				A821AB1B243B8BB40063A194 /* AdminPopupVC.xib */,
 				01B56D3C243C6AE200B0D804 /* Course */,
+				0146B5D1243EC0EE000453E7 /* Product */,
 				A80CECE1243C233E001785DC /* RegisterAccount+Receipt */,
 			);
 			path = Admin;
@@ -402,6 +416,7 @@
 				A88A42D5243A14B00013BAFB /* PopupPaymentVC.xib in Resources */,
 				A823C7442438839C00F749C2 /* Quicksand-Bold.ttf in Resources */,
 				A80CECF4243C354B001785DC /* RegisterAccountCell.xib in Resources */,
+				0146B5D5243EC12B000453E7 /* PushProductVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +485,7 @@
 				A821AB18243B8B1E0063A194 /* StoreVC.swift in Sources */,
 				A823C74824388A0300F749C2 /* RegisterVC.swift in Sources */,
 				A80CECE7243C23DE001785DC /* SegmentedControl.swift in Sources */,
+				0146B5D4243EC12B000453E7 /* PushProductVC.swift in Sources */,
 				A88A42CE2439D99A0013BAFB /* Constant.swift in Sources */,
 				A8A7004B2438C6EF00B2139D /* Extensions.swift in Sources */,
 				A899AA23243E2AF80032DCDA /* SessionData.swift in Sources */,
