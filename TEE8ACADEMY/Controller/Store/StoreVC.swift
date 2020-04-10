@@ -85,7 +85,7 @@ extension StoreVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section {
         case 0 , 2 :
-            return CGSize(width: screenWidth - 15, height: 54)
+            return CGSize(width: screenWidth - 15, height: 50)
         case 1 , 3:
             return CGSize(width: screenWidth/2 - 15 , height: screenWidth/2 - 15)
         default:
@@ -134,7 +134,8 @@ extension StoreVC: UICollectionViewDelegate, UICollectionViewDataSource {
         case 1:
             let productPMU = arrayProductPMU[indexPath.row]
             cell1.lblTitle.text = productPMU.name
-            cell1.lblDescription.text = "\(productPMU.price)"
+            cell1.lblDescription.text = "Giá: \(formatMoney(productPMU.price)) VND"
+            cell1.lblTime.isHidden = true
             if let url = URL(string: productPMU.imageUrl) {
                 cell1.imgVideo.sd_setImage(with: url, completed: nil)
             } else {
@@ -148,13 +149,13 @@ extension StoreVC: UICollectionViewDelegate, UICollectionViewDataSource {
         case 3:
             let productTime = arrayProductTimes[indexPath.row]
             cell1.lblTitle.text = productTime.name
-            cell1.lblDescription.text = "\(productTime.price)"
+            cell1.lblDescription.text = "Giá: \(formatMoney(productTime.price)) VND"
+            cell1.lblTime.isHidden = true
             if let url = URL(string: productTime.imageUrl) {
                 cell1.imgVideo.sd_setImage(with: url, completed: nil)
             } else {
                 cell1.imgVideo.image = UIImage(named: "placeholder")
             }
-            
             return cell1
         default:
             return UICollectionViewCell()

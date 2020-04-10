@@ -97,7 +97,7 @@ class PushProductVC: BaseViewController {
         } else {
             let sale = Double(txtPriceSale.text!.digits)!
             if sale > 100.0 {
-                showToast(message: "Số bạn nhập không hợp lệ")
+                showToast(message: "% sale bạn nhập không hợp lệ")
                 hideLoading()
                 return
             }
