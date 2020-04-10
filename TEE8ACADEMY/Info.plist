@@ -17,9 +17,20 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>TEE 8 ACADEMY muốn sử dụng camera của bạn để chụp ảnh đăng bài</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>TEE 8 ACADEMY muốn sử dụng thư viện ảnh của bạn để gửi ảnh</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>TEE 8 ACADEMY muốn sử dụng thư viện ảnh của bạn để gửi ảnh</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Quicksand-Bold.ttf</string>
