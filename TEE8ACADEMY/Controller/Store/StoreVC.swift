@@ -21,10 +21,10 @@ class StoreVC: BaseViewController {
     var screenWidth: CGFloat {
         return UIScreen.main.bounds.size.width
     }
-    
     var screenHeight: CGFloat {
         return UIScreen.main.bounds.size.height
     }
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,19 @@ class StoreVC: BaseViewController {
         setupView()
         getDataFromFirebase()
         setUpCollectionView()
+        setupRefreshControl()
+    }
+    
+    func setupRefreshControl() {
+        self.collectionView.alwaysBounceVertical = true
+        self.refreshControl.tintColor = #colorLiteral(red: 0.1019607843, green: 0.3568627451, blue: 0.3921568627, alpha: 1)
+        self.refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+        self.collectionView.addSubview(refreshControl)
+    }
+    
+    @objc func reloadData() {
+        getDataFromFirebase()
+        refreshControl.endRefreshing()
     }
     
     func getDataFromFirebase() {
