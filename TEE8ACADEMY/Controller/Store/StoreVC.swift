@@ -129,7 +129,7 @@ extension StoreVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         switch indexPath.section {
         case 0:
-            cell0.btnTitle.setTitle("P.M.U PLUS - WWW.PMUPLUS.COM", for: .normal)
+            cell0.btnTitle.setTitle("   P.M.U PLUS - WWW.PMUPLUS.COM", for: .normal)
             return cell0
         case 1:
             let productPMU = arrayProductPMU[indexPath.row]
@@ -143,7 +143,7 @@ extension StoreVC: UICollectionViewDelegate, UICollectionViewDataSource {
             
             return cell1
         case 2:
-            cell0.btnTitle.setTitle("TIMES - WWW.PMUTIMES.COM", for: .normal)
+            cell0.btnTitle.setTitle("   TIMES - WWW.PMUTIMES.COM", for: .normal)
             return cell0
         case 3:
             let productTime = arrayProductTimes[indexPath.row]

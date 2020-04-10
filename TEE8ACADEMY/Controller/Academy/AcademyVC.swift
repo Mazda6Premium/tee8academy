@@ -33,8 +33,8 @@ class AcademyVC: BaseViewController {
     }
     
     func setupCollectionView() {
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
         
         let headerCell_xib = UINib(nibName: "HeaderCell", bundle: nil)
         collectionView.register(headerCell_xib, forCellWithReuseIdentifier: "headerCell")
@@ -51,6 +51,7 @@ class AcademyVC: BaseViewController {
                 if let dict = snapshot1.value as? [String: Any] {
                     let course = Course(fromDict: dict)
                     self.arrayCourse.append(course)
+                    dump(self.arrayCourse)
                     self.arrayCourse.sort(by: { (course1, course2) -> Bool in
                         return Int64(course1.price) > Int64(course2.price)
                     })
@@ -81,7 +82,7 @@ class AcademyVC: BaseViewController {
     }
 }
 
-extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return arrayCourse.count * 2
     }
@@ -98,9 +99,12 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell0 = collectionView.dequeueReusableCell(withReuseIdentifier: "headerCell", for: indexPath) as! HeaderCell
         let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath) as! VideoCell
         
+        cell0.backgroundColor = .clear
+        cell1.backgroundColor = .clear
+        
         if indexPath.section % 2 == 0 {
             let course = arrayCourse[indexPath.section / 2]
-            cell0.btnTitle.setTitle(course.name, for: .normal)
+            cell0.btnTitle.setTitle("   \(course.name)", for: .normal)
             return cell0
         } else {
             let course = arrayCourse[indexPath.section / 2].video[indexPath.row]
@@ -113,13 +117,10 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch indexPath.section {
-        case 0 , 2 :
-            return CGSize(width: screenWidth, height: 54)
-        case 1 , 3:
+        if indexPath.section % 2 == 0 {
+            return CGSize(width: screenWidth, height: 50)
+        } else {
             return CGSize(width: screenWidth/2 - 15 , height: screenWidth/2 - 15)
-        default:
-            return CGSize(width: 0, height: 0)
         }
     }
     
@@ -128,7 +129,7 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 10
     }
 }
 

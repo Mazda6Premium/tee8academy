@@ -44,7 +44,7 @@ class Video {
         return video
     }
     
-    func asDistionary() -> [String: Any] {
+    func asDictionary() -> [String: Any] {
         return [
             "type": self.type,
             "course" : self.course,

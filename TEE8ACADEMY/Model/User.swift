@@ -21,13 +21,17 @@ class Course {
         self.price = price
     }
     
+    init(video: [Video]) {
+        self.video = video
+    }
+    
     init(fromDict: [String: Any]) {
         self.name = fromDict["name"] as? String ?? ""
         self.price = fromDict["price"] as? Double ?? 0.0
         self.description = fromDict["description"] as? String ?? ""
         self.time = fromDict["time"] as? Double ?? 0.0
-        if let video = fromDict["Videos"] as? [String: Any] {
-            self.video.append(Video(dict: video))
+        if let video = fromDict["videos"] as? [[String: Any]] {
+            self.video = video.map({Video(dict: $0)})
         }
     }
     
@@ -35,6 +39,12 @@ class Course {
         return [
             "name": self.name,
             "price": self.price
+        ]
+    }
+    
+    func asDictionaryVideo() -> [String: Any] {
+        return [
+            "videos": self.video.map({$0.asDictionary()})
         ]
     }
 }
