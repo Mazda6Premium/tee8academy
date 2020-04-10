@@ -35,6 +35,7 @@ class AcademyVC: BaseViewController {
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         
         let headerCell_xib = UINib(nibName: "HeaderCell", bundle: nil)
         collectionView.register(headerCell_xib, forCellWithReuseIdentifier: "headerCell")
@@ -104,7 +105,7 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         
         if indexPath.section % 2 == 0 {
             let course = arrayCourse[indexPath.section / 2]
-            cell0.btnTitle.setTitle("   \(course.name)", for: .normal)
+            cell0.btnTitle.setTitle("     \(course.name)", for: .normal)
             return cell0
         } else {
             let course = arrayCourse[indexPath.section / 2].video[indexPath.row]

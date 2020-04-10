@@ -64,6 +64,7 @@ class StoreVC: BaseViewController {
     func setUpCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         
         let headerCell_xib = UINib(nibName: "HeaderCell", bundle: nil)
         collectionView.register(headerCell_xib, forCellWithReuseIdentifier: "headerCell")

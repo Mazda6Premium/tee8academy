@@ -60,7 +60,7 @@ class Video {
     init(dict: [String: Any]) {
         self.name = dict["name"] as? String ?? ""
         self.course = dict["course"] as? String ?? ""
-        self.description = dict["decription"] as? String ?? ""
+        self.description = dict["description"] as? String ?? ""
         self.id = dict["id"] as? String ?? ""
         self.linkVideo = dict["linkVideo"] as? String ?? ""
         self.time = dict["time"] as? Double ?? 0.0
