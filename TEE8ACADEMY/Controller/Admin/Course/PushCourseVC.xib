@@ -13,7 +13,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PushCourseVC" customModule="TEE8ACADEMY" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PushCourseVC" customModule="TEE_8_ACADEMY" customModuleProvider="target">
             <connections>
                 <outlet property="btnPost" destination="fBP-hi-o4S" id="gy3-vb-Jey"/>
                 <outlet property="btnPostVideo" destination="wbS-Zm-hLM" id="5eN-v7-tbP"/>
@@ -78,7 +78,7 @@
                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Giá tiền" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Brg-Ez-fcL" customClass="CurrencyTextField" customModule="TEE8ACADEMY" customModuleProvider="target">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Giá tiền" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Brg-Ez-fcL" customClass="CurrencyTextField" customModule="TEE_8_ACADEMY" customModuleProvider="target">
                             <rect key="frame" x="5" y="171" width="259" height="36"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
@@ -132,7 +132,7 @@
                         <action selector="tapOnBack:" destination="-1" eventType="touchUpInside" id="O4Z-4L-vE0"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0y-sK-FlV" customClass="SegmentedControl" customModule="TEE8ACADEMY" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0y-sK-FlV" customClass="SegmentedControl" customModule="TEE_8_ACADEMY" customModuleProvider="target">
                     <rect key="frame" x="20" y="144" width="374" height="40"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
@@ -154,7 +154,7 @@
                             <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="dPg-bn-kcc">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="dPg-bn-kcc">
                             <rect key="frame" x="269" y="87" width="120" height="120"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="120" id="3MB-fE-Hbr"/>

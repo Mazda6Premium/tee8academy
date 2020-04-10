@@ -14,7 +14,6 @@ class StoreVC: BaseViewController {
     @IBOutlet weak var imgAdmin: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var arrayProduct = [Product]()
     var arrayProductPMU = [Product]()
     var arrayProductTimes = [Product]()
     
@@ -44,6 +43,9 @@ class StoreVC: BaseViewController {
     }
     
     @objc func reloadData() {
+        arrayProductPMU.removeAll()
+        arrayProductTimes.removeAll()
+        collectionView.reloadData()
         getDataFromFirebase()
         refreshControl.endRefreshing()
     }

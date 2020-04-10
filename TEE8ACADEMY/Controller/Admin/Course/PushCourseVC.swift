@@ -190,7 +190,7 @@ class PushCourseVC: BaseViewController {
                     let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: "", time: time, type: type, imageUrl: "\(imageUrl)")
                     self.arrayVideo.append(video)
                     let course = Course(video: self.arrayVideo)
-                    databaseReference.child("Courses").child(nameCourseChoose).updateChildValues(course.asDictionary())
+                    databaseReference.child("Courses").child(nameCourseChoose).updateChildValues(course.asDictionaryVideo())
                     self.startTimer()
                     self.showLoadingSuccess(1)
                 })

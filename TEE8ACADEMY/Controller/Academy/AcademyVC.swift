@@ -8,6 +8,15 @@
 
 import UIKit
 import SDWebImage
+import XCDYouTubeKit
+import AVKit
+import SimpleImageViewer
+
+struct VideoQuality {
+    static let hd720 = NSNumber(value: XCDYouTubeVideoQuality.HD720.rawValue)
+    static let medium360 = NSNumber(value: XCDYouTubeVideoQuality.medium360.rawValue)
+    static let small240 = NSNumber(value: XCDYouTubeVideoQuality.small240.rawValue)
+}
 
 class AcademyVC: BaseViewController {
     
@@ -43,6 +52,8 @@ class AcademyVC: BaseViewController {
     }
     
     @objc func reloadData() {
+        arrayCourse.removeAll()
+        collectionView.reloadData()
         getDataFromFirebase()
         refreshControl.endRefreshing()
     }
@@ -153,6 +164,34 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             }
 
             return cell1
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section % 2 != 0 {
+            let course = arrayCourse[indexPath.section / 2].video[indexPath.row]
+            if course.type == "Video" {
+                if let videoId = getYoutubeId(youtubeUrl: course.linkVideo) {
+                    // play video
+                    let playerViewController = AVPlayerViewController()
+                    self.present(playerViewController, animated: true, completion: nil)
+                    XCDYouTubeClient.default().getVideoWithIdentifier(videoId) { [weak playerViewController] (video: XCDYouTubeVideo?, error: Error?) in
+                        if let streamURLs = video?.streamURLs, let streamURL = (streamURLs[XCDYouTubeVideoQualityHTTPLiveStreaming] ?? streamURLs[VideoQuality.hd720] ?? streamURLs[VideoQuality.medium360] ?? streamURLs[VideoQuality.small240]) {
+                            playerViewController?.player = AVPlayer(url: streamURL)
+                            playerViewController?.player?.play()
+                        } else {
+                            self.dismiss(animated: true, completion: nil)
+                        }
+                    }
+                }
+            } else {
+                let cell = collectionView.cellForItem(at: indexPath) as! VideoCell
+                let configuration = ImageViewerConfiguration { config in
+                    config.imageView = cell.imgVideo
+                }
+        
+                present(ImageViewerController(configuration: configuration), animated: true)
+            }
         }
     }
     
