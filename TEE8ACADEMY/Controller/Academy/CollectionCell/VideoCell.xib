@@ -70,9 +70,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="CWX-2U-jQc" secondAttribute="bottom" id="68c-v7-1Aw"/>
-                            <constraint firstAttribute="trailing" secondItem="dey-QK-M52" secondAttribute="trailing" id="75l-cP-Boy"/>
                             <constraint firstAttribute="bottom" secondItem="dey-QK-M52" secondAttribute="bottom" id="IUk-jO-iOh"/>
-                            <constraint firstItem="dey-QK-M52" firstAttribute="leading" secondItem="dqU-PK-Zuf" secondAttribute="leading" id="WZQ-nC-g5v"/>
+                            <constraint firstAttribute="trailing" secondItem="dey-QK-M52" secondAttribute="trailing" id="N9b-5X-KOA"/>
+                            <constraint firstItem="dey-QK-M52" firstAttribute="leading" secondItem="dqU-PK-Zuf" secondAttribute="leading" id="OCR-Oz-674"/>
                             <constraint firstItem="CWX-2U-jQc" firstAttribute="top" secondItem="dqU-PK-Zuf" secondAttribute="top" id="YjK-if-QfP"/>
                             <constraint firstAttribute="trailing" secondItem="CWX-2U-jQc" secondAttribute="trailing" id="eAt-cc-UOe"/>
                             <constraint firstItem="CWX-2U-jQc" firstAttribute="leading" secondItem="dqU-PK-Zuf" secondAttribute="leading" id="uG8-Hf-CiF"/>
