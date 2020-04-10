@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class AcademyVC: BaseViewController {
     
@@ -111,10 +112,35 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             let course = arrayCourse[indexPath.section / 2].video[indexPath.row]
             cell1.lblTitle.text = course.name
             cell1.lblDescription.text = course.description
-            cell1.imgVideo.image = UIImage(named: "placeholder")
             
+            switch course.type {
+            case "Video":
+                if let videoId = getYoutubeId(youtubeUrl: course.linkVideo) {
+                    // thumbnail
+                    let urlString = "https://i1.ytimg.com/vi/\(String(describing: videoId))/hqdefault.jpg"
+                    if let url = URL(string: urlString) {
+                        cell1.imgVideo.sd_setImage(with: url, completed: nil)
+                    } else {
+                        cell1.imgVideo.image = UIImage(named: "placeholder")
+                    }
+                } else {
+                    cell1.imgVideo.image = UIImage(named: "placeholder")
+                }
+            default:
+                if let url = URL(string: course.imageUrl) {
+                    cell1.imgVideo.sd_setImage(with: url, completed: nil)
+                } else {
+                    cell1.imgVideo.image = UIImage(named: "placeholder")
+                }
+            }
+
+
             return cell1
         }
+    }
+    
+    func getYoutubeId(youtubeUrl: String) -> String? {
+        return URLComponents(string: youtubeUrl)?.queryItems?.first(where: { $0.name == "v" })?.value
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
