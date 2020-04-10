@@ -72,7 +72,11 @@ class AcademyVC: BaseViewController {
         imgAdmin.addGestureRecognizer(tapGes)
         
         if let user = SessionData.shared.userData {
-            print(user.email)
+            if user.email == "admin" {
+                self.imgAdmin.isHidden = false
+            } else {
+                self.imgAdmin.isHidden = true
+            }
         }
     }
     
@@ -134,7 +138,6 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
                 }
             }
 
-
             return cell1
         }
     }
@@ -145,7 +148,7 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section % 2 == 0 {
-            return CGSize(width: screenWidth, height: 50)
+            return CGSize(width: screenWidth, height: 46)
         } else {
             return CGSize(width: screenWidth/2 - 15 , height: screenWidth/2 - 15)
         }

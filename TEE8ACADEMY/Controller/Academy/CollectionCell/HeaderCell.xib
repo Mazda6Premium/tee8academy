@@ -16,17 +16,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerCell" id="gTV-IL-0wX" customClass="HeaderCell" customModule="TEE8ACADEMY" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="458" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="458" height="46"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="458" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="458" height="46"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IK-NE-Fbk">
-                        <rect key="frame" x="0.0" y="10" width="458" height="40"/>
+                        <rect key="frame" x="0.0" y="10" width="458" height="36"/>
                         <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="L5Z-Qb-tVT"/>
+                            <constraint firstAttribute="height" constant="36" id="L5Z-Qb-tVT"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
                         <state key="normal" title="Button" backgroundImage="bg_button">

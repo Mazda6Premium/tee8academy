@@ -59,6 +59,14 @@ class StoreVC: BaseViewController {
         let tapGes = UITapGestureRecognizer(target: self, action: #selector(tapOnAdmin))
         imgAdmin.isUserInteractionEnabled = true
         imgAdmin.addGestureRecognizer(tapGes)
+        
+        if let user = SessionData.shared.userData {
+            if user.email == "admin" {
+                self.imgAdmin.isHidden = false
+            } else {
+                self.imgAdmin.isHidden = true
+            }
+        }
     }
     
     func setUpCollectionView() {
@@ -86,7 +94,7 @@ extension StoreVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section {
         case 0 , 2 :
-            return CGSize(width: screenWidth - 15, height: 50)
+            return CGSize(width: screenWidth - 15, height: 46)
         case 1 , 3:
             return CGSize(width: screenWidth/2 - 15 , height: screenWidth/2 - 15)
         default:
@@ -126,7 +134,8 @@ extension StoreVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell0 = collectionView.dequeueReusableCell(withReuseIdentifier: "headerCell", for: indexPath) as! HeaderCell
         let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath) as! VideoCell
-        
+        cell0.backgroundColor = .clear
+        cell1.backgroundColor = .clear
         
         switch indexPath.section {
         case 0:

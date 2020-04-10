@@ -21,27 +21,27 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_button" translatesAutoresizingMaskIntoConstraints="NO" id="iog-uR-hCX">
-                                <rect key="frame" x="0.0" y="110" width="414" height="2"/>
+                                <rect key="frame" x="0.0" y="115" width="414" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="xdO-pl-FlB"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="academic" translatesAutoresizingMaskIntoConstraints="NO" id="vhg-Yy-41V">
-                                <rect key="frame" x="10" y="10" width="207" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Asset 37" translatesAutoresizingMaskIntoConstraints="NO" id="vhg-Yy-41V">
+                                <rect key="frame" x="10" y="15" width="207" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="3Pb-3K-onA"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="admin" translatesAutoresizingMaskIntoConstraints="NO" id="AmS-aB-KHx">
-                                <rect key="frame" x="344" y="50" width="60" height="60"/>
+                                <rect key="frame" x="344" y="55" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="EDW-9K-jcg"/>
                                     <constraint firstAttribute="height" constant="60" id="bsn-la-aod"/>
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jRG-Fn-US9">
-                                <rect key="frame" x="0.0" y="112" width="414" height="701"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="117" width="414" height="696"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3pI-LZ-xfE">
                                     <size key="itemSize" width="207" height="159"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -60,7 +60,7 @@
                             <constraint firstItem="jRG-Fn-US9" firstAttribute="leading" secondItem="LLt-7l-YPO" secondAttribute="leading" id="CQU-5s-fMf"/>
                             <constraint firstItem="iog-uR-hCX" firstAttribute="top" secondItem="vhg-Yy-41V" secondAttribute="bottom" id="Wz5-C9-fqc"/>
                             <constraint firstItem="iog-uR-hCX" firstAttribute="leading" secondItem="LLt-7l-YPO" secondAttribute="leading" id="fB1-Fj-3Ad"/>
-                            <constraint firstItem="vhg-Yy-41V" firstAttribute="top" secondItem="SZt-OE-XPa" secondAttribute="top" constant="10" id="mjW-YR-m9F"/>
+                            <constraint firstItem="vhg-Yy-41V" firstAttribute="top" secondItem="SZt-OE-XPa" secondAttribute="top" constant="15" id="mjW-YR-m9F"/>
                             <constraint firstItem="jRG-Fn-US9" firstAttribute="top" secondItem="iog-uR-hCX" secondAttribute="bottom" id="sao-ao-t1M"/>
                             <constraint firstItem="LLt-7l-YPO" firstAttribute="bottom" secondItem="jRG-Fn-US9" secondAttribute="bottom" id="spw-Aw-7it"/>
                             <constraint firstItem="LLt-7l-YPO" firstAttribute="trailing" secondItem="jRG-Fn-US9" secondAttribute="trailing" id="tfO-Ch-Msh"/>
@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jz-LU-b6s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-314.49275362318843" y="328.79464285714283"/>
+            <point key="canvasLocation" x="377" y="-319"/>
         </scene>
         <!--Tee Academy-->
         <scene sceneID="BX8-Ic-MxF">
@@ -94,26 +94,26 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="academic" translatesAutoresizingMaskIntoConstraints="NO" id="H63-ez-VMR">
-                                <rect key="frame" x="10" y="10" width="207" height="100"/>
+                                <rect key="frame" x="10" y="15" width="207" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="syD-YD-whQ"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_button" translatesAutoresizingMaskIntoConstraints="NO" id="UsW-eg-nZX">
-                                <rect key="frame" x="0.0" y="110" width="414" height="2"/>
+                                <rect key="frame" x="0.0" y="115" width="414" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="Oez-56-UVg"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="admin" translatesAutoresizingMaskIntoConstraints="NO" id="EYW-ip-quS">
-                                <rect key="frame" x="344" y="50" width="60" height="60"/>
+                                <rect key="frame" x="344" y="55" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Rxg-7h-etT"/>
                                     <constraint firstAttribute="width" constant="60" id="p7X-P8-e2L"/>
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rD4-3N-2B0">
-                                <rect key="frame" x="10" y="112" width="394" height="701"/>
+                                <rect key="frame" x="10" y="117" width="394" height="696"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mi3-iW-xug">
                                     <size key="itemSize" width="0.0" height="0.0"/>
@@ -150,7 +150,7 @@
                             <constraint firstItem="H63-ez-VMR" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" constant="10" id="mxG-bw-NmF"/>
                             <constraint firstItem="QCx-Ah-JBd" firstAttribute="leading" secondItem="osz-h0-yxW" secondAttribute="leading" id="ob2-QB-tdl"/>
                             <constraint firstItem="osz-h0-yxW" firstAttribute="trailing" secondItem="QCx-Ah-JBd" secondAttribute="trailing" id="s4V-ak-dXO"/>
-                            <constraint firstItem="H63-ez-VMR" firstAttribute="top" secondItem="c6h-sb-CUT" secondAttribute="top" constant="10" id="zTJ-EY-OFT"/>
+                            <constraint firstItem="H63-ez-VMR" firstAttribute="top" secondItem="c6h-sb-CUT" secondAttribute="top" constant="15" id="zTJ-EY-OFT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="osz-h0-yxW"/>
                     </view>
@@ -184,6 +184,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Asset 37" width="177" height="67"/>
         <image name="academic" width="176" height="65"/>
         <image name="admin" width="100" height="100"/>
         <image name="bg" width="540" height="898"/>
