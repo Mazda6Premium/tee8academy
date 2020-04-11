@@ -24,14 +24,11 @@ class AcademyVC: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var arrayCourse = [Course]()
-    
     var screenWidth: CGFloat {
         return UIScreen.main.bounds.size.width
     }
-    var screenHeight: CGFloat {
-        return UIScreen.main.bounds.size.height
-    }
-    
+    var screenWidthVideo: CGFloat = 0.1
+
     let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
@@ -84,6 +81,9 @@ class AcademyVC: BaseViewController {
                     })
                     
                     self.arrayCourse.removeAll(where: { $0.name == "ALL COURSE" })
+                    if self.arrayCourse.count > 0 {
+                        self.arrayCourse[0].isOpen = true
+                    }
                     self.collectionView.reloadData()
                     self.showLoadingSuccess(1)
                 }
@@ -133,9 +133,16 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         cell0.backgroundColor = .clear
         cell1.backgroundColor = .clear
         
+        if arrayCourse[indexPath.section / 2].video.count > 0 {
+            cell0.imgDown.isHidden = false
+        } else {
+            cell0.imgDown.isHidden = true
+        }
+        
         if indexPath.section % 2 == 0 {
             let course = arrayCourse[indexPath.section / 2]
             cell0.btnTitle.setTitle("     \(course.name)", for: .normal)
+            
             return cell0
         } else {
             let course = arrayCourse[indexPath.section / 2].video[indexPath.row]
@@ -170,7 +177,7 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section % 2 != 0 {
             let course = arrayCourse[indexPath.section / 2].video[indexPath.row]
-            if course.type == "Video" {
+            if course.type == "Video" { // VIDEO
                 if let videoId = getYoutubeId(youtubeUrl: course.linkVideo) {
                     // play video
                     let playerViewController = AVPlayerViewController()
@@ -184,14 +191,18 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
                         }
                     }
                 }
-            } else {
+            } else { // IMAGE
                 let cell = collectionView.cellForItem(at: indexPath) as! VideoCell
                 let configuration = ImageViewerConfiguration { config in
                     config.imageView = cell.imgVideo
                 }
-        
                 present(ImageViewerController(configuration: configuration), animated: true)
             }
+        } else { // TAP ON HEADER
+            collectionView.performBatchUpdates({
+                let course = arrayCourse[indexPath.section / 2]
+                course.isOpen = !course.isOpen
+            }, completion: nil)
         }
     }
     
@@ -203,7 +214,14 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         if indexPath.section % 2 == 0 {
             return CGSize(width: screenWidth, height: 46)
         } else {
-            return CGSize(width: screenWidth/2 - 15 , height: screenWidth/2 - 15)
+            let course = arrayCourse[indexPath.section / 2]
+            if course.isOpen {
+                screenWidthVideo = UIScreen.main.bounds.size.width / 2 - 15
+            } else {
+                screenWidthVideo = 0.1
+            }
+            
+            return CGSize(width: screenWidthVideo, height: screenWidthVideo)
         }
     }
     

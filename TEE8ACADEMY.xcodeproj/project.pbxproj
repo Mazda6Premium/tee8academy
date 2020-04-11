@@ -100,7 +100,7 @@
 		A823C74724388A0300F749C2 /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
 		A83ABBEF243F495E0039E64C /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		A83ABBF0243F495E0039E64C /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
-		A85B7FEC2438268E00CC4DCC /* TEE8ACADEMY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TEE8ACADEMY.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A85B7FEC2438268E00CC4DCC /* TEE 8 ACADEMY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TEE 8 ACADEMY.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85B7FEF2438268E00CC4DCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A85B7FF12438268E00CC4DCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A85B7FF32438268E00CC4DCC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -265,7 +265,7 @@
 		A85B7FED2438268E00CC4DCC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A85B7FEC2438268E00CC4DCC /* TEE8ACADEMY.app */,
+				A85B7FEC2438268E00CC4DCC /* TEE 8 ACADEMY.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 			);
 			name = TEE8ACADEMY;
 			productName = TEE8ACADEMY;
-			productReference = A85B7FEC2438268E00CC4DCC /* TEE8ACADEMY.app */;
+			productReference = A85B7FEC2438268E00CC4DCC /* TEE 8 ACADEMY.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -689,7 +689,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TEE8ACADEMY/TEE 8 ACADEMY.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2J3K999PRZ;
 				INFOPLIST_FILE = TEE8ACADEMY/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -711,7 +711,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TEE8ACADEMY/TEE 8 ACADEMY.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2J3K999PRZ;
 				INFOPLIST_FILE = TEE8ACADEMY/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

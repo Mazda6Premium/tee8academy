@@ -15,6 +15,8 @@ class Course {
     var description = ""
     var time = 0.0
     var video = [Video]()
+    var isOpen = false
+
     
     init(name: String, price: Double) {
         self.name = name

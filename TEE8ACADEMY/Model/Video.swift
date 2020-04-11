@@ -17,6 +17,7 @@ class Video {
     var time = 0.0
     var type = ""
     var imageUrl = ""
+    var isOpen = false
     
     init() {}
     
