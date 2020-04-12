@@ -34,10 +34,10 @@
                         </state>
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down" translatesAutoresizingMaskIntoConstraints="NO" id="VPA-ye-na6">
-                        <rect key="frame" x="418" y="20.5" width="15" height="15"/>
+                        <rect key="frame" x="428" y="23" width="10" height="10"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="15" id="HWB-ga-Y3z"/>
-                            <constraint firstAttribute="width" constant="15" id="rjU-Y7-kC4"/>
+                            <constraint firstAttribute="height" constant="10" id="HWB-ga-Y3z"/>
+                            <constraint firstAttribute="width" constant="10" id="rjU-Y7-kC4"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -45,7 +45,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="VPA-ye-na6" firstAttribute="centerY" secondItem="6IK-NE-Fbk" secondAttribute="centerY" id="JaW-4T-GKN"/>
-                <constraint firstAttribute="trailing" secondItem="VPA-ye-na6" secondAttribute="trailing" constant="25" id="K6A-Vo-DWK"/>
+                <constraint firstAttribute="trailing" secondItem="VPA-ye-na6" secondAttribute="trailing" constant="20" id="K6A-Vo-DWK"/>
                 <constraint firstAttribute="trailing" secondItem="6IK-NE-Fbk" secondAttribute="trailing" id="Zih-l8-147"/>
                 <constraint firstItem="6IK-NE-Fbk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sy1-Jc-U7J"/>
                 <constraint firstAttribute="bottom" secondItem="6IK-NE-Fbk" secondAttribute="bottom" id="xyD-Jo-0gp"/>

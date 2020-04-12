@@ -141,7 +141,6 @@ class SendReceiptVC: BaseViewController {
                 userData.imagePayment = "\(imageUrl)"
                 userData.time = time
                 userData.totalPayment = self.totalBill
-                userData.postId = postId
                 userData.paymentMethod = self.paymentMethod
                 databaseReference.child("Receipt").child(postId).setValue(userData.asDictionary())
                 self.showLoadingSuccess(5)

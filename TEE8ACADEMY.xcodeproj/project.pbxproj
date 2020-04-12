@@ -47,6 +47,10 @@
 		A85B7FF92438268F00CC4DCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A85B7FF82438268F00CC4DCC /* Assets.xcassets */; };
 		A85B7FFC2438268F00CC4DCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A85B7FFA2438268F00CC4DCC /* LaunchScreen.storyboard */; };
 		A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B80072438277C00CC4DCC /* BaseViewController.swift */; };
+		A85FAAEA24433F0900C2F723 /* VerifyAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85FAAE824433F0900C2F723 /* VerifyAccountVC.swift */; };
+		A85FAAEB24433F0900C2F723 /* VerifyAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85FAAE924433F0900C2F723 /* VerifyAccountVC.xib */; };
+		A85FAAEE24434E2C00C2F723 /* CreatePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85FAAEC24434E2C00C2F723 /* CreatePasswordVC.swift */; };
+		A85FAAEF24434E2C00C2F723 /* CreatePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85FAAED24434E2C00C2F723 /* CreatePasswordVC.xib */; };
 		A88A42CE2439D99A0013BAFB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A42CD2439D99A0013BAFB /* Constant.swift */; };
 		A88A42D0243A08230013BAFB /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A88A42CF243A08230013BAFB /* Tabbar.storyboard */; };
 		A88A42D4243A14B00013BAFB /* PopupPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A42D2243A14B00013BAFB /* PopupPaymentVC.swift */; };
@@ -109,6 +113,10 @@
 		A85B7FFB2438268F00CC4DCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A85B7FFD2438268F00CC4DCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A85B80072438277C00CC4DCC /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A85FAAE824433F0900C2F723 /* VerifyAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyAccountVC.swift; sourceTree = "<group>"; };
+		A85FAAE924433F0900C2F723 /* VerifyAccountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyAccountVC.xib; sourceTree = "<group>"; };
+		A85FAAEC24434E2C00C2F723 /* CreatePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordVC.swift; sourceTree = "<group>"; };
+		A85FAAED24434E2C00C2F723 /* CreatePasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePasswordVC.xib; sourceTree = "<group>"; };
 		A88A42CD2439D99A0013BAFB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A88A42CF243A08230013BAFB /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		A88A42D2243A14B00013BAFB /* PopupPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPaymentVC.swift; sourceTree = "<group>"; };
@@ -215,17 +223,18 @@
 		A823C73B2438832E00F749C2 /* LoginRegisterFlow */ = {
 			isa = PBXGroup;
 			children = (
+				A85FAAE724433E4200C2F723 /* BuyCourseFlow */,
 				A88A42D1243A14720013BAFB /* Popup */,
 				A812A52A243984CE009E3552 /* TableCell */,
 				A85B7FF32438268E00CC4DCC /* ViewController.swift */,
 				A823C74624388A0300F749C2 /* RegisterVC.swift */,
 				A823C74724388A0300F749C2 /* RegisterVC.xib */,
-				A8A700422438C2B700B2139D /* BuyCourseVC.swift */,
-				A8A700432438C2B700B2139D /* BuyCourseVC.xib */,
-				A8A700462438C62600B2139D /* SendReceiveVC.swift */,
-				A8A700472438C62600B2139D /* SendReceiptVC.xib */,
 				A810224A243DDC250089AE63 /* ForgetPasswordVC.swift */,
 				A810224B243DDC250089AE63 /* ForgetPasswordVC.xib */,
+				A85FAAE824433F0900C2F723 /* VerifyAccountVC.swift */,
+				A85FAAE924433F0900C2F723 /* VerifyAccountVC.xib */,
+				A85FAAEC24434E2C00C2F723 /* CreatePasswordVC.swift */,
+				A85FAAED24434E2C00C2F723 /* CreatePasswordVC.xib */,
 			);
 			path = LoginRegisterFlow;
 			sourceTree = "<group>";
@@ -358,6 +367,17 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A85FAAE724433E4200C2F723 /* BuyCourseFlow */ = {
+			isa = PBXGroup;
+			children = (
+				A8A700422438C2B700B2139D /* BuyCourseVC.swift */,
+				A8A700432438C2B700B2139D /* BuyCourseVC.xib */,
+				A8A700462438C62600B2139D /* SendReceiveVC.swift */,
+				A8A700472438C62600B2139D /* SendReceiptVC.xib */,
+			);
+			path = BuyCourseFlow;
+			sourceTree = "<group>";
+		};
 		A88A42D1243A14720013BAFB /* Popup */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,6 +471,7 @@
 				A85B7FF92438268F00CC4DCC /* Assets.xcassets in Resources */,
 				A8A700452438C2B700B2139D /* BuyCourseVC.xib in Resources */,
 				A85B7FF72438268E00CC4DCC /* Main.storyboard in Resources */,
+				A85FAAEF24434E2C00C2F723 /* CreatePasswordVC.xib in Resources */,
 				A810224D243DDC250089AE63 /* ForgetPasswordVC.xib in Resources */,
 				A8D91CF7243F4C240087A86E /* VideoCell.xib in Resources */,
 				A823C7412438839C00F749C2 /* Quicksand-Medium.ttf in Resources */,
@@ -460,6 +481,7 @@
 				A821AB1D243B8BB40063A194 /* AdminPopupVC.xib in Resources */,
 				A88A42D5243A14B00013BAFB /* PopupPaymentVC.xib in Resources */,
 				A823C7442438839C00F749C2 /* Quicksand-Bold.ttf in Resources */,
+				A85FAAEB24433F0900C2F723 /* VerifyAccountVC.xib in Resources */,
 				A80CECF4243C354B001785DC /* RegisterAccountCell.xib in Resources */,
 				0146B5D5243EC12B000453E7 /* PushProductVC.xib in Resources */,
 			);
@@ -525,6 +547,7 @@
 				A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */,
 				A821AB16243B8AFB0063A194 /* AcademyVC.swift in Sources */,
 				A88A42D4243A14B00013BAFB /* PopupPaymentVC.swift in Sources */,
+				A85FAAEA24433F0900C2F723 /* VerifyAccountVC.swift in Sources */,
 				A85B7FF02438268E00CC4DCC /* AppDelegate.swift in Sources */,
 				A80CECF3243C354B001785DC /* RegisterAccountCell.swift in Sources */,
 				A821AB1C243B8BB40063A194 /* AdminPopupVC.swift in Sources */,
@@ -537,6 +560,7 @@
 				0146B5D4243EC12B000453E7 /* PushProductVC.swift in Sources */,
 				A88A42CE2439D99A0013BAFB /* Constant.swift in Sources */,
 				A8A7004B2438C6EF00B2139D /* Extensions.swift in Sources */,
+				A85FAAEE24434E2C00C2F723 /* CreatePasswordVC.swift in Sources */,
 				0146B5E1243F1550000453E7 /* Product.swift in Sources */,
 				A899AA23243E2AF80032DCDA /* SessionData.swift in Sources */,
 				A85B7FF22438268E00CC4DCC /* SceneDelegate.swift in Sources */,

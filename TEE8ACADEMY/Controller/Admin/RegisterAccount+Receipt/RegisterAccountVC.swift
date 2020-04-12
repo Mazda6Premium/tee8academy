@@ -87,30 +87,29 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
     }
     
     @objc func tapOnActive(sender: UIButton) {
-        showLoading()
-        let user = arrayUser[sender.tag]
-        user.userId = databaseReference.childByAutoId().key!
-        print(user.asDictionary())
-        databaseReference.child("Users").child(user.userId).setValue(user.asDictionary())
-        
-        self.deleteImage(index: sender.tag)
-        databaseReference.child("Receipt").child(user.postId).removeValue()
-        
-        self.arrayUser.removeAll()
-        self.getDataFromFirebase()
-        self.pageView.reloadData()
-        
+//        showLoading()
+//        let user = arrayUser[sender.tag]
+//        user.userId = databaseReference.childByAutoId().key!
+//        print(user.asDictionary())
+//        databaseReference.child("Users").child(user.userId).setValue(user.asDictionary())
+//
+//        self.deleteImage(index: sender.tag)
+//        databaseReference.child("Receipt").child(user.postId).removeValue()
+//
+//        self.arrayUser.removeAll()
+//        self.getDataFromFirebase()
+//        self.pageView.reloadData()
     }
     
     @objc func tapOnCancel(sender: UIButton) {
-        showLoading()
-        let user = arrayUser[sender.tag]
-        deleteImage(index: sender.tag)
-        databaseReference.child("Receipt").child(user.postId).removeValue()
-        
-        self.arrayUser.removeAll()
-        self.getDataFromFirebase()
-        self.pageView.reloadData()
+//        showLoading()
+//        let user = arrayUser[sender.tag]
+//        deleteImage(index: sender.tag)
+//        databaseReference.child("Receipt").child(user.postId).removeValue()
+//
+//        self.arrayUser.removeAll()
+//        self.getDataFromFirebase()
+//        self.pageView.reloadData()
     }
     
     func deleteImage(index: Int) {

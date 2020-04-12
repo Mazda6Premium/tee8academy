@@ -151,6 +151,7 @@ extension StoreVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath) as! VideoCell
         cell0.backgroundColor = .clear
         cell1.backgroundColor = .clear
+        cell0.imgDown.isHidden = true
         
         switch indexPath.section {
         case 0:

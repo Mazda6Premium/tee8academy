@@ -66,7 +66,6 @@ class User {
     var phoneModel = ""
     var time = 0.0
     var totalPayment = 0.0
-    var postId = ""
     var userId = ""
     
     init() {}
@@ -86,7 +85,6 @@ class User {
         self.imagePayment = imagePayment
         self.time = time
         self.totalPayment = totalPayment
-        self.postId = postId
         self.userId = userId
     }
     
@@ -105,7 +103,6 @@ class User {
             "phoneModel": self.phoneModel,
             "time": self.time,
             "totalPayment": self.totalPayment,
-            "postId": self.postId,
             "userId": self.userId
         ]
     }
@@ -120,7 +117,6 @@ class User {
         self.imagePayment = dict["imagePayment"] as? String ?? ""
         self.time = dict["time"] as? Double ?? 0.0
         self.totalPayment = dict["totalPayment"] as? Double ?? 0.0
-        self.postId = dict["postId"] as? String ?? ""
         self.phoneId = dict["phoneId"] as? String ?? ""
         self.phoneModel = dict["phoneModel"] as? String ?? ""
         self.password = dict["password"] as? String ?? ""
@@ -143,7 +139,6 @@ extension User {
         user.imagePayment = dict["imagePayment"] as? String ?? ""
         user.time = dict["time"] as? Double ?? 0.0
         user.totalPayment = dict["totalPayment"] as? Double ?? 0.0
-        user.postId = dict["postId"] as? String ?? ""
         user.phoneId = dict["phoneId"] as? String ?? ""
         user.phoneModel = dict["phoneModel"] as? String ?? ""
         user.password = dict["password"] as? String ?? ""
