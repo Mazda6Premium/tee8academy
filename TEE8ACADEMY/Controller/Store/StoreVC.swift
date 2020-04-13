@@ -11,7 +11,6 @@ import SDWebImage
 
 class StoreVC: BaseViewController {
     
-    @IBOutlet weak var imgAdmin: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var arrayProductPMU = [Product]()
@@ -29,7 +28,6 @@ class StoreVC: BaseViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        setupView()
         getDataFromFirebase()
         setUpCollectionView()
         setupRefreshControl()
@@ -70,20 +68,6 @@ class StoreVC: BaseViewController {
         }
     }
     
-    func setupView() {
-        let tapGes = UITapGestureRecognizer(target: self, action: #selector(tapOnAdmin))
-        imgAdmin.isUserInteractionEnabled = true
-        imgAdmin.addGestureRecognizer(tapGes)
-        
-        if let user = SessionData.shared.userData {
-            if user.email == "admin" {
-                self.imgAdmin.isHidden = false
-            } else {
-                self.imgAdmin.isHidden = true
-            }
-        }
-    }
-    
     func setUpCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -95,13 +79,6 @@ class StoreVC: BaseViewController {
         let productCell_xib = UINib(nibName: "VideoCell", bundle: nil)
         collectionView.register(productCell_xib, forCellWithReuseIdentifier: "videoCell")
         
-    }
-    
-    @objc func tapOnAdmin() {
-        let vc = AdminPopupVC(nibName: "AdminPopupVC", bundle: nil)
-        vc.modalPresentationStyle = .overCurrentContext
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true, completion: nil)
     }
 }
 
@@ -150,8 +127,11 @@ extension StoreVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell0 = collectionView.dequeueReusableCell(withReuseIdentifier: "headerCell", for: indexPath) as! HeaderCell
         let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath) as! VideoCell
         cell0.backgroundColor = .clear
-        cell1.backgroundColor = .clear
         cell0.imgDown.isHidden = true
+        cell1.backgroundColor = .clear
+        cell1.viewDim.isHidden = true
+        cell1.imgLock.isHidden = true
+        
         
         switch indexPath.section {
         case 0:

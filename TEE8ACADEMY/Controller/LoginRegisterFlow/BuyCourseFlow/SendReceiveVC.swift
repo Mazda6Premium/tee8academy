@@ -122,7 +122,7 @@ class SendReceiptVC: BaseViewController {
         let time = date.timeIntervalSince1970 * 1000
         
         let imageName = "\(userData.realName)-\(userData.email)-\(userData.phone)-\(dateCreate)-\(time)"
-        let imageStorage = storageReference.child("Receipt").child(imageName)
+        let imageStorage = storageReference.child("Receipts").child(imageName)
         imageStorage.putData(imageData, metadata: nil) { (metaData, error) in
             if error != nil {
                 self.showToast(message: "Có lỗi xảy ra trong quá trình tải ảnh, vui lòng thử lại sau.")
@@ -143,7 +143,7 @@ class SendReceiptVC: BaseViewController {
                 userData.totalPayment = self.totalBill
                 userData.paymentMethod = self.paymentMethod
                 userData.receiptPostId = postId
-                databaseReference.child("Receipt").child(postId).setValue(userData.asDictionary())
+                databaseReference.child("Receipts").child(postId).setValue(userData.asDictionary())
                 self.showLoadingSuccess(5)
                 self.showToast(message: "Thanh toán của bạn đã được gửi đến quản trị viên, vui lòng chờ đợi trong ít phút để được kích hoạt tài khoản, xin chân thành cảm ơn.")
                 _ = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(self.dismissView), userInfo: nil, repeats: false)

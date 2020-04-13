@@ -20,7 +20,6 @@ struct VideoQuality {
 
 class AcademyVC: BaseViewController {
     
-    @IBOutlet weak var imgAdmin: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var arrayCourse = [Course]()
@@ -28,6 +27,7 @@ class AcademyVC: BaseViewController {
         return UIScreen.main.bounds.size.width
     }
     var screenWidthVideo: CGFloat = 0.1
+    var courseRegisted = [Course]()
 
     let refreshControl = UIRefreshControl()
     
@@ -35,10 +35,17 @@ class AcademyVC: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupView()
         setupCollectionView()
+        bindData()
         getDataFromFirebase()
         setupRefreshControl()
+        
+    }
+    
+    func bindData() {
+        if let user = SessionData.shared.userData {
+            courseRegisted = user.course
+        }
     }
     
     func setupRefreshControl() {
@@ -75,41 +82,27 @@ class AcademyVC: BaseViewController {
                 if let dict = snapshot1.value as? [String: Any] {
                     let course = Course(fromDict: dict)
                     self.arrayCourse.append(course)
-                    dump(self.arrayCourse)
                     self.arrayCourse.sort(by: { (course1, course2) -> Bool in
                         return Int64(course1.price) > Int64(course2.price)
                     })
                     
-                    self.arrayCourse.removeAll(where: { $0.name == "ALL COURSE" })
+                    self.arrayCourse.removeAll(where: { $0.name == "ALL COURSE"})
                     if self.arrayCourse.count > 0 {
                         self.arrayCourse[0].isOpen = true
                     }
+                    
+                    // SO SANH 2 ARRAY
+                    self.courseRegisted.forEach { (data) in
+                        if let indexObject = self.arrayCourse.firstIndex(where: {$0.name == data.name}) {
+                            self.arrayCourse[indexObject].isUnLock = true
+                        }
+                    }
+                    
                     self.collectionView.reloadData()
                     self.showLoadingSuccess(1)
                 }
             }
         }
-    }
-    
-    func setupView() {
-        let tapGes = UITapGestureRecognizer(target: self, action: #selector(tapOnAdmin))
-        imgAdmin.isUserInteractionEnabled = true
-        imgAdmin.addGestureRecognizer(tapGes)
-        
-        if let user = SessionData.shared.userData {
-            if user.email == "admin" {
-                self.imgAdmin.isHidden = false
-            } else {
-                self.imgAdmin.isHidden = true
-            }
-        }
-    }
-    
-    @objc func tapOnAdmin() {
-        let vc = AdminPopupVC(nibName: "AdminPopupVC", bundle: nil)
-        vc.modalPresentationStyle = .overCurrentContext
-        vc.modalTransitionStyle = .crossDissolve
-        self.present(vc, animated: true, completion: nil)
     }
 }
 
@@ -139,6 +132,10 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             cell0.imgDown.isHidden = true
         }
         
+        let data = arrayCourse[indexPath.section / 2]
+        cell1.viewDim.isHidden = data.isUnLock
+        cell1.imgLock.isHidden = data.isUnLock
+        
         if indexPath.section % 2 == 0 {
             let course = arrayCourse[indexPath.section / 2]
             cell0.btnTitle.setTitle("     \(course.name)", for: .normal)
@@ -148,6 +145,7 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             let course = arrayCourse[indexPath.section / 2].video[indexPath.row]
             cell1.lblTitle.text = course.name
             cell1.lblDescription.text = course.description
+            
             
             switch course.type {
             case "Video":

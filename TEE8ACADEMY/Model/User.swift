@@ -16,7 +16,7 @@ class Course {
     var time = 0.0
     var video = [Video]()
     var isOpen = false
-
+    var isUnLock = false
     
     init(name: String, price: Double) {
         self.name = name
@@ -132,6 +132,10 @@ class User {
         if let course = dict["course"] as? [[String: Any]] {
             self.course = course.map({Course(fromDict: $0)})
         }
+    }
+    
+    init(course: [Course]) {
+        self.course = course
     }
 }
 
