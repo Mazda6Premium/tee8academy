@@ -67,6 +67,7 @@ class User {
     var time = 0.0
     var totalPayment = 0.0
     var userId = ""
+    var receiptPostId = ""
     
     init() {}
     
@@ -103,8 +104,14 @@ class User {
             "phoneModel": self.phoneModel,
             "time": self.time,
             "totalPayment": self.totalPayment,
-            "userId": self.userId
+            "userId": self.userId,
+            "receiptPostId": self.receiptPostId,
+            "checkExists": true
         ]
+    }
+    
+    func asDictionaryVideo() -> [String: Any] {
+        return ["course": self.course.map({$0.asDictionary()})]
     }
     
     init(dict: [String: Any]) {
@@ -121,6 +128,7 @@ class User {
         self.phoneModel = dict["phoneModel"] as? String ?? ""
         self.password = dict["password"] as? String ?? ""
         self.userId = dict["userId"] as? String ?? ""
+        self.receiptPostId = dict["receiptPostId"] as? String ?? ""
         if let course = dict["course"] as? [[String: Any]] {
             self.course = course.map({Course(fromDict: $0)})
         }
@@ -143,6 +151,7 @@ extension User {
         user.phoneModel = dict["phoneModel"] as? String ?? ""
         user.password = dict["password"] as? String ?? ""
         user.userId = dict["userId"] as? String ?? ""
+        user.receiptPostId = dict["receiptPostId"] as? String ?? ""
         if let course = dict["course"] as? [[String: Any]] {
             user.course = course.map({Course(fromDict: $0)})
         }

@@ -41,7 +41,7 @@ class SendReceiptVC: BaseViewController {
         
         addBorder(views: [imgReceipt], width: 1, color: #colorLiteral(red: 0.5704585314, green: 0.5704723597, blue: 0.5704649091, alpha: 1))
         
-        if let user = user {
+        if let user = SessionData.shared.userData {
             user.course.forEach { (course) in
                 totalBill += course.price
             }
@@ -142,6 +142,7 @@ class SendReceiptVC: BaseViewController {
                 userData.time = time
                 userData.totalPayment = self.totalBill
                 userData.paymentMethod = self.paymentMethod
+                userData.receiptPostId = postId
                 databaseReference.child("Receipt").child(postId).setValue(userData.asDictionary())
                 self.showLoadingSuccess(5)
                 self.showToast(message: "Thanh toán của bạn đã được gửi đến quản trị viên, vui lòng chờ đợi trong ít phút để được kích hoạt tài khoản, xin chân thành cảm ơn.")
@@ -151,7 +152,7 @@ class SendReceiptVC: BaseViewController {
     }
     
     @objc func dismissView() {
-        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func tapOnBack(_ sender: Any) {

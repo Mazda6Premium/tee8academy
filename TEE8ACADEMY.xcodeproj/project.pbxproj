@@ -24,6 +24,7 @@
 		A810224D243DDC250089AE63 /* ForgetPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A810224B243DDC250089AE63 /* ForgetPasswordVC.xib */; };
 		A8102250243DFCC60089AE63 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A810224E243DFCC60089AE63 /* ChangePasswordVC.swift */; };
 		A8102251243DFCC60089AE63 /* ChangePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A810224F243DFCC60089AE63 /* ChangePasswordVC.xib */; };
+		A81843E0244487F2000BF147 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81843DF244487F2000BF147 /* AccountVC.swift */; };
 		A819AFDB243F4FED009AB1A6 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819AFDA243F4FED009AB1A6 /* Video.swift */; };
 		A819AFDF243F5AE5009AB1A6 /* AcademyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819AFDD243F5AE5009AB1A6 /* AcademyCell.swift */; };
 		A819AFE0243F5AE5009AB1A6 /* AcademyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A819AFDE243F5AE5009AB1A6 /* AcademyCell.xib */; };
@@ -88,6 +89,7 @@
 		A810224B243DDC250089AE63 /* ForgetPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordVC.xib; sourceTree = "<group>"; };
 		A810224E243DFCC60089AE63 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		A810224F243DFCC60089AE63 /* ChangePasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordVC.xib; sourceTree = "<group>"; };
+		A81843DF244487F2000BF147 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		A819AFDA243F4FED009AB1A6 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		A819AFDD243F5AE5009AB1A6 /* AcademyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyCell.swift; sourceTree = "<group>"; };
 		A819AFDE243F5AE5009AB1A6 /* AcademyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcademyCell.xib; sourceTree = "<group>"; };
@@ -171,14 +173,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A80CECE1243C233E001785DC /* RegisterAccount+Receipt */ = {
+		A80CECE1243C233E001785DC /* Receipt */ = {
 			isa = PBXGroup;
 			children = (
 				A80CECE8243C2D42001785DC /* Cell */,
 				A80CECE2243C2374001785DC /* RegisterAccountVC.swift */,
 				A80CECE3243C2374001785DC /* RegisterAccountVC.xib */,
 			);
-			path = "RegisterAccount+Receipt";
+			path = Receipt;
 			sourceTree = "<group>";
 		};
 		A80CECE8243C2D42001785DC /* Cell */ = {
@@ -199,6 +201,14 @@
 			path = TableCell;
 			sourceTree = "<group>";
 		};
+		A81843DE244487C3000BF147 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				A81843DF244487F2000BF147 /* AccountVC.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		A819AFDC243F5AAF009AB1A6 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,7 +225,7 @@
 				A821AB1B243B8BB40063A194 /* AdminPopupVC.xib */,
 				01B56D3C243C6AE200B0D804 /* Course */,
 				0146B5D1243EC0EE000453E7 /* Product */,
-				A80CECE1243C233E001785DC /* RegisterAccount+Receipt */,
+				A80CECE1243C233E001785DC /* Receipt */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -305,6 +315,7 @@
 				A821AB19243B8B950063A194 /* Admin */,
 				A823C73B2438832E00F749C2 /* LoginRegisterFlow */,
 				A85B800B243827C600CC4DCC /* Store */,
+				A81843DE244487C3000BF147 /* Account */,
 				A85B800A243827BF00CC4DCC /* Academy */,
 			);
 			path = Controller;
@@ -552,6 +563,7 @@
 				A80CECF3243C354B001785DC /* RegisterAccountCell.swift in Sources */,
 				A821AB1C243B8BB40063A194 /* AdminPopupVC.swift in Sources */,
 				01B56D3F243C6B6100B0D804 /* PushCourseVC.swift in Sources */,
+				A81843E0244487F2000BF147 /* AccountVC.swift in Sources */,
 				A8A700412438BC3200B2139D /* User.swift in Sources */,
 				A819AFDF243F5AE5009AB1A6 /* AcademyCell.swift in Sources */,
 				A821AB18243B8B1E0063A194 /* StoreVC.swift in Sources */,

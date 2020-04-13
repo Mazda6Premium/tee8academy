@@ -28,7 +28,7 @@ class RegisterAccountVC: BaseViewController {
     func getDataFromFirebase() {
         showLoading()
         
-        databaseReference.child("Receipt").queryOrdered(byChild: "userId").queryEqual(toValue: "").observeSingleEvent(of: .value) { (snapshot) in
+        databaseReference.child("Receipt").queryOrdered(byChild: "checkExists").queryEqual(toValue: true).observeSingleEvent(of: .value) { (snapshot) in
             if snapshot.exists() {
                 databaseReference.child("Receipt").observe(.childAdded) { (snapshot) in
                     databaseReference.child("Receipt").child(snapshot.key).observeSingleEvent(of: .value) { (snapshot1) in
@@ -87,29 +87,27 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
     }
     
     @objc func tapOnActive(sender: UIButton) {
-//        showLoading()
-//        let user = arrayUser[sender.tag]
-//        user.userId = databaseReference.childByAutoId().key!
-//        print(user.asDictionary())
-//        databaseReference.child("Users").child(user.userId).setValue(user.asDictionary())
-//
-//        self.deleteImage(index: sender.tag)
-//        databaseReference.child("Receipt").child(user.postId).removeValue()
-//
-//        self.arrayUser.removeAll()
-//        self.getDataFromFirebase()
-//        self.pageView.reloadData()
+        showLoading()
+        let user = arrayUser[sender.tag]
+        databaseReference.child("Users").child(user.userId).updateChildValues(user.asDictionaryVideo())
+
+        self.deleteImage(index: sender.tag)
+        databaseReference.child("Receipt").child(user.receiptPostId).removeValue()
+
+        self.arrayUser.removeAll()
+        self.getDataFromFirebase()
+        self.pageView.reloadData()
     }
     
     @objc func tapOnCancel(sender: UIButton) {
-//        showLoading()
-//        let user = arrayUser[sender.tag]
-//        deleteImage(index: sender.tag)
-//        databaseReference.child("Receipt").child(user.postId).removeValue()
-//
-//        self.arrayUser.removeAll()
-//        self.getDataFromFirebase()
-//        self.pageView.reloadData()
+        showLoading()
+        let user = arrayUser[sender.tag]
+        deleteImage(index: sender.tag)
+        databaseReference.child("Receipt").child(user.receiptPostId).removeValue()
+
+        self.arrayUser.removeAll()
+        self.getDataFromFirebase()
+        self.pageView.reloadData()
     }
     
     func deleteImage(index: Int) {
