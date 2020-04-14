@@ -13,6 +13,8 @@
 		0146B5D4243EC12B000453E7 /* PushProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0146B5D2243EC12B000453E7 /* PushProductVC.swift */; };
 		0146B5D5243EC12B000453E7 /* PushProductVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0146B5D3243EC12B000453E7 /* PushProductVC.xib */; };
 		0146B5E1243F1550000453E7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0146B5E0243F1550000453E7 /* Product.swift */; };
+		01601EF024459F9000DC4F2C /* BuyProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01601EEE24459F9000DC4F2C /* BuyProductVC.swift */; };
+		01601EF124459F9000DC4F2C /* BuyProductVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01601EEF24459F9000DC4F2C /* BuyProductVC.xib */; };
 		01B56D3F243C6B6100B0D804 /* PushCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B56D3D243C6B6100B0D804 /* PushCourseVC.swift */; };
 		01B56D40243C6B6100B0D804 /* PushCourseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01B56D3E243C6B6100B0D804 /* PushCourseVC.xib */; };
 		A80CECE4243C2374001785DC /* RegisterAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80CECE2243C2374001785DC /* RegisterAccountVC.swift */; };
@@ -75,6 +77,8 @@
 		0146B5D2243EC12B000453E7 /* PushProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushProductVC.swift; sourceTree = "<group>"; };
 		0146B5D3243EC12B000453E7 /* PushProductVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PushProductVC.xib; sourceTree = "<group>"; };
 		0146B5E0243F1550000453E7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		01601EEE24459F9000DC4F2C /* BuyProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyProductVC.swift; sourceTree = "<group>"; };
+		01601EEF24459F9000DC4F2C /* BuyProductVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyProductVC.xib; sourceTree = "<group>"; };
 		01B56D3D243C6B6100B0D804 /* PushCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushCourseVC.swift; sourceTree = "<group>"; };
 		01B56D3E243C6B6100B0D804 /* PushCourseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PushCourseVC.xib; sourceTree = "<group>"; };
 		5D0F17786205A1FAF2E65BC2 /* Pods-TEE8ACADEMY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TEE8ACADEMY.debug.xcconfig"; path = "Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +158,15 @@
 				0146B5D3243EC12B000453E7 /* PushProductVC.xib */,
 			);
 			path = Product;
+			sourceTree = "<group>";
+		};
+		01601EED24459CF900DC4F2C /* BuyProduct */ = {
+			isa = PBXGroup;
+			children = (
+				01601EEE24459F9000DC4F2C /* BuyProductVC.swift */,
+				01601EEF24459F9000DC4F2C /* BuyProductVC.xib */,
+			);
+			path = BuyProduct;
 			sourceTree = "<group>";
 		};
 		01B56D3C243C6AE200B0D804 /* Course */ = {
@@ -362,6 +375,7 @@
 		A85B800B243827C600CC4DCC /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				01601EED24459CF900DC4F2C /* BuyProduct */,
 				A821AB17243B8B1E0063A194 /* StoreVC.swift */,
 			);
 			path = Store;
@@ -478,6 +492,7 @@
 				014665E62438CC11008661E2 /* BuyCourseCell.xib in Resources */,
 				A80CECE5243C2374001785DC /* RegisterAccountVC.xib in Resources */,
 				A823C74924388A0300F749C2 /* RegisterVC.xib in Resources */,
+				01601EF124459F9000DC4F2C /* BuyProductVC.xib in Resources */,
 				A823C7432438839C00F749C2 /* Quicksand-Light.ttf in Resources */,
 				A85B7FF92438268F00CC4DCC /* Assets.xcassets in Resources */,
 				A8A700452438C2B700B2139D /* BuyCourseVC.xib in Resources */,
@@ -549,6 +564,7 @@
 			files = (
 				A8A700482438C62600B2139D /* SendReceiveVC.swift in Sources */,
 				A80CECE4243C2374001785DC /* RegisterAccountVC.swift in Sources */,
+				01601EF024459F9000DC4F2C /* BuyProductVC.swift in Sources */,
 				A85B7FF42438268E00CC4DCC /* ViewController.swift in Sources */,
 				A8102250243DFCC60089AE63 /* ChangePasswordVC.swift in Sources */,
 				A83ABBF1243F495E0039E64C /* HeaderCell.swift in Sources */,
