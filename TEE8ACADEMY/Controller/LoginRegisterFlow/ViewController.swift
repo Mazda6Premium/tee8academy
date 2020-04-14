@@ -56,7 +56,7 @@ class ViewController: BaseViewController {
         roundCorner(views: [txtEmail, txtPassword, btnLogin], radius: 8)
         changeAlpha(views: [txtEmail, txtPassword, lblLogin, btnForget, btnRegister, btnLogin], alpha: 0)
         
-        imgLogo.image = UIImage(named: "logo")
+        imgLogo.image = UIImage(named: "image")
         imgLogo.frame = CGRect(x: 30, y: screenHeight, width: imgFrame.frame.width, height: imgFrame.frame.height)
         view.addSubview(imgLogo)
         

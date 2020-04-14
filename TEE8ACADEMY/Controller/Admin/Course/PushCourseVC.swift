@@ -32,6 +32,7 @@ class PushCourseVC: BaseViewController {
     var arrayNameCourse = [String]()
     var courseImage : UIImage?
     var timer : Timer?
+    var arrayVideo = [Video]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,9 @@ class PushCourseVC: BaseViewController {
     func setUpView() {
         roundCorner(views: [txtName, txtPrice, tvDescriptionCourse, btnPost, txtNameVideo, imgCourse, txtLinkVid, txtType, txtChooseCourse, tvDescriptionVideo, btnPostVideo], radius: 8)
         addShadow(views: [viewPush, viewPushVideo])
+        
+        viewPush.isHidden = false
+        viewPushVideo.isHidden = true
         
         txtLinkVid.isUserInteractionEnabled = false
         imgCourse.isUserInteractionEnabled = false
@@ -161,9 +165,11 @@ class PushCourseVC: BaseViewController {
 
         switch txtType.text {
         case "Video":
-            guard let video = txtLinkVid.text else { return }
-            let value = ["type": type, "course" : nameCourseChoose ,"id" : id , "name": nameVideoOrImage, "description": description, "linkVideo" : video, "time" : time] as [String : Any]
-            databaseReference.child("Video").child(id).setValue(value)
+            guard let linkVideo = txtLinkVid.text else { return }
+            let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: linkVideo, time: time, type: type, imageUrl: "")
+            self.arrayVideo.append(video)
+            let course = Course(video: arrayVideo)
+            databaseReference.child("Courses").child(nameCourseChoose).updateChildValues(course.asDictionaryVideo())
             startTimer()
             showLoadingSuccess(1)
         case "Ảnh":
@@ -180,8 +186,11 @@ class PushCourseVC: BaseViewController {
                         self.showToast(message: "Có lỗi xảy ra, vui lòng thử lại sau.")
                         return
                     }
-                    let value = ["type": type, "course" : nameCourseChoose , "id" : id , "name": nameVideoOrImage, "description": description, "imageUrl" : "\(String(describing: imageUrl))" , "time" : time] as [String : Any]
-                    databaseReference.child("Video").child(id).setValue(value)
+                    
+                    let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: "", time: time, type: type, imageUrl: "\(imageUrl)")
+                    self.arrayVideo.append(video)
+                    let course = Course(video: self.arrayVideo)
+                    databaseReference.child("Courses").child(nameCourseChoose).updateChildValues(course.asDictionaryVideo())
                     self.startTimer()
                     self.showLoadingSuccess(1)
                 })
@@ -189,7 +198,14 @@ class PushCourseVC: BaseViewController {
         default:
             return
         }
-        
+    }
+    
+    func getDataVideo(nameCourseChoose: String) {
+        databaseReference.child("Courses").child(nameCourseChoose).child("videos").observeSingleEvent(of: .value) { (snapshot) in
+            if let video = snapshot.value as? [[String: Any]] {
+                self.arrayVideo = video.map({Video(dict: $0)})
+            }
+        }
     }
     
     func startTimer() {
@@ -286,6 +302,7 @@ extension PushCourseVC : UITextFieldDelegate {
             ActionSheetStringPicker.show(withTitle: "Chọn khoá học", rows: arrayNameCourse, initialSelection: 0, doneBlock: { (picker, index, value) in
                 if let course = value as? String {
                     self.txtChooseCourse.text = course
+                    self.getDataVideo(nameCourseChoose: course)
                 }
             }, cancel: { (picker) in
                 return

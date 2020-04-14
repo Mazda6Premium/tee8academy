@@ -13,8 +13,6 @@ class RegisterVC: BaseViewController {
     
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtUsername: UITextField!
-    @IBOutlet weak var txtPassword: UITextField!
-    @IBOutlet weak var txtConfirmPassword: UITextField!
     @IBOutlet weak var txtAddress: UITextField!
     @IBOutlet weak var txtPhone: UITextField!
     @IBOutlet weak var txtRealName: UITextField!
@@ -33,11 +31,9 @@ class RegisterVC: BaseViewController {
     }
     
     func setupView() {
-        roundCorner(views: [txtEmail, txtUsername, txtPassword, txtConfirmPassword, txtAddress, txtPhone, txtRealName, btnContinue, btnContactSupport, btnBack], radius: 8)
+        roundCorner(views: [txtEmail, txtUsername, txtAddress, txtPhone, txtRealName, btnContinue, btnContactSupport, btnBack], radius: 8)
         
         txtEmail.delegate = self
-        txtPassword.delegate = self
-        txtConfirmPassword.delegate = self
         txtPhone.delegate = self
         
         fakeData()
@@ -46,8 +42,6 @@ class RegisterVC: BaseViewController {
     func fakeData() {
         txtEmail.text = "trung@gmail.com"
         txtUsername.text = "abc"
-        txtPassword.text = "123456"
-        txtConfirmPassword.text = "123456"
         txtAddress.text = "abc"
         txtPhone.text = "0942556886"
         txtRealName.text = "abc"
@@ -80,7 +74,7 @@ class RegisterVC: BaseViewController {
                 self.txtPhone.textColor = .red
                 self.hideLoading()
             } else {
-                let vc = BuyCourseVC(nibName: "BuyCourseVC", bundle: nil)
+                let vc = VerifyAccountVC(nibName: "VerifyAccountVC", bundle: nil)
                 vc.modalTransitionStyle = .crossDissolve
                 vc.modalPresentationStyle = .overFullScreen
                 vc.user = self.user
@@ -91,7 +85,7 @@ class RegisterVC: BaseViewController {
     }
     
     func checkLogic() {
-        if txtEmail.text == "" || txtUsername.text == "" || txtPassword.text == "" || txtConfirmPassword.text == "" || txtAddress.text == "" || txtPhone.text == "" || txtRealName.text == "" {
+        if txtEmail.text == "" || txtUsername.text == "" || txtAddress.text == "" || txtPhone.text == "" || txtRealName.text == "" {
             showToast(message: "Bạn cần điền đầy đủ thông tin.")
             hideLoading()
             return
@@ -99,20 +93,6 @@ class RegisterVC: BaseViewController {
             if !txtEmail.text!.isValidEmail {
                 txtEmail.textColor = .red
                 showToast(message: "Email không đúng định dạng.")
-                hideLoading()
-                return
-            }
-            
-            if txtPassword.text!.count < 6 {
-                txtPassword.textColor = .red
-                showToast(message: "Mật khẩu của bạn cần tối thiểu 6 ký tự.")
-                hideLoading()
-                return
-            }
-            
-            if txtPassword.text! != txtConfirmPassword.text! {
-                txtConfirmPassword.textColor = .red
-                showToast(message: "Xác nhận mật khẩu không trùng khớp.")
                 hideLoading()
                 return
             }
@@ -127,7 +107,7 @@ class RegisterVC: BaseViewController {
             guard let phoneId = UIDevice.current.identifierForVendor?.uuidString else {return}
             let phoneModel = UIDevice.modelName
 
-            user = User(email: txtEmail.text!, username: txtUsername.text!, password: txtPassword.text!, confirmPassword: txtConfirmPassword.text!, address: txtAddress.text!, phone: txtPhone.text!, realName: txtRealName.text!, course: [Course](), paymentMethod: "", imagePayment: "", phoneId: phoneId, phoneModel: phoneModel, time: 0, totalPayment: 0, postId: "", userId: "")
+            user = User(email: txtEmail.text!, username: txtUsername.text!, password: "", confirmPassword: "", address: txtAddress.text!, phone: txtPhone.text!, realName: txtRealName.text!, course: [Course](), paymentMethod: "", imagePayment: "", phoneId: phoneId, phoneModel: phoneModel, time: 0, totalPayment: 0, postId: "", userId: "")
         }
     }
     
@@ -141,12 +121,6 @@ extension RegisterVC: UITextFieldDelegate {
         switch textField {
         case txtEmail:
             txtEmail.textColor = .black
-            return true
-        case txtPassword:
-            txtPassword.textColor = .black
-            return true
-        case txtConfirmPassword:
-            txtConfirmPassword.textColor = .black
             return true
         case txtPhone:
             txtPhone.textColor = .black

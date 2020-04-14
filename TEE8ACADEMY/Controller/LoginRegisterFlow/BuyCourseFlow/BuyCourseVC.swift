@@ -39,10 +39,11 @@ class BuyCourseVC: BaseViewController {
     func setupView() {
         roundCorner(views: [btnContinue, btnSupport, btnBack], radius: 8)
         
+        user = SessionData.shared.userData
         if let user = user {
             lblTitle.text = "Welcome \(user.realName) to Tee 8 Academy, please choice your course belows:"
+
         }
-        
     }
     
     func getDataFromFirebase() {

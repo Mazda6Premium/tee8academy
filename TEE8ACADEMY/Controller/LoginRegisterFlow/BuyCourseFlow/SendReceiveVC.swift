@@ -41,7 +41,7 @@ class SendReceiptVC: BaseViewController {
         
         addBorder(views: [imgReceipt], width: 1, color: #colorLiteral(red: 0.5704585314, green: 0.5704723597, blue: 0.5704649091, alpha: 1))
         
-        if let user = user {
+        if let user = SessionData.shared.userData {
             user.course.forEach { (course) in
                 totalBill += course.price
             }
@@ -122,7 +122,7 @@ class SendReceiptVC: BaseViewController {
         let time = date.timeIntervalSince1970 * 1000
         
         let imageName = "\(userData.realName)-\(userData.email)-\(userData.phone)-\(dateCreate)-\(time)"
-        let imageStorage = storageReference.child("Receipt").child(imageName)
+        let imageStorage = storageReference.child("Receipts").child(imageName)
         imageStorage.putData(imageData, metadata: nil) { (metaData, error) in
             if error != nil {
                 self.showToast(message: "Có lỗi xảy ra trong quá trình tải ảnh, vui lòng thử lại sau.")
@@ -141,9 +141,9 @@ class SendReceiptVC: BaseViewController {
                 userData.imagePayment = "\(imageUrl)"
                 userData.time = time
                 userData.totalPayment = self.totalBill
-                userData.postId = postId
                 userData.paymentMethod = self.paymentMethod
-                databaseReference.child("Receipt").child(postId).setValue(userData.asDictionary())
+                userData.receiptPostId = postId
+                databaseReference.child("Receipts").child(postId).setValue(userData.asDictionary())
                 self.showLoadingSuccess(5)
                 self.showToast(message: "Thanh toán của bạn đã được gửi đến quản trị viên, vui lòng chờ đợi trong ít phút để được kích hoạt tài khoản, xin chân thành cảm ơn.")
                 _ = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(self.dismissView), userInfo: nil, repeats: false)
@@ -152,7 +152,7 @@ class SendReceiptVC: BaseViewController {
     }
     
     @objc func dismissView() {
-        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func tapOnBack(_ sender: Any) {

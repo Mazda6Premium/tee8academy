@@ -14,10 +14,17 @@ class Course {
     var isSelected = false
     var description = ""
     var time = 0.0
+    var video = [Video]()
+    var isOpen = false
+    var isUnLock = false
     
     init(name: String, price: Double) {
         self.name = name
         self.price = price
+    }
+    
+    init(video: [Video]) {
+        self.video = video
     }
     
     init(fromDict: [String: Any]) {
@@ -25,12 +32,21 @@ class Course {
         self.price = fromDict["price"] as? Double ?? 0.0
         self.description = fromDict["description"] as? String ?? ""
         self.time = fromDict["time"] as? Double ?? 0.0
+        if let video = fromDict["videos"] as? [[String: Any]] {
+            self.video = video.map({Video(dict: $0)})
+        }
     }
     
     func asDictionary() -> [String: Any] {
         return [
             "name": self.name,
             "price": self.price
+        ]
+    }
+    
+    func asDictionaryVideo() -> [String: Any] {
+        return [
+            "videos": self.video.map({$0.asDictionary()})
         ]
     }
 }
@@ -50,8 +66,8 @@ class User {
     var phoneModel = ""
     var time = 0.0
     var totalPayment = 0.0
-    var postId = ""
     var userId = ""
+    var receiptPostId = ""
     
     init() {}
     
@@ -70,7 +86,6 @@ class User {
         self.imagePayment = imagePayment
         self.time = time
         self.totalPayment = totalPayment
-        self.postId = postId
         self.userId = userId
     }
     
@@ -89,9 +104,14 @@ class User {
             "phoneModel": self.phoneModel,
             "time": self.time,
             "totalPayment": self.totalPayment,
-            "postId": self.postId,
-            "userId": self.userId
+            "userId": self.userId,
+            "receiptPostId": self.receiptPostId,
+            "checkExists": true
         ]
+    }
+    
+    func asDictionaryVideo() -> [String: Any] {
+        return ["course": self.course.map({$0.asDictionary()})]
     }
     
     init(dict: [String: Any]) {
@@ -104,14 +124,18 @@ class User {
         self.imagePayment = dict["imagePayment"] as? String ?? ""
         self.time = dict["time"] as? Double ?? 0.0
         self.totalPayment = dict["totalPayment"] as? Double ?? 0.0
-        self.postId = dict["postId"] as? String ?? ""
         self.phoneId = dict["phoneId"] as? String ?? ""
         self.phoneModel = dict["phoneModel"] as? String ?? ""
         self.password = dict["password"] as? String ?? ""
         self.userId = dict["userId"] as? String ?? ""
+        self.receiptPostId = dict["receiptPostId"] as? String ?? ""
         if let course = dict["course"] as? [[String: Any]] {
             self.course = course.map({Course(fromDict: $0)})
         }
+    }
+    
+    init(course: [Course]) {
+        self.course = course
     }
 }
 
@@ -127,11 +151,11 @@ extension User {
         user.imagePayment = dict["imagePayment"] as? String ?? ""
         user.time = dict["time"] as? Double ?? 0.0
         user.totalPayment = dict["totalPayment"] as? Double ?? 0.0
-        user.postId = dict["postId"] as? String ?? ""
         user.phoneId = dict["phoneId"] as? String ?? ""
         user.phoneModel = dict["phoneModel"] as? String ?? ""
         user.password = dict["password"] as? String ?? ""
         user.userId = dict["userId"] as? String ?? ""
+        user.receiptPostId = dict["receiptPostId"] as? String ?? ""
         if let course = dict["course"] as? [[String: Any]] {
             user.course = course.map({Course(fromDict: $0)})
         }

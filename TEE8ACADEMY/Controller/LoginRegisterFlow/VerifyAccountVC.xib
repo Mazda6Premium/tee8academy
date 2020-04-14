@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Quicksand-Bold.ttf">
+            <string>Quicksand-Bold</string>
+        </array>
+        <array key="Quicksand-Medium.ttf">
+            <string>Quicksand-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerifyAccountVC" customModule="TEE_8_ACADEMY" customModuleProvider="target">
+            <connections>
+                <outlet property="btnBack" destination="th5-vh-1cn" id="Utl-hb-p53"/>
+                <outlet property="btnConfirm" destination="7bk-MN-Dym" id="0wt-T2-0hZ"/>
+                <outlet property="btnContact" destination="oxj-Ka-dqg" id="6NW-c2-1SC"/>
+                <outlet property="btnSendAgain" destination="FQc-JM-Ldk" id="Fgy-XH-qU5"/>
+                <outlet property="btnVerifyAccount" destination="0zF-iB-fdG" id="zO3-9v-a7y"/>
+                <outlet property="txtOTP" destination="Cae-Mo-hMs" id="0ge-XH-aMC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="itj-fS-DTk">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="OTP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cae-Mo-hMs">
+                    <rect key="frame" x="20" y="321.5" width="374" height="40"/>
+                    <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="nNY-yl-9DU"/>
+                    </constraints>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="UCJ-X5-2cG">
+                    <rect key="frame" x="127" y="64" width="160" height="160"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="160" id="aQL-MB-0VH"/>
+                        <constraint firstAttribute="width" constant="160" id="sNe-uc-kd3"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEASE ENTER OTP TO VERIFY YOUR ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikH-Pj-OQN">
+                    <rect key="frame" x="20" y="264" width="374" height="17.5"/>
+                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                    <color key="textColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERg-We-Pkx">
+                    <rect key="frame" x="20" y="827" width="374" height="35"/>
+                    <string key="text">Hotline 0919188158 - 0888777158/198
+WWW.TEE8.EDU.VN</string>
+                    <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand Medium" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO NOT GET OTP?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3R-sK-Iek">
+                    <rect key="frame" x="20" y="411.5" width="133" height="17.5"/>
+                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                    <color key="textColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQc-JM-Ldk">
+                    <rect key="frame" x="159" y="405.5" width="90" height="30"/>
+                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                    <state key="normal" title="SEND AGAIN">
+                        <color key="titleColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="tapOnResend:" destination="-1" eventType="touchUpInside" id="4uw-ve-SPf"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zF-iB-fdG">
+                    <rect key="frame" x="20" y="449" width="173" height="30"/>
+                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                    <state key="normal" title="VERIFY VIA YOUR EMAIL">
+                        <color key="titleColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="tapOnVerifyEmail:" destination="-1" eventType="touchUpInside" id="b8p-6Y-3LJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxj-Ka-dqg">
+                    <rect key="frame" x="20" y="781" width="374" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="pQi-JP-stX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                    <state key="normal" title="Contact Support" backgroundImage="bg_button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JqZ-sJ-Dx6">
+                    <rect key="frame" x="20" y="735" width="374" height="36"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="th5-vh-1cn">
+                            <rect key="frame" x="0.0" y="0.0" width="182" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="Cjk-ue-CrB"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                            <state key="normal" title="Back" backgroundImage="bg_button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="tapOnBack:" destination="-1" eventType="touchUpInside" id="QOK-cL-Zei"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bk-MN-Dym">
+                            <rect key="frame" x="192" y="0.0" width="182" height="36"/>
+                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                            <state key="normal" title="Continue" backgroundImage="bg_button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="tapOnConfirm:" destination="-1" eventType="touchUpInside" id="wcC-jb-guY"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="7jh-5q-GYx"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oxj-Ka-dqg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="1mr-k8-5wa"/>
+                <constraint firstItem="w3R-sK-Iek" firstAttribute="top" secondItem="Cae-Mo-hMs" secondAttribute="bottom" constant="50" id="9Cd-pi-jqP"/>
+                <constraint firstAttribute="bottom" secondItem="itj-fS-DTk" secondAttribute="bottom" id="AfE-f2-TaC"/>
+                <constraint firstItem="oxj-Ka-dqg" firstAttribute="top" secondItem="JqZ-sJ-Dx6" secondAttribute="bottom" constant="10" id="EEe-lw-wAc"/>
+                <constraint firstItem="FQc-JM-Ldk" firstAttribute="leading" secondItem="w3R-sK-Iek" secondAttribute="trailing" constant="6" id="Igb-h6-8xN"/>
+                <constraint firstItem="ikH-Pj-OQN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="J0a-vP-cAI"/>
+                <constraint firstItem="UCJ-X5-2cG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="J2k-26-FXG"/>
+                <constraint firstAttribute="trailing" secondItem="itj-fS-DTk" secondAttribute="trailing" id="K15-op-eqE"/>
+                <constraint firstItem="JqZ-sJ-Dx6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="MDP-hw-xKK"/>
+                <constraint firstItem="itj-fS-DTk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ODI-bW-Q1I"/>
+                <constraint firstItem="FQc-JM-Ldk" firstAttribute="centerY" secondItem="w3R-sK-Iek" secondAttribute="centerY" id="Phy-9I-Ay0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ikH-Pj-OQN" secondAttribute="trailing" constant="20" id="Qg9-EX-Nvf"/>
+                <constraint firstItem="Cae-Mo-hMs" firstAttribute="leading" secondItem="ikH-Pj-OQN" secondAttribute="leading" id="R0p-yf-elQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ERg-We-Pkx" secondAttribute="bottom" id="R9l-3z-F2I"/>
+                <constraint firstItem="itj-fS-DTk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VT9-7N-aq7"/>
+                <constraint firstItem="0zF-iB-fdG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Wk3-s0-PeI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ERg-We-Pkx" secondAttribute="trailing" constant="20" id="Wti-Ve-GMS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oxj-Ka-dqg" secondAttribute="trailing" constant="20" id="ZaN-hc-YIZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JqZ-sJ-Dx6" secondAttribute="trailing" constant="20" id="aWr-qU-7Xa"/>
+                <constraint firstItem="ERg-We-Pkx" firstAttribute="top" secondItem="oxj-Ka-dqg" secondAttribute="bottom" constant="10" id="fNp-zS-i7d"/>
+                <constraint firstItem="Cae-Mo-hMs" firstAttribute="trailing" secondItem="ikH-Pj-OQN" secondAttribute="trailing" id="kSI-cB-AbC"/>
+                <constraint firstItem="0zF-iB-fdG" firstAttribute="top" secondItem="w3R-sK-Iek" secondAttribute="bottom" constant="20" id="mxX-g3-jb3"/>
+                <constraint firstItem="ikH-Pj-OQN" firstAttribute="top" secondItem="UCJ-X5-2cG" secondAttribute="bottom" constant="40" id="oGn-Oz-9PL"/>
+                <constraint firstItem="w3R-sK-Iek" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="rk0-Rm-U9M"/>
+                <constraint firstItem="Cae-Mo-hMs" firstAttribute="top" secondItem="ikH-Pj-OQN" secondAttribute="bottom" constant="40" id="wM9-FG-ijx"/>
+                <constraint firstItem="ERg-We-Pkx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="wmz-Mj-Lax"/>
+                <constraint firstItem="UCJ-X5-2cG" firstAttribute="centerX" secondItem="itj-fS-DTk" secondAttribute="centerX" id="yC8-ua-GOZ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-436.23188405797106" y="12.723214285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg" width="540" height="898"/>
+        <image name="bg_button" width="129" height="22"/>
+        <image name="image" width="1788.5" height="1536.5"/>
+    </resources>
+</document>

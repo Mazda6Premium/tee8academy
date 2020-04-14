@@ -16,6 +16,7 @@ class RegisterAccountVC: BaseViewController {
     @IBOutlet weak var pageView: FSPagerView!
     
     var arrayUser = [User]()
+    var arrayCourse = [Course]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,16 +29,17 @@ class RegisterAccountVC: BaseViewController {
     func getDataFromFirebase() {
         showLoading()
         
-        databaseReference.child("Receipt").queryOrdered(byChild: "userId").queryEqual(toValue: "").observeSingleEvent(of: .value) { (snapshot) in
+        databaseReference.child("Receipts").queryOrdered(byChild: "checkExists").queryEqual(toValue: true).observeSingleEvent(of: .value) { (snapshot) in
             if snapshot.exists() {
-                databaseReference.child("Receipt").observe(.childAdded) { (snapshot) in
-                    databaseReference.child("Receipt").child(snapshot.key).observeSingleEvent(of: .value) { (snapshot1) in
+                databaseReference.child("Receipts").observe(.childAdded) { (snapshot) in
+                    databaseReference.child("Receipts").child(snapshot.key).observeSingleEvent(of: .value) { (snapshot1) in
                         if let dict = snapshot1.value as? [String: Any] {
                             let user = User.getUserData(dict: dict, key: snapshot1.key)
                             self.arrayUser.append(user)
                             self.arrayUser.sort(by: { (user1, user2) -> Bool in
                                 return Int64(user1.time) > Int64(user2.time)
                             })
+                            self.getDataVideo()
                             DispatchQueue.main.async {
                                 self.pageView.reloadData()
                             }
@@ -47,6 +49,17 @@ class RegisterAccountVC: BaseViewController {
                 }
             } else {
                 self.hideLoading()
+            }
+        }
+    }
+    
+    func getDataVideo() {
+        databaseReference.child("Users").observe(.childAdded) { (snapshot) in
+            databaseReference.child("Users").child(snapshot.key).observeSingleEvent(of: .value) { (snapshot1) in
+                if let dict = snapshot1.value as? [String: Any] {
+                    let user = User.getUserData(dict: dict, key: snapshot1.key)
+                    self.arrayCourse = user.course
+                }
             }
         }
     }
@@ -89,25 +102,24 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
     @objc func tapOnActive(sender: UIButton) {
         showLoading()
         let user = arrayUser[sender.tag]
-        user.userId = databaseReference.childByAutoId().key!
-        print(user.asDictionary())
-        databaseReference.child("Users").child(user.userId).setValue(user.asDictionary())
-        
+        self.arrayCourse.append(contentsOf: user.course)
+        let course = User(course: self.arrayCourse)
+        databaseReference.child("Users").child(user.userId).updateChildValues(course.asDictionaryVideo())
+
         self.deleteImage(index: sender.tag)
-        databaseReference.child("Receipt").child(user.postId).removeValue()
-        
+        databaseReference.child("Receipt").child(user.receiptPostId).removeValue()
+
         self.arrayUser.removeAll()
         self.getDataFromFirebase()
         self.pageView.reloadData()
-        
     }
     
     @objc func tapOnCancel(sender: UIButton) {
         showLoading()
         let user = arrayUser[sender.tag]
         deleteImage(index: sender.tag)
-        databaseReference.child("Receipt").child(user.postId).removeValue()
-        
+        databaseReference.child("Receipt").child(user.receiptPostId).removeValue()
+
         self.arrayUser.removeAll()
         self.getDataFromFirebase()
         self.pageView.reloadData()

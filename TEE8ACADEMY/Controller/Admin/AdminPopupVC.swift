@@ -88,6 +88,11 @@ class AdminPopupVC: BaseViewController {
                 self.viewD.alpha = 1
             }
         }
+        
+        let vc = PushProductVC(nibName: "PushProductVC", bundle: nil)
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     
     @objc func tapOnView() {
