@@ -132,7 +132,6 @@ extension StoreVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell1.viewDim.isHidden = true
         cell1.imgLock.isHidden = true
         
-        
         switch indexPath.section {
         case 0:
             cell0.btnTitle.setTitle("   P.M.U PLUS - WWW.PMUPLUS.COM", for: .normal)
@@ -147,7 +146,6 @@ extension StoreVC: UICollectionViewDelegate, UICollectionViewDataSource {
             } else {
                 cell1.imgVideo.image = UIImage(named: "placeholder")
             }
-            
             return cell1
         case 2:
             cell0.btnTitle.setTitle("   TIMES - WWW.PMUTIMES.COM", for: .normal)
@@ -166,5 +164,29 @@ extension StoreVC: UICollectionViewDelegate, UICollectionViewDataSource {
         default:
             return UICollectionViewCell()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = BuyProductVC(nibName: "BuyProductVC", bundle: nil)
+        switch indexPath.section {
+        case 1:
+            let product = arrayProductPMU[indexPath.row]
+            vc.product = product
+//            vc.imageName = product.imageUrl
+//            vc.name = product.name
+//            vc.price = product.price
+//            vc.productDescrip = product.description
+        case 3:
+            let product = arrayProductTimes[indexPath.row]
+            vc.product = product
+//            vc.imageName = product.imageUrl
+//            vc.name = product.name
+//            vc.price = product.price
+//            vc.productDescrip = product.description
+        default:
+            return
+        }
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true, completion: nil)
     }
 }
