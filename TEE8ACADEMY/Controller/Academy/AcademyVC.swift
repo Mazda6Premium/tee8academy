@@ -135,6 +135,11 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         let data = arrayCourse[indexPath.section / 2]
         cell1.viewDim.isHidden = data.isUnLock
         cell1.imgLock.isHidden = data.isUnLock
+        if !data.isUnLock {
+            cell1.isUserInteractionEnabled = false
+        } else {
+            cell1.isUserInteractionEnabled = true
+        }
         
         if indexPath.section % 2 == 0 {
             let course = arrayCourse[indexPath.section / 2]
