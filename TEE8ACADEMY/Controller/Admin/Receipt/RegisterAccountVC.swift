@@ -28,6 +28,7 @@ class RegisterAccountVC: BaseViewController {
         // Do any additional setup after loading the view.
         setupPageView()
         getDataFromFirebase()
+        getDataOrder()
         setUpSegmentControl()
     }
     
@@ -45,9 +46,8 @@ class RegisterAccountVC: BaseViewController {
                                 return Int64(user1.time) > Int64(user2.time)
                             })
                             self.getDataVideo()
-                            DispatchQueue.main.async {
-                                self.pageView.reloadData()
-                            }
+                            self.pageView.reloadData()
+                            
                             self.showLoadingSuccess(1)
                         }
                     }
@@ -68,9 +68,8 @@ class RegisterAccountVC: BaseViewController {
                         if let dict = snapshot1.value as? [String: Any] {
                             let order = Order.getOrderData(dict: dict, key: snapshot1.key)
                             self.arrayOrder.append(order)
-                            DispatchQueue.main.async {
-                                self.pageViewProducts.reloadData()
-                            }
+                            self.pageViewProducts.reloadData()
+                            
                             self.showLoadingSuccess(1)
                         }
                     }
@@ -121,15 +120,16 @@ class RegisterAccountVC: BaseViewController {
     func setupPageView() {
         pageView.delegate = self
         pageView.dataSource = self
+        pageViewProducts.delegate = self
+        pageViewProducts.dataSource = self
         
         roundCorner(views: [pageView, pageViewProducts], radius: 10)
-        
         let nib = UINib(nibName: "RegisterAccountCell", bundle: nil)
         pageView.register(nib, forCellWithReuseIdentifier: "registerAccountCell")
         pageView.transformer = FSPagerViewTransformer(type: .cubic)
+
         
-        pageViewProducts.delegate = self
-        pageViewProducts.dataSource = self
+        pageViewProducts.isHidden = true
         let nib1 = UINib(nibName: "OrderCell", bundle: nil)
         pageViewProducts.register(nib1, forCellWithReuseIdentifier: "orderCell")
         pageViewProducts.transformer = FSPagerViewTransformer(type: .cubic)
@@ -142,7 +142,7 @@ class RegisterAccountVC: BaseViewController {
 
 extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        if pageView == pageView {
+        if pagerView == pageView {
             return arrayUser.count
         } else {
             return arrayOrder.count
@@ -150,7 +150,7 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
-        if pageView == pageView {
+        if pagerView == pageView {
             let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "registerAccountCell", at: index) as! RegisterAccountCell
             cell.user = arrayUser[index]
             cell.parentVC = self
@@ -164,7 +164,8 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
             return cell
         } else {
             let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "orderCell", at: index) as! OrderCell
-            
+            cell.order = arrayOrder[index]
+            return cell
         }
     }
     

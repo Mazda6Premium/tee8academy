@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import FSPagerView
+import SDWebImage
+import SimpleImageViewer
 
-class OrderCell: UICollectionViewCell {
+class OrderCell: FSPagerViewCell {
     
+    @IBOutlet weak var viewCell: UIView!
     @IBOutlet weak var lblRealName: UILabel!
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblUsername: UILabel!
@@ -21,8 +25,33 @@ class OrderCell: UICollectionViewCell {
     @IBOutlet weak var btnAccept: UIButton!
     @IBOutlet weak var btnCancel: UIButton!
     
+    var order: Order! {
+        didSet {
+            updateView()
+        }
+    }
+    
+    func updateView() {
+        lblRealName.text = order.realname
+        lblUsername.text = "Username: \(order.username)"
+        lblPhone.text = "Phone: \(order.phone)"
+        lblAddress.text = "Address: \(order.address)"
+        lblNumberProduct.text = "Number product: \(order.quantity)"
+        lblTotalPayment.text = "Total payment \(formatMoney(order.totalPayment))"
+        
+        let time = order.time
+        let date = Date(timeIntervalSince1970: TimeInterval(time) / 1000)
+        lblTime.text = date.timeAgoSinceDate()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        let views = [btnAccept, btnCancel, viewCell]
+        views.forEach { (view) in
+            view?.layer.cornerRadius = 10
+            view?.layer.masksToBounds = true
+        }
+
     }
 }

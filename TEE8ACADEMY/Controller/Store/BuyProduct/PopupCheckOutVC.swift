@@ -31,6 +31,8 @@ class PopupCheckOutVC: BaseViewController {
     
     var arrayCart = [Cart]()
     var delegate: PopupCheckOutDelegate?
+    var quantity = 0
+    var total = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +48,7 @@ class PopupCheckOutVC: BaseViewController {
         roundCorner(views: [btnAddToCart, btnPlaceOrder, viewCheckout, viewHoTen, viewSoDT, viewDiaChi], radius: 8)
         
         lblLoaiSP.text = "\(arrayCart.count)"
-        var quantity = 0
-        var total = 0.0
+
 
         arrayCart.forEach { (cart) in
             quantity += cart.quantity
@@ -84,7 +85,7 @@ class PopupCheckOutVC: BaseViewController {
             let date = Date()
             let time = date.timeIntervalSince1970 * 1000
             
-            let order = Order(userId: user.userId, username: user.username, phone: txtSoDT.text!, address: txtDiaChi.text!, cart: arrayCart, realname: user.realName, time: time)
+            let order = Order(userId: user.userId, username: user.username, phone: txtSoDT.text!, address: txtDiaChi.text!, cart: arrayCart, realname: user.realName, time: time, quantity: self.quantity, totalPayment: self.total)
             let key = databaseReference.childByAutoId().key!
             databaseReference.child("Orders").child(key).setValue(order.asDictionary())
             showLoadingSuccess(1)

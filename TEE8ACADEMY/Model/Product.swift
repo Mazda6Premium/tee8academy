@@ -82,10 +82,12 @@ class Order {
     var realname = ""
     var cart = [Cart]()
     var time = 0.0
+    var quantity = 0
+    var totalPayment = 0.0
     
     init() {}
     
-    init(userId: String, username: String, phone: String, address: String, cart: [Cart], realname: String, time: Double) {
+    init(userId: String, username: String, phone: String, address: String, cart: [Cart], realname: String, time: Double, quantity: Int, totalPayment: Double) {
         self.userId = userId
         self.username = username
         self.phone = phone
@@ -93,6 +95,8 @@ class Order {
         self.cart = cart
         self.realname = realname
         self.time = time
+        self.quantity = quantity
+        self.totalPayment = totalPayment
     }
     
     func asDictionary() -> [String: Any] {
@@ -104,6 +108,8 @@ class Order {
             "address": self.address,
             "realname": self.realname,
             "time": self.time,
+            "quantity": self.quantity,
+            "totalPayment": self.totalPayment,
             "checkExists": true
         ]
     }
@@ -116,6 +122,8 @@ class Order {
         order.phone = dict["phone"] as? String ?? ""
         order.time = dict["time"] as? Double ?? 0.0
         order.realname = dict["realname"] as? String ?? ""
+        order.quantity = dict["quantity"] as? Int ?? 0
+        order.totalPayment = dict["totalPayment"] as? Double ?? 0.0
         if let cart = dict["cart"] as? [[String: Any]] {
             order.cart = cart.map({Cart(fromDict: $0)})
         }
