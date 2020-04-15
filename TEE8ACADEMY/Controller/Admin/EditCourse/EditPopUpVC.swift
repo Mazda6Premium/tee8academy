@@ -24,6 +24,8 @@ class EditPopUpVC: BaseViewController {
     var course : Course?
     var timer : Timer?
     var delegate : EditPopUpDelegate?
+    var allCoursePrice = 0.0
+    var sale : Double = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +59,7 @@ class EditPopUpVC: BaseViewController {
             return
         }
         
+        
         guard let name = txtName.text else { return }
         guard let description = tvDescription.text else { return }
         guard let price = Double(txtPrice.text!.digits) else { return }
@@ -64,6 +67,10 @@ class EditPopUpVC: BaseViewController {
         
         let value = ["description": description, "price" : price, "time" : time] as [String : Any]
         databaseReference.child("Courses").child(name).updateChildValues(value)
+        
+        allCoursePrice += price
+        let priceAfterSale = allCoursePrice * ( 1 - sale / 100)
+        databaseReference.child("Courses").child("ALL COURSE").updateChildValues(["price" : priceAfterSale])
         startTimer()
         showLoadingSuccess(1)
     }
@@ -76,6 +83,7 @@ class EditPopUpVC: BaseViewController {
     @objc func clearData() {
         
         delegate?.refreshData()
+        
         self.dismiss(animated: true, completion: nil)
         
         timer?.invalidate()

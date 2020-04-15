@@ -18,7 +18,8 @@ class EditCourseVC: BaseViewController {
     }
     
     var arrayCourse = [Course]()
-    var arrayFreeCourse = [Course]()
+    var allCoursePrice = 0.0
+    var timer : Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,14 +44,15 @@ class EditCourseVC: BaseViewController {
             databaseReference.child("Courses").child(snapshot.key).observeSingleEvent(of: .value) { (snapshot1) in
                 if let dict = snapshot1.value as? [String: Any] {
                     let course = Course(fromDict: dict)
-                    if course.price != 0 {
-                        self.arrayCourse.append(course)
-                        self.arrayCourse.sort(by: { (course1, course2) -> Bool in
-                            return Int64(course1.price) > Int64(course2.price)
-                        })
+                    if course.name != "ALL COURSE" {
+                        self.allCoursePrice += course.price
                     } else {
-                        self.arrayFreeCourse.append(course)
+                        self.allCoursePrice += 0
                     }
+                    self.arrayCourse.append(course)
+                    self.arrayCourse.sort(by: { (course1, course2) -> Bool in
+                        return Int64(course1.price) > Int64(course2.price)
+                    })
                     
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
@@ -88,6 +90,7 @@ extension EditCourseVC: UITableViewDelegate, UITableViewDataSource {
             cell.lblPrice.text = "Price: \(formatMoney(course.price)) VND"
             cell.imgDiscount.image = UIImage(named: "saving20")
             cell.imgDiscount.isHidden = false
+            cell.isUserInteractionEnabled = false
             
         default :
             cell.viewBackground.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
@@ -103,6 +106,7 @@ extension EditCourseVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = EditPopUpVC(nibName: "EditPopUpVC", bundle: nil)
         let course = arrayCourse[indexPath.row]
+        vc.allCoursePrice = allCoursePrice - course.price
         vc.course = course
         vc.delegate = self
         vc.modalPresentationStyle = .overCurrentContext
@@ -112,13 +116,13 @@ extension EditCourseVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-    
 }
 
 extension EditCourseVC : EditPopUpDelegate {
     func refreshData() {
+        allCoursePrice = 0.0
         self.arrayCourse.removeAll()
         self.tableView.reloadData()
         getDataFromFirebase()
-    }
+    }    
 }
