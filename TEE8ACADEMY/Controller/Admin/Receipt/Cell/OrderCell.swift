@@ -25,13 +25,19 @@ class OrderCell: FSPagerViewCell {
     @IBOutlet weak var btnAccept: UIButton!
     @IBOutlet weak var btnCancel: UIButton!
     
+    var arrayCart = [Cart]()
+    
     var order: Order! {
         didSet {
             updateView()
+            
+            arrayCart = order.cart
+            collectionView.reloadData()
         }
     }
     
     func updateView() {
+        
         lblRealName.text = order.realname
         lblUsername.text = "Username: \(order.username)"
         lblPhone.text = "Phone: \(order.phone)"
@@ -52,6 +58,47 @@ class OrderCell: FSPagerViewCell {
             view?.layer.cornerRadius = 10
             view?.layer.masksToBounds = true
         }
-
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        let nib = UINib(nibName: "ProductCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "productCell")
     }
+}
+
+extension OrderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrayCart.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath) as! ProductCell
+        let cart = arrayCart[indexPath.row]
+        cell.lblProductName.text = cart.name
+        cell.lblQuantity.text = "Số lượng: \(cart.quantity)"
+        let totalPrice = cart.price * Double(cart.quantity)
+        cell.lblPrice.text = "Tổng tiền: \(formatMoney(totalPrice)) VND"
+        
+        if let url = URL(string: cart.imageUrl) {
+            cell.imgProduct.sd_setImage(with: url, completed: nil)
+        } else {
+            cell.imgProduct.image = UIImage(named: "placeholder")
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.frame.width - 30, height: 140)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
 }

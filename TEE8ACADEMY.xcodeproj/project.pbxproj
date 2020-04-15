@@ -62,6 +62,8 @@
 		A883494E2446F8A200587024 /* PopupCheckOutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A883494C2446F8A200587024 /* PopupCheckOutVC.xib */; };
 		A88349552447508B00587024 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88349532447508B00587024 /* OrderCell.swift */; };
 		A88349562447508B00587024 /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88349542447508B00587024 /* OrderCell.xib */; };
+		A88349592447672000587024 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88349572447672000587024 /* ProductCell.swift */; };
+		A883495A2447672000587024 /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88349582447672000587024 /* ProductCell.xib */; };
 		A88A42CE2439D99A0013BAFB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A42CD2439D99A0013BAFB /* Constant.swift */; };
 		A88A42D0243A08230013BAFB /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A88A42CF243A08230013BAFB /* Tabbar.storyboard */; };
 		A88A42D4243A14B00013BAFB /* PopupPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A42D2243A14B00013BAFB /* PopupPaymentVC.swift */; };
@@ -139,6 +141,8 @@
 		A883494C2446F8A200587024 /* PopupCheckOutVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupCheckOutVC.xib; sourceTree = "<group>"; };
 		A88349532447508B00587024 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		A88349542447508B00587024 /* OrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
+		A88349572447672000587024 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		A88349582447672000587024 /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		A88A42CD2439D99A0013BAFB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A88A42CF243A08230013BAFB /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		A88A42D2243A14B00013BAFB /* PopupPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPaymentVC.swift; sourceTree = "<group>"; };
@@ -224,6 +228,8 @@
 				A80CECF2243C354B001785DC /* RegisterAccountCell.xib */,
 				A88349532447508B00587024 /* OrderCell.swift */,
 				A88349542447508B00587024 /* OrderCell.xib */,
+				A88349572447672000587024 /* ProductCell.swift */,
+				A88349582447672000587024 /* ProductCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -516,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A85B7FFC2438268F00CC4DCC /* LaunchScreen.storyboard in Resources */,
+				A883495A2447672000587024 /* ProductCell.xib in Resources */,
 				A823C7422438839C00F749C2 /* Quicksand-Regular.ttf in Resources */,
 				A88A42D0243A08230013BAFB /* Tabbar.storyboard in Resources */,
 				01B56D40243C6B6100B0D804 /* PushCourseVC.xib in Resources */,
@@ -613,6 +620,7 @@
 				A88A42D4243A14B00013BAFB /* PopupPaymentVC.swift in Sources */,
 				A85FAAEA24433F0900C2F723 /* VerifyAccountVC.swift in Sources */,
 				A85B7FF02438268E00CC4DCC /* AppDelegate.swift in Sources */,
+				A88349592447672000587024 /* ProductCell.swift in Sources */,
 				A8170691244617A2007C9F2C /* CheckOutCell.swift in Sources */,
 				A80CECF3243C354B001785DC /* RegisterAccountCell.swift in Sources */,
 				A821AB1C243B8BB40063A194 /* AdminPopupVC.swift in Sources */,
