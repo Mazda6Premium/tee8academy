@@ -12,9 +12,15 @@ import SDWebImage
 class StoreVC: BaseViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var lblNumberStore: UILabel!
+    @IBOutlet weak var btnCart: UIButton!
+    
+    @IBOutlet weak var widthConstr: NSLayoutConstraint!
+    @IBOutlet weak var heightConstr: NSLayoutConstraint!
     
     var arrayProductPMU = [Product]()
     var arrayProductTimes = [Product]()
+    var arrayCart = [Cart]()
     
     var screenWidth: CGFloat {
         return UIScreen.main.bounds.size.width
@@ -31,6 +37,12 @@ class StoreVC: BaseViewController {
         getDataFromFirebase()
         setUpCollectionView()
         setupRefreshControl()
+        setupView()
+    }
+    
+    func setupView() {
+        roundCorner(views: [lblNumberStore], radius: 7.5)
+        lblNumberStore.isHidden = true
     }
     
     func setupRefreshControl() {
@@ -78,7 +90,20 @@ class StoreVC: BaseViewController {
         
         let productCell_xib = UINib(nibName: "VideoCell", bundle: nil)
         collectionView.register(productCell_xib, forCellWithReuseIdentifier: "videoCell")
-        
+    }
+    
+    @IBAction func tapOnCart(_ sender: Any) {
+        if arrayCart.count > 0 {
+            let vc = CheckOutVC(nibName: "CheckOutVC", bundle: nil)
+            vc.arrayCart = self.arrayCart
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overFullScreen
+            vc.delegate = self
+            vc.delegateCheckOut = self
+            self.present(vc, animated: true, completion: nil)
+        } else {
+            showToast(message: "Bạn chưa chọn sản phẩm nào")
+        }
     }
 }
 
@@ -172,21 +197,40 @@ extension StoreVC: UICollectionViewDelegate, UICollectionViewDataSource {
         case 1:
             let product = arrayProductPMU[indexPath.row]
             vc.product = product
-//            vc.imageName = product.imageUrl
-//            vc.name = product.name
-//            vc.price = product.price
-//            vc.productDescrip = product.description
         case 3:
             let product = arrayProductTimes[indexPath.row]
             vc.product = product
-//            vc.imageName = product.imageUrl
-//            vc.name = product.name
-//            vc.price = product.price
-//            vc.productDescrip = product.description
         default:
             return
         }
         vc.modalPresentationStyle = .overCurrentContext
+        vc.delegate = self
+        vc.arrayCart = self.arrayCart
         self.present(vc, animated: true, completion: nil)
+    }
+}
+
+extension StoreVC: BuyProductDelegate {
+    func addToCart(cart: [Cart]) {
+        lblNumberStore.text = "\(cart.count)"
+        self.arrayCart = cart
+        lblNumberStore.isHidden = false
+        showLoadingSuccess(1)
+    }
+}
+
+extension StoreVC: PopupCheckOutDelegate {
+    func clearCart() {
+        arrayCart.removeAll()
+        lblNumberStore.text = "0"
+        lblNumberStore.isHidden = true
+    }
+}
+
+extension StoreVC: CheckOutDelegate {
+    func deleteCart() {
+        arrayCart.removeAll()
+        lblNumberStore.text = "0"
+        lblNumberStore.isHidden = true
     }
 }

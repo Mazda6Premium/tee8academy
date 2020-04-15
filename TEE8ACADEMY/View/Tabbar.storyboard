@@ -49,6 +49,28 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7L7-Z4-X2p">
+                                <rect key="frame" x="384" y="56" width="15" height="15"/>
+                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="15" id="pR9-EH-6KS"/>
+                                    <constraint firstAttribute="height" constant="15" id="rSk-Cc-PI2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTM-Og-Jsg">
+                                <rect key="frame" x="364" y="66" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9Bl-A7-LwR"/>
+                                    <constraint firstAttribute="width" constant="30" id="a7O-eB-HOQ"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="cart"/>
+                                <connections>
+                                    <action selector="tapOnCart:" destination="bWu-xH-R6a" eventType="touchUpInside" id="CWw-s3-A23"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -58,24 +80,32 @@
                             <constraint firstItem="tH7-HJ-Uvd" firstAttribute="trailing" secondItem="LLt-7l-YPO" secondAttribute="trailing" id="7nI-rh-tFc"/>
                             <constraint firstItem="jRG-Fn-US9" firstAttribute="leading" secondItem="LLt-7l-YPO" secondAttribute="leading" id="CQU-5s-fMf"/>
                             <constraint firstItem="vhg-Yy-41V" firstAttribute="top" secondItem="SZt-OE-XPa" secondAttribute="top" constant="36" id="MzA-EM-n8k"/>
+                            <constraint firstItem="LLt-7l-YPO" firstAttribute="trailing" secondItem="YTM-Og-Jsg" secondAttribute="trailing" constant="20" id="Qw9-Fw-aSa"/>
                             <constraint firstItem="vhg-Yy-41V" firstAttribute="leading" secondItem="LLt-7l-YPO" secondAttribute="leading" constant="10" id="TmS-7s-gbu"/>
                             <constraint firstItem="iog-uR-hCX" firstAttribute="top" secondItem="vhg-Yy-41V" secondAttribute="bottom" constant="12" id="W45-z5-33t"/>
+                            <constraint firstItem="YTM-Og-Jsg" firstAttribute="bottom" secondItem="vhg-Yy-41V" secondAttribute="bottom" id="X7t-vy-Ua9"/>
                             <constraint firstItem="iog-uR-hCX" firstAttribute="leading" secondItem="LLt-7l-YPO" secondAttribute="leading" id="fB1-Fj-3Ad"/>
+                            <constraint firstItem="7L7-Z4-X2p" firstAttribute="trailing" secondItem="YTM-Og-Jsg" secondAttribute="trailing" constant="5" id="g5Y-8D-puf"/>
                             <constraint firstItem="jRG-Fn-US9" firstAttribute="top" secondItem="iog-uR-hCX" secondAttribute="bottom" id="sao-ao-t1M"/>
                             <constraint firstItem="LLt-7l-YPO" firstAttribute="bottom" secondItem="jRG-Fn-US9" secondAttribute="bottom" id="spw-Aw-7it"/>
                             <constraint firstItem="LLt-7l-YPO" firstAttribute="trailing" secondItem="jRG-Fn-US9" secondAttribute="trailing" id="tfO-Ch-Msh"/>
+                            <constraint firstItem="7L7-Z4-X2p" firstAttribute="top" secondItem="YTM-Og-Jsg" secondAttribute="top" constant="-10" id="tpd-vq-FLS"/>
                             <constraint firstItem="iog-uR-hCX" firstAttribute="trailing" secondItem="LLt-7l-YPO" secondAttribute="trailing" id="wsr-Wt-4NG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LLt-7l-YPO"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tee Store" image="cart" selectedImage="cartfill" id="a7Z-3V-Bar"/>
                     <connections>
+                        <outlet property="btnCart" destination="YTM-Og-Jsg" id="DSt-Ix-WRX"/>
                         <outlet property="collectionView" destination="jRG-Fn-US9" id="ovX-zs-pw2"/>
+                        <outlet property="heightConstr" destination="9Bl-A7-LwR" id="pKz-oZ-4Fb"/>
+                        <outlet property="lblNumberStore" destination="7L7-Z4-X2p" id="TcJ-73-eNz"/>
+                        <outlet property="widthConstr" destination="a7O-eB-HOQ" id="oIS-Nw-M5t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jz-LU-b6s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="377" y="-319"/>
+            <point key="canvasLocation" x="376.81159420289856" y="-319.56521739130437"/>
         </scene>
         <!--Tee Account-->
         <scene sceneID="1bB-ts-Bi4">
