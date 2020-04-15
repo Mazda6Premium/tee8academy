@@ -76,6 +76,23 @@ extension CheckOutVC: UITableViewDelegate, UITableViewDataSource {
         cell.lblNumber.text = "\(cart.quantity)"
         
         cell.backgroundColor = .clear
+        cell.btnTru.tag = indexPath.row
+        cell.btnCong.tag = indexPath.row
+        
+        cell.decrease = { index in
+            cart.quantity -= 1
+            cell.lblNumber.text = "\(cart.quantity)"
+            
+            if cart.quantity == 0 {
+                self.arrayCart.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [IndexPath.init(row: index, section: 0)], with: .fade)
+            }
+        }
+        
+        cell.increase = { index in
+            cart.quantity += 1
+            cell.lblNumber.text = "\(cart.quantity)"
+        }
         
         if let url = URL(string: cart.imageUrl) {
             cell.imgProduct.sd_setImage(with: url, completed: nil)

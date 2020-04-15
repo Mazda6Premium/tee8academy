@@ -44,6 +44,7 @@ class BuyProductVC: BaseViewController {
         
         if number == 1 {
             btnDecrease.isUserInteractionEnabled = false
+            btnDecrease.alpha = 0.5
         } else {
             btnDecrease.isUserInteractionEnabled = true
         }
@@ -72,15 +73,16 @@ class BuyProductVC: BaseViewController {
     
     @IBAction func tapOnDecrease(_ sender: Any) {
         number -= 1
-        DispatchQueue.main.async {
-            if let data = self.product {
-                self.lblNumberBuy.text = "\(self.number)"
-                self.totalPrice = data.price * Double(self.number)
-                self.lblTotal.text = "Tổng: \(formatMoney(self.totalPrice)) VND"
-            }
+
+        if let data = self.product {
+            self.lblNumberBuy.text = "\(self.number)"
+            self.totalPrice = data.price * Double(self.number)
+            self.lblTotal.text = "Tổng: \(formatMoney(self.totalPrice)) VND"
         }
+        
         if number == 1 {
             btnDecrease.isUserInteractionEnabled = false
+            btnDecrease.alpha = 0.5
         }
         
     }
@@ -95,6 +97,7 @@ class BuyProductVC: BaseViewController {
             }
         }
         btnDecrease.isUserInteractionEnabled = true
+        btnDecrease.alpha = 1
     }
     
     @IBAction func tapOnDismiss(_ sender: Any) {

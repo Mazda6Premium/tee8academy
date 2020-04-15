@@ -18,6 +18,9 @@ class CheckOutCell: UITableViewCell {
     @IBOutlet weak var lblNumber: UILabel!
     @IBOutlet weak var btnCong: UIButton!
     
+    var decrease: ((_ index: Int) -> Void)?
+    var increase: ((_ index: Int) -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -48,9 +51,11 @@ class CheckOutCell: UITableViewCell {
     }
     
     @IBAction func tapOnTru(_ sender: Any) {
+        decrease?(btnTru.tag)
     }
     
     @IBAction func tapOnCong(_ sender: Any) {
+        increase?(btnCong.tag)
     }
     
 }

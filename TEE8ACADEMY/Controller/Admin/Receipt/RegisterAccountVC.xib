@@ -16,6 +16,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterAccountVC">
             <connections>
                 <outlet property="pageView" destination="3V1-pj-VQ3" id="D61-wa-JlA"/>
+                <outlet property="pageViewProducts" destination="4E4-NQ-iOl" id="3ev-4x-ITl"/>
+                <outlet property="segmentedControl" destination="d3L-PM-5Ju" id="0p1-Us-a5y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -40,7 +42,7 @@
                     </constraints>
                 </imageView>
                 <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="3V1-pj-VQ3" customClass="FSPagerView" customModule="FSPagerView">
-                    <rect key="frame" x="0.0" y="116" width="414" height="710"/>
+                    <rect key="frame" x="0.0" y="196" width="414" height="630"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJa-JH-piG">
@@ -61,32 +63,50 @@
                     <rect key="frame" x="0.0" y="859" width="414" height="37"/>
                     <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
+                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="4E4-NQ-iOl" customClass="FSPagerView" customModule="FSPagerView">
+                    <rect key="frame" x="0.0" y="196" width="414" height="630"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3L-PM-5Ju" customClass="SegmentedControl" customModule="TEE_8_ACADEMY" customModuleProvider="target">
+                    <rect key="frame" x="20" y="136" width="374" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="3MO-Q1-a8P"/>
+                    </constraints>
+                    <connections>
+                        <action selector="tapOnSegmented:" destination="-1" eventType="valueChanged" id="KAX-Rx-yQZ"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="AZ3-Yl-s9J" secondAttribute="bottom" id="0Ex-WW-ATd"/>
+                <constraint firstItem="3V1-pj-VQ3" firstAttribute="top" secondItem="d3L-PM-5Ju" secondAttribute="bottom" constant="20" id="15A-YC-qIp"/>
                 <constraint firstAttribute="trailing" secondItem="hPh-B5-pQ4" secondAttribute="trailing" id="1s8-UZ-WmM"/>
-                <constraint firstItem="3V1-pj-VQ3" firstAttribute="top" secondItem="hve-qF-1Ej" secondAttribute="bottom" id="29M-la-wAo"/>
-                <constraint firstItem="3V1-pj-VQ3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3Dd-XX-BKF"/>
+                <constraint firstItem="AJa-JH-piG" firstAttribute="top" secondItem="4E4-NQ-iOl" secondAttribute="bottom" id="4h1-Qd-cWE"/>
                 <constraint firstItem="AJa-JH-piG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4wC-3R-nqF"/>
                 <constraint firstItem="AZ3-Yl-s9J" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="A4u-bz-FfI"/>
                 <constraint firstItem="hPh-B5-pQ4" firstAttribute="top" secondItem="AJa-JH-piG" secondAttribute="bottom" constant="-3" id="AEx-ea-2ej"/>
-                <constraint firstItem="3V1-pj-VQ3" firstAttribute="top" secondItem="hve-qF-1Ej" secondAttribute="bottom" id="GSS-dm-vFl"/>
-                <constraint firstItem="AJa-JH-piG" firstAttribute="top" secondItem="3V1-pj-VQ3" secondAttribute="bottom" id="Gpa-nj-bdY"/>
-                <constraint firstItem="3V1-pj-VQ3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="K5y-Vl-6sP"/>
+                <constraint firstItem="4E4-NQ-iOl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CPl-XO-0zz"/>
                 <constraint firstAttribute="bottom" secondItem="hPh-B5-pQ4" secondAttribute="bottom" id="KL5-zX-amS"/>
-                <constraint firstItem="3V1-pj-VQ3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KlL-Bf-eMg"/>
+                <constraint firstItem="d3L-PM-5Ju" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="L8E-uX-54N"/>
                 <constraint firstItem="AJa-JH-piG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="QuO-4a-u9h"/>
+                <constraint firstItem="3V1-pj-VQ3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SRQ-Q4-WNx"/>
                 <constraint firstItem="hve-qF-1Ej" firstAttribute="top" secondItem="3VI-0v-ouJ" secondAttribute="bottom" id="WbN-Vy-yeq"/>
                 <constraint firstItem="3VI-0v-ouJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="14" id="Zea-B2-Yxl"/>
-                <constraint firstItem="3V1-pj-VQ3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aL3-eI-TMn"/>
+                <constraint firstItem="4E4-NQ-iOl" firstAttribute="top" secondItem="d3L-PM-5Ju" secondAttribute="bottom" constant="20" id="aCW-gy-sdd"/>
+                <constraint firstItem="d3L-PM-5Ju" firstAttribute="top" secondItem="hve-qF-1Ej" secondAttribute="bottom" constant="20" id="d67-wf-fdB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hve-qF-1Ej" secondAttribute="trailing" id="f4a-tO-7rl"/>
                 <constraint firstItem="3VI-0v-ouJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="gRg-1i-gRs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="d3L-PM-5Ju" secondAttribute="trailing" constant="20" id="hVl-xg-bU5"/>
                 <constraint firstItem="AJa-JH-piG" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ipr-rp-Uyf"/>
                 <constraint firstItem="AZ3-Yl-s9J" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="khC-Dp-4kN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4E4-NQ-iOl" secondAttribute="trailing" id="klc-02-Uh5"/>
+                <constraint firstItem="AJa-JH-piG" firstAttribute="top" secondItem="3V1-pj-VQ3" secondAttribute="bottom" id="nle-JX-joX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AZ3-Yl-s9J" secondAttribute="trailing" id="ocs-Si-VgS"/>
                 <constraint firstItem="hve-qF-1Ej" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s52-v6-QZo"/>
                 <constraint firstItem="hPh-B5-pQ4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uxr-jI-h0h"/>
+                <constraint firstItem="3V1-pj-VQ3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zbF-CO-7uH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>

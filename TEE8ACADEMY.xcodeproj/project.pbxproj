@@ -60,6 +60,8 @@
 		A85FAAEF24434E2C00C2F723 /* CreatePasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A85FAAED24434E2C00C2F723 /* CreatePasswordVC.xib */; };
 		A883494D2446F8A200587024 /* PopupCheckOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A883494B2446F8A200587024 /* PopupCheckOutVC.swift */; };
 		A883494E2446F8A200587024 /* PopupCheckOutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A883494C2446F8A200587024 /* PopupCheckOutVC.xib */; };
+		A88349552447508B00587024 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88349532447508B00587024 /* OrderCell.swift */; };
+		A88349562447508B00587024 /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88349542447508B00587024 /* OrderCell.xib */; };
 		A88A42CE2439D99A0013BAFB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A42CD2439D99A0013BAFB /* Constant.swift */; };
 		A88A42D0243A08230013BAFB /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A88A42CF243A08230013BAFB /* Tabbar.storyboard */; };
 		A88A42D4243A14B00013BAFB /* PopupPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A42D2243A14B00013BAFB /* PopupPaymentVC.swift */; };
@@ -135,6 +137,8 @@
 		A85FAAED24434E2C00C2F723 /* CreatePasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePasswordVC.xib; sourceTree = "<group>"; };
 		A883494B2446F8A200587024 /* PopupCheckOutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCheckOutVC.swift; sourceTree = "<group>"; };
 		A883494C2446F8A200587024 /* PopupCheckOutVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupCheckOutVC.xib; sourceTree = "<group>"; };
+		A88349532447508B00587024 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		A88349542447508B00587024 /* OrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
 		A88A42CD2439D99A0013BAFB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A88A42CF243A08230013BAFB /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		A88A42D2243A14B00013BAFB /* PopupPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPaymentVC.swift; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 			children = (
 				A80CECF1243C354B001785DC /* RegisterAccountCell.swift */,
 				A80CECF2243C354B001785DC /* RegisterAccountCell.xib */,
+				A88349532447508B00587024 /* OrderCell.swift */,
+				A88349542447508B00587024 /* OrderCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -532,6 +538,7 @@
 				A8A700492438C62600B2139D /* SendReceiptVC.xib in Resources */,
 				A8102251243DFCC60089AE63 /* ChangePasswordVC.xib in Resources */,
 				A83ABBF2243F495E0039E64C /* HeaderCell.xib in Resources */,
+				A88349562447508B00587024 /* OrderCell.xib in Resources */,
 				A821AB1D243B8BB40063A194 /* AdminPopupVC.xib in Resources */,
 				A88A42D5243A14B00013BAFB /* PopupPaymentVC.xib in Resources */,
 				A823C7442438839C00F749C2 /* Quicksand-Bold.ttf in Resources */,
@@ -611,6 +618,7 @@
 				A821AB1C243B8BB40063A194 /* AdminPopupVC.swift in Sources */,
 				01B56D3F243C6B6100B0D804 /* PushCourseVC.swift in Sources */,
 				A81843E0244487F2000BF147 /* AccountVC.swift in Sources */,
+				A88349552447508B00587024 /* OrderCell.swift in Sources */,
 				A8A700412438BC3200B2139D /* User.swift in Sources */,
 				A819AFDF243F5AE5009AB1A6 /* AcademyCell.swift in Sources */,
 				A821AB18243B8B1E0063A194 /* StoreVC.swift in Sources */,
