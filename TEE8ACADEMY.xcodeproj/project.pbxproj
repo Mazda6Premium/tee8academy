@@ -12,6 +12,8 @@
 		01272F2F2445ECED001A39ED /* EditCourseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01272F2D2445ECED001A39ED /* EditCourseVC.xib */; };
 		01272F322445F55E001A39ED /* EditPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01272F302445F55E001A39ED /* EditPopUpVC.swift */; };
 		01272F332445F55E001A39ED /* EditPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01272F312445F55E001A39ED /* EditPopUpVC.xib */; };
+		0143BBE724474B84001C57FF /* DeletePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0143BBE524474B83001C57FF /* DeletePopUpVC.swift */; };
+		0143BBE824474B84001C57FF /* DeletePopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0143BBE624474B83001C57FF /* DeletePopUpVC.xib */; };
 		014665E52438CC11008661E2 /* BuyCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014665E32438CC11008661E2 /* BuyCourseCell.swift */; };
 		014665E62438CC11008661E2 /* BuyCourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014665E42438CC11008661E2 /* BuyCourseCell.xib */; };
 		0146B5D4243EC12B000453E7 /* PushProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0146B5D2243EC12B000453E7 /* PushProductVC.swift */; };
@@ -19,6 +21,8 @@
 		0146B5E1243F1550000453E7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0146B5E0243F1550000453E7 /* Product.swift */; };
 		01601EF024459F9000DC4F2C /* BuyProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01601EEE24459F9000DC4F2C /* BuyProductVC.swift */; };
 		01601EF124459F9000DC4F2C /* BuyProductVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01601EEF24459F9000DC4F2C /* BuyProductVC.xib */; };
+		018759B2244709DE00EAEFE9 /* EditCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018759B0244709DE00EAEFE9 /* EditCourseCell.swift */; };
+		018759B3244709DE00EAEFE9 /* EditCourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 018759B1244709DE00EAEFE9 /* EditCourseCell.xib */; };
 		01B56D3F243C6B6100B0D804 /* PushCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B56D3D243C6B6100B0D804 /* PushCourseVC.swift */; };
 		01B56D40243C6B6100B0D804 /* PushCourseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01B56D3E243C6B6100B0D804 /* PushCourseVC.xib */; };
 		A80CECE4243C2374001785DC /* RegisterAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80CECE2243C2374001785DC /* RegisterAccountVC.swift */; };
@@ -80,6 +84,8 @@
 		01272F2D2445ECED001A39ED /* EditCourseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditCourseVC.xib; sourceTree = "<group>"; };
 		01272F302445F55E001A39ED /* EditPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPopUpVC.swift; sourceTree = "<group>"; };
 		01272F312445F55E001A39ED /* EditPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPopUpVC.xib; sourceTree = "<group>"; };
+		0143BBE524474B83001C57FF /* DeletePopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePopUpVC.swift; sourceTree = "<group>"; };
+		0143BBE624474B83001C57FF /* DeletePopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeletePopUpVC.xib; sourceTree = "<group>"; };
 		014665E32438CC11008661E2 /* BuyCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCourseCell.swift; sourceTree = "<group>"; };
 		014665E42438CC11008661E2 /* BuyCourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyCourseCell.xib; sourceTree = "<group>"; };
 		0146B5D2243EC12B000453E7 /* PushProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushProductVC.swift; sourceTree = "<group>"; };
@@ -87,6 +93,8 @@
 		0146B5E0243F1550000453E7 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		01601EEE24459F9000DC4F2C /* BuyProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyProductVC.swift; sourceTree = "<group>"; };
 		01601EEF24459F9000DC4F2C /* BuyProductVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyProductVC.xib; sourceTree = "<group>"; };
+		018759B0244709DE00EAEFE9 /* EditCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCourseCell.swift; sourceTree = "<group>"; };
+		018759B1244709DE00EAEFE9 /* EditCourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditCourseCell.xib; sourceTree = "<group>"; };
 		01B56D3D243C6B6100B0D804 /* PushCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushCourseVC.swift; sourceTree = "<group>"; };
 		01B56D3E243C6B6100B0D804 /* PushCourseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PushCourseVC.xib; sourceTree = "<group>"; };
 		5D0F17786205A1FAF2E65BC2 /* Pods-TEE8ACADEMY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TEE8ACADEMY.debug.xcconfig"; path = "Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY.debug.xcconfig"; sourceTree = "<group>"; };
@@ -162,10 +170,13 @@
 		01272F2B2445ECBF001A39ED /* EditCourse */ = {
 			isa = PBXGroup;
 			children = (
+				018759AF2447097D00EAEFE9 /* EditCell */,
 				01272F2C2445ECED001A39ED /* EditCourseVC.swift */,
 				01272F2D2445ECED001A39ED /* EditCourseVC.xib */,
 				01272F302445F55E001A39ED /* EditPopUpVC.swift */,
 				01272F312445F55E001A39ED /* EditPopUpVC.xib */,
+				0143BBE524474B83001C57FF /* DeletePopUpVC.swift */,
+				0143BBE624474B83001C57FF /* DeletePopUpVC.xib */,
 			);
 			path = EditCourse;
 			sourceTree = "<group>";
@@ -186,6 +197,15 @@
 				01601EEF24459F9000DC4F2C /* BuyProductVC.xib */,
 			);
 			path = BuyProduct;
+			sourceTree = "<group>";
+		};
+		018759AF2447097D00EAEFE9 /* EditCell */ = {
+			isa = PBXGroup;
+			children = (
+				018759B0244709DE00EAEFE9 /* EditCourseCell.swift */,
+				018759B1244709DE00EAEFE9 /* EditCourseCell.xib */,
+			);
+			path = EditCell;
 			sourceTree = "<group>";
 		};
 		01B56D3C243C6AE200B0D804 /* Course */ = {
@@ -504,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A85B7FFC2438268F00CC4DCC /* LaunchScreen.storyboard in Resources */,
+				0143BBE824474B84001C57FF /* DeletePopUpVC.xib in Resources */,
 				A823C7422438839C00F749C2 /* Quicksand-Regular.ttf in Resources */,
 				A88A42D0243A08230013BAFB /* Tabbar.storyboard in Resources */,
 				01B56D40243C6B6100B0D804 /* PushCourseVC.xib in Resources */,
@@ -529,6 +550,7 @@
 				01272F332445F55E001A39ED /* EditPopUpVC.xib in Resources */,
 				A823C7442438839C00F749C2 /* Quicksand-Bold.ttf in Resources */,
 				A85FAAEB24433F0900C2F723 /* VerifyAccountVC.xib in Resources */,
+				018759B3244709DE00EAEFE9 /* EditCourseCell.xib in Resources */,
 				01272F2F2445ECED001A39ED /* EditCourseVC.xib in Resources */,
 				A80CECF4243C354B001785DC /* RegisterAccountCell.xib in Resources */,
 				0146B5D5243EC12B000453E7 /* PushProductVC.xib in Resources */,
@@ -593,11 +615,13 @@
 				A83ABBF1243F495E0039E64C /* HeaderCell.swift in Sources */,
 				A819AFDB243F4FED009AB1A6 /* Video.swift in Sources */,
 				A8D91CF6243F4C240087A86E /* VideoCell.swift in Sources */,
+				0143BBE724474B84001C57FF /* DeletePopUpVC.swift in Sources */,
 				A8A700442438C2B700B2139D /* BuyCourseVC.swift in Sources */,
 				A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */,
 				A821AB16243B8AFB0063A194 /* AcademyVC.swift in Sources */,
 				A88A42D4243A14B00013BAFB /* PopupPaymentVC.swift in Sources */,
 				A85FAAEA24433F0900C2F723 /* VerifyAccountVC.swift in Sources */,
+				018759B2244709DE00EAEFE9 /* EditCourseCell.swift in Sources */,
 				A85B7FF02438268E00CC4DCC /* AppDelegate.swift in Sources */,
 				A80CECF3243C354B001785DC /* RegisterAccountCell.swift in Sources */,
 				A821AB1C243B8BB40063A194 /* AdminPopupVC.swift in Sources */,

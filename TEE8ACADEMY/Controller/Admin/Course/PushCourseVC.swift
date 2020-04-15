@@ -33,6 +33,8 @@ class PushCourseVC: BaseViewController {
     var courseImage : UIImage?
     var timer : Timer?
     var arrayVideo = [Video]()
+    var allCoursePrice = 0.0
+    var sale = 0.2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +72,11 @@ class PushCourseVC: BaseViewController {
             databaseReference.child("Courses").child(snapshot.key).observeSingleEvent(of: .value) { (snapshot1) in
                 if let dict = snapshot1.value as? [String: Any] {
                     let course = Course(fromDict: dict)
+                    
+                    if course.name == "ALL COURSE" {
+                        self.allCoursePrice = course.price
+                    }
+                    
                     self.arrayCourse.append(course)
                     self.arrayCourse.sort(by: { (course1, course2) -> Bool in
                         return Int64(course1.price) > Int64(course2.price)
@@ -123,6 +130,10 @@ class PushCourseVC: BaseViewController {
         
         let value = ["name": name, "description": description, "price" : price, "time" : time] as [String : Any]
         databaseReference.child("Courses").child(name).setValue(value)
+        
+        let priceAfterSale = (self.allCoursePrice / (1 - self.sale) + price) * (1 - self.sale)
+        databaseReference.child("Courses").child("ALL COURSE").updateChildValues(["price" : priceAfterSale])
+
         startTimer()
         showLoadingSuccess(1)
         
