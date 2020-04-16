@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditPopUpVC" customModule="TEE_8_ACADEMY" customModuleProvider="target">
+            <connections>
+                <outlet property="btnCancel" destination="EtS-i6-0Rs" id="8ke-Rt-Ogl"/>
+                <outlet property="btnConfirm" destination="3zi-nD-DsG" id="Igr-23-MDo"/>
+                <outlet property="tvDescription" destination="OkP-nz-JMk" id="5Jd-12-d7x"/>
+                <outlet property="txtName" destination="Cuf-zr-sVg" id="rAw-cN-DzS"/>
+                <outlet property="txtPrice" destination="aFB-pQ-VkR" id="DgL-MD-5an"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewDim" destination="WZN-Py-LFc" id="vO1-7j-SmE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZN-Py-LFc">
+                    <rect key="frame" x="50" y="246" width="314" height="298"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tên khoá học" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cuf-zr-sVg">
+                            <rect key="frame" x="10" y="10" width="294" height="36"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="2pq-P8-yrC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Giá tiền" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFB-pQ-VkR" customClass="CurrencyTextField" customModule="TEE_8_ACADEMY" customModuleProvider="target">
+                            <rect key="frame" x="10" y="56" width="294" height="36"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="LD4-Ag-rgX"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OkP-nz-JMk">
+                            <rect key="frame" x="10" y="102" width="294" height="140"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="140" id="HTm-rR-e06"/>
+                            </constraints>
+                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zpZ-W2-MVM">
+                            <rect key="frame" x="10" y="252" width="294" height="36"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtS-i6-0Rs">
+                                    <rect key="frame" x="0.0" y="0.0" width="142" height="36"/>
+                                    <state key="normal" title="Huỷ" backgroundImage="bg_button">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tapOnCancel:" destination="-1" eventType="touchUpInside" id="h6G-Id-rba"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zi-nD-DsG">
+                                    <rect key="frame" x="152" y="0.0" width="142" height="36"/>
+                                    <state key="normal" title="Xác nhận" backgroundImage="bg_button">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tapOnConfirm:" destination="-1" eventType="touchUpInside" id="4FF-bq-YRN"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="Ler-Fx-GT6"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="zpZ-W2-MVM" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" constant="10" id="0WH-kc-Y9M"/>
+                        <constraint firstItem="aFB-pQ-VkR" firstAttribute="top" secondItem="Cuf-zr-sVg" secondAttribute="bottom" constant="10" id="5QI-9g-dCe"/>
+                        <constraint firstItem="Cuf-zr-sVg" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" constant="10" id="GoQ-Ie-jhD"/>
+                        <constraint firstAttribute="trailing" secondItem="aFB-pQ-VkR" secondAttribute="trailing" constant="10" id="Hon-SM-MRo"/>
+                        <constraint firstItem="OkP-nz-JMk" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" constant="10" id="IZN-jj-qJA"/>
+                        <constraint firstItem="zpZ-W2-MVM" firstAttribute="top" secondItem="OkP-nz-JMk" secondAttribute="bottom" constant="10" id="Kxb-Ek-XjM"/>
+                        <constraint firstAttribute="trailing" secondItem="zpZ-W2-MVM" secondAttribute="trailing" constant="10" id="MAd-p4-69r"/>
+                        <constraint firstAttribute="bottom" secondItem="zpZ-W2-MVM" secondAttribute="bottom" constant="10" id="PWk-Mo-ZMB"/>
+                        <constraint firstItem="OkP-nz-JMk" firstAttribute="top" secondItem="aFB-pQ-VkR" secondAttribute="bottom" constant="10" id="PWz-Hy-cLq"/>
+                        <constraint firstItem="Cuf-zr-sVg" firstAttribute="top" secondItem="WZN-Py-LFc" secondAttribute="top" constant="10" id="Q9q-Vf-98a"/>
+                        <constraint firstAttribute="trailing" secondItem="OkP-nz-JMk" secondAttribute="trailing" constant="10" id="QUc-PQ-f2K"/>
+                        <constraint firstItem="aFB-pQ-VkR" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" constant="10" id="ao9-6B-acu"/>
+                        <constraint firstAttribute="trailing" secondItem="Cuf-zr-sVg" secondAttribute="trailing" constant="10" id="gGq-wY-2Zo"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WZN-Py-LFc" secondAttribute="trailing" constant="50" id="2SK-B3-ojx"/>
+                <constraint firstItem="WZN-Py-LFc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="Gwq-XQ-thH"/>
+                <constraint firstItem="WZN-Py-LFc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="202" id="Rv1-Ps-vbh"/>
+                <constraint firstItem="WZN-Py-LFc" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="d9x-tJ-tI4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_button" width="129" height="22"/>
+    </resources>
+</document>
