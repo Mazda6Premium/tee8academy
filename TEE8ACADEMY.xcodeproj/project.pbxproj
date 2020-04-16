@@ -14,6 +14,10 @@
 		01272F332445F55E001A39ED /* EditPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01272F312445F55E001A39ED /* EditPopUpVC.xib */; };
 		0143BBE724474B84001C57FF /* DeletePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0143BBE524474B83001C57FF /* DeletePopUpVC.swift */; };
 		0143BBE824474B84001C57FF /* DeletePopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0143BBE624474B83001C57FF /* DeletePopUpVC.xib */; };
+		0143BBEC24476137001C57FF /* UserManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0143BBEA24476137001C57FF /* UserManagerVC.swift */; };
+		0143BBED24476137001C57FF /* UserManagerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0143BBEB24476137001C57FF /* UserManagerVC.xib */; };
+		0143BBF024476285001C57FF /* UserManagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0143BBEE24476285001C57FF /* UserManagerCell.swift */; };
+		0143BBF124476285001C57FF /* UserManagerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0143BBEF24476285001C57FF /* UserManagerCell.xib */; };
 		014665E52438CC11008661E2 /* BuyCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014665E32438CC11008661E2 /* BuyCourseCell.swift */; };
 		014665E62438CC11008661E2 /* BuyCourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014665E42438CC11008661E2 /* BuyCourseCell.xib */; };
 		0146B5D4243EC12B000453E7 /* PushProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0146B5D2243EC12B000453E7 /* PushProductVC.swift */; };
@@ -86,6 +90,10 @@
 		01272F312445F55E001A39ED /* EditPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditPopUpVC.xib; sourceTree = "<group>"; };
 		0143BBE524474B83001C57FF /* DeletePopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePopUpVC.swift; sourceTree = "<group>"; };
 		0143BBE624474B83001C57FF /* DeletePopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeletePopUpVC.xib; sourceTree = "<group>"; };
+		0143BBEA24476137001C57FF /* UserManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerVC.swift; sourceTree = "<group>"; };
+		0143BBEB24476137001C57FF /* UserManagerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserManagerVC.xib; sourceTree = "<group>"; };
+		0143BBEE24476285001C57FF /* UserManagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManagerCell.swift; sourceTree = "<group>"; };
+		0143BBEF24476285001C57FF /* UserManagerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserManagerCell.xib; sourceTree = "<group>"; };
 		014665E32438CC11008661E2 /* BuyCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCourseCell.swift; sourceTree = "<group>"; };
 		014665E42438CC11008661E2 /* BuyCourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyCourseCell.xib; sourceTree = "<group>"; };
 		0146B5D2243EC12B000453E7 /* PushProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushProductVC.swift; sourceTree = "<group>"; };
@@ -181,6 +189,25 @@
 			path = EditCourse;
 			sourceTree = "<group>";
 		};
+		0143BBE924476102001C57FF /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				014686FD2447FA47008CE599 /* TableCell */,
+				0143BBEA24476137001C57FF /* UserManagerVC.swift */,
+				0143BBEB24476137001C57FF /* UserManagerVC.xib */,
+			);
+			path = UserManager;
+			sourceTree = "<group>";
+		};
+		014686FD2447FA47008CE599 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				0143BBEE24476285001C57FF /* UserManagerCell.swift */,
+				0143BBEF24476285001C57FF /* UserManagerCell.xib */,
+			);
+			path = TableCell;
+			sourceTree = "<group>";
+		};
 		0146B5D1243EC0EE000453E7 /* Product */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +300,7 @@
 		A821AB19243B8B950063A194 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				0143BBE924476102001C57FF /* UserManager */,
 				01272F2B2445ECBF001A39ED /* EditCourse */,
 				A821AB1A243B8BB40063A194 /* AdminPopupVC.swift */,
 				A821AB1B243B8BB40063A194 /* AdminPopupVC.xib */,
@@ -536,6 +564,7 @@
 				01601EF124459F9000DC4F2C /* BuyProductVC.xib in Resources */,
 				A823C7432438839C00F749C2 /* Quicksand-Light.ttf in Resources */,
 				A85B7FF92438268F00CC4DCC /* Assets.xcassets in Resources */,
+				0143BBF124476285001C57FF /* UserManagerCell.xib in Resources */,
 				A8A700452438C2B700B2139D /* BuyCourseVC.xib in Resources */,
 				A85B7FF72438268E00CC4DCC /* Main.storyboard in Resources */,
 				A85FAAEF24434E2C00C2F723 /* CreatePasswordVC.xib in Resources */,
@@ -544,6 +573,7 @@
 				A823C7412438839C00F749C2 /* Quicksand-Medium.ttf in Resources */,
 				A8A700492438C62600B2139D /* SendReceiptVC.xib in Resources */,
 				A8102251243DFCC60089AE63 /* ChangePasswordVC.xib in Resources */,
+				0143BBED24476137001C57FF /* UserManagerVC.xib in Resources */,
 				A83ABBF2243F495E0039E64C /* HeaderCell.xib in Resources */,
 				A821AB1D243B8BB40063A194 /* AdminPopupVC.xib in Resources */,
 				A88A42D5243A14B00013BAFB /* PopupPaymentVC.xib in Resources */,
@@ -611,6 +641,7 @@
 				01601EF024459F9000DC4F2C /* BuyProductVC.swift in Sources */,
 				A85B7FF42438268E00CC4DCC /* ViewController.swift in Sources */,
 				A8102250243DFCC60089AE63 /* ChangePasswordVC.swift in Sources */,
+				0143BBF024476285001C57FF /* UserManagerCell.swift in Sources */,
 				01272F2E2445ECED001A39ED /* EditCourseVC.swift in Sources */,
 				A83ABBF1243F495E0039E64C /* HeaderCell.swift in Sources */,
 				A819AFDB243F4FED009AB1A6 /* Video.swift in Sources */,
@@ -627,6 +658,7 @@
 				A821AB1C243B8BB40063A194 /* AdminPopupVC.swift in Sources */,
 				01B56D3F243C6B6100B0D804 /* PushCourseVC.swift in Sources */,
 				A81843E0244487F2000BF147 /* AccountVC.swift in Sources */,
+				0143BBEC24476137001C57FF /* UserManagerVC.swift in Sources */,
 				01272F322445F55E001A39ED /* EditPopUpVC.swift in Sources */,
 				A8A700412438BC3200B2139D /* User.swift in Sources */,
 				A819AFDF243F5AE5009AB1A6 /* AcademyCell.swift in Sources */,
