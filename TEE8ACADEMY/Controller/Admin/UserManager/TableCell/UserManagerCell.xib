@@ -50,26 +50,19 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="LrS-Cc-gnR">
                                         <rect key="frame" x="25" y="25" width="20" height="20"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="Ee1-Y8-HG0"/>
-                                            <constraint firstAttribute="height" constant="20" id="U9N-x2-Ol7"/>
+                                            <constraint firstAttribute="height" constant="20" id="EN6-Us-gCk"/>
+                                            <constraint firstAttribute="width" constant="20" id="zzQ-rs-lax"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Block" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dkw-ba-6AZ">
-                                        <rect key="frame" x="20.5" y="44" width="29" height="13.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.49803921569999998" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="1g8-D5-tAc"/>
-                                    <constraint firstItem="LrS-Cc-gnR" firstAttribute="centerX" secondItem="51Y-6c-lR3" secondAttribute="centerX" id="4NR-N0-QFi"/>
-                                    <constraint firstItem="LrS-Cc-gnR" firstAttribute="centerY" secondItem="51Y-6c-lR3" secondAttribute="centerY" id="7I3-BL-2Hl"/>
+                                    <constraint firstItem="LrS-Cc-gnR" firstAttribute="centerY" secondItem="51Y-6c-lR3" secondAttribute="centerY" id="THL-An-t8V"/>
                                     <constraint firstAttribute="width" constant="70" id="bkn-ZT-nXp"/>
-                                    <constraint firstItem="Dkw-ba-6AZ" firstAttribute="top" secondItem="LrS-Cc-gnR" secondAttribute="bottom" constant="-1" id="t6W-x6-fBv"/>
-                                    <constraint firstItem="Dkw-ba-6AZ" firstAttribute="centerX" secondItem="51Y-6c-lR3" secondAttribute="centerX" id="zrT-Kl-XLh"/>
+                                    <constraint firstItem="LrS-Cc-gnR" firstAttribute="centerX" secondItem="51Y-6c-lR3" secondAttribute="centerX" id="dx4-xO-8Um"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -78,6 +71,7 @@
                         </constraints>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="gex-BT-yNt" secondAttribute="trailing" id="UIK-Cs-S0B"/>
                     <constraint firstAttribute="bottom" secondItem="gex-BT-yNt" secondAttribute="bottom" constant="5" id="iwX-0t-mMZ"/>
@@ -86,6 +80,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="imgLock" destination="LrS-Cc-gnR" id="vhL-bs-ulO"/>
                 <outlet property="lblEmail" destination="qLy-cc-Xqx" id="yXv-5R-OTM"/>
                 <outlet property="lblName" destination="HpF-qd-PjM" id="xju-Aa-tXJ"/>
                 <outlet property="viewBlock" destination="51Y-6c-lR3" id="91E-Z1-Le4"/>

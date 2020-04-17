@@ -17,6 +17,7 @@ class Course {
     var video = [Video]()
     var isOpen = false
     var isUnLock = false
+    var isSwiped = true
     
     init(name: String, price: Double) {
         self.name = name
@@ -68,6 +69,8 @@ class User {
     var totalPayment = 0.0
     var userId = ""
     var receiptPostId = ""
+    var isBlock = false
+    var isSwiped = true
     
     init() {}
     
@@ -106,7 +109,8 @@ class User {
             "totalPayment": self.totalPayment,
             "userId": self.userId,
             "receiptPostId": self.receiptPostId,
-            "checkExists": true
+            "checkExists": true,
+            "isBlock": false
         ]
     }
     
@@ -132,6 +136,7 @@ class User {
         if let course = dict["course"] as? [[String: Any]] {
             self.course = course.map({Course(fromDict: $0)})
         }
+        self.isBlock = dict["isBlock"] as? Bool ?? false
     }
     
     init(course: [Course]) {
