@@ -166,7 +166,7 @@ class AccountVC: BaseViewController {
         
         switch account {
         case .admin: // QUẢN LÝ KHOÁ HỌC
-            let vc = PushProductVC(nibName: "PushProductVC", bundle: nil)
+            let vc = EditCourseVC(nibName: "EditCourseVC", bundle: nil)
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
