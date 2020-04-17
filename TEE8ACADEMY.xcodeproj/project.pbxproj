@@ -20,6 +20,10 @@
 		0143BBF124476285001C57FF /* UserManagerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0143BBEF24476285001C57FF /* UserManagerCell.xib */; };
 		01446DC3244952C200CE2912 /* BlockPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01446DC1244952C200CE2912 /* BlockPopUpVC.swift */; };
 		01446DC4244952C200CE2912 /* BlockPopUpVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01446DC2244952C200CE2912 /* BlockPopUpVC.xib */; };
+		0144C2142449B11100D003DC /* EditProductPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0144C2122449B11100D003DC /* EditProductPopUp.swift */; };
+		0144C2152449B11100D003DC /* EditProductPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0144C2132449B11100D003DC /* EditProductPopUp.xib */; };
+		0144C2182449B44200D003DC /* ProductManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0144C2162449B44200D003DC /* ProductManagerVC.swift */; };
+		0144C2192449B44200D003DC /* ProductManagerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0144C2172449B44200D003DC /* ProductManagerVC.xib */; };
 		014665E52438CC11008661E2 /* BuyCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014665E32438CC11008661E2 /* BuyCourseCell.swift */; };
 		014665E62438CC11008661E2 /* BuyCourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014665E42438CC11008661E2 /* BuyCourseCell.xib */; };
 		0146B5D4243EC12B000453E7 /* PushProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0146B5D2243EC12B000453E7 /* PushProductVC.swift */; };
@@ -108,6 +112,10 @@
 		0143BBEF24476285001C57FF /* UserManagerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserManagerCell.xib; sourceTree = "<group>"; };
 		01446DC1244952C200CE2912 /* BlockPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockPopUpVC.swift; sourceTree = "<group>"; };
 		01446DC2244952C200CE2912 /* BlockPopUpVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlockPopUpVC.xib; sourceTree = "<group>"; };
+		0144C2122449B11100D003DC /* EditProductPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductPopUp.swift; sourceTree = "<group>"; };
+		0144C2132449B11100D003DC /* EditProductPopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProductPopUp.xib; sourceTree = "<group>"; };
+		0144C2162449B44200D003DC /* ProductManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManagerVC.swift; sourceTree = "<group>"; };
+		0144C2172449B44200D003DC /* ProductManagerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductManagerVC.xib; sourceTree = "<group>"; };
 		014665E32438CC11008661E2 /* BuyCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCourseCell.swift; sourceTree = "<group>"; };
 		014665E42438CC11008661E2 /* BuyCourseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyCourseCell.xib; sourceTree = "<group>"; };
 		0146B5D2243EC12B000453E7 /* PushProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushProductVC.swift; sourceTree = "<group>"; };
@@ -223,6 +231,17 @@
 				01446DC2244952C200CE2912 /* BlockPopUpVC.xib */,
 			);
 			path = UserManager;
+			sourceTree = "<group>";
+		};
+		0144C2092449AB5500D003DC /* ProductManager */ = {
+			isa = PBXGroup;
+			children = (
+				0144C2162449B44200D003DC /* ProductManagerVC.swift */,
+				0144C2172449B44200D003DC /* ProductManagerVC.xib */,
+				0144C2122449B11100D003DC /* EditProductPopUp.swift */,
+				0144C2132449B11100D003DC /* EditProductPopUp.xib */,
+			);
+			path = ProductManager;
 			sourceTree = "<group>";
 		};
 		014686FD2447FA47008CE599 /* TableCell */ = {
@@ -344,6 +363,7 @@
 		A821AB19243B8B950063A194 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				0144C2092449AB5500D003DC /* ProductManager */,
 				0143BBE924476102001C57FF /* UserManager */,
 				01272F2B2445ECBF001A39ED /* EditCourse */,
 				A821AB1A243B8BB40063A194 /* AdminPopupVC.swift */,
@@ -595,6 +615,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0144C2192449B44200D003DC /* ProductManagerVC.xib in Resources */,
+				0144C2152449B11100D003DC /* EditProductPopUp.xib in Resources */,
 				01446DC4244952C200CE2912 /* BlockPopUpVC.xib in Resources */,
 				A85B7FFC2438268F00CC4DCC /* LaunchScreen.storyboard in Resources */,
 				0143BBE824474B84001C57FF /* DeletePopUpVC.xib in Resources */,
@@ -698,6 +720,7 @@
 				A819AFDB243F4FED009AB1A6 /* Video.swift in Sources */,
 				A8D91CF6243F4C240087A86E /* VideoCell.swift in Sources */,
 				0143BBE724474B84001C57FF /* DeletePopUpVC.swift in Sources */,
+				0144C2142449B11100D003DC /* EditProductPopUp.swift in Sources */,
 				A8A700442438C2B700B2139D /* BuyCourseVC.swift in Sources */,
 				A85B80082438277C00CC4DCC /* BaseViewController.swift in Sources */,
 				A821AB16243B8AFB0063A194 /* AcademyVC.swift in Sources */,
@@ -722,6 +745,7 @@
 				01446DC3244952C200CE2912 /* BlockPopUpVC.swift in Sources */,
 				0146B5D4243EC12B000453E7 /* PushProductVC.swift in Sources */,
 				A88A42CE2439D99A0013BAFB /* Constant.swift in Sources */,
+				0144C2182449B44200D003DC /* ProductManagerVC.swift in Sources */,
 				A8A7004B2438C6EF00B2139D /* Extensions.swift in Sources */,
 				A85FAAEE24434E2C00C2F723 /* CreatePasswordVC.swift in Sources */,
 				0146B5E1243F1550000453E7 /* Product.swift in Sources */,
