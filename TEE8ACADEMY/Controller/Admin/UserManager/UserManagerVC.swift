@@ -13,15 +13,15 @@ class UserManagerVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var arrayUser = [User]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setUpTableView()
         getDataFromFirebase()
     }
-
+    
     func setUpTableView() {
         let userManagerCell_xib = UINib(nibName: "UserManagerCell", bundle: nil)
         tableView.register(userManagerCell_xib, forCellReuseIdentifier: "userManagerCell")
@@ -66,9 +66,14 @@ extension UserManagerVC : UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         cell.viewUser.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
         cell.viewBlock.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
-        cell.lblName.text = user.username
-        cell.lblEmail.text = user.email
+        cell.user = user
         cell.viewBlock.tag = indexPath.row
+        
+        if user.isBlock == true {
+            cell.imgLock.image = UIImage(named: "lock")
+        } else {
+            cell.imgLock.image = UIImage(named: "copy")
+        }
         
         let tapGes1 = UITapGestureRecognizer(target: self, action: #selector(tapOnViewBlock))
         cell.viewBlock.addGestureRecognizer(tapGes1)
@@ -77,10 +82,31 @@ extension UserManagerVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func tapOnViewBlock(_ sender : UITapGestureRecognizer) {
+        if let index = sender.view?.tag {
+            let vc = BlockPopUpVC(nibName: "BlockPopUpVC", bundle: nil)
+            let user = arrayUser[index]
+            vc.user = user
+            if user.isBlock == true {
+                vc.statusUser = .block
+            } else {
+                vc.statusUser = .unBlock
+            }
+            vc.delegate = self
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+    
+}
 
+extension UserManagerVC : BlockPopUpDelegate {
+    func updateUserStatus() {
+        self.arrayUser.removeAll()
+        self.tableView.reloadData()
+        getDataFromFirebase()
+    }
 }

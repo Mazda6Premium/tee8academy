@@ -82,23 +82,25 @@ extension EditCourseVC: UITableViewDelegate, UITableViewDataSource {
         let course = arrayCourse[indexPath.row]
         switch indexPath.row {
         case 0:
+            cell.course = course
             cell.viewCourse.backgroundColor = #colorLiteral(red: 0.6392156863, green: 0, blue: 0, alpha: 1)
             cell.lblPrice.textColor = .white
             cell.lblCourse.textColor = .white
-            cell.lblCourse.text = course.name
-            cell.lblPrice.text = "Price: \(formatMoney(course.price)) VND"
+//            cell.lblCourse.text = course.name
+//            cell.lblPrice.text = "Price: \(formatMoney(course.price)) VND"
             cell.imgDiscount.image = UIImage(named: "saving20")
             cell.imgDiscount.isHidden = false
+            cell.isUserInteractionEnabled = false
             
         default :
+            cell.course = course
+
             cell.viewCourse.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
             cell.viewEdit.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
             cell.viewDelete.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
 
             cell.lblPrice.textColor = .white
             cell.lblCourse.textColor = .white
-            cell.lblCourse.text = course.name
-            cell.lblPrice.text = "Price: \(formatMoney(course.price)) VND"
             cell.imgDiscount.isHidden = true
             
             cell.viewEdit.tag = indexPath.row

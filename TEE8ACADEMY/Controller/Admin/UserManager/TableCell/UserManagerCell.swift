@@ -14,13 +14,27 @@ class UserManagerCell: UITableViewCell {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var viewBlock: UIView!
+    @IBOutlet weak var imgLock: UIImageView!
+    @IBOutlet weak var lblStatus: UILabel!
+    
+    var user : User! {
+        didSet {
+            updateView()
+            setUpGes()
+        }
+    }
+    
+    func updateView() {
+        lblName.text = user.username
+        lblEmail.text = user.email
+        viewBlock.isHidden = user.isSwiped
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        roundCorner(views: [viewUser , viewBlock], radius: 8)
-        addShadow(views: [viewUser , viewBlock])
-        setUpGes()
+        
+        setUpView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,10 +43,14 @@ class UserManagerCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setUpView() {
+        roundCorner(views: [viewUser , viewBlock], radius: 8)
+        addShadow(views: [viewUser , viewBlock])
+    }
+    
     func setUpGes() {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(showEditCell))
         swipeLeft.direction = .left
-        viewUser.isUserInteractionEnabled = true
         viewUser.addGestureRecognizer(swipeLeft)
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(hideEditCell))
@@ -42,12 +60,14 @@ class UserManagerCell: UITableViewCell {
     }
     
     @objc func showEditCell() {
-        viewBlock.isHidden = false
-        viewBlock.isUserInteractionEnabled = true
+        user.isSwiped = false
+        updateView()
     }
 
     @objc func hideEditCell() {
-        viewBlock.isHidden = true
+        user.isSwiped = true
+        updateView()
+
     }
     
     func roundCorner(views: [UIView], radius: CGFloat) {
@@ -69,7 +89,5 @@ class UserManagerCell: UITableViewCell {
         }
     }
     
-    override func prepareForReuse() {
-        hideEditCell()
-    }
+   
 }
