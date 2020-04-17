@@ -36,8 +36,6 @@ class EditProductPopUp: BaseViewController {
         view.isOpaque = false
         view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
-        txtName.isUserInteractionEnabled = false
-        
         txtName.text = product!.name
         txtPrice.text = formatMoney(product!.price)
         
