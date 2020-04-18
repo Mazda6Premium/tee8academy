@@ -182,12 +182,12 @@ class VerifyAccountVC: BaseViewController {
         if second == 0 {
             if let user = user {
                 loginWithPhoneNumber(phone: user.phone)
-                btnSendAgain.setTitle("Gửi lại OTP", for: .normal)
+                btnSendAgain.setTitle("SEND AGAIN", for: .normal)
                 timer.invalidate()
                 second = 60
             }
         } else {
-            btnSendAgain.setTitle("Get OTP after \(second) second", for: .normal)
+            btnSendAgain.setTitle("GET OTP   \(second) second", for: .normal)
         }
     }
 }

@@ -50,12 +50,17 @@ class CreatePasswordVC: BaseViewController {
             showToast(message: "Chúc mừng bạn đã tạo tài khoản thành công.")
             txtPassword.text = ""
             txtConfirmPassword.text = ""
-            _ = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(self.dismissView), userInfo: nil, repeats: false)
+            _ = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.dismissView), userInfo: nil, repeats: false)
         }
     }
     
     @objc func dismissView() {
-        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+        let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        // CACHE IN SESSION DATA USING SINGLETON
+        SessionData.shared.userData = user
     }
     
     func checkLogic() {
