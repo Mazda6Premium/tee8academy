@@ -25,41 +25,41 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZN-Py-LFc">
-                    <rect key="frame" x="50" y="246" width="314" height="298"/>
+                    <rect key="frame" x="10" y="311.5" width="394" height="273"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tên khoá học" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cuf-zr-sVg">
-                            <rect key="frame" x="10" y="10" width="294" height="36"/>
+                            <rect key="frame" x="5" y="5" width="384" height="36"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="36" id="2pq-P8-yrC"/>
+                                <constraint firstAttribute="height" constant="36" id="aSE-R9-crZ"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Giá tiền" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFB-pQ-VkR" customClass="CurrencyTextField" customModule="TEE_8_ACADEMY" customModuleProvider="target">
-                            <rect key="frame" x="10" y="56" width="294" height="36"/>
+                            <rect key="frame" x="5" y="46" width="384" height="36"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="36" id="LD4-Ag-rgX"/>
+                                <constraint firstAttribute="height" constant="36" id="Ca1-uh-4mz"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OkP-nz-JMk">
-                            <rect key="frame" x="10" y="102" width="294" height="140"/>
+                            <rect key="frame" x="5" y="87" width="384" height="140"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="140" id="HTm-rR-e06"/>
+                                <constraint firstAttribute="height" constant="140" id="Z9D-d8-wkS"/>
                             </constraints>
                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zpZ-W2-MVM">
-                            <rect key="frame" x="10" y="252" width="294" height="36"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zpZ-W2-MVM">
+                            <rect key="frame" x="5" y="232" width="384" height="36"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtS-i6-0Rs">
-                                    <rect key="frame" x="0.0" y="0.0" width="142" height="36"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="189.5" height="36"/>
                                     <state key="normal" title="Huỷ" backgroundImage="bg_button">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -68,7 +68,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zi-nD-DsG">
-                                    <rect key="frame" x="152" y="0.0" width="142" height="36"/>
+                                    <rect key="frame" x="194.5" y="0.0" width="189.5" height="36"/>
                                     <state key="normal" title="Xác nhận" backgroundImage="bg_button">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -78,34 +78,35 @@
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="36" id="Ler-Fx-GT6"/>
+                                <constraint firstAttribute="height" constant="36" id="uXU-Ja-Ahd"/>
                             </constraints>
                         </stackView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstItem="zpZ-W2-MVM" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" constant="10" id="0WH-kc-Y9M"/>
-                        <constraint firstItem="aFB-pQ-VkR" firstAttribute="top" secondItem="Cuf-zr-sVg" secondAttribute="bottom" constant="10" id="5QI-9g-dCe"/>
-                        <constraint firstItem="Cuf-zr-sVg" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" constant="10" id="GoQ-Ie-jhD"/>
-                        <constraint firstAttribute="trailing" secondItem="aFB-pQ-VkR" secondAttribute="trailing" constant="10" id="Hon-SM-MRo"/>
-                        <constraint firstItem="OkP-nz-JMk" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" constant="10" id="IZN-jj-qJA"/>
-                        <constraint firstItem="zpZ-W2-MVM" firstAttribute="top" secondItem="OkP-nz-JMk" secondAttribute="bottom" constant="10" id="Kxb-Ek-XjM"/>
-                        <constraint firstAttribute="trailing" secondItem="zpZ-W2-MVM" secondAttribute="trailing" constant="10" id="MAd-p4-69r"/>
-                        <constraint firstAttribute="bottom" secondItem="zpZ-W2-MVM" secondAttribute="bottom" constant="10" id="PWk-Mo-ZMB"/>
-                        <constraint firstItem="OkP-nz-JMk" firstAttribute="top" secondItem="aFB-pQ-VkR" secondAttribute="bottom" constant="10" id="PWz-Hy-cLq"/>
-                        <constraint firstItem="Cuf-zr-sVg" firstAttribute="top" secondItem="WZN-Py-LFc" secondAttribute="top" constant="10" id="Q9q-Vf-98a"/>
-                        <constraint firstAttribute="trailing" secondItem="OkP-nz-JMk" secondAttribute="trailing" constant="10" id="QUc-PQ-f2K"/>
-                        <constraint firstItem="aFB-pQ-VkR" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" constant="10" id="ao9-6B-acu"/>
-                        <constraint firstAttribute="trailing" secondItem="Cuf-zr-sVg" secondAttribute="trailing" constant="10" id="gGq-wY-2Zo"/>
+                        <constraint firstItem="aFB-pQ-VkR" firstAttribute="top" secondItem="Cuf-zr-sVg" secondAttribute="bottom" constant="5" id="3ER-eI-j7z"/>
+                        <constraint firstItem="zpZ-W2-MVM" firstAttribute="leading" secondItem="OkP-nz-JMk" secondAttribute="leading" id="61K-M9-Ad6"/>
+                        <constraint firstAttribute="trailing" secondItem="Cuf-zr-sVg" secondAttribute="trailing" constant="5" id="8zO-X5-Sna"/>
+                        <constraint firstItem="zpZ-W2-MVM" firstAttribute="trailing" secondItem="OkP-nz-JMk" secondAttribute="trailing" id="9Gk-fR-KJe"/>
+                        <constraint firstItem="aFB-pQ-VkR" firstAttribute="trailing" secondItem="Cuf-zr-sVg" secondAttribute="trailing" id="Ac9-KZ-7WR"/>
+                        <constraint firstItem="zpZ-W2-MVM" firstAttribute="top" secondItem="OkP-nz-JMk" secondAttribute="bottom" constant="5" id="G5e-eY-GPf"/>
+                        <constraint firstItem="OkP-nz-JMk" firstAttribute="top" secondItem="aFB-pQ-VkR" secondAttribute="bottom" constant="5" id="HxK-Br-ipB"/>
+                        <constraint firstAttribute="bottom" secondItem="zpZ-W2-MVM" secondAttribute="bottom" constant="5" id="KDo-Ce-1io"/>
+                        <constraint firstItem="Cuf-zr-sVg" firstAttribute="top" secondItem="WZN-Py-LFc" secondAttribute="top" constant="5" id="Yba-bt-E03"/>
+                        <constraint firstItem="aFB-pQ-VkR" firstAttribute="leading" secondItem="Cuf-zr-sVg" secondAttribute="leading" id="dJD-Q1-H7C"/>
+                        <constraint firstItem="OkP-nz-JMk" firstAttribute="trailing" secondItem="aFB-pQ-VkR" secondAttribute="trailing" id="k2O-3U-lZa"/>
+                        <constraint firstItem="OkP-nz-JMk" firstAttribute="leading" secondItem="aFB-pQ-VkR" secondAttribute="leading" id="mpa-GR-GMk"/>
+                        <constraint firstItem="Cuf-zr-sVg" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" constant="5" id="uMa-GM-Hgl"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WZN-Py-LFc" secondAttribute="trailing" constant="50" id="2SK-B3-ojx"/>
-                <constraint firstItem="WZN-Py-LFc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="Gwq-XQ-thH"/>
-                <constraint firstItem="WZN-Py-LFc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="202" id="Rv1-Ps-vbh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WZN-Py-LFc" secondAttribute="trailing" constant="10" id="JEg-Td-MN2"/>
+                <constraint firstItem="WZN-Py-LFc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JQk-AT-w6o"/>
+                <constraint firstItem="WZN-Py-LFc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Kqe-la-rNf"/>
                 <constraint firstItem="WZN-Py-LFc" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="d9x-tJ-tI4"/>
+                <constraint firstItem="WZN-Py-LFc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mcX-GU-DT0"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>

@@ -71,19 +71,24 @@ class ViewController: BaseViewController {
         checkLogic()
         // CHECK 4 CONDITIONS PASSWORD + UUID + IPHONE MODEL
         if let user = user {
+            if user.email == "admin" {
+                self.loginSuccess()
+                return
+            }
             guard let phoneId = UIDevice.current.identifierForVendor?.uuidString else {return}
             let phoneModel = UIDevice.modelName
             guard let password = txtPassword.text else {return}
             if password == user.password { // CHECK PASSWORD
                 if phoneId == user.phoneId && phoneModel == user.phoneModel { // CHECK ID AND MODEL
-                    self.loginSuccess()
-                } else {
-                    if user.email == "admin" {
+                    if !user.isBlock {
                         self.loginSuccess()
                     } else {
-                        self.showToast(message: "Thiết bị đăng nhập không hợp lệ, mỗi tài khoản chỉ được đăng nhập trên một thiết bị duy nhất, vui lòng liên hệ quản trị viên để biết thêm thông tin chi tiết.", duration: 5)
+                        self.showToast(message: "Tài khoản của bạn đã bị khoá do vi phạm quy định của ứng dụng, vui lòng liên hệ quản trị viên để biết thêm thông tin chi tiết.", duration: 5)
                         self.hideLoading()
                     }
+                } else {
+                    self.showToast(message: "Thiết bị đăng nhập không hợp lệ, mỗi tài khoản chỉ được đăng nhập trên một thiết bị duy nhất, vui lòng liên hệ quản trị viên để biết thêm thông tin chi tiết.", duration: 5)
+                    self.hideLoading()
                 }
             } else {
                 self.showToast(message: "Sai mật khẩu, vui lòng nhập lại.")

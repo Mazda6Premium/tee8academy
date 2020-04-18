@@ -1,61 +1,27 @@
 //
-//  AcademyVC.swift
+//  EditVideoVC.swift
 //  TEE8ACADEMY
 //
-//  Created by Trung iOS on 4/6/20.
+//  Created by Trung iOS on 4/18/20.
 //  Copyright © 2020 Fighting. All rights reserved.
 //
 
 import UIKit
-import SDWebImage
-import XCDYouTubeKit
-import AVKit
-import SimpleImageViewer
 
-struct VideoQuality {
-    static let hd720 = NSNumber(value: XCDYouTubeVideoQuality.HD720.rawValue)
-    static let medium360 = NSNumber(value: XCDYouTubeVideoQuality.medium360.rawValue)
-    static let small240 = NSNumber(value: XCDYouTubeVideoQuality.small240.rawValue)
-}
-
-class AcademyVC: BaseViewController {
+class EditVideoVC: BaseViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     var arrayCourse = [Course]()
     var screenWidthVideo: CGFloat = 0.1
-    var courseRegisted = [Course]()
-
-    let refreshControl = UIRefreshControl()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setupCollectionView()
-        bindData()
         getDataFromFirebase()
-        setupRefreshControl()
-    }
-    
-    func bindData() {
-        if let user = SessionData.shared.userData {
-            courseRegisted = user.course
-        }
-    }
-    
-    func setupRefreshControl() {
-        self.collectionView.alwaysBounceVertical = true
-        self.refreshControl.tintColor = #colorLiteral(red: 0.1019607843, green: 0.3568627451, blue: 0.3921568627, alpha: 1)
-        self.refreshControl.addTarget(self, action: #selector(reloadData), for: .valueChanged)
-        self.collectionView.addSubview(refreshControl)
-    }
-    
-    @objc func reloadData() {
-        arrayCourse.removeAll()
-        collectionView.reloadData()
-        getDataFromFirebase()
-        refreshControl.endRefreshing()
     }
     
     func setupCollectionView() {
@@ -87,28 +53,19 @@ class AcademyVC: BaseViewController {
                         self.arrayCourse[0].isOpen = true
                     }
                     
-                    // SO SANH 2 ARRAY
-                    self.courseRegisted.forEach { (data) in
-                        if data.name == "ALL COURSE" {
-                            self.arrayCourse.forEach { (response) in
-                                response.isUnLock = true
-                            }
-                        } else {
-                            if let indexObject = self.arrayCourse.firstIndex(where: {$0.name == data.name}) {
-                                self.arrayCourse[indexObject].isUnLock = true
-                            }
-                        }
-                    }
-                    
                     self.collectionView.reloadData()
                     self.showLoadingSuccess(1)
                 }
             }
         }
     }
+    
+    @IBAction func tapOnBack(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
-extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension EditVideoVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return arrayCourse.count * 2
     }
@@ -134,14 +91,14 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             cell0.imgDown.isHidden = true
         }
         
-        let data = arrayCourse[indexPath.section / 2]
-        cell1.viewDim.isHidden = data.isUnLock
-        cell1.imgLock.isHidden = data.isUnLock
-        if !data.isUnLock {
-            cell1.isUserInteractionEnabled = false
-        } else {
-            cell1.isUserInteractionEnabled = true
-        }
+//        let data = arrayCourse[indexPath.section / 2]
+        cell1.viewDim.isHidden = true
+        cell1.imgLock.isHidden = true
+//        if !data.isUnLock {
+//            cell1.isUserInteractionEnabled = false
+//        } else {
+//            cell1.isUserInteractionEnabled = true
+//        }
         
         if indexPath.section % 2 == 0 {
             let course = arrayCourse[indexPath.section / 2]
@@ -177,7 +134,7 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
                     cell1.imgVideo.image = UIImage(named: "placeholder")
                 }
             }
-
+            
             return cell1
         }
     }
@@ -185,27 +142,10 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section % 2 != 0 {
             let course = arrayCourse[indexPath.section / 2].video[indexPath.row]
-            if course.type == "Video" { // VIDEO
-                if let videoId = getYoutubeId(youtubeUrl: course.linkVideo) {
-                    // play video
-                    let playerViewController = AVPlayerViewController()
-                    self.present(playerViewController, animated: true, completion: nil)
-                    XCDYouTubeClient.default().getVideoWithIdentifier(videoId) { [weak playerViewController] (video: XCDYouTubeVideo?, error: Error?) in
-                        if let streamURLs = video?.streamURLs, let streamURL = (streamURLs[XCDYouTubeVideoQualityHTTPLiveStreaming] ?? streamURLs[VideoQuality.hd720] ?? streamURLs[VideoQuality.medium360] ?? streamURLs[VideoQuality.small240]) {
-                            playerViewController?.player = AVPlayer(url: streamURL)
-                            playerViewController?.player?.play()
-                        } else {
-                            self.dismiss(animated: true, completion: nil)
-                        }
-                    }
-                }
-            } else { // IMAGE
-                let cell = collectionView.cellForItem(at: indexPath) as! VideoCell
-                let configuration = ImageViewerConfiguration { config in
-                    config.imageView = cell.imgVideo
-                }
-                present(ImageViewerController(configuration: configuration), animated: true)
-            }
+            let vc = PopupEditVideo(nibName: "PopupEditVideo", bundle: nil)
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.video = course
+            self.present(vc, animated: true, completion: nil)
         } else { // TAP ON HEADER
             collectionView.performBatchUpdates({
                 let course = arrayCourse[indexPath.section / 2]
@@ -213,8 +153,6 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             }, completion: nil)
         }
     }
-    
-
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section % 2 == 0 {
@@ -239,4 +177,3 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         return 10
     }
 }
-

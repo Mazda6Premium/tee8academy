@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopupEditVideo" customModule="TEE_8_ACADEMY" customModuleProvider="target">
+            <connections>
+                <outlet property="btnHuy" destination="8HA-jz-60w" id="OjA-2e-swi"/>
+                <outlet property="btnXacNhan" destination="dnH-TA-KcO" id="KRP-Zz-oH9"/>
+                <outlet property="tvDescription" destination="htj-0f-vn6" id="qr9-DS-aEb"/>
+                <outlet property="txtLinkVideo" destination="g3N-ap-fMM" id="7Fs-x5-ZRS"/>
+                <outlet property="txtNameVideo" destination="DUd-sm-T7B" id="Qb8-ll-Y6f"/>
+                <outlet property="txtType" destination="7gO-0Y-5rn" id="nQA-du-Kex"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewDim" destination="ax3-59-tp3" id="Z3j-Kh-l2g"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ax3-59-tp3">
+                    <rect key="frame" x="10" y="311.5" width="394" height="273"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="T88-4X-c52">
+                            <rect key="frame" x="5" y="5" width="384" height="36"/>
+                            <subviews>
+                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Loại" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7gO-0Y-5rn">
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="36"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="120" id="9v9-SX-YSj"/>
+                                        <constraint firstAttribute="height" constant="36" id="zY5-s2-8qO"/>
+                                    </constraints>
+                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Link video" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g3N-ap-fMM">
+                                    <rect key="frame" x="125" y="0.0" width="259" height="36"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="36" id="I9r-dI-siG"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="ZD9-E2-TZx"/>
+                            </constraints>
+                        </stackView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tên video" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DUd-sm-T7B">
+                            <rect key="frame" x="5" y="46" width="384" height="36"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="tPC-VY-64K"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="htj-0f-vn6">
+                            <rect key="frame" x="5" y="87" width="384" height="140"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="140" id="uQJ-0J-v5a"/>
+                            </constraints>
+                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="518-Pa-JyE">
+                            <rect key="frame" x="5" y="232" width="384" height="36"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8HA-jz-60w">
+                                    <rect key="frame" x="0.0" y="0.0" width="189.5" height="36"/>
+                                    <state key="normal" title="Huỷ" backgroundImage="bg_button">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tapOnCancel:" destination="-1" eventType="touchUpInside" id="uiQ-WV-9jg"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnH-TA-KcO">
+                                    <rect key="frame" x="194.5" y="0.0" width="189.5" height="36"/>
+                                    <state key="normal" title="Xác nhận" backgroundImage="bg_button">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tapOnConfirm:" destination="-1" eventType="touchUpInside" id="UWM-Mi-t18"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="Xch-GO-67W"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="T88-4X-c52" secondAttribute="trailing" constant="5" id="060-CI-SXK"/>
+                        <constraint firstItem="518-Pa-JyE" firstAttribute="trailing" secondItem="htj-0f-vn6" secondAttribute="trailing" id="78t-HS-Jmf"/>
+                        <constraint firstItem="T88-4X-c52" firstAttribute="top" secondItem="ax3-59-tp3" secondAttribute="top" constant="5" id="CoH-He-aZb"/>
+                        <constraint firstItem="htj-0f-vn6" firstAttribute="top" secondItem="DUd-sm-T7B" secondAttribute="bottom" constant="5" id="Ke1-Vi-UAf"/>
+                        <constraint firstItem="DUd-sm-T7B" firstAttribute="leading" secondItem="T88-4X-c52" secondAttribute="leading" id="QXv-h9-g2e"/>
+                        <constraint firstItem="DUd-sm-T7B" firstAttribute="top" secondItem="T88-4X-c52" secondAttribute="bottom" constant="5" id="W4b-LJ-TWa"/>
+                        <constraint firstItem="htj-0f-vn6" firstAttribute="leading" secondItem="ax3-59-tp3" secondAttribute="leading" constant="5" id="cZF-du-sS1"/>
+                        <constraint firstItem="T88-4X-c52" firstAttribute="leading" secondItem="ax3-59-tp3" secondAttribute="leading" constant="5" id="ddl-hi-pJE"/>
+                        <constraint firstAttribute="bottom" secondItem="518-Pa-JyE" secondAttribute="bottom" constant="5" id="g2F-8g-4P6"/>
+                        <constraint firstItem="518-Pa-JyE" firstAttribute="top" secondItem="htj-0f-vn6" secondAttribute="bottom" constant="5" id="pla-vY-f6d"/>
+                        <constraint firstAttribute="trailing" secondItem="htj-0f-vn6" secondAttribute="trailing" constant="5" id="rPd-qV-ThZ"/>
+                        <constraint firstItem="DUd-sm-T7B" firstAttribute="trailing" secondItem="T88-4X-c52" secondAttribute="trailing" id="t4h-of-79Y"/>
+                        <constraint firstItem="518-Pa-JyE" firstAttribute="leading" secondItem="htj-0f-vn6" secondAttribute="leading" id="wLG-hV-VZb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ax3-59-tp3" secondAttribute="trailing" constant="10" id="3RT-0k-raZ"/>
+                <constraint firstItem="ax3-59-tp3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="eVi-GK-G6d"/>
+                <constraint firstItem="ax3-59-tp3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ej9-ni-93M"/>
+                <constraint firstItem="ax3-59-tp3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="g0N-kc-jER"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131.8840579710145" y="152.67857142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_button" width="129" height="22"/>
+    </resources>
+</document>

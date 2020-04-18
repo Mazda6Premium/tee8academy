@@ -232,7 +232,7 @@ class AccountVC: BaseViewController {
         
         switch account {
         case .admin: // QUẢN LÝ VIDEO
-            let vc = ProductManagerVC(nibName: "ProductManagerVC", bundle: nil)
+            let vc = EditVideoVC(nibName: "EditVideoVC", bundle: nil)
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)

@@ -8,6 +8,8 @@
 
 import UIKit
 import ActionSheetPicker_3_0
+import AVKit
+import XCDYouTubeKit
 
 enum PushVC {
     case course
@@ -162,6 +164,7 @@ class PushCourseVC: BaseViewController {
         case "Video":
             guard let linkVideo = txtLinkVid.text else { return }
             let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: linkVideo, time: time, type: type, imageUrl: "")
+            
             self.arrayVideo.append(video)
             let course = Course(video: arrayVideo)
             databaseReference.child("Courses").child(nameCourseChoose).updateChildValues(course.asDictionaryVideo())

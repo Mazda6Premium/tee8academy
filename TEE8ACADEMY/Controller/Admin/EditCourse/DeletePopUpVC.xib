@@ -22,22 +22,22 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VM3-FS-7B3">
-                    <rect key="frame" x="60" y="397.5" width="294" height="111"/>
+                    <rect key="frame" x="10" y="387.5" width="394" height="131"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xoá khoá học ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOq-so-SbK">
-                            <rect key="frame" x="95" y="20" width="104.5" height="30"/>
+                            <rect key="frame" x="145" y="20" width="104.5" height="50"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="NbI-fw-c4i"/>
+                                <constraint firstAttribute="height" constant="50" id="NbI-fw-c4i"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QNx-sM-vVk">
-                            <rect key="frame" x="5" y="70" width="284" height="36"/>
+                            <rect key="frame" x="5" y="90" width="384" height="36"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e44-3A-u4M">
-                                    <rect key="frame" x="0.0" y="0.0" width="139.5" height="36"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="189.5" height="36"/>
                                     <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="Huỷ" backgroundImage="bg_button">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,7 +47,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5R-NW-40n">
-                                    <rect key="frame" x="144.5" y="0.0" width="139.5" height="36"/>
+                                    <rect key="frame" x="194.5" y="0.0" width="189.5" height="36"/>
                                     <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="Xoá" backgroundImage="bg_button">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -76,10 +76,10 @@
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="VM3-FS-7B3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="U8b-WB-cpm"/>
+                <constraint firstItem="VM3-FS-7B3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="U8b-WB-cpm"/>
                 <constraint firstItem="VM3-FS-7B3" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="nGn-Bv-Scm"/>
                 <constraint firstItem="VM3-FS-7B3" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="nKW-JG-Npo"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VM3-FS-7B3" secondAttribute="trailing" constant="60" id="wLx-Be-Tg8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VM3-FS-7B3" secondAttribute="trailing" constant="10" id="wLx-Be-Tg8"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="105.79710144927537" y="13.392857142857142"/>

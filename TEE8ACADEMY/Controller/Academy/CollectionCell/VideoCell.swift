@@ -15,7 +15,6 @@ class VideoCell: UICollectionViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
     @IBOutlet weak var lblTime: UILabel!
-    
     @IBOutlet weak var viewDim: UIView!
     @IBOutlet weak var imgLock: UIImageView!
     

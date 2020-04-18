@@ -41,12 +41,13 @@ class EditPopUpVC: BaseViewController {
         
         txtName.isUserInteractionEnabled = false
         
-        txtName.text = course!.name
-        txtPrice.text = formatMoney(course!.price)
-        tvDescription.text = course!.description
-        
+        if let data = course {
+            txtName.text = data.name
+            txtPrice.text = formatMoney(data.price)
+            tvDescription.text = data.description
+        }
+
         roundCorner(views: [viewDim , txtName , txtPrice , tvDescription , btnCancel , btnConfirm ], radius: 8)
-        
     }
     
     @IBAction func tapOnConfirm(_ sender: Any) {

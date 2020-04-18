@@ -61,6 +61,10 @@
 		A823C7442438839C00F749C2 /* Quicksand-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A823C7402438839C00F749C2 /* Quicksand-Bold.ttf */; };
 		A823C74824388A0300F749C2 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823C74624388A0300F749C2 /* RegisterVC.swift */; };
 		A823C74924388A0300F749C2 /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A823C74724388A0300F749C2 /* RegisterVC.xib */; };
+		A837C753244B398000BC4F66 /* EditVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A837C751244B398000BC4F66 /* EditVideoVC.swift */; };
+		A837C754244B398000BC4F66 /* EditVideoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A837C752244B398000BC4F66 /* EditVideoVC.xib */; };
+		A837C757244B3F3100BC4F66 /* PopupEditVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A837C755244B3F3100BC4F66 /* PopupEditVideo.swift */; };
+		A837C758244B3F3100BC4F66 /* PopupEditVideo.xib in Resources */ = {isa = PBXBuildFile; fileRef = A837C756244B3F3100BC4F66 /* PopupEditVideo.xib */; };
 		A83ABBF1243F495E0039E64C /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83ABBEF243F495E0039E64C /* HeaderCell.swift */; };
 		A83ABBF2243F495E0039E64C /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83ABBF0243F495E0039E64C /* HeaderCell.xib */; };
 		A849BFF9244AE099002537D0 /* AnimationCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A849BFF7244AE099002537D0 /* AnimationCourseVC.swift */; };
@@ -156,6 +160,10 @@
 		A823C7402438839C00F749C2 /* Quicksand-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.ttf"; sourceTree = "<group>"; };
 		A823C74624388A0300F749C2 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		A823C74724388A0300F749C2 /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
+		A837C751244B398000BC4F66 /* EditVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVideoVC.swift; sourceTree = "<group>"; };
+		A837C752244B398000BC4F66 /* EditVideoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditVideoVC.xib; sourceTree = "<group>"; };
+		A837C755244B3F3100BC4F66 /* PopupEditVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupEditVideo.swift; sourceTree = "<group>"; };
+		A837C756244B3F3100BC4F66 /* PopupEditVideo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupEditVideo.xib; sourceTree = "<group>"; };
 		A83ABBEF243F495E0039E64C /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		A83ABBF0243F495E0039E64C /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		A849BFF7244AE099002537D0 /* AnimationCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCourseVC.swift; sourceTree = "<group>"; };
@@ -363,6 +371,7 @@
 		A821AB19243B8B950063A194 /* Admin */ = {
 			isa = PBXGroup;
 			children = (
+				A837C750244B394500BC4F66 /* Video */,
 				0144C2092449AB5500D003DC /* ProductManager */,
 				0143BBE924476102001C57FF /* UserManager */,
 				01272F2B2445ECBF001A39ED /* EditCourse */,
@@ -403,6 +412,17 @@
 				A823C73E2438839C00F749C2 /* Quicksand-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A837C750244B394500BC4F66 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				A837C751244B398000BC4F66 /* EditVideoVC.swift */,
+				A837C752244B398000BC4F66 /* EditVideoVC.xib */,
+				A837C755244B3F3100BC4F66 /* PopupEditVideo.swift */,
+				A837C756244B3F3100BC4F66 /* PopupEditVideo.xib */,
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 		A83ABBEE243F49230039E64C /* CollectionCell */ = {
@@ -621,7 +641,9 @@
 				A85B7FFC2438268F00CC4DCC /* LaunchScreen.storyboard in Resources */,
 				0143BBE824474B84001C57FF /* DeletePopUpVC.xib in Resources */,
 				A883495A2447672000587024 /* ProductCell.xib in Resources */,
+				A837C754244B398000BC4F66 /* EditVideoVC.xib in Resources */,
 				A823C7422438839C00F749C2 /* Quicksand-Regular.ttf in Resources */,
+				A837C758244B3F3100BC4F66 /* PopupEditVideo.xib in Resources */,
 				A88A42D0243A08230013BAFB /* Tabbar.storyboard in Resources */,
 				01B56D40243C6B6100B0D804 /* PushCourseVC.xib in Resources */,
 				A819AFE0243F5AE5009AB1A6 /* AcademyCell.xib in Resources */,
@@ -742,6 +764,8 @@
 				A821AB18243B8B1E0063A194 /* StoreVC.swift in Sources */,
 				A823C74824388A0300F749C2 /* RegisterVC.swift in Sources */,
 				A80CECE7243C23DE001785DC /* SegmentedControl.swift in Sources */,
+				A837C757244B3F3100BC4F66 /* PopupEditVideo.swift in Sources */,
+				A837C753244B398000BC4F66 /* EditVideoVC.swift in Sources */,
 				01446DC3244952C200CE2912 /* BlockPopUpVC.swift in Sources */,
 				0146B5D4243EC12B000453E7 /* PushProductVC.swift in Sources */,
 				A88A42CE2439D99A0013BAFB /* Constant.swift in Sources */,
