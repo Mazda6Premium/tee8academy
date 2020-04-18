@@ -22,12 +22,6 @@ class StoreVC: BaseViewController {
     var arrayProductTimes = [Product]()
     var arrayCart = [Cart]()
     
-    var screenWidth: CGFloat {
-        return UIScreen.main.bounds.size.width
-    }
-    var screenHeight: CGFloat {
-        return UIScreen.main.bounds.size.height
-    }
     let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {

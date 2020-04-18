@@ -9,9 +9,12 @@
 import UIKit
 import ActionSheetPicker_3_0
 
+enum PushVC {
+    case course
+    case video
+}
+
 class PushCourseVC: BaseViewController {
-    
-    @IBOutlet weak var segmentedControl: SegmentedControl!
     
     @IBOutlet weak var viewPush: UIView!
     @IBOutlet weak var txtName: UITextField!
@@ -36,21 +39,28 @@ class PushCourseVC: BaseViewController {
     var allCoursePrice = 0.0
     var sale = 0.2
     
+    var pushVC: PushVC = .course
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         setUpView()
-        setUpSegmentControl()
         getDataFromFirebase()
     }
     
     func setUpView() {
+        switch pushVC {
+        case .course:
+            viewPush.isHidden = false
+            viewPushVideo.isHidden = true
+        case .video:
+            viewPush.isHidden = true
+            viewPushVideo.isHidden = false
+        }
+        
         roundCorner(views: [txtName, txtPrice, tvDescriptionCourse, btnPost, txtNameVideo, imgCourse, txtLinkVid, txtType, txtChooseCourse, tvDescriptionVideo, btnPostVideo], radius: 8)
         addShadow(views: [viewPush, viewPushVideo])
-        
-        viewPush.isHidden = false
-        viewPushVideo.isHidden = true
         
         txtLinkVid.isUserInteractionEnabled = false
         imgCourse.isUserInteractionEnabled = false
@@ -86,32 +96,6 @@ class PushCourseVC: BaseViewController {
             }
         }
     }
-    
-    func setUpSegmentControl() {
-        segmentedControl.selectedIndex = 0
-        segmentedControl.items = ["Đăng khoá học", "Đăng video"]
-        segmentedControl.backgroundColor = .groupTableViewBackground
-        segmentedControl.selectedLabelColor = .white
-        segmentedControl.unselectedLabelColor = .black
-        
-        segmentedControl.borderColor = .clear
-        segmentedControl.thumbColor = #colorLiteral(red: 0.1019607843, green: 0.3568627451, blue: 0.3921568627, alpha: 1)
-        segmentedControl.font = UIFont(name: "Quicksand-Bold", size: 16)
-    }
-    
-    @IBAction func tapOnSegment(_ sender: Any) {
-        switch segmentedControl.selectedIndex {
-        case 0:
-            viewPush.isHidden = false
-            viewPushVideo.isHidden = true
-        case 1:
-            viewPush.isHidden = true
-            viewPushVideo.isHidden = false
-        default:
-            break
-        }
-    }
-    
     
     @IBAction func tapOnPostCourse(_ sender: Any) {
         self.view.endEditing(true)

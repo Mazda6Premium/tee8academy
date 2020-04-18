@@ -61,9 +61,11 @@ extension UserManagerVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userManagerCell") as! UserManagerCell
+        
         let user = arrayUser[indexPath.row]
         
         cell.selectionStyle = .none
+        cell.backgroundColor = .clear
         cell.viewUser.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
         cell.viewBlock.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
         cell.user = user
@@ -98,7 +100,7 @@ extension UserManagerVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 90
     }
     
 }

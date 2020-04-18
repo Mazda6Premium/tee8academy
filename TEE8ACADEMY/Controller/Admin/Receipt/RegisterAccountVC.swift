@@ -154,6 +154,7 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
             let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "registerAccountCell", at: index) as! RegisterAccountCell
             cell.user = arrayUser[index]
             cell.parentVC = self
+            cell.backgroundColor = .clear
             
             cell.btnActive.addTarget(self, action: #selector(tapOnActive), for: .touchUpInside)
             cell.btnActive.tag = index
@@ -164,6 +165,7 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
             return cell
         } else {
             let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "orderCell", at: index) as! OrderCell
+            cell.backgroundColor = .clear
             cell.order = arrayOrder[index]
             return cell
         }
@@ -177,7 +179,7 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
         databaseReference.child("Users").child(user.userId).updateChildValues(course.asDictionaryVideo())
 
         self.deleteImage(index: sender.tag)
-        databaseReference.child("Receipt").child(user.receiptPostId).removeValue()
+        databaseReference.child("Receipts").child(user.receiptPostId).removeValue()
 
         self.arrayUser.removeAll()
         self.getDataFromFirebase()
@@ -188,7 +190,7 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
         showLoading()
         let user = arrayUser[sender.tag]
         deleteImage(index: sender.tag)
-        databaseReference.child("Receipt").child(user.receiptPostId).removeValue()
+        databaseReference.child("Receipts").child(user.receiptPostId).removeValue()
 
         self.arrayUser.removeAll()
         self.getDataFromFirebase()

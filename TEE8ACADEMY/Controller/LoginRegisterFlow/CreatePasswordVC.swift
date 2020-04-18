@@ -55,12 +55,12 @@ class CreatePasswordVC: BaseViewController {
     }
     
     @objc func dismissView() {
-        let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
+        let vc = AnimationCourseVC(nibName: "AnimationCourseVC", bundle: nil)
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overFullScreen
         // CACHE IN SESSION DATA USING SINGLETON
         SessionData.shared.userData = user
+        self.present(vc, animated: true, completion: nil)
     }
     
     func checkLogic() {

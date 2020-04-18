@@ -1,22 +1,23 @@
 //
-//  BuyCourseVC.swift
+//  AnimationCourseVC.swift
 //  TEE8ACADEMY
 //
-//  Created by Trung iOS on 4/4/20.
+//  Created by Trung iOS on 4/18/20.
 //  Copyright © 2020 Fighting. All rights reserved.
 //
 
 import UIKit
 
-class BuyCourseVC: BaseViewController {
-    
+class AnimationCourseVC: BaseViewController {
+
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblFrame: UILabel!
+    @IBOutlet weak var btnSkip: UIButton!
     @IBOutlet weak var btnContinue: UIButton!
-    @IBOutlet weak var btnSupport: UIButton!
-    @IBOutlet weak var btnBack: UIButton!
     
     var user: User?
+
+    var lblTitle = UILabel()
     
     var arrayCourse = [Course]()
     var arrayFreeCourse = [Course]()
@@ -24,20 +25,60 @@ class BuyCourseVC: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
         setupView()
         setUpTableView()
         getDataFromFirebase()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        animationLabel()
+    }
+    
     func setupView() {
-        roundCorner(views: [btnContinue, btnSupport, btnBack], radius: 8)
+        changeAlpha(views: [self.btnContinue, self.btnSkip, self.tableView], alpha: 0)
+        roundCorner(views: [btnContinue, btnSkip], radius: 8)
+        
+        lblTitle.frame = CGRect(x: 30, y: screenHeight, width: lblFrame.frame.width, height: lblFrame.frame.height)
+        lblTitle.numberOfLines = 0
+        lblTitle.font = lblFrame.font
+        lblTitle.textColor = lblFrame.textColor
+        lblTitle.textAlignment = .center
+        view.addSubview(lblTitle)
+
+        
+        
         
         user = SessionData.shared.userData
         if let user = user {
             lblTitle.text = "Welcome \(user.realName) to Tee 8 Academy, please choice your course belows:"
 
+        }
+        view.addSubview(lblTitle)
+    }
+    
+    func animationLabel() {
+        self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 2.5, animations: {
+            self.lblTitle.frame = self.lblFrame.frame
+            self.view.layoutIfNeeded()
+        }) { (_) in
+            self.view.layoutIfNeeded()
+            UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseIn, animations: {
+                self.changeAlpha(views: [self.btnContinue, self.btnSkip, self.tableView], alpha: 1)
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
+        lblTitle.topAnchor.constraint(equalTo: lblFrame.topAnchor).isActive = true
+        lblTitle.leadingAnchor.constraint(equalTo: lblFrame.leadingAnchor).isActive = true
+        lblTitle.trailingAnchor.constraint(equalTo: lblFrame.trailingAnchor).isActive = true
+        lblTitle.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func changeAlpha(views : [UIView], alpha : CGFloat) {
+        views.forEach { (view) in
+            view.alpha = alpha
         }
     }
     
@@ -97,12 +138,16 @@ class BuyCourseVC: BaseViewController {
         }
     }
     
-    @IBAction func tapOnBack(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func tapOnSkip(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
 
-extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
+extension AnimationCourseVC: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayCourse.count
     }
@@ -213,3 +258,4 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
         return 80
     }
 }
+

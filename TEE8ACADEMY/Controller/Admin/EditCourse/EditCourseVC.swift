@@ -13,10 +13,6 @@ class EditCourseVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnBack: UIButton!
     
-    var screenWidth: CGFloat {
-        return UIScreen.main.bounds.width
-    }
-    
     var arrayCourse = [Course]()
     var allCoursePrice = 0.0
     var timer : Timer?
@@ -142,7 +138,7 @@ extension EditCourseVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 86
+        return 80
     }
     
 }

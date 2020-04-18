@@ -145,14 +145,18 @@ class SendReceiptVC: BaseViewController {
                 userData.receiptPostId = postId
                 databaseReference.child("Receipts").child(postId).setValue(userData.asDictionary())
                 self.showLoadingSuccess(5)
-                self.showToast(message: "Thanh toán của bạn đã được gửi đến quản trị viên, vui lòng chờ đợi trong ít phút để được kích hoạt tài khoản, xin chân thành cảm ơn.")
+                self.showToast(message: "Thanh toán của bạn đã được gửi đến quản trị viên, vui lòng chờ đợi trong ít phút để được kích hoạt khoá học, xin chân thành cảm ơn.")
                 _ = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(self.dismissView), userInfo: nil, repeats: false)
             }
         }
     }
     
     @objc func dismissView() {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+        let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func tapOnBack(_ sender: Any) {

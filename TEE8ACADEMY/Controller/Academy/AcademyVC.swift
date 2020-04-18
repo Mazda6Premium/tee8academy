@@ -23,9 +23,6 @@ class AcademyVC: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var arrayCourse = [Course]()
-    var screenWidth: CGFloat {
-        return UIScreen.main.bounds.size.width
-    }
     var screenWidthVideo: CGFloat = 0.1
     var courseRegisted = [Course]()
 

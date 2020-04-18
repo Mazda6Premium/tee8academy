@@ -22,11 +22,6 @@ class ViewController: BaseViewController {
     var imgLogo = UIImageView()
     var user: User?
     
-    // Screen height.
-    public var screenHeight: CGFloat {
-        return UIScreen.main.bounds.height
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

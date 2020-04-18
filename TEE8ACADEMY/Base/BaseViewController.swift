@@ -13,6 +13,15 @@ import JGProgressHUD
 
 class BaseViewController: UIViewController {
     
+    // Screen width.
+    public var screenWidth: CGFloat {
+        return UIScreen.main.bounds.width
+    }
+    
+    public var screenHeight: CGFloat {
+        return UIScreen.main.bounds.height
+    }
+    
     let hud = JGProgressHUD(style: .dark)
 
     func roundCorner(views: [UIView], radius: CGFloat) {

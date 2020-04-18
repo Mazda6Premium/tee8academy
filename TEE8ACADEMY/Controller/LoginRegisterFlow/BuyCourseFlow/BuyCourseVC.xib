@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BuyCourseVC" customModule="TEE8ACADEMY" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BuyCourseVC" customModule="TEE_8_ACADEMY" customModuleProvider="target">
             <connections>
                 <outlet property="btnBack" destination="YmJ-qV-U05" id="cxO-cQ-fab"/>
                 <outlet property="btnContinue" destination="3jW-v2-NSo" id="Vjn-zI-17K"/>
@@ -96,6 +96,7 @@ WWW.TEE8.EDU.VN</string>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="lct-XM-cvn" firstAttribute="top" secondItem="UHF-K1-Wgw" secondAttribute="bottom" constant="10" id="0cx-on-Fp3"/>
                 <constraint firstItem="UHF-K1-Wgw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="46N-tQ-ZQ1"/>
                 <constraint firstItem="ekz-s3-r4o" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6K3-6Q-ani"/>
                 <constraint firstItem="lct-XM-cvn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7mQ-UW-hA0"/>
@@ -105,6 +106,7 @@ WWW.TEE8.EDU.VN</string>
                 <constraint firstItem="UHF-K1-Wgw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="9hW-p1-leG"/>
                 <constraint firstItem="YLh-w2-9CA" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="DNB-ai-3XF"/>
                 <constraint firstItem="ekz-s3-r4o" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DZ5-J4-eu0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lct-XM-cvn" secondAttribute="trailing" constant="20" id="EyI-uO-tGC"/>
                 <constraint firstItem="Wjk-WI-HQK" firstAttribute="top" secondItem="bGL-zZ-9K8" secondAttribute="bottom" constant="10" id="FVD-Ep-DOK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YLh-w2-9CA" secondAttribute="trailing" constant="20" id="Nvk-ON-sRW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bGL-zZ-9K8" secondAttribute="trailing" constant="20" id="ONB-p3-ihm"/>
@@ -113,6 +115,7 @@ WWW.TEE8.EDU.VN</string>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UHF-K1-Wgw" secondAttribute="trailing" constant="20" id="aOt-ca-7PF"/>
                 <constraint firstItem="bGL-zZ-9K8" firstAttribute="top" secondItem="lct-XM-cvn" secondAttribute="bottom" constant="20" id="bdB-xD-sV1"/>
                 <constraint firstItem="YLh-w2-9CA" firstAttribute="top" secondItem="Wjk-WI-HQK" secondAttribute="bottom" constant="10" id="hhP-gM-PIA"/>
+                <constraint firstItem="lct-XM-cvn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="p5F-8r-E8Y"/>
                 <constraint firstItem="bGL-zZ-9K8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pZo-oL-k7M"/>
                 <constraint firstAttribute="bottom" secondItem="ekz-s3-r4o" secondAttribute="bottom" id="tWf-gy-zBq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wjk-WI-HQK" secondAttribute="trailing" constant="20" id="wmL-1g-i46"/>

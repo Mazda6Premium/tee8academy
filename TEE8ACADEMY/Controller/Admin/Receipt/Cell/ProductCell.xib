@@ -28,19 +28,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttd-uO-ymG">
-                                <rect key="frame" x="116" y="10" width="230" height="21"/>
+                                <rect key="frame" x="118" y="10" width="226" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKt-1U-Qoz">
-                                <rect key="frame" x="116" y="49.5" width="230" height="21"/>
+                                <rect key="frame" x="118" y="49.5" width="226" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teT-wA-a0x">
-                                <rect key="frame" x="116" y="89" width="230" height="21"/>
+                                <rect key="frame" x="118" y="89" width="226" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,21 +49,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eKt-1U-Qoz" firstAttribute="centerY" secondItem="6Rq-n0-95u" secondAttribute="centerY" id="3Ts-eI-KoL"/>
-                            <constraint firstItem="teT-wA-a0x" firstAttribute="leading" secondItem="6Rq-n0-95u" secondAttribute="trailing" constant="8" id="9iM-iI-NA5"/>
+                            <constraint firstItem="teT-wA-a0x" firstAttribute="leading" secondItem="6Rq-n0-95u" secondAttribute="trailing" constant="10" id="9iM-iI-NA5"/>
                             <constraint firstItem="teT-wA-a0x" firstAttribute="bottom" secondItem="6Rq-n0-95u" secondAttribute="bottom" id="A7d-Ay-tfb"/>
-                            <constraint firstAttribute="trailing" secondItem="Ttd-uO-ymG" secondAttribute="trailing" constant="8" id="FXE-yk-jl7"/>
-                            <constraint firstAttribute="trailing" secondItem="eKt-1U-Qoz" secondAttribute="trailing" constant="8" id="KcO-uD-eHR"/>
+                            <constraint firstAttribute="trailing" secondItem="Ttd-uO-ymG" secondAttribute="trailing" constant="10" id="FXE-yk-jl7"/>
+                            <constraint firstAttribute="trailing" secondItem="eKt-1U-Qoz" secondAttribute="trailing" constant="10" id="KcO-uD-eHR"/>
                             <constraint firstItem="6Rq-n0-95u" firstAttribute="centerY" secondItem="Rmn-R4-cZD" secondAttribute="centerY" id="Oa6-1T-dDA"/>
-                            <constraint firstItem="Ttd-uO-ymG" firstAttribute="leading" secondItem="6Rq-n0-95u" secondAttribute="trailing" constant="8" id="Vkl-Dy-rJ8"/>
-                            <constraint firstAttribute="trailing" secondItem="teT-wA-a0x" secondAttribute="trailing" constant="8" id="gF1-7Z-asz"/>
+                            <constraint firstItem="Ttd-uO-ymG" firstAttribute="leading" secondItem="6Rq-n0-95u" secondAttribute="trailing" constant="10" id="Vkl-Dy-rJ8"/>
+                            <constraint firstAttribute="trailing" secondItem="teT-wA-a0x" secondAttribute="trailing" constant="10" id="gF1-7Z-asz"/>
                             <constraint firstItem="Ttd-uO-ymG" firstAttribute="top" secondItem="6Rq-n0-95u" secondAttribute="top" id="iXv-mL-sHI"/>
                             <constraint firstItem="6Rq-n0-95u" firstAttribute="leading" secondItem="Rmn-R4-cZD" secondAttribute="leading" constant="8" id="j0a-W6-jx3"/>
-                            <constraint firstItem="eKt-1U-Qoz" firstAttribute="leading" secondItem="6Rq-n0-95u" secondAttribute="trailing" constant="8" id="nWT-0W-bCW"/>
+                            <constraint firstItem="eKt-1U-Qoz" firstAttribute="leading" secondItem="6Rq-n0-95u" secondAttribute="trailing" constant="10" id="nWT-0W-bCW"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Rmn-R4-cZD" secondAttribute="bottom" constant="10" id="EHG-5B-ogH"/>
                 <constraint firstItem="Rmn-R4-cZD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="XHA-t3-gvv"/>

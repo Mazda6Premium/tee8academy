@@ -18,7 +18,6 @@
                 <outlet property="btnPost" destination="fBP-hi-o4S" id="gy3-vb-Jey"/>
                 <outlet property="btnPostVideo" destination="wbS-Zm-hLM" id="5eN-v7-tbP"/>
                 <outlet property="imgCourse" destination="dPg-bn-kcc" id="0Ns-Cl-Zlb"/>
-                <outlet property="segmentedControl" destination="B0y-sK-FlV" id="iCQ-mc-mJU"/>
                 <outlet property="tvDescriptionCourse" destination="KJO-U0-XEx" id="MDM-Qv-BBx"/>
                 <outlet property="tvDescriptionVideo" destination="Op5-Cd-qXY" id="bKL-ZK-vlk"/>
                 <outlet property="txtChooseCourse" destination="kkV-IC-Klw" id="8FR-q5-9OD"/>
@@ -57,7 +56,7 @@
                     <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gN6-bb-ymR">
-                    <rect key="frame" x="10" y="204" width="394" height="212"/>
+                    <rect key="frame" x="10" y="144" width="394" height="212"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Tên khoá học" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R6c-Ls-sn3">
                             <rect key="frame" x="5" y="5" width="384" height="36"/>
@@ -132,18 +131,8 @@
                         <action selector="tapOnBack:" destination="-1" eventType="touchUpInside" id="O4Z-4L-vE0"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0y-sK-FlV" customClass="SegmentedControl" customModule="TEE_8_ACADEMY" customModuleProvider="target">
-                    <rect key="frame" x="20" y="144" width="374" height="40"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="pu4-vW-Fbe"/>
-                    </constraints>
-                    <connections>
-                        <action selector="tapOnSegment:" destination="-1" eventType="valueChanged" id="E9o-od-RVs"/>
-                    </connections>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIj-xi-xTo">
-                    <rect key="frame" x="10" y="204" width="394" height="253"/>
+                    <rect key="frame" x="10" y="144" width="394" height="253"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Tên video" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-0k-tNE">
                             <rect key="frame" x="5" y="5" width="259" height="36"/>
@@ -241,7 +230,6 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="B0y-sK-FlV" secondAttribute="trailing" constant="20" id="0gj-yL-YFT"/>
                 <constraint firstAttribute="bottom" secondItem="JWM-4B-aCf" secondAttribute="bottom" id="2NX-y4-plo"/>
                 <constraint firstAttribute="trailing" secondItem="xDM-Qv-nlm" secondAttribute="trailing" id="2lu-Jd-AtG"/>
                 <constraint firstAttribute="trailing" secondItem="wbS-Zm-hLM" secondAttribute="trailing" constant="15" id="6qx-vo-JYQ"/>
@@ -255,10 +243,10 @@
                 <constraint firstAttribute="bottom" secondItem="xI6-Gd-RAl" secondAttribute="bottom" id="LUi-kP-air"/>
                 <constraint firstItem="xDM-Qv-nlm" firstAttribute="top" secondItem="R72-tq-Pgo" secondAttribute="bottom" constant="8" symbolic="YES" id="QiI-u9-yWG"/>
                 <constraint firstItem="JWM-4B-aCf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YVq-oj-GYS"/>
-                <constraint firstItem="B0y-sK-FlV" firstAttribute="top" secondItem="xDM-Qv-nlm" secondAttribute="bottom" constant="20" id="ZKZ-05-xc0"/>
+                <constraint firstItem="uIj-xi-xTo" firstAttribute="top" secondItem="xDM-Qv-nlm" secondAttribute="bottom" constant="20" id="YuW-X8-Kez"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gN6-bb-ymR" secondAttribute="trailing" constant="10" id="apc-NS-lfk"/>
                 <constraint firstItem="wbS-Zm-hLM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="cqR-pj-NGJ"/>
-                <constraint firstItem="uIj-xi-xTo" firstAttribute="top" secondItem="B0y-sK-FlV" secondAttribute="bottom" constant="20" id="du1-lK-MvS"/>
+                <constraint firstItem="gN6-bb-ymR" firstAttribute="top" secondItem="xDM-Qv-nlm" secondAttribute="bottom" constant="20" id="eOQ-IW-doh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uIj-xi-xTo" secondAttribute="trailing" constant="10" id="eSJ-Tq-bP9"/>
                 <constraint firstItem="uIj-xi-xTo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="fR6-wq-l6V"/>
                 <constraint firstAttribute="trailing" secondItem="JWM-4B-aCf" secondAttribute="trailing" id="fbZ-g0-Knu"/>
@@ -266,10 +254,8 @@
                 <constraint firstItem="JWM-4B-aCf" firstAttribute="top" secondItem="EF1-hD-2x5" secondAttribute="bottom" constant="-3" id="hJJ-JC-nyp"/>
                 <constraint firstItem="EF1-hD-2x5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="i2M-Hv-vIm"/>
                 <constraint firstAttribute="bottom" secondItem="JWM-4B-aCf" secondAttribute="bottom" id="i9b-FM-kjp"/>
-                <constraint firstItem="B0y-sK-FlV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="jAr-k0-kPN"/>
                 <constraint firstItem="EF1-hD-2x5" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-3" id="lUI-cC-adT"/>
                 <constraint firstItem="R72-tq-Pgo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="14" id="oAX-3g-ERB"/>
-                <constraint firstItem="gN6-bb-ymR" firstAttribute="top" secondItem="B0y-sK-FlV" secondAttribute="bottom" constant="20" id="pVV-Wc-2mg"/>
                 <constraint firstAttribute="trailing" secondItem="JWM-4B-aCf" secondAttribute="trailing" id="vUQ-FI-ljs"/>
                 <constraint firstItem="xI6-Gd-RAl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yte-a9-aj5"/>
             </constraints>

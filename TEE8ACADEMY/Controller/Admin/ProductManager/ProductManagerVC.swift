@@ -15,14 +15,6 @@ class ProductManagerVC: BaseViewController {
     var arrayProductPMU = [Product]()
     var arrayProductTimes = [Product]()
     
-    var screenWidth: CGFloat {
-        return UIScreen.main.bounds.size.width
-    }
-    
-    var screenHeight: CGFloat {
-        return UIScreen.main.bounds.size.height
-    }
-    
     let refreshControl = UIRefreshControl()
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -187,7 +187,7 @@ class VerifyAccountVC: BaseViewController {
                 second = 60
             }
         } else {
-            btnSendAgain.setTitle("GET OTP   \(second) second", for: .normal)
+            btnSendAgain.setTitle("GET OTP AFTER \(second) second", for: .normal)
         }
     }
 }

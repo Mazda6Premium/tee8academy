@@ -15,7 +15,7 @@ class UserManagerCell: UITableViewCell {
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var viewBlock: UIView!
     @IBOutlet weak var imgLock: UIImageView!
-    @IBOutlet weak var lblStatus: UILabel!
+    @IBOutlet weak var lblPhone: UILabel!
     
     var user : User! {
         didSet {
@@ -25,8 +25,9 @@ class UserManagerCell: UITableViewCell {
     }
     
     func updateView() {
-        lblName.text = user.username
-        lblEmail.text = user.email
+        lblName.text = "Tên KH: \(user.username)"
+        lblEmail.text = "Email: \(user.email)"
+        lblPhone.text = "Phone \(user.phone)"
         viewBlock.isHidden = user.isSwiped
     }
     

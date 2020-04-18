@@ -195,7 +195,6 @@
                     </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="G2p-l3-UFm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="HRe-m1-aj8"/>
                 <constraint firstItem="G2p-l3-UFm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="bNw-TO-IMr"/>

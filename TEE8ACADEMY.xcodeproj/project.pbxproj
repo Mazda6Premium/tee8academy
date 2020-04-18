@@ -54,8 +54,6 @@
 		A819AFE0243F5AE5009AB1A6 /* AcademyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A819AFDE243F5AE5009AB1A6 /* AcademyCell.xib */; };
 		A821AB16243B8AFB0063A194 /* AcademyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821AB15243B8AFB0063A194 /* AcademyVC.swift */; };
 		A821AB18243B8B1E0063A194 /* StoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821AB17243B8B1E0063A194 /* StoreVC.swift */; };
-		A821AB1C243B8BB40063A194 /* AdminPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A821AB1A243B8BB40063A194 /* AdminPopupVC.swift */; };
-		A821AB1D243B8BB40063A194 /* AdminPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A821AB1B243B8BB40063A194 /* AdminPopupVC.xib */; };
 		A823C73424383DAF00F749C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A823C73324383DAF00F749C2 /* GoogleService-Info.plist */; };
 		A823C7412438839C00F749C2 /* Quicksand-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A823C73D2438839C00F749C2 /* Quicksand-Medium.ttf */; };
 		A823C7422438839C00F749C2 /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A823C73E2438839C00F749C2 /* Quicksand-Regular.ttf */; };
@@ -65,6 +63,8 @@
 		A823C74924388A0300F749C2 /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A823C74724388A0300F749C2 /* RegisterVC.xib */; };
 		A83ABBF1243F495E0039E64C /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83ABBEF243F495E0039E64C /* HeaderCell.swift */; };
 		A83ABBF2243F495E0039E64C /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A83ABBF0243F495E0039E64C /* HeaderCell.xib */; };
+		A849BFF9244AE099002537D0 /* AnimationCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A849BFF7244AE099002537D0 /* AnimationCourseVC.swift */; };
+		A849BFFA244AE099002537D0 /* AnimationCourseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A849BFF8244AE099002537D0 /* AnimationCourseVC.xib */; };
 		A85B7FF02438268E00CC4DCC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B7FEF2438268E00CC4DCC /* AppDelegate.swift */; };
 		A85B7FF22438268E00CC4DCC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B7FF12438268E00CC4DCC /* SceneDelegate.swift */; };
 		A85B7FF42438268E00CC4DCC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85B7FF32438268E00CC4DCC /* ViewController.swift */; };
@@ -149,8 +149,6 @@
 		A819AFDE243F5AE5009AB1A6 /* AcademyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AcademyCell.xib; sourceTree = "<group>"; };
 		A821AB15243B8AFB0063A194 /* AcademyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyVC.swift; sourceTree = "<group>"; };
 		A821AB17243B8B1E0063A194 /* StoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreVC.swift; sourceTree = "<group>"; };
-		A821AB1A243B8BB40063A194 /* AdminPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPopupVC.swift; sourceTree = "<group>"; };
-		A821AB1B243B8BB40063A194 /* AdminPopupVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminPopupVC.xib; sourceTree = "<group>"; };
 		A823C73324383DAF00F749C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A823C73D2438839C00F749C2 /* Quicksand-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Medium.ttf"; sourceTree = "<group>"; };
 		A823C73E2438839C00F749C2 /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
@@ -160,6 +158,8 @@
 		A823C74724388A0300F749C2 /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
 		A83ABBEF243F495E0039E64C /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		A83ABBF0243F495E0039E64C /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
+		A849BFF7244AE099002537D0 /* AnimationCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationCourseVC.swift; sourceTree = "<group>"; };
+		A849BFF8244AE099002537D0 /* AnimationCourseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimationCourseVC.xib; sourceTree = "<group>"; };
 		A85B7FEC2438268E00CC4DCC /* TEE 8 ACADEMY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TEE 8 ACADEMY.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85B7FEF2438268E00CC4DCC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A85B7FF12438268E00CC4DCC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -366,8 +366,6 @@
 				0144C2092449AB5500D003DC /* ProductManager */,
 				0143BBE924476102001C57FF /* UserManager */,
 				01272F2B2445ECBF001A39ED /* EditCourse */,
-				A821AB1A243B8BB40063A194 /* AdminPopupVC.swift */,
-				A821AB1B243B8BB40063A194 /* AdminPopupVC.xib */,
 				01B56D3C243C6AE200B0D804 /* Course */,
 				0146B5D1243EC0EE000453E7 /* Product */,
 				A80CECE1243C233E001785DC /* Receipt */,
@@ -390,6 +388,8 @@
 				A85FAAE924433F0900C2F723 /* VerifyAccountVC.xib */,
 				A85FAAEC24434E2C00C2F723 /* CreatePasswordVC.swift */,
 				A85FAAED24434E2C00C2F723 /* CreatePasswordVC.xib */,
+				A849BFF7244AE099002537D0 /* AnimationCourseVC.swift */,
+				A849BFF8244AE099002537D0 /* AnimationCourseVC.xib */,
 			);
 			path = LoginRegisterFlow;
 			sourceTree = "<group>";
@@ -643,10 +643,10 @@
 				A817068D244612A1007C9F2C /* CheckOutVC.xib in Resources */,
 				A8A700492438C62600B2139D /* SendReceiptVC.xib in Resources */,
 				A8102251243DFCC60089AE63 /* ChangePasswordVC.xib in Resources */,
+				A849BFFA244AE099002537D0 /* AnimationCourseVC.xib in Resources */,
 				0143BBED24476137001C57FF /* UserManagerVC.xib in Resources */,
 				A83ABBF2243F495E0039E64C /* HeaderCell.xib in Resources */,
 				A88349562447508B00587024 /* OrderCell.xib in Resources */,
-				A821AB1D243B8BB40063A194 /* AdminPopupVC.xib in Resources */,
 				A88A42D5243A14B00013BAFB /* PopupPaymentVC.xib in Resources */,
 				01272F332445F55E001A39ED /* EditPopUpVC.xib in Resources */,
 				A823C7442438839C00F749C2 /* Quicksand-Bold.ttf in Resources */,
@@ -731,11 +731,11 @@
 				A88349592447672000587024 /* ProductCell.swift in Sources */,
 				A8170691244617A2007C9F2C /* CheckOutCell.swift in Sources */,
 				A80CECF3243C354B001785DC /* RegisterAccountCell.swift in Sources */,
-				A821AB1C243B8BB40063A194 /* AdminPopupVC.swift in Sources */,
 				01B56D3F243C6B6100B0D804 /* PushCourseVC.swift in Sources */,
 				A81843E0244487F2000BF147 /* AccountVC.swift in Sources */,
 				A88349552447508B00587024 /* OrderCell.swift in Sources */,
 				0143BBEC24476137001C57FF /* UserManagerVC.swift in Sources */,
+				A849BFF9244AE099002537D0 /* AnimationCourseVC.swift in Sources */,
 				01272F322445F55E001A39ED /* EditPopUpVC.swift in Sources */,
 				A8A700412438BC3200B2139D /* User.swift in Sources */,
 				A819AFDF243F5AE5009AB1A6 /* AcademyCell.swift in Sources */,

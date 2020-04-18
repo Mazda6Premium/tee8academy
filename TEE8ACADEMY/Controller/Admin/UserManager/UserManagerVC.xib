@@ -52,7 +52,7 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aPr-pb-WMZ">
-                    <rect key="frame" x="20" y="134" width="374" height="672"/>
+                    <rect key="frame" x="0.0" y="124" width="414" height="702"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
@@ -65,16 +65,16 @@
                 <constraint firstItem="1mW-tE-gvS" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Dwi-lx-LO4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kR7-YB-w4r" secondAttribute="bottom" constant="-34" id="GPf-Kl-IB4"/>
                 <constraint firstItem="1mW-tE-gvS" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="GT2-hc-ygd"/>
-                <constraint firstItem="aPr-pb-WMZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="KC0-sB-lip"/>
+                <constraint firstItem="aPr-pb-WMZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KC0-sB-lip"/>
                 <constraint firstItem="gT4-uM-h24" firstAttribute="top" secondItem="8ie-Vr-66z" secondAttribute="bottom" constant="8" symbolic="YES" id="KW2-UF-V86"/>
                 <constraint firstAttribute="trailing" secondItem="Xdd-5a-Z2u" secondAttribute="trailing" id="LnG-Rp-hE4"/>
                 <constraint firstItem="8ie-Vr-66z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="14" id="NNH-z3-fkT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aPr-pb-WMZ" secondAttribute="trailing" constant="20" id="PEF-Zm-VEI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aPr-pb-WMZ" secondAttribute="trailing" id="PEF-Zm-VEI"/>
                 <constraint firstAttribute="trailing" secondItem="gT4-uM-h24" secondAttribute="trailing" id="SeI-qc-Jhd"/>
-                <constraint firstItem="aPr-pb-WMZ" firstAttribute="top" secondItem="gT4-uM-h24" secondAttribute="bottom" constant="10" id="XI0-xd-FmI"/>
+                <constraint firstItem="aPr-pb-WMZ" firstAttribute="top" secondItem="gT4-uM-h24" secondAttribute="bottom" id="XI0-xd-FmI"/>
                 <constraint firstItem="1mW-tE-gvS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ZRC-om-KWR"/>
                 <constraint firstItem="kR7-YB-w4r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aIk-bk-JRN"/>
-                <constraint firstItem="1mW-tE-gvS" firstAttribute="top" secondItem="aPr-pb-WMZ" secondAttribute="bottom" constant="20" id="cQw-KL-Liu"/>
+                <constraint firstItem="1mW-tE-gvS" firstAttribute="top" secondItem="aPr-pb-WMZ" secondAttribute="bottom" id="cQw-KL-Liu"/>
                 <constraint firstItem="kR7-YB-w4r" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-44" id="cx8-6V-rwq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kR7-YB-w4r" secondAttribute="trailing" id="dDS-dS-fNl"/>
                 <constraint firstItem="Xdd-5a-Z2u" firstAttribute="top" secondItem="1mW-tE-gvS" secondAttribute="bottom" constant="-3" id="rg8-4w-RtV"/>
