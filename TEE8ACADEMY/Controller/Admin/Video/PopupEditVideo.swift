@@ -95,7 +95,7 @@ class PopupEditVideo: BaseViewController {
             databaseReference.child("Courses").child(vid.course).child("videos").child("\(vid.index)").removeValue()
             self.arrayVideo.remove(at: vid.index)
             let course = Course(video: arrayVideo)
-            databaseReference.child("Courses").child(vid.course).child("videos").setValue(course.asDictionaryVideo())
+            databaseReference.child("Courses").child(vid.course).updateChildValues(course.asDictionaryVideo())
             startTimer()
             showLoadingSuccess(1)
         }
