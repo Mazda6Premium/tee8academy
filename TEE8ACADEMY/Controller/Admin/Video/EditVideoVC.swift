@@ -145,6 +145,8 @@ extension EditVideoVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             let vc = PopupEditVideo(nibName: "PopupEditVideo", bundle: nil)
             vc.modalPresentationStyle = .overCurrentContext
             vc.video = course
+            vc.delegate = self
+            vc.arrayVideo = arrayCourse[indexPath.section / 2].video
             self.present(vc, animated: true, completion: nil)
         } else { // TAP ON HEADER
             collectionView.performBatchUpdates({
@@ -175,5 +177,13 @@ extension EditVideoVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10
+    }
+}
+
+extension EditVideoVC: PopupEditVideoDelegate {
+    func reloadData() {
+        self.arrayCourse.removeAll()
+        collectionView.reloadData()
+        getDataFromFirebase()
     }
 }

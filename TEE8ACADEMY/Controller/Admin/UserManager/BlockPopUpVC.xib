@@ -23,25 +23,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDy-i0-not">
-                    <rect key="frame" x="60" y="394.5" width="294" height="117.5"/>
+                    <rect key="frame" x="10" y="383" width="394" height="140"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thông báo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOn-YC-FI1">
-                            <rect key="frame" x="106" y="10" width="82.5" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn có chắc chắn muốn block không ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzk-J7-ZBg">
-                            <rect key="frame" x="30.5" y="40.5" width="233" height="16"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzk-J7-ZBg">
+                            <rect key="frame" x="180.5" y="20" width="33" height="59"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="z0g-rN-KmM">
-                            <rect key="frame" x="5" y="76.5" width="284" height="36"/>
+                            <rect key="frame" x="5" y="99" width="384" height="36"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPZ-QN-TUf">
-                                    <rect key="frame" x="0.0" y="0.0" width="139.5" height="36"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="189.5" height="36"/>
                                     <state key="normal" title="Huỷ" backgroundImage="bg_button">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -50,7 +44,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tr-Ru-fb4">
-                                    <rect key="frame" x="144.5" y="0.0" width="139.5" height="36"/>
+                                    <rect key="frame" x="194.5" y="0.0" width="189.5" height="36"/>
                                     <state key="normal" title="Block" backgroundImage="bg_button">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -69,19 +63,18 @@
                         <constraint firstItem="z0g-rN-KmM" firstAttribute="leading" secondItem="jDy-i0-not" secondAttribute="leading" constant="5" id="1bp-Lv-QpY"/>
                         <constraint firstItem="z0g-rN-KmM" firstAttribute="top" secondItem="dzk-J7-ZBg" secondAttribute="bottom" constant="20" id="6RS-UG-hOF"/>
                         <constraint firstAttribute="trailing" secondItem="z0g-rN-KmM" secondAttribute="trailing" constant="5" id="RC2-Kx-eSP"/>
-                        <constraint firstItem="pOn-YC-FI1" firstAttribute="centerX" secondItem="jDy-i0-not" secondAttribute="centerX" id="TOS-jw-Seh"/>
-                        <constraint firstItem="dzk-J7-ZBg" firstAttribute="top" secondItem="pOn-YC-FI1" secondAttribute="bottom" constant="10" id="oSS-1y-Zll"/>
+                        <constraint firstItem="dzk-J7-ZBg" firstAttribute="top" secondItem="jDy-i0-not" secondAttribute="top" constant="20" id="RSt-SE-yc9"/>
+                        <constraint firstAttribute="height" constant="140" id="f73-xk-WYn"/>
                         <constraint firstAttribute="bottom" secondItem="z0g-rN-KmM" secondAttribute="bottom" constant="5" id="qzh-vg-GK2"/>
-                        <constraint firstItem="pOn-YC-FI1" firstAttribute="top" secondItem="jDy-i0-not" secondAttribute="top" constant="10" id="rln-l8-s9j"/>
                         <constraint firstItem="dzk-J7-ZBg" firstAttribute="centerX" secondItem="jDy-i0-not" secondAttribute="centerX" id="zcQ-gg-qmx"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="jDy-i0-not" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="37z-B9-AS9"/>
+                <constraint firstItem="jDy-i0-not" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="37z-B9-AS9"/>
                 <constraint firstItem="jDy-i0-not" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="8dL-Gs-y1M"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jDy-i0-not" secondAttribute="trailing" constant="60" id="aob-TQ-Gbh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jDy-i0-not" secondAttribute="trailing" constant="10" id="aob-TQ-Gbh"/>
                 <constraint firstItem="jDy-i0-not" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="dbd-rM-0uM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

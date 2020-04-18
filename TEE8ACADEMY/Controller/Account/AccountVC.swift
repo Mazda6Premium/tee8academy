@@ -224,9 +224,9 @@ class AccountVC: BaseViewController {
     
     @objc func tapOnViewF() {
         UIView.animate(withDuration: 0.3) {
-            self.viewD.alpha = 0.3
+            self.viewF.alpha = 0.3
             UIView.animate(withDuration: 0.3) {
-                self.viewD.alpha = 1
+                self.viewF.alpha = 1
             }
         }
         
@@ -252,9 +252,9 @@ class AccountVC: BaseViewController {
     
     @objc func tapOnViewG() {
         UIView.animate(withDuration: 0.3) {
-            self.viewD.alpha = 0.3
+            self.viewG.alpha = 0.3
             UIView.animate(withDuration: 0.3) {
-                self.viewD.alpha = 1
+                self.viewG.alpha = 1
             }
         }
         
@@ -266,9 +266,9 @@ class AccountVC: BaseViewController {
     
     @objc func tapOnViewH() {
         UIView.animate(withDuration: 0.3) {
-            self.viewD.alpha = 0.3
+            self.viewH.alpha = 0.3
             UIView.animate(withDuration: 0.3) {
-                self.viewD.alpha = 1
+                self.viewH.alpha = 1
             }
         }
         // QUẢN LÝ THÀNH VIÊN
@@ -280,9 +280,9 @@ class AccountVC: BaseViewController {
     
     @objc func tapOnViewI() {
         UIView.animate(withDuration: 0.3) {
-            self.viewD.alpha = 0.3
+            self.viewI.alpha = 0.3
             UIView.animate(withDuration: 0.3) {
-                self.viewD.alpha = 1
+                self.viewI.alpha = 1
             }
         }
         // ĐĂNG XUẤT

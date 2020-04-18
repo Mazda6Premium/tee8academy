@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PopupEditVideoDelegate {
+    func reloadData()
+}
+
 class PopupEditVideo: BaseViewController {
     
     @IBOutlet weak var viewDim: UIView!
@@ -15,10 +19,14 @@ class PopupEditVideo: BaseViewController {
     @IBOutlet weak var txtLinkVideo: UITextField!
     @IBOutlet weak var txtNameVideo: UITextField!
     @IBOutlet weak var tvDescription: UITextView!
-    @IBOutlet weak var btnHuy: UIButton!
+    @IBOutlet weak var btnXoa: UIButton!
     @IBOutlet weak var btnXacNhan: UIButton!
+    @IBOutlet weak var viewLinkVideo: UIView!
     
     var video: Video?
+    var timer : Timer?
+    var delegate : PopupEditVideoDelegate?
+    var arrayVideo = [Video]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,14 +53,51 @@ class PopupEditVideo: BaseViewController {
         view.isOpaque = false
         view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
-        roundCorner(views: [viewDim, txtType, txtLinkVideo, txtNameVideo, tvDescription, btnHuy, btnXacNhan], radius: 8)
+        roundCorner(views: [viewDim, txtType, viewLinkVideo, txtNameVideo, tvDescription, btnXoa, btnXacNhan], radius: 8)
+        
+        let tapGes = UITapGestureRecognizer(target: self, action: #selector(dismissView))
+        view.addGestureRecognizer(tapGes)
     }
     
-    @IBAction func tapOnCancel(_ sender: Any) {
+    @objc func dismissView() {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tapOnConfirm(_ sender: Any) {
-        
+        showLoading()
+        if txtLinkVideo.text == "" || txtNameVideo.text == "" || tvDescription.text == "" {
+            showToast(message: "Bạn cần điền đẩy đủ thông tin.")
+            hideLoading()
+        } else {
+            let data = ["description": tvDescription.text!, "name": txtNameVideo.text!, "linkVideo": txtLinkVideo.text!] as [AnyHashable : Any]
+            if let vid = video {
+                databaseReference.child("Courses").child(vid.course).child("videos").child("\(vid.index)").updateChildValues(data)
+                startTimer()
+                showLoadingSuccess(1)
+            }
+        }
+    }
+    
+    func startTimer() {
+        guard timer == nil else { return }
+        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(clearData), userInfo: nil, repeats: true)
+    }
+    
+    @objc func clearData() {
+        delegate?.reloadData()
+        self.dismiss(animated: true, completion: nil)
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    @IBAction func tapOnXoa(_ sender: Any) {
+        if let vid = video {
+            databaseReference.child("Courses").child(vid.course).child("videos").child("\(vid.index)").removeValue()
+            self.arrayVideo.remove(at: vid.index)
+            let course = Course(video: arrayVideo)
+            databaseReference.child("Courses").child(vid.course).child("videos").setValue(course.asDictionaryVideo())
+            startTimer()
+            showLoadingSuccess(1)
+        }
     }
 }

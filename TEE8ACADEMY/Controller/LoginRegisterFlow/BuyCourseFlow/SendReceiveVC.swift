@@ -152,11 +152,7 @@ class SendReceiptVC: BaseViewController {
     }
     
     @objc func dismissView() {
-        let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
-        vc.modalTransitionStyle = .crossDissolve
-        vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true, completion: nil)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     
     @IBAction func tapOnBack(_ sender: Any) {

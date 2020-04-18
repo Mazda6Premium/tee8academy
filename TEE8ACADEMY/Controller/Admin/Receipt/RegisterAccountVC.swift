@@ -45,10 +45,7 @@ class RegisterAccountVC: BaseViewController {
                             self.arrayUser.sort(by: { (user1, user2) -> Bool in
                                 return Int64(user1.time) > Int64(user2.time)
                             })
-                            self.getDataVideo()
                             self.pageView.reloadData()
-                            
-                            self.showLoadingSuccess(1)
                         }
                     }
                 }
@@ -76,17 +73,6 @@ class RegisterAccountVC: BaseViewController {
                 }
             } else {
                 self.hideLoading()
-            }
-        }
-    }
-    
-    func getDataVideo() {
-        databaseReference.child("Users").observe(.childAdded) { (snapshot) in
-            databaseReference.child("Users").child(snapshot.key).observeSingleEvent(of: .value) { (snapshot1) in
-                if let dict = snapshot1.value as? [String: Any] {
-                    let user = User.getUserData(dict: dict, key: snapshot1.key)
-                    self.arrayCourse = user.course
-                }
             }
         }
     }
@@ -175,15 +161,27 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
         showLoading()
         let user = arrayUser[sender.tag]
         self.arrayCourse.append(contentsOf: user.course)
-        let course = User(course: self.arrayCourse)
-        databaseReference.child("Users").child(user.userId).updateChildValues(course.asDictionaryVideo())
+        
+        databaseReference.child("Users").child(user.userId).observeSingleEvent(of: .value) { (snapshot) in
+            if let dict = snapshot.value as? [String: Any] {
+                let userData = User.getUserData(dict: dict, key: snapshot.key)
+                self.arrayCourse.append(contentsOf: userData.course)
+                
+                let course = User(course: self.arrayCourse)
+                databaseReference.child("Users").child(user.userId).updateChildValues(course.asDictionaryCourse())
+                
+                self.deleteImage(index: sender.tag)
+                databaseReference.child("Receipts").child(user.receiptPostId).removeValue()
 
-        self.deleteImage(index: sender.tag)
-        databaseReference.child("Receipts").child(user.receiptPostId).removeValue()
+                self.arrayUser.removeAll()
+                self.arrayCourse.removeAll()
+                self.getDataFromFirebase()
+                self.pageView.reloadData()
+                self.showLoadingSuccess(1)
+            }
+        }
+        
 
-        self.arrayUser.removeAll()
-        self.getDataFromFirebase()
-        self.pageView.reloadData()
     }
     
     @objc func tapOnCancel(sender: UIButton) {

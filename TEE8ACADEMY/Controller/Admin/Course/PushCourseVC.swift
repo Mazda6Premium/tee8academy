@@ -163,7 +163,7 @@ class PushCourseVC: BaseViewController {
         switch txtType.text {
         case "Video":
             guard let linkVideo = txtLinkVid.text else { return }
-            let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: linkVideo, time: time, type: type, imageUrl: "")
+            let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: linkVideo, time: time, type: type, imageUrl: "", index: arrayVideo.count)
             
             self.arrayVideo.append(video)
             let course = Course(video: arrayVideo)
@@ -185,7 +185,7 @@ class PushCourseVC: BaseViewController {
                         return
                     }
                     
-                    let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: "", time: time, type: type, imageUrl: "\(imageUrl)")
+                    let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: "", time: time, type: type, imageUrl: "\(imageUrl)", index: self.arrayVideo.count)
                     self.arrayVideo.append(video)
                     let course = Course(video: self.arrayVideo)
                     databaseReference.child("Courses").child(nameCourseChoose).updateChildValues(course.asDictionaryVideo())

@@ -114,7 +114,7 @@ class User {
         ]
     }
     
-    func asDictionaryVideo() -> [String: Any] {
+    func asDictionaryCourse() -> [String: Any] {
         return ["course": self.course.map({$0.asDictionary()})]
     }
     

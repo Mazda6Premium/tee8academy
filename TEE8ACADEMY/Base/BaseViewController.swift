@@ -60,6 +60,10 @@ class BaseViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+        let touch: UITouch? = touches.first
+        if touch?.view?.tag == 10 {
+            dismiss(animated: true, completion: nil)
+        }
     }
 }
 

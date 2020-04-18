@@ -82,11 +82,8 @@ class EditPopUpVC: BaseViewController {
     }
     
     @objc func clearData() {
-        
         delegate?.refreshData()
-        
         self.dismiss(animated: true, completion: nil)
-        
         timer?.invalidate()
         timer = nil
     }

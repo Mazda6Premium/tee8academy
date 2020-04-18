@@ -37,7 +37,7 @@ class AcademyVC: BaseViewController {
         getDataFromFirebase()
         setupRefreshControl()
     }
-    
+        
     func bindData() {
         if let user = SessionData.shared.userData {
             courseRegisted = user.course
@@ -144,8 +144,7 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         }
         
         if indexPath.section % 2 == 0 {
-            let course = arrayCourse[indexPath.section / 2]
-            cell0.btnTitle.setTitle("     \(course.name)", for: .normal)
+            cell0.btnTitle.setTitle("     \(data.name)", for: .normal)
             return cell0
         } else {
             let course = arrayCourse[indexPath.section / 2].video[indexPath.row]
