@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 protocol PopupEditVideoDelegate {
     func reloadData()
@@ -69,11 +70,21 @@ class PopupEditVideo: BaseViewController {
             showToast(message: "Bạn cần điền đẩy đủ thông tin.")
             hideLoading()
         } else {
-            let data = ["description": tvDescription.text!, "name": txtNameVideo.text!, "linkVideo": txtLinkVideo.text!] as [AnyHashable : Any]
+            let values = ["description": tvDescription.text!, "name": txtNameVideo.text!, "linkVideo": txtLinkVideo.text!] as [AnyHashable : Any]
             if let vid = video {
-                databaseReference.child("Courses").child(vid.course).child("videos").child("\(vid.index)").updateChildValues(data)
-                startTimer()
-                showLoadingSuccess(1)
+                databaseReference.child("Courses").child(vid.course).observe(.childAdded) { (data) in
+                    databaseReference.child("Courses").child(vid.course).child(data.key).queryOrdered(byChild: "id").queryEqual(toValue: vid.id).observeSingleEvent(of: .value) { (snapshot) in
+                        if snapshot.exists() {
+                            self.hideLoading()
+                            for child in snapshot.children {
+                                guard let data = child as? DataSnapshot else {return}
+                                databaseReference.child("Courses").child(vid.course).child("videos").child(data.key).updateChildValues(values)
+                                self.startTimer()
+                                self.showLoadingSuccess(1)
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -92,12 +103,23 @@ class PopupEditVideo: BaseViewController {
     
     @IBAction func tapOnXoa(_ sender: Any) {
         if let vid = video {
-            databaseReference.child("Courses").child(vid.course).child("videos").child("\(vid.index)").removeValue()
-            self.arrayVideo.remove(at: vid.index)
-            let course = Course(video: arrayVideo)
-            databaseReference.child("Courses").child(vid.course).updateChildValues(course.asDictionaryVideo())
-            startTimer()
-            showLoadingSuccess(1)
+            self.arrayVideo.removeAll(where: { $0.id == vid.id})
+            databaseReference.child("Courses").child(vid.course).observe(.childAdded) { (data) in
+                databaseReference.child("Courses").child(vid.course).child(data.key).queryOrdered(byChild: "id").queryEqual(toValue: vid.id).observeSingleEvent(of: .value) { (snapshot) in
+                    if snapshot.exists() {
+                        self.hideLoading()
+                        for child in snapshot.children {
+                            guard let data = child as? DataSnapshot else {return}
+                            databaseReference.child("Courses").child(vid.course).child("videos").child(data.key).removeValue()
+                            
+                            let course = Course(video: self.arrayVideo)
+                            databaseReference.child("Courses").child(vid.course).updateChildValues(course.asDictionaryVideo())
+                            self.startTimer()
+                            self.showLoadingSuccess(1)
+                        }
+                    }
+                }
+            }
         }
     }
 }
