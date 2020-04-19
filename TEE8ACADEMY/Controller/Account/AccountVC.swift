@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 enum AccountType {
     case admin
@@ -61,7 +62,7 @@ class AccountVC: BaseViewController {
         case .user:
             lblA.text = "Mua khoá học"
             lblB.text = "Thông tin cá nhân"
-            lblC.text = "Thông tin ứng dụng"
+            lblC.text = "Đánh giá ứng dụng"
             lblD.text = "Góp ý"
             lblE.text = "Đổi mật khẩu"
             lblF.text = "Đăng xuất"
@@ -169,9 +170,10 @@ class AccountVC: BaseViewController {
             vc.modalPresentationStyle = .overFullScreen
             vc.pushVC = .video
             self.present(vc, animated: true, completion: nil)
-        case .user: // LỊCH SỬ GIAO DỊCH
-            showToast(message: "Chức năng đang được xây dựng")
-            return
+        case .user: // ĐÁNH GIÁ ỨNG DỤNG
+            showLoading()
+            SKStoreReviewController.requestReview()
+            hideLoading()
         default:
             break
         }
@@ -215,8 +217,9 @@ class AccountVC: BaseViewController {
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
         case .user: // ĐỔI MẬT KHẨU
-            showToast(message: "Chức năng đang được xây dựng")
-            return
+            let vc = ChangePasswordPopup(nibName: "ChangePasswordPopup", bundle: nil)
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc, animated: true, completion: nil)
         default:
             break
         }

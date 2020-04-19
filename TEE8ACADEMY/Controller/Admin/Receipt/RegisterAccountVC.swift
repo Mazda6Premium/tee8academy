@@ -114,7 +114,6 @@ class RegisterAccountVC: BaseViewController {
         pageView.register(nib, forCellWithReuseIdentifier: "registerAccountCell")
         pageView.transformer = FSPagerViewTransformer(type: .cubic)
 
-        
         pageViewProducts.isHidden = true
         let nib1 = UINib(nibName: "OrderCell", bundle: nil)
         pageViewProducts.register(nib1, forCellWithReuseIdentifier: "orderCell")
@@ -153,6 +152,7 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
             let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "orderCell", at: index) as! OrderCell
             cell.backgroundColor = .clear
             cell.order = arrayOrder[index]
+            cell.parentVC = self
             return cell
         }
     }
@@ -180,8 +180,6 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
                 self.showLoadingSuccess(1)
             }
         }
-        
-
     }
     
     @objc func tapOnCancel(sender: UIButton) {

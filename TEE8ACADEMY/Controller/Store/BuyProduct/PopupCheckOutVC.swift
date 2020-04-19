@@ -88,8 +88,9 @@ class PopupCheckOutVC: BaseViewController {
             let order = Order(userId: user.userId, username: user.username, phone: txtSoDT.text!, address: txtDiaChi.text!, cart: arrayCart, realname: user.realName, time: time, quantity: self.quantity, totalPayment: self.total)
             let key = databaseReference.childByAutoId().key!
             databaseReference.child("Orders").child(key).setValue(order.asDictionary())
-            showLoadingSuccess(1)
-            _ = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(dismissView), userInfo: nil, repeats: false)
+            showLoadingSuccess(5)
+            showToast(message: "Thông tin đơn hàng đã được gửi đến quản trị viên, chúng tôi sẽ liên hệ sớm với bạn, xin chân thành cảm ơn.")
+            _ = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(dismissView), userInfo: nil, repeats: false)
         }
     }
     

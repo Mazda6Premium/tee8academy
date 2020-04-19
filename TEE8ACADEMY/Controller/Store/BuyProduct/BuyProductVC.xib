@@ -61,7 +61,6 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abY-hR-uxA">
                                             <rect key="frame" x="0.0" y="0.5" width="30" height="29"/>
-                                            <color key="tintColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" backgroundImage="minus.circle.fill" catalog="system"/>
                                             <connections>
                                                 <action selector="tapOnDecrease:" destination="-1" eventType="touchUpInside" id="LQC-te-UTP"/>
@@ -75,7 +74,6 @@
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zj-Hp-Wm4">
                                             <rect key="frame" x="60" y="0.5" width="30" height="29"/>
-                                            <color key="tintColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" backgroundImage="plus.circle.fill" catalog="system"/>
                                             <connections>
                                                 <action selector="tapOnIncrease:" destination="-1" eventType="touchUpInside" id="xjg-gZ-3Fy"/>
