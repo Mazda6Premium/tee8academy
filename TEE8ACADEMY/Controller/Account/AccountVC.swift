@@ -61,7 +61,7 @@ class AccountVC: BaseViewController {
         case .user:
             lblA.text = "Mua khoá học"
             lblB.text = "Thông tin cá nhân"
-            lblC.text = "Lịch sử giao dịch"
+            lblC.text = "Thông tin ứng dụng"
             lblD.text = "Góp ý"
             lblE.text = "Đổi mật khẩu"
             lblF.text = "Đăng xuất"

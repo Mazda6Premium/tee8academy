@@ -100,6 +100,13 @@ class BuyCourseVC: BaseViewController {
     @IBAction func tapOnBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func tapOnGift(_ sender: Any) {
+        let vc = GiftCourseVC(nibName: "GiftCourseVC", bundle: nil)
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.arrayFreeCourse = self.arrayFreeCourse
+        self.present(vc, animated: true, completion: nil)
+    }
 }
 
 extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {

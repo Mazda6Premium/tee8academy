@@ -40,11 +40,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X8C-W9-X6m">
-                    <rect key="frame" x="20" y="101.5" width="374" height="714.5"/>
+                    <rect key="frame" x="20" y="101.5" width="374" height="668.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CJH-H5-8lp">
-                    <rect key="frame" x="20" y="826" width="374" height="36"/>
+                    <rect key="frame" x="20" y="780" width="374" height="36"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5F-1r-dv9">
                             <rect key="frame" x="0.0" y="0.0" width="182" height="36"/>
@@ -74,21 +74,38 @@
                         <constraint firstAttribute="height" constant="36" id="jpd-dw-Q7n"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VA5-K8-5Dk">
+                    <rect key="frame" x="20" y="826" width="374" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="VfS-2b-WPY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                    <state key="normal" title="Gift Courses" backgroundImage="bg_button">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="tapOnContinue:" destination="-1" eventType="touchUpInside" id="Vhw-N0-cXV"/>
+                        <action selector="tapOnGift:" destination="-1" eventType="touchUpInside" id="8aw-0D-M1O"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="VA5-K8-5Dk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="09a-Kp-5RA"/>
                 <constraint firstAttribute="trailing" secondItem="bz6-R3-MaW" secondAttribute="trailing" id="8Yt-r1-Dcg"/>
                 <constraint firstAttribute="bottom" secondItem="bz6-R3-MaW" secondAttribute="bottom" id="Dlk-ve-Hh2"/>
                 <constraint firstItem="rEk-b8-njt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="GiJ-WF-TE6"/>
                 <constraint firstItem="X8C-W9-X6m" firstAttribute="top" secondItem="rEk-b8-njt" secondAttribute="bottom" constant="10" id="ICY-VV-eYw"/>
                 <constraint firstItem="bz6-R3-MaW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Qrs-HE-1yZ"/>
-                <constraint firstItem="CJH-H5-8lp" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="gbq-HX-EIg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VA5-K8-5Dk" secondAttribute="trailing" constant="20" id="WTw-3n-9YH"/>
+                <constraint firstItem="VA5-K8-5Dk" firstAttribute="top" secondItem="CJH-H5-8lp" secondAttribute="bottom" constant="10" id="YqG-mp-ZGn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rEk-b8-njt" secondAttribute="trailing" constant="20" id="hEE-vB-YRs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="X8C-W9-X6m" secondAttribute="trailing" constant="20" id="hrZ-Dp-GSf"/>
                 <constraint firstItem="bz6-R3-MaW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="huL-Uz-H3n"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CJH-H5-8lp" secondAttribute="trailing" constant="20" id="j73-1m-U4n"/>
                 <constraint firstItem="X8C-W9-X6m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="m3a-Ig-6Yo"/>
                 <constraint firstItem="CJH-H5-8lp" firstAttribute="top" secondItem="X8C-W9-X6m" secondAttribute="bottom" constant="10" id="o9t-Om-OpH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VA5-K8-5Dk" secondAttribute="bottom" id="qjv-oi-kwi"/>
                 <constraint firstItem="rEk-b8-njt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="yf9-uw-3sy"/>
                 <constraint firstItem="CJH-H5-8lp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="zKM-Nk-iiG"/>
             </constraints>

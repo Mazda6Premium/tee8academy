@@ -89,9 +89,12 @@ WWW.TEE8.EDU.VN</string>
                         <constraint firstAttribute="height" constant="36" id="3C6-EH-7fa"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                    <state key="normal" title="Contact Support" backgroundImage="bg_button">
+                    <state key="normal" title="Gift Courses" backgroundImage="bg_button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="tapOnGift:" destination="-1" eventType="touchUpInside" id="Fpe-ao-ouY"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -102,7 +105,6 @@ WWW.TEE8.EDU.VN</string>
                 <constraint firstItem="lct-XM-cvn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7mQ-UW-hA0"/>
                 <constraint firstItem="YLh-w2-9CA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7vv-Ie-71Q"/>
                 <constraint firstItem="lct-XM-cvn" firstAttribute="top" secondItem="UHF-K1-Wgw" secondAttribute="bottom" constant="10" id="7xU-FM-H8q"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lct-XM-cvn" secondAttribute="trailing" constant="20" id="8JM-7n-fOz"/>
                 <constraint firstItem="UHF-K1-Wgw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="9hW-p1-leG"/>
                 <constraint firstItem="YLh-w2-9CA" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="DNB-ai-3XF"/>
                 <constraint firstItem="ekz-s3-r4o" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DZ5-J4-eu0"/>
@@ -115,7 +117,6 @@ WWW.TEE8.EDU.VN</string>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UHF-K1-Wgw" secondAttribute="trailing" constant="20" id="aOt-ca-7PF"/>
                 <constraint firstItem="bGL-zZ-9K8" firstAttribute="top" secondItem="lct-XM-cvn" secondAttribute="bottom" constant="20" id="bdB-xD-sV1"/>
                 <constraint firstItem="YLh-w2-9CA" firstAttribute="top" secondItem="Wjk-WI-HQK" secondAttribute="bottom" constant="10" id="hhP-gM-PIA"/>
-                <constraint firstItem="lct-XM-cvn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="p5F-8r-E8Y"/>
                 <constraint firstItem="bGL-zZ-9K8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pZo-oL-k7M"/>
                 <constraint firstAttribute="bottom" secondItem="ekz-s3-r4o" secondAttribute="bottom" id="tWf-gy-zBq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wjk-WI-HQK" secondAttribute="trailing" constant="20" id="wmL-1g-i46"/>

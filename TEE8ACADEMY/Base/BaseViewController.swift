@@ -42,7 +42,7 @@ class BaseViewController: UIViewController {
         var style = ToastStyle()
         style.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
         style.messageColor = .white
-        style.messageFont = UIFont(name: "Quicksand-Bold", size: 16)!
+        style.messageFont = UIFont.systemFont(ofSize: 16)
         self.view.makeToast(message, duration: duration, position: .bottom, style: style)
     }
     

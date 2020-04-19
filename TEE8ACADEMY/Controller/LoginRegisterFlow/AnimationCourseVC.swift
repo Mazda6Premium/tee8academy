@@ -47,9 +47,6 @@ class AnimationCourseVC: BaseViewController {
         lblTitle.textAlignment = .center
         view.addSubview(lblTitle)
 
-        
-        
-        
         user = SessionData.shared.userData
         if let user = user {
             lblTitle.text = "Welcome \(user.realName) to Tee 8 Academy, please choice your course belows:"
@@ -143,6 +140,13 @@ class AnimationCourseVC: BaseViewController {
         let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
         vc.modalTransitionStyle = .crossDissolve
         vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func tapOnGift(_ sender: Any) {
+        let vc = GiftCourseVC(nibName: "GiftCourseVC", bundle: nil)
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.arrayFreeCourse = self.arrayFreeCourse
         self.present(vc, animated: true, completion: nil)
     }
 }
