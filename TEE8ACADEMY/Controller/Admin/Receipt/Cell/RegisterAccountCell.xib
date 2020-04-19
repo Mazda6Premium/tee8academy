@@ -8,11 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Quicksand-Bold.ttf">
-            <string>Quicksand-Bold</string>
-        </array>
-        <array key="Quicksand-Regular.ttf">
-            <string>Quicksand-Regular</string>
+        <array key="didact-gothic.regular.ttf">
+            <string>DidactGothic-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -33,14 +30,14 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AF4-Bc-H81">
                                         <rect key="frame" x="0.0" y="0.0" width="267" height="36"/>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
                                         <state key="normal" title="Accept" backgroundImage="bg_button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNy-42-vF3">
                                         <rect key="frame" x="287" y="0.0" width="267" height="36"/>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
                                         <state key="normal" title="Cancel" backgroundImage="bg_button">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -63,16 +60,16 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="8mP-6G-YEa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0s-ra-Y0m">
-                                <rect key="frame" x="89" y="42" width="23" height="15"/>
+                                <rect key="frame" x="89" y="42" width="21" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="SLW-KP-8Pf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="10"/>
                                 <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -88,7 +85,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="7fb-4R-egj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -97,7 +94,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="FT4-NY-sif"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -106,7 +103,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="sxI-Dh-IwD"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -115,7 +112,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="TkT-lU-9O6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -124,7 +121,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="8TT-EN-hhK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -133,7 +130,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="1hT-Ai-sSF"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -149,7 +146,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="xdj-UO-Noz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

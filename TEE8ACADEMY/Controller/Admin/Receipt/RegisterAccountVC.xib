@@ -8,8 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Quicksand-Bold.ttf">
-            <string>Quicksand-Bold</string>
+        <array key="didact-gothic.regular.ttf">
+            <string>DidactGothic-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -51,7 +51,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="ucJ-VZ-wLO"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
                     <state key="normal" title="Back" backgroundImage="bg_button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>

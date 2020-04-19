@@ -60,7 +60,7 @@ class BuyProductVC: BaseViewController {
             } else {
                 imgProduct.image = UIImage(named: "placeholder")
             }
-            lblName.text = data.name
+            lblName.text = "Sản phẩm: \(data.name)"
             lblPrice.text = "Giá tiền: \(formatMoney(data.price)) VND"
             lblNumberBuy.text = "\(number)"
             tvDescription.text = data.description

@@ -8,11 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Quicksand-Bold.ttf">
-            <string>Quicksand-Bold</string>
-        </array>
-        <array key="Quicksand-Medium.ttf">
-            <string>Quicksand-Medium</string>
+        <array key="didact-gothic.regular.ttf">
+            <string>DidactGothic-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -42,7 +39,7 @@
                         <constraint firstAttribute="height" constant="40" id="nNY-yl-9DU"/>
                     </constraints>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="UCJ-X5-2cG">
@@ -54,7 +51,7 @@
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEASE ENTER OTP TO VERIFY YOUR ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikH-Pj-OQN">
                     <rect key="frame" x="20" y="264" width="374" height="17.5"/>
-                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
                     <color key="textColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -62,19 +59,19 @@
                     <rect key="frame" x="20" y="827" width="374" height="35"/>
                     <string key="text">Hotline 0919188158 - 0888777158/198
 WWW.TEE8.EDU.VN</string>
-                    <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand Medium" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DO NOT GET OTP?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3R-sK-Iek">
                     <rect key="frame" x="20" y="411.5" width="133" height="17.5"/>
-                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
                     <color key="textColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQc-JM-Ldk">
                     <rect key="frame" x="159" y="405.5" width="90" height="30"/>
-                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
                     <state key="normal" title="SEND AGAIN">
                         <color key="titleColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -84,7 +81,7 @@ WWW.TEE8.EDU.VN</string>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zF-iB-fdG">
                     <rect key="frame" x="20" y="449" width="173" height="30"/>
-                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
                     <state key="normal" title="VERIFY VIA YOUR EMAIL">
                         <color key="titleColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -97,7 +94,7 @@ WWW.TEE8.EDU.VN</string>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="pQi-JP-stX"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
                     <state key="normal" title="Contact Support" backgroundImage="bg_button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -110,7 +107,7 @@ WWW.TEE8.EDU.VN</string>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="Cjk-ue-CrB"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                            <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
                             <state key="normal" title="Back" backgroundImage="bg_button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -120,7 +117,7 @@ WWW.TEE8.EDU.VN</string>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bk-MN-Dym">
                             <rect key="frame" x="192" y="0.0" width="182" height="36"/>
-                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                            <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
                             <state key="normal" title="Continue" backgroundImage="bg_button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>

@@ -86,7 +86,7 @@ class RegisterAccountVC: BaseViewController {
         
         segmentedControl.borderColor = .clear
         segmentedControl.thumbColor = #colorLiteral(red: 0.1019607843, green: 0.3568627451, blue: 0.3921568627, alpha: 1)
-        segmentedControl.font = UIFont(name: "Quicksand-Bold", size: 16)
+        segmentedControl.font = UIFont.systemFont(ofSize: 16)
     }
     
     @IBAction func tapOnSegmented(_ sender: Any) {

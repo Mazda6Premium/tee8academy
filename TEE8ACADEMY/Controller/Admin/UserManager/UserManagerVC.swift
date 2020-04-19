@@ -74,7 +74,7 @@ extension UserManagerVC : UITableViewDelegate, UITableViewDataSource {
         if user.isBlock == true {
             cell.imgLock.image = UIImage(named: "lock")
         } else {
-            cell.imgLock.image = UIImage(named: "copy")
+            cell.imgLock.image = UIImage(named: "unlock")
         }
         
         let tapGes1 = UITapGestureRecognizer(target: self, action: #selector(tapOnViewBlock))

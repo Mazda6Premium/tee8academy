@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="didact-gothic.regular.ttf">
+            <string>DidactGothic-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -24,14 +29,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coW-kg-D9b">
-                                        <rect key="frame" x="10" y="10" width="60" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="10" y="10" width="60" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtP-VI-ABR">
-                                        <rect key="frame" x="10" y="45.5" width="31" height="14.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <rect key="frame" x="10" y="44" width="28" height="16"/>
+                                        <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -58,42 +63,40 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="am0-Jv-7Bg">
                                 <rect key="frame" x="155" y="0.0" width="70" height="70"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="fVF-TU-HIo">
-                                        <rect key="frame" x="23" y="23" width="24" height="24"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit" translatesAutoresizingMaskIntoConstraints="NO" id="8NG-W2-ly4">
-                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit_icon" translatesAutoresizingMaskIntoConstraints="NO" id="8NG-W2-ly4">
+                                        <rect key="frame" x="27" y="27" width="16" height="16"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="9D0-3L-t1e"/>
+                                            <constraint firstAttribute="width" constant="16" id="aXD-S8-ekn"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.49803921568627452" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="fVF-TU-HIo" firstAttribute="centerX" secondItem="am0-Jv-7Bg" secondAttribute="centerX" id="FhV-Qz-S2A"/>
                                     <constraint firstAttribute="width" constant="70" id="JKK-TF-xnm"/>
-                                    <constraint firstItem="fVF-TU-HIo" firstAttribute="centerY" secondItem="am0-Jv-7Bg" secondAttribute="centerY" id="TrX-lE-ijH"/>
                                     <constraint firstAttribute="height" constant="70" id="hWy-hV-vmM"/>
+                                    <constraint firstItem="8NG-W2-ly4" firstAttribute="centerY" secondItem="am0-Jv-7Bg" secondAttribute="centerY" id="q3s-5p-flx"/>
+                                    <constraint firstItem="8NG-W2-ly4" firstAttribute="centerX" secondItem="am0-Jv-7Bg" secondAttribute="centerX" id="xZh-Oo-DMN"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tjz-8v-Yoj">
                                 <rect key="frame" x="230" y="0.0" width="70" height="70"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="wt2-Ur-5S0">
-                                        <rect key="frame" x="25.5" y="25" width="19.5" height="20"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jXJ-hc-mic">
-                                                <rect key="frame" x="0.0" y="-1" width="19.5" height="20.5"/>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash_icon" translatesAutoresizingMaskIntoConstraints="NO" id="jXJ-hc-mic">
+                                        <rect key="frame" x="27" y="27" width="16" height="16"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="rq1-Af-8As"/>
+                                            <constraint firstAttribute="height" constant="16" id="tFK-KN-b95"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.49803921568627452" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="wt2-Ur-5S0" firstAttribute="centerX" secondItem="Tjz-8v-Yoj" secondAttribute="centerX" id="Hm0-tK-s9X"/>
+                                    <constraint firstItem="jXJ-hc-mic" firstAttribute="centerX" secondItem="Tjz-8v-Yoj" secondAttribute="centerX" id="Rxj-T0-kQL"/>
                                     <constraint firstAttribute="width" constant="70" id="XtA-4w-NQW"/>
-                                    <constraint firstItem="wt2-Ur-5S0" firstAttribute="centerY" secondItem="Tjz-8v-Yoj" secondAttribute="centerY" id="bLn-0D-7rp"/>
+                                    <constraint firstItem="jXJ-hc-mic" firstAttribute="centerY" secondItem="Tjz-8v-Yoj" secondAttribute="centerY" id="eRj-2m-S1E"/>
                                     <constraint firstAttribute="height" constant="70" id="vkC-O0-c9L"/>
                                 </constraints>
                             </view>
@@ -125,8 +128,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="edit" width="24" height="24"/>
+        <image name="edit_icon" width="16" height="16"/>
         <image name="saving20" width="79" height="53"/>
-        <image name="trash" catalog="system" width="60" height="64"/>
+        <image name="trash_icon" width="16" height="16"/>
     </resources>
 </document>

@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="didact-gothic.regular.ttf">
+            <string>DidactGothic-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GiftCourseVC" customModule="TEE_8_ACADEMY" customModuleProvider="target">
             <connections>
@@ -33,31 +38,17 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gift Courses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpO-Wx-I6Z">
-                                    <rect key="frame" x="159.5" y="9.5" width="95.5" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="161" y="8" width="92.5" height="24"/>
+                                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRL-6v-6R1">
-                                    <rect key="frame" x="374" y="5" width="30" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="JfQ-Xm-DYv"/>
-                                        <constraint firstAttribute="width" constant="30" id="WY3-bZ-uJU"/>
-                                    </constraints>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" image="xmark" catalog="system"/>
-                                    <connections>
-                                        <action selector="tapOnClose:" destination="-1" eventType="touchUpInside" id="EsF-17-nTK"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="LpO-Wx-I6Z" firstAttribute="centerY" secondItem="h6P-Ur-fdg" secondAttribute="centerY" id="Krd-wM-7Aw"/>
                                 <constraint firstItem="LpO-Wx-I6Z" firstAttribute="centerX" secondItem="h6P-Ur-fdg" secondAttribute="centerX" id="aiE-IZ-2us"/>
-                                <constraint firstItem="vRL-6v-6R1" firstAttribute="centerY" secondItem="h6P-Ur-fdg" secondAttribute="centerY" id="go4-Mk-lm1"/>
                                 <constraint firstAttribute="height" constant="40" id="oHd-dw-jVp"/>
-                                <constraint firstAttribute="trailing" secondItem="vRL-6v-6R1" secondAttribute="trailing" constant="10" id="wdn-Od-jL4"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -90,6 +81,5 @@
     </objects>
     <resources>
         <image name="bg" width="540" height="898"/>
-        <image name="xmark" catalog="system" width="64" height="56"/>
     </resources>
 </document>
