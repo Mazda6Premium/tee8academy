@@ -23,16 +23,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDy-i0-not">
-                    <rect key="frame" x="10" y="383" width="394" height="140"/>
+                    <rect key="frame" x="10" y="363" width="394" height="180"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzk-J7-ZBg">
-                            <rect key="frame" x="180.5" y="20" width="33" height="59"/>
+                            <rect key="frame" x="20" y="60" width="354" height="59"/>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="z0g-rN-KmM">
-                            <rect key="frame" x="5" y="99" width="384" height="36"/>
+                            <rect key="frame" x="5" y="139" width="384" height="36"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPZ-QN-TUf">
                                     <rect key="frame" x="0.0" y="0.0" width="189.5" height="36"/>
@@ -57,15 +57,37 @@
                                 <constraint firstAttribute="height" constant="36" id="ood-9v-q9M"/>
                             </constraints>
                         </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaM-KP-ZuQ">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Block" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiC-cL-IQC">
+                                    <rect key="frame" x="176" y="10" width="42.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.49803921569999998" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="3YP-vj-d6c"/>
+                                <constraint firstItem="AiC-cL-IQC" firstAttribute="centerY" secondItem="EaM-KP-ZuQ" secondAttribute="centerY" id="qI3-Z4-okJ"/>
+                                <constraint firstItem="AiC-cL-IQC" firstAttribute="centerX" secondItem="EaM-KP-ZuQ" secondAttribute="centerX" id="yYn-2S-wkf"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="z0g-rN-KmM" firstAttribute="leading" secondItem="jDy-i0-not" secondAttribute="leading" constant="5" id="1bp-Lv-QpY"/>
                         <constraint firstItem="z0g-rN-KmM" firstAttribute="top" secondItem="dzk-J7-ZBg" secondAttribute="bottom" constant="20" id="6RS-UG-hOF"/>
                         <constraint firstAttribute="trailing" secondItem="z0g-rN-KmM" secondAttribute="trailing" constant="5" id="RC2-Kx-eSP"/>
-                        <constraint firstItem="dzk-J7-ZBg" firstAttribute="top" secondItem="jDy-i0-not" secondAttribute="top" constant="20" id="RSt-SE-yc9"/>
-                        <constraint firstAttribute="height" constant="140" id="f73-xk-WYn"/>
+                        <constraint firstAttribute="trailing" secondItem="EaM-KP-ZuQ" secondAttribute="trailing" id="TMk-RF-jdn"/>
+                        <constraint firstItem="dzk-J7-ZBg" firstAttribute="leading" secondItem="jDy-i0-not" secondAttribute="leading" constant="20" id="U4b-Zd-cmf"/>
+                        <constraint firstItem="EaM-KP-ZuQ" firstAttribute="leading" secondItem="jDy-i0-not" secondAttribute="leading" id="Ybj-el-kdv"/>
+                        <constraint firstAttribute="height" constant="180" id="f73-xk-WYn"/>
+                        <constraint firstAttribute="trailing" secondItem="dzk-J7-ZBg" secondAttribute="trailing" constant="20" id="kdE-7S-4hw"/>
+                        <constraint firstItem="EaM-KP-ZuQ" firstAttribute="top" secondItem="jDy-i0-not" secondAttribute="top" id="lyX-h2-pZZ"/>
                         <constraint firstAttribute="bottom" secondItem="z0g-rN-KmM" secondAttribute="bottom" constant="5" id="qzh-vg-GK2"/>
+                        <constraint firstItem="dzk-J7-ZBg" firstAttribute="top" secondItem="EaM-KP-ZuQ" secondAttribute="bottom" constant="20" id="xrW-QL-Xeo"/>
                         <constraint firstItem="dzk-J7-ZBg" firstAttribute="centerX" secondItem="jDy-i0-not" secondAttribute="centerX" id="zcQ-gg-qmx"/>
                     </constraints>
                 </view>

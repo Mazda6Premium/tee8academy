@@ -22,16 +22,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VM3-FS-7B3">
-                    <rect key="frame" x="10" y="383" width="394" height="140"/>
+                    <rect key="frame" x="10" y="363" width="394" height="180"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xoá khoá học ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOq-so-SbK">
-                            <rect key="frame" x="145" y="20" width="104.5" height="59"/>
+                            <rect key="frame" x="145" y="60" width="104.5" height="59"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QNx-sM-vVk">
-                            <rect key="frame" x="5" y="99" width="384" height="36"/>
+                            <rect key="frame" x="5" y="139" width="384" height="36"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e44-3A-u4M">
                                     <rect key="frame" x="0.0" y="0.0" width="189.5" height="36"/>
@@ -58,17 +58,37 @@
                                 <constraint firstAttribute="height" constant="36" id="vHh-FE-XJz"/>
                             </constraints>
                         </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jw7-u9-Tlh">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9n-Ov-RhV">
+                                    <rect key="frame" x="170" y="10" width="54" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.49803921569999998" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="x9n-Ov-RhV" firstAttribute="centerY" secondItem="jw7-u9-Tlh" secondAttribute="centerY" id="1vb-2l-Dio"/>
+                                <constraint firstItem="x9n-Ov-RhV" firstAttribute="centerX" secondItem="jw7-u9-Tlh" secondAttribute="centerX" id="SXU-7r-Eai"/>
+                                <constraint firstAttribute="height" constant="40" id="fcH-vV-bCV"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="QNx-sM-vVk" secondAttribute="bottom" constant="5" id="LVu-Zt-NGe"/>
-                        <constraint firstAttribute="height" constant="140" id="PFR-bQ-STE"/>
+                        <constraint firstAttribute="height" constant="180" id="PFR-bQ-STE"/>
                         <constraint firstItem="LOq-so-SbK" firstAttribute="centerX" secondItem="VM3-FS-7B3" secondAttribute="centerX" id="QNu-MS-Z59"/>
+                        <constraint firstItem="jw7-u9-Tlh" firstAttribute="top" secondItem="VM3-FS-7B3" secondAttribute="top" id="QQB-y8-QpZ"/>
+                        <constraint firstItem="LOq-so-SbK" firstAttribute="top" secondItem="jw7-u9-Tlh" secondAttribute="bottom" constant="20" id="R2H-s7-rnW"/>
                         <constraint firstAttribute="trailing" secondItem="QNx-sM-vVk" secondAttribute="trailing" constant="5" id="VQr-Du-UNT"/>
                         <constraint firstItem="QNx-sM-vVk" firstAttribute="leading" secondItem="VM3-FS-7B3" secondAttribute="leading" constant="5" id="Xbz-KZ-ZTG"/>
+                        <constraint firstAttribute="trailing" secondItem="jw7-u9-Tlh" secondAttribute="trailing" id="Xth-Q9-1bI"/>
                         <constraint firstItem="QNx-sM-vVk" firstAttribute="top" secondItem="LOq-so-SbK" secondAttribute="bottom" constant="20" id="ZcO-mo-NMr"/>
                         <constraint firstItem="QNx-sM-vVk" firstAttribute="centerX" secondItem="VM3-FS-7B3" secondAttribute="centerX" id="uIl-Bc-5JG"/>
-                        <constraint firstItem="LOq-so-SbK" firstAttribute="top" secondItem="VM3-FS-7B3" secondAttribute="top" constant="20" id="vab-uK-pQ0"/>
+                        <constraint firstItem="jw7-u9-Tlh" firstAttribute="leading" secondItem="VM3-FS-7B3" secondAttribute="leading" id="yVR-mz-cQK"/>
                     </constraints>
                 </view>
             </subviews>

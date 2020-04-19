@@ -25,10 +25,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZN-Py-LFc">
-                    <rect key="frame" x="10" y="311.5" width="394" height="273"/>
+                    <rect key="frame" x="10" y="289" width="394" height="318"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tên khoá học" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cuf-zr-sVg">
-                            <rect key="frame" x="5" y="5" width="384" height="36"/>
+                            <rect key="frame" x="5" y="45" width="384" height="36"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="aSE-R9-crZ"/>
@@ -37,7 +37,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Giá tiền" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFB-pQ-VkR" customClass="CurrencyTextField" customModule="TEE_8_ACADEMY" customModuleProvider="target">
-                            <rect key="frame" x="5" y="46" width="384" height="36"/>
+                            <rect key="frame" x="5" y="86" width="384" height="36"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="Ca1-uh-4mz"/>
@@ -46,7 +46,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OkP-nz-JMk">
-                            <rect key="frame" x="5" y="87" width="384" height="140"/>
+                            <rect key="frame" x="5" y="127" width="384" height="140"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="140" id="Z9D-d8-wkS"/>
@@ -56,7 +56,7 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zpZ-W2-MVM">
-                            <rect key="frame" x="5" y="232" width="384" height="36"/>
+                            <rect key="frame" x="5" y="272" width="384" height="36"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtS-i6-0Rs">
                                     <rect key="frame" x="0.0" y="0.0" width="189.5" height="36"/>
@@ -81,22 +81,42 @@
                                 <constraint firstAttribute="height" constant="36" id="uXU-Ja-Ahd"/>
                             </constraints>
                         </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJI-g9-QC1">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO4-Oy-FjX">
+                                    <rect key="frame" x="182.5" y="10" width="29.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.49803921568627452" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="cO4-Oy-FjX" firstAttribute="centerY" secondItem="OJI-g9-QC1" secondAttribute="centerY" id="0PQ-Hl-Oya"/>
+                                <constraint firstAttribute="height" constant="40" id="V2D-Rv-SPJ"/>
+                                <constraint firstItem="cO4-Oy-FjX" firstAttribute="centerX" secondItem="OJI-g9-QC1" secondAttribute="centerX" id="Yp4-bB-d6a"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="aFB-pQ-VkR" firstAttribute="top" secondItem="Cuf-zr-sVg" secondAttribute="bottom" constant="5" id="3ER-eI-j7z"/>
                         <constraint firstItem="zpZ-W2-MVM" firstAttribute="leading" secondItem="OkP-nz-JMk" secondAttribute="leading" id="61K-M9-Ad6"/>
+                        <constraint firstItem="Cuf-zr-sVg" firstAttribute="top" secondItem="OJI-g9-QC1" secondAttribute="bottom" constant="5" id="6lT-J1-VjQ"/>
                         <constraint firstAttribute="trailing" secondItem="Cuf-zr-sVg" secondAttribute="trailing" constant="5" id="8zO-X5-Sna"/>
                         <constraint firstItem="zpZ-W2-MVM" firstAttribute="trailing" secondItem="OkP-nz-JMk" secondAttribute="trailing" id="9Gk-fR-KJe"/>
                         <constraint firstItem="aFB-pQ-VkR" firstAttribute="trailing" secondItem="Cuf-zr-sVg" secondAttribute="trailing" id="Ac9-KZ-7WR"/>
                         <constraint firstItem="zpZ-W2-MVM" firstAttribute="top" secondItem="OkP-nz-JMk" secondAttribute="bottom" constant="5" id="G5e-eY-GPf"/>
                         <constraint firstItem="OkP-nz-JMk" firstAttribute="top" secondItem="aFB-pQ-VkR" secondAttribute="bottom" constant="5" id="HxK-Br-ipB"/>
-                        <constraint firstAttribute="bottom" secondItem="zpZ-W2-MVM" secondAttribute="bottom" constant="5" id="KDo-Ce-1io"/>
-                        <constraint firstItem="Cuf-zr-sVg" firstAttribute="top" secondItem="WZN-Py-LFc" secondAttribute="top" constant="5" id="Yba-bt-E03"/>
+                        <constraint firstAttribute="bottom" secondItem="zpZ-W2-MVM" secondAttribute="bottom" constant="10" id="KDo-Ce-1io"/>
+                        <constraint firstAttribute="trailing" secondItem="OJI-g9-QC1" secondAttribute="trailing" id="TiP-pp-uzd"/>
+                        <constraint firstItem="OJI-g9-QC1" firstAttribute="top" secondItem="WZN-Py-LFc" secondAttribute="top" id="aZr-9j-qsN"/>
                         <constraint firstItem="aFB-pQ-VkR" firstAttribute="leading" secondItem="Cuf-zr-sVg" secondAttribute="leading" id="dJD-Q1-H7C"/>
                         <constraint firstItem="OkP-nz-JMk" firstAttribute="trailing" secondItem="aFB-pQ-VkR" secondAttribute="trailing" id="k2O-3U-lZa"/>
                         <constraint firstItem="OkP-nz-JMk" firstAttribute="leading" secondItem="aFB-pQ-VkR" secondAttribute="leading" id="mpa-GR-GMk"/>
                         <constraint firstItem="Cuf-zr-sVg" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" constant="5" id="uMa-GM-Hgl"/>
+                        <constraint firstItem="OJI-g9-QC1" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" id="ugC-bR-hMc"/>
                     </constraints>
                 </view>
             </subviews>
