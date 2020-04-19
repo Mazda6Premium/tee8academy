@@ -25,22 +25,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCP-go-Wpe">
                         <rect key="frame" x="10" y="10" width="555" height="574"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mv8-hm-dtD">
-                                <rect key="frame" x="20" y="528" width="515" height="36"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tc-Iw-qiQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="515" height="36"/>
-                                        <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
-                                        <state key="normal" title="Accept" backgroundImage="bg_button">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="IRX-h5-xJt"/>
-                                </constraints>
-                            </stackView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Cwm-Xn-f0i">
                                 <rect key="frame" x="8" y="10" width="50" height="50"/>
                                 <constraints>
@@ -149,7 +133,6 @@
                         <constraints>
                             <constraint firstItem="aNd-LT-cwk" firstAttribute="top" secondItem="Bh0-jx-OEf" secondAttribute="bottom" constant="10" id="28b-oI-TCZ"/>
                             <constraint firstItem="4TL-K0-80i" firstAttribute="leading" secondItem="Cwm-Xn-f0i" secondAttribute="trailing" constant="10" id="4w6-3v-MNG"/>
-                            <constraint firstAttribute="trailing" secondItem="mv8-hm-dtD" secondAttribute="trailing" constant="20" id="8Ed-pJ-dhA"/>
                             <constraint firstItem="Bh0-jx-OEf" firstAttribute="top" secondItem="KCB-ue-xKq" secondAttribute="bottom" constant="20" id="8dx-BZ-izS"/>
                             <constraint firstItem="Bh0-jx-OEf" firstAttribute="leading" secondItem="pCP-go-Wpe" secondAttribute="leading" constant="10" id="Lkw-zE-thr"/>
                             <constraint firstItem="KCB-ue-xKq" firstAttribute="top" secondItem="TGR-ue-l2z" secondAttribute="bottom" constant="20" id="N8d-9k-VPl"/>
@@ -162,13 +145,11 @@
                             <constraint firstItem="KCB-ue-xKq" firstAttribute="leading" secondItem="pCP-go-Wpe" secondAttribute="leading" constant="10" id="ZSV-iV-ox2"/>
                             <constraint firstItem="TGR-ue-l2z" firstAttribute="top" secondItem="GkP-7G-bK9" secondAttribute="bottom" constant="20" id="Zh7-n4-ksi"/>
                             <constraint firstItem="Cwm-Xn-f0i" firstAttribute="top" secondItem="pCP-go-Wpe" secondAttribute="top" constant="10" id="aNf-Iw-nrX"/>
-                            <constraint firstAttribute="bottom" secondItem="mv8-hm-dtD" secondAttribute="bottom" constant="10" id="d4l-Zf-N01"/>
                             <constraint firstAttribute="trailing" secondItem="TGR-ue-l2z" secondAttribute="trailing" constant="10" id="fuC-Jc-iMd"/>
                             <constraint firstItem="4TL-K0-80i" firstAttribute="bottom" secondItem="Cwm-Xn-f0i" secondAttribute="bottom" constant="-3" id="hcG-uN-XCh"/>
                             <constraint firstItem="3Nq-i8-FYO" firstAttribute="leading" secondItem="4TL-K0-80i" secondAttribute="trailing" constant="6" id="nNC-Oe-puL"/>
                             <constraint firstAttribute="trailing" secondItem="GkP-7G-bK9" secondAttribute="trailing" constant="10" id="o61-cP-Sc0"/>
                             <constraint firstItem="3Nq-i8-FYO" firstAttribute="centerY" secondItem="4TL-K0-80i" secondAttribute="centerY" id="o9R-LZ-nZk"/>
-                            <constraint firstItem="mv8-hm-dtD" firstAttribute="leading" secondItem="pCP-go-Wpe" secondAttribute="leading" constant="20" id="qM8-JO-M7I"/>
                             <constraint firstAttribute="trailing" secondItem="aNd-LT-cwk" secondAttribute="trailing" id="rRO-MZ-d0l"/>
                             <constraint firstItem="TGR-ue-l2z" firstAttribute="leading" secondItem="pCP-go-Wpe" secondAttribute="leading" constant="10" id="rna-M8-sXY"/>
                             <constraint firstItem="aNd-LT-cwk" firstAttribute="leading" secondItem="pCP-go-Wpe" secondAttribute="leading" id="uv2-CN-Za4"/>
@@ -188,7 +169,6 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="575" height="594"/>
             <connections>
-                <outlet property="btnAccept" destination="3Tc-Iw-qiQ" id="ZbC-KC-f4p"/>
                 <outlet property="collectionView" destination="aNd-LT-cwk" id="F0p-1W-4HY"/>
                 <outlet property="lblAddress" destination="KCB-ue-xKq" id="eoC-KH-fgl"/>
                 <outlet property="lblNumberProduct" destination="8m3-2e-PPa" id="hLL-Ph-RZh"/>
@@ -203,7 +183,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="bg_button" width="129" height="22"/>
         <image name="clock" width="18" height="18"/>
         <image name="user_placeholder" width="1200" height="1200"/>
     </resources>

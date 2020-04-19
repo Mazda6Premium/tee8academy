@@ -22,8 +22,8 @@ class OrderCell: FSPagerViewCell {
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var lblTotalPayment: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var btnAccept: UIButton!
-    @IBOutlet weak var btnCancel: UIButton!
+//    @IBOutlet weak var btnAccept: UIButton!
+//    @IBOutlet weak var btnCancel: UIButton!
     
     var arrayCart = [Cart]()
     var parentVC = UIViewController()
@@ -54,7 +54,7 @@ class OrderCell: FSPagerViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        let views = [btnAccept, btnCancel, viewCell]
+        let views = [viewCell]
         views.forEach { (view) in
             view?.layer.cornerRadius = 10
             view?.layer.masksToBounds = true
