@@ -61,7 +61,7 @@ class AccountVC: BaseViewController {
             break
         case .user:
             lblA.text = "Mua khoá học"
-            lblB.text = "Thông tin cá nhân"
+            lblB.text = "Thông tin ứng dụng"
             lblC.text = "Đánh giá ứng dụng"
             lblD.text = "Góp ý"
             lblE.text = "Đổi mật khẩu"

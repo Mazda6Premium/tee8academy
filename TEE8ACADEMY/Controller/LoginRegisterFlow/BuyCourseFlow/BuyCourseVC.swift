@@ -124,6 +124,7 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
         case false:
             animationBackCell(cell: cell)
         }
+        cell.lblPrice.isHidden = true
         
         switch indexPath.row {
         case 0:

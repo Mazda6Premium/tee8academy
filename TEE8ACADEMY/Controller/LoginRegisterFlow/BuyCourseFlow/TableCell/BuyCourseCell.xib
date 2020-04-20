@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALL COURSE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOt-pL-g0Z">
-                                <rect key="frame" x="20" y="10" width="271" height="26.5"/>
+                                <rect key="frame" x="20" y="22" width="271" height="26.5"/>
                                 <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -56,9 +56,9 @@
                             <constraint firstItem="mq4-mC-Tjs" firstAttribute="leading" secondItem="SOt-pL-g0Z" secondAttribute="trailing" constant="10" id="8di-uH-EB5"/>
                             <constraint firstItem="2xN-xd-Xyu" firstAttribute="leading" secondItem="Qgl-Xa-alJ" secondAttribute="leading" constant="20" id="AE0-kn-Bqh"/>
                             <constraint firstItem="jSW-hU-uzM" firstAttribute="leading" secondItem="Qgl-Xa-alJ" secondAttribute="leading" id="KKP-Q6-7GD"/>
-                            <constraint firstItem="SOt-pL-g0Z" firstAttribute="top" secondItem="Qgl-Xa-alJ" secondAttribute="top" constant="10" id="Ppt-hE-3zF"/>
                             <constraint firstAttribute="bottom" secondItem="jSW-hU-uzM" secondAttribute="bottom" id="S5D-q0-Q62"/>
                             <constraint firstItem="mq4-mC-Tjs" firstAttribute="top" secondItem="Qgl-Xa-alJ" secondAttribute="top" id="bnV-SV-i0y"/>
+                            <constraint firstItem="SOt-pL-g0Z" firstAttribute="centerY" secondItem="Qgl-Xa-alJ" secondAttribute="centerY" id="c5a-c8-Zms"/>
                             <constraint firstAttribute="trailing" secondItem="mq4-mC-Tjs" secondAttribute="trailing" id="nng-zH-lHM"/>
                             <constraint firstAttribute="bottom" secondItem="mq4-mC-Tjs" secondAttribute="bottom" id="ruq-IJ-wIJ"/>
                             <constraint firstAttribute="bottom" secondItem="2xN-xd-Xyu" secondAttribute="bottom" constant="10" id="tSH-5d-aB5"/>

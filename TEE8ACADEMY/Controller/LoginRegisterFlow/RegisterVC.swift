@@ -36,7 +36,7 @@ class RegisterVC: BaseViewController {
         txtEmail.delegate = self
         txtPhone.delegate = self
         
-        fakeData()
+//        fakeData()
     }
     
     func fakeData() {

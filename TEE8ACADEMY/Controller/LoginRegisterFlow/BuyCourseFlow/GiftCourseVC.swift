@@ -53,6 +53,7 @@ extension GiftCourseVC: UITableViewDelegate, UITableViewDataSource {
         cell.viewBackground.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
         cell.lblCourse.text = course.name
         cell.lblPrice.text = "Price: Free"
+        cell.lblPrice.isHidden = true
         cell.imgDiscount.isHidden = true
         return cell
     }
