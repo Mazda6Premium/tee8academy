@@ -22,8 +22,8 @@ class OrderCell: FSPagerViewCell {
     @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var lblTotalPayment: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-//    @IBOutlet weak var btnAccept: UIButton!
-//    @IBOutlet weak var btnCancel: UIButton!
+    @IBOutlet weak var btnAccept: UIButton!
+    @IBOutlet weak var btnCancel: UIButton!
     
     var arrayCart = [Cart]()
     var parentVC = UIViewController()
@@ -44,7 +44,7 @@ class OrderCell: FSPagerViewCell {
         lblPhone.text = "Phone: \(order.phone)"
         lblAddress.text = "Address: \(order.address)"
         lblNumberProduct.text = "Number product: \(order.quantity)"
-        lblTotalPayment.text = "Total payment \(formatMoney(order.totalPayment))"
+        lblTotalPayment.text = "Total payment \(formatMoney(order.totalPayment)) VND"
         
         let time = order.time
         let date = Date(timeIntervalSince1970: TimeInterval(time) / 1000)
@@ -54,7 +54,7 @@ class OrderCell: FSPagerViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        let views = [viewCell]
+        let views = [viewCell, btnAccept, btnCancel]
         views.forEach { (view) in
             view?.layer.cornerRadius = 10
             view?.layer.masksToBounds = true

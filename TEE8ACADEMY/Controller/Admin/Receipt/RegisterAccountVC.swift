@@ -153,6 +153,13 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
             cell.backgroundColor = .clear
             cell.order = arrayOrder[index]
             cell.parentVC = self
+            
+            cell.btnAccept.addTarget(self, action: #selector(tapOnAcceptOrder), for: .touchUpInside)
+            cell.btnAccept.tag = index
+            
+            cell.btnCancel.addTarget(self, action: #selector(tapOnCancelOrder), for: .touchUpInside)
+            cell.btnCancel.tag = index
+            
             return cell
         }
     }
@@ -167,6 +174,7 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
                 let userData = User.getUserData(dict: dict, key: snapshot.key)
                 self.arrayCourse.append(contentsOf: userData.course)
                 
+                // ADD COURSE VÀO USER
                 let course = User(course: self.arrayCourse)
                 databaseReference.child("Users").child(user.userId).updateChildValues(course.asDictionaryCourse())
                 
@@ -202,5 +210,19 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
                 print(error)
             }
         }
+    }
+    
+    @objc func tapOnAcceptOrder(sender: UIButton) {
+        
+    }
+    
+    @objc func tapOnCancelOrder(sender: UIButton) {
+        showLoading()
+        let order = arrayOrder[sender.tag]
+        databaseReference.child("Orders").child(order.orderId).removeValue()
+        
+        self.arrayOrder.removeAll()
+        self.getDataOrder()
+        self.pageViewProducts.reloadData()
     }
 }

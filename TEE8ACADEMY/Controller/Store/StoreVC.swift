@@ -222,6 +222,17 @@ extension StoreVC: PopupCheckOutDelegate {
 }
 
 extension StoreVC: CheckOutDelegate {
+    func refreshCart(cart: [Cart]) {
+        lblNumberStore.text = "\(cart.count)"
+        self.arrayCart = cart
+        if cart.count == 0 {
+            lblNumberStore.isHidden = true
+        } else {
+            lblNumberStore.isHidden = false
+        }
+        showLoadingSuccess(1)
+    }
+    
     func deleteCart() {
         arrayCart.removeAll()
         lblNumberStore.text = "0"

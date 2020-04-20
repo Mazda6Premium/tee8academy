@@ -64,11 +64,6 @@ class PopupCheckOutVC: BaseViewController {
         }
     }
     
-    @IBAction func tapOnClosePopup(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    
     @IBAction func tapOnAddProduct(_ sender: Any) {
         self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
     }
@@ -84,9 +79,9 @@ class PopupCheckOutVC: BaseViewController {
         if let user = SessionData.shared.userData {
             let date = Date()
             let time = date.timeIntervalSince1970 * 1000
-            
-            let order = Order(userId: user.userId, username: user.username, phone: txtSoDT.text!, address: txtDiaChi.text!, cart: arrayCart, realname: user.realName, time: time, quantity: self.quantity, totalPayment: self.total)
             let key = databaseReference.childByAutoId().key!
+            let order = Order(userId: user.userId, username: user.username, phone: txtSoDT.text!, address: txtDiaChi.text!, cart: arrayCart, realname: user.realName, time: time, quantity: self.quantity, totalPayment: self.total, orderId: key)
+            
             databaseReference.child("Orders").child(key).setValue(order.asDictionary())
             showLoadingSuccess(5)
             showToast(message: "Thông tin đơn hàng đã được gửi đến quản trị viên, chúng tôi sẽ liên hệ sớm với bạn, xin chân thành cảm ơn.")
