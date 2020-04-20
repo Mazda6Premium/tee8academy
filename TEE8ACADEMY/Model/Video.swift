@@ -17,10 +17,11 @@ class Video {
     var time = 0.0
     var type = ""
     var imageUrl = ""
+    var index = 0
     
     init() {}
     
-    init(name: String, course: String, description: String, id: String, linkVideo: String, time: Double, type: String, imageUrl: String) {
+    init(name: String, course: String, description: String, id: String, linkVideo: String, time: Double, type: String, imageUrl: String, index: Int) {
         self.name = name
         self.course = course
         self.description = description
@@ -29,6 +30,7 @@ class Video {
         self.time = time
         self.type = type
         self.imageUrl = imageUrl
+        self.index = index
     }
     
     static func getVideoData(dict : [String : Any], key: String = "") -> Video {
@@ -41,6 +43,7 @@ class Video {
         video.time = dict["time"] as? Double ?? 0.0
         video.type = dict["type"] as? String ?? ""
         video.imageUrl = dict["imageUrl"] as? String ?? ""
+        video.index = dict["index"] as? Int ?? 0
         return video
     }
     
@@ -54,6 +57,7 @@ class Video {
             "linkVideo" : self.linkVideo,
             "time" : self.time,
             "imageUrl": self.imageUrl,
+            "index": self.index
         ]
     }
     
@@ -66,6 +70,7 @@ class Video {
         self.time = dict["time"] as? Double ?? 0.0
         self.type = dict["type"] as? String ?? ""
         self.imageUrl = dict["imageUrl"] as? String ?? ""
+        self.index = dict["index"] as? Int ?? 0
     }
 }
 

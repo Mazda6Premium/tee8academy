@@ -31,6 +31,7 @@ class PushCourseVC: BaseViewController {
     @IBOutlet weak var txtType: UITextField!
     @IBOutlet weak var txtChooseCourse: UITextField!
     @IBOutlet weak var tvDescriptionVideo: UITextView!
+    @IBOutlet weak var txtIndexVideo: UITextField!
     @IBOutlet weak var btnPostVideo: UIButton!
     
     var arrayCourse = [Course]()
@@ -141,29 +142,40 @@ class PushCourseVC: BaseViewController {
             return
         }
         
-        if txtType.text == "Video" && txtLinkVid.text == "" {
-            showToast(message: "Bạn chưa điền link video.")
-            hideLoading()
-            return
+        if txtType.text == "Video" {
+            if txtLinkVid.text == "" {
+                showToast(message: "Bạn chưa điền link video.")
+                hideLoading()
+                return
+            }
+            
+            if txtIndexVideo.text == "" {
+                showToast(message: "Bạn chưa điền index video.")
+                hideLoading()
+                return
+            }
         }
         
-        if txtType.text == "Ảnh" && courseImage == nil {
-            showToast(message: "Bạn chưa chọn ảnh")
-            hideLoading()
-            return
+        if txtType.text == "Ảnh" {
+            if courseImage == nil {
+                showToast(message: "Bạn chưa chọn ảnh")
+                hideLoading()
+                return
+            }
         }
         
         guard let nameVideoOrImage = txtNameVideo.text else { return }
         guard let nameCourseChoose = txtChooseCourse.text else { return }
         guard let description = tvDescriptionVideo.text else { return }
         guard let type = txtType.text else { return }
+        guard let index = Int(txtIndexVideo.text!) else { return }
         let time = Date().millisecondsSince1970
         let id = databaseReference.childByAutoId().key!
 
         switch txtType.text {
         case "Video":
             guard let linkVideo = txtLinkVid.text else { return }
-            let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: linkVideo, time: time, type: type, imageUrl: "")
+            let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: linkVideo, time: time, type: type, imageUrl: "", index: index)
             
             self.arrayVideo.append(video)
             let course = Course(video: arrayVideo)
@@ -185,7 +197,7 @@ class PushCourseVC: BaseViewController {
                         return
                     }
                     
-                    let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: "", time: time, type: type, imageUrl: "\(imageUrl)")
+                    let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: "", time: time, type: type, imageUrl: "\(imageUrl)", index: index)
                     self.arrayVideo.append(video)
                     let course = Course(video: self.arrayVideo)
                     databaseReference.child("Courses").child(nameCourseChoose).updateChildValues(course.asDictionaryVideo())
@@ -221,6 +233,7 @@ class PushCourseVC: BaseViewController {
         txtType.text = ""
         tvDescriptionVideo.text = ""
         txtLinkVid.text = ""
+        txtIndexVideo.text = ""
         courseImage = nil
         imgCourse.image = UIImage(named: "placeholder")
         
@@ -274,6 +287,7 @@ extension PushCourseVC : UITextFieldDelegate {
                 }
                 if self.txtType.text == "Video" {
                     self.txtLinkVid.isUserInteractionEnabled = true
+                    self.txtIndexVideo.isUserInteractionEnabled = true
                     self.imgCourse.isUserInteractionEnabled = false
                     self.courseImage = nil
                     self.imgCourse.image = UIImage(named: "placeholder")
@@ -282,7 +296,9 @@ extension PushCourseVC : UITextFieldDelegate {
                 if self.txtType.text == "Ảnh" {
                     self.imgCourse.isUserInteractionEnabled = true
                     self.txtLinkVid.isUserInteractionEnabled = false
+                    self.txtIndexVideo.isUserInteractionEnabled = false
                     self.txtLinkVid.text = ""
+                    self.txtIndexVideo.text = ""
                 }
             }, cancel: { (picker) in
                 return

@@ -39,6 +39,8 @@ class UserManagerVC: BaseViewController {
                     let user = User(dict: dict)
                     self.arrayUser.append(user)
                     
+                    self.arrayUser.removeAll(where: {$0.email == "admin"})
+                    
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
@@ -51,7 +53,6 @@ class UserManagerVC: BaseViewController {
     @IBAction func tapOnBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
 }
 
 extension UserManagerVC : UITableViewDelegate, UITableViewDataSource {

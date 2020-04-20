@@ -24,6 +24,7 @@
                 <outlet property="tvDescriptionCourse" destination="KJO-U0-XEx" id="MDM-Qv-BBx"/>
                 <outlet property="tvDescriptionVideo" destination="Op5-Cd-qXY" id="bKL-ZK-vlk"/>
                 <outlet property="txtChooseCourse" destination="kkV-IC-Klw" id="8FR-q5-9OD"/>
+                <outlet property="txtIndexVideo" destination="qRS-h1-fPx" id="3NI-hA-0Ni"/>
                 <outlet property="txtLinkVid" destination="aBX-RY-29p" id="zIw-e4-c8X"/>
                 <outlet property="txtName" destination="R6c-Ls-sn3" id="M3h-Rq-s7g"/>
                 <outlet property="txtNameVideo" destination="jFJ-0k-tNE" id="Abm-98-SU9"/>
@@ -164,17 +165,17 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Op5-Cd-qXY">
-                            <rect key="frame" x="5" y="46" width="259" height="120"/>
+                            <rect key="frame" x="5" y="46" width="259" height="79"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="120" id="yuH-Aw-rXA"/>
+                                <constraint firstAttribute="height" constant="79" id="yuH-Aw-rXA"/>
                             </constraints>
                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                             <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Link Video" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aBX-RY-29p">
-                            <rect key="frame" x="5" y="171" width="259" height="36"/>
+                            <rect key="frame" x="5" y="130" width="259" height="36"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="qGc-NQ-9cG"/>
@@ -182,19 +183,6 @@
                             <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbS-Zm-hLM">
-                            <rect key="frame" x="5" y="212" width="384" height="36"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="36" id="DGL-hI-xHL"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
-                            <state key="normal" title="Đăng" backgroundImage="bg_button">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </state>
-                            <connections>
-                                <action selector="tapOnPostVideo:" destination="-1" eventType="touchUpInside" id="Ghj-hQ-hO9"/>
-                            </connections>
-                        </button>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chọn loại" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3s-Re-1vB">
                             <rect key="frame" x="269" y="46" width="120" height="36"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -204,28 +192,53 @@
                             <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Index video" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qRS-h1-fPx">
+                            <rect key="frame" x="5" y="171" width="259" height="36"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="SHb-sA-075"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbS-Zm-hLM">
+                            <rect key="frame" x="5" y="212" width="384" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="xBm-gB-dKQ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
+                            <state key="normal" title="Đăng" backgroundImage="bg_button">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="tapOnPostVideo:" destination="-1" eventType="touchUpInside" id="Ghj-hQ-hO9"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="dPg-bn-kcc" firstAttribute="leading" secondItem="aBX-RY-29p" secondAttribute="trailing" constant="5" id="0Lt-oK-p1d"/>
-                        <constraint firstAttribute="trailing" secondItem="wbS-Zm-hLM" secondAttribute="trailing" constant="5" id="3o6-hK-ViV"/>
+                        <constraint firstAttribute="bottom" secondItem="wbS-Zm-hLM" secondAttribute="bottom" constant="5" id="3x9-2t-iVJ"/>
                         <constraint firstItem="K3s-Re-1vB" firstAttribute="width" secondItem="kkV-IC-Klw" secondAttribute="width" id="BZm-Eo-jcd"/>
                         <constraint firstItem="aBX-RY-29p" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="DE3-9Y-SBp"/>
-                        <constraint firstItem="wbS-Zm-hLM" firstAttribute="top" secondItem="aBX-RY-29p" secondAttribute="bottom" constant="5" id="IaC-vD-E0i"/>
-                        <constraint firstAttribute="bottom" secondItem="wbS-Zm-hLM" secondAttribute="bottom" constant="5" id="Je7-oz-qq6"/>
-                        <constraint firstItem="wbS-Zm-hLM" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="K4m-oZ-A0N"/>
                         <constraint firstItem="Op5-Cd-qXY" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="LuU-hk-meg"/>
                         <constraint firstItem="aBX-RY-29p" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="Oee-yT-FZP"/>
                         <constraint firstItem="aBX-RY-29p" firstAttribute="top" secondItem="Op5-Cd-qXY" secondAttribute="bottom" constant="5" id="Pe4-DQ-Hiy"/>
+                        <constraint firstItem="wbS-Zm-hLM" firstAttribute="top" secondItem="dPg-bn-kcc" secondAttribute="bottom" constant="5" id="QrN-p1-x9x"/>
                         <constraint firstAttribute="trailing" secondItem="kkV-IC-Klw" secondAttribute="trailing" constant="5" id="Udz-RE-sR4"/>
                         <constraint firstAttribute="trailing" secondItem="dPg-bn-kcc" secondAttribute="trailing" constant="5" id="X7T-3x-eOW"/>
+                        <constraint firstItem="wbS-Zm-hLM" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="Yb7-Bg-W3T"/>
                         <constraint firstItem="dPg-bn-kcc" firstAttribute="top" secondItem="K3s-Re-1vB" secondAttribute="bottom" constant="5" id="ZEd-bS-XkU"/>
                         <constraint firstAttribute="trailing" secondItem="K3s-Re-1vB" secondAttribute="trailing" constant="5" id="ZL8-Pq-vW4"/>
                         <constraint firstItem="K3s-Re-1vB" firstAttribute="top" secondItem="kkV-IC-Klw" secondAttribute="bottom" constant="5" id="ZPr-Gx-br6"/>
+                        <constraint firstItem="qRS-h1-fPx" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="ZuN-0L-5cU"/>
                         <constraint firstItem="kkV-IC-Klw" firstAttribute="leading" secondItem="jFJ-0k-tNE" secondAttribute="trailing" constant="5" id="ZxR-LA-PZB"/>
                         <constraint firstItem="jFJ-0k-tNE" firstAttribute="top" secondItem="uIj-xi-xTo" secondAttribute="top" constant="5" id="c64-LE-FFx"/>
                         <constraint firstItem="kkV-IC-Klw" firstAttribute="top" secondItem="uIj-xi-xTo" secondAttribute="top" constant="5" id="fMV-oZ-duc"/>
+                        <constraint firstItem="qRS-h1-fPx" firstAttribute="top" secondItem="aBX-RY-29p" secondAttribute="bottom" constant="5" id="ib5-Mn-SKm"/>
                         <constraint firstItem="dPg-bn-kcc" firstAttribute="leading" secondItem="Op5-Cd-qXY" secondAttribute="trailing" constant="5" id="j6r-sZ-7Ee"/>
+                        <constraint firstItem="dPg-bn-kcc" firstAttribute="leading" secondItem="qRS-h1-fPx" secondAttribute="trailing" constant="5" id="kLh-Cd-dca"/>
+                        <constraint firstAttribute="trailing" secondItem="wbS-Zm-hLM" secondAttribute="trailing" constant="5" id="nH7-Ru-U7n"/>
                         <constraint firstItem="Op5-Cd-qXY" firstAttribute="top" secondItem="jFJ-0k-tNE" secondAttribute="bottom" constant="5" id="s9k-uw-Uas"/>
                         <constraint firstItem="jFJ-0k-tNE" firstAttribute="leading" secondItem="uIj-xi-xTo" secondAttribute="leading" constant="5" id="xor-sj-P0H"/>
                     </constraints>
@@ -235,9 +248,7 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="JWM-4B-aCf" secondAttribute="bottom" id="2NX-y4-plo"/>
                 <constraint firstAttribute="trailing" secondItem="xDM-Qv-nlm" secondAttribute="trailing" id="2lu-Jd-AtG"/>
-                <constraint firstAttribute="trailing" secondItem="wbS-Zm-hLM" secondAttribute="trailing" constant="15" id="6qx-vo-JYQ"/>
                 <constraint firstItem="EF1-hD-2x5" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ACB-dN-LBc"/>
-                <constraint firstItem="wbS-Zm-hLM" firstAttribute="top" secondItem="aBX-RY-29p" secondAttribute="bottom" constant="5" id="ADT-7a-f4O"/>
                 <constraint firstItem="R72-tq-Pgo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Ag6-tX-buw"/>
                 <constraint firstItem="JWM-4B-aCf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CEe-u6-1Ic"/>
                 <constraint firstItem="xI6-Gd-RAl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DPV-CL-Aot"/>
@@ -248,7 +259,6 @@
                 <constraint firstItem="JWM-4B-aCf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YVq-oj-GYS"/>
                 <constraint firstItem="uIj-xi-xTo" firstAttribute="top" secondItem="xDM-Qv-nlm" secondAttribute="bottom" constant="20" id="YuW-X8-Kez"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gN6-bb-ymR" secondAttribute="trailing" constant="10" id="apc-NS-lfk"/>
-                <constraint firstItem="wbS-Zm-hLM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="cqR-pj-NGJ"/>
                 <constraint firstItem="gN6-bb-ymR" firstAttribute="top" secondItem="xDM-Qv-nlm" secondAttribute="bottom" constant="20" id="eOQ-IW-doh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uIj-xi-xTo" secondAttribute="trailing" constant="10" id="eSJ-Tq-bP9"/>
                 <constraint firstItem="uIj-xi-xTo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="fR6-wq-l6V"/>

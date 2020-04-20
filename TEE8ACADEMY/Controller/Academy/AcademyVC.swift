@@ -100,6 +100,13 @@ class AcademyVC: BaseViewController {
                         }
                     }
                     
+                    // SOURCE VIDEO
+                    self.arrayCourse.forEach { (value) in
+                        value.video.sort { (v1, v2) -> Bool in
+                            return v1.index < v2.index
+                        }
+                    }
+                    
                     self.collectionView.reloadData()
                     self.showLoadingSuccess(1)
                 }
