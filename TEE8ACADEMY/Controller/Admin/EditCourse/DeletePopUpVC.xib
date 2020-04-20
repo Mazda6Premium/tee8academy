@@ -30,7 +30,7 @@
                     <rect key="frame" x="10" y="363" width="394" height="180"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xoá khoá học ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOq-so-SbK">
-                            <rect key="frame" x="149.5" y="60" width="95.5" height="59"/>
+                            <rect key="frame" x="10" y="60" width="374" height="59"/>
                             <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -87,6 +87,8 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="QNx-sM-vVk" secondAttribute="bottom" constant="5" id="LVu-Zt-NGe"/>
                         <constraint firstAttribute="height" constant="180" id="PFR-bQ-STE"/>
+                        <constraint firstAttribute="trailing" secondItem="LOq-so-SbK" secondAttribute="trailing" constant="10" id="PRk-un-xbZ"/>
+                        <constraint firstItem="LOq-so-SbK" firstAttribute="leading" secondItem="VM3-FS-7B3" secondAttribute="leading" constant="10" id="PaP-bh-18Z"/>
                         <constraint firstItem="LOq-so-SbK" firstAttribute="centerX" secondItem="VM3-FS-7B3" secondAttribute="centerX" id="QNu-MS-Z59"/>
                         <constraint firstItem="jw7-u9-Tlh" firstAttribute="top" secondItem="VM3-FS-7B3" secondAttribute="top" id="QQB-y8-QpZ"/>
                         <constraint firstItem="LOq-so-SbK" firstAttribute="top" secondItem="jw7-u9-Tlh" secondAttribute="bottom" constant="20" id="R2H-s7-rnW"/>

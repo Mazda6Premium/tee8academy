@@ -59,6 +59,8 @@
 		A823C74924388A0300F749C2 /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A823C74724388A0300F749C2 /* RegisterVC.xib */; };
 		A8277D66244DEBEC0005BEE6 /* OrderHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8277D64244DEBEC0005BEE6 /* OrderHistoryVC.swift */; };
 		A8277D67244DEBEC0005BEE6 /* OrderHistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8277D65244DEBEC0005BEE6 /* OrderHistoryVC.xib */; };
+		A8277D6A244DF6EF0005BEE6 /* DeleteOrderPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8277D68244DF6EF0005BEE6 /* DeleteOrderPopup.swift */; };
+		A8277D6B244DF6EF0005BEE6 /* DeleteOrderPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8277D69244DF6EF0005BEE6 /* DeleteOrderPopup.xib */; };
 		A837C753244B398000BC4F66 /* EditVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A837C751244B398000BC4F66 /* EditVideoVC.swift */; };
 		A837C754244B398000BC4F66 /* EditVideoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A837C752244B398000BC4F66 /* EditVideoVC.xib */; };
 		A837C757244B3F3100BC4F66 /* PopupEditVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A837C755244B3F3100BC4F66 /* PopupEditVideo.swift */; };
@@ -93,6 +95,8 @@
 		A88A42D4243A14B00013BAFB /* PopupPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88A42D2243A14B00013BAFB /* PopupPaymentVC.swift */; };
 		A88A42D5243A14B00013BAFB /* PopupPaymentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A88A42D3243A14B00013BAFB /* PopupPaymentVC.xib */; };
 		A899AA23243E2AF80032DCDA /* SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899AA22243E2AF80032DCDA /* SessionData.swift */; };
+		A8A5E818244DFA0400C02CFF /* PopupDeleteVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5E816244DFA0400C02CFF /* PopupDeleteVideo.swift */; };
+		A8A5E819244DFA0400C02CFF /* PopupDeleteVideo.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A5E817244DFA0400C02CFF /* PopupDeleteVideo.xib */; };
 		A8A700412438BC3200B2139D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A700402438BC3200B2139D /* User.swift */; };
 		A8A700442438C2B700B2139D /* BuyCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A700422438C2B700B2139D /* BuyCourseVC.swift */; };
 		A8A700452438C2B700B2139D /* BuyCourseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A700432438C2B700B2139D /* BuyCourseVC.xib */; };
@@ -161,6 +165,8 @@
 		A823C74724388A0300F749C2 /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
 		A8277D64244DEBEC0005BEE6 /* OrderHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryVC.swift; sourceTree = "<group>"; };
 		A8277D65244DEBEC0005BEE6 /* OrderHistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderHistoryVC.xib; sourceTree = "<group>"; };
+		A8277D68244DF6EF0005BEE6 /* DeleteOrderPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteOrderPopup.swift; sourceTree = "<group>"; };
+		A8277D69244DF6EF0005BEE6 /* DeleteOrderPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteOrderPopup.xib; sourceTree = "<group>"; };
 		A837C751244B398000BC4F66 /* EditVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVideoVC.swift; sourceTree = "<group>"; };
 		A837C752244B398000BC4F66 /* EditVideoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditVideoVC.xib; sourceTree = "<group>"; };
 		A837C755244B3F3100BC4F66 /* PopupEditVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupEditVideo.swift; sourceTree = "<group>"; };
@@ -197,6 +203,8 @@
 		A88A42D2243A14B00013BAFB /* PopupPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupPaymentVC.swift; sourceTree = "<group>"; };
 		A88A42D3243A14B00013BAFB /* PopupPaymentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupPaymentVC.xib; sourceTree = "<group>"; };
 		A899AA22243E2AF80032DCDA /* SessionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionData.swift; sourceTree = "<group>"; };
+		A8A5E816244DFA0400C02CFF /* PopupDeleteVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDeleteVideo.swift; sourceTree = "<group>"; };
+		A8A5E817244DFA0400C02CFF /* PopupDeleteVideo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupDeleteVideo.xib; sourceTree = "<group>"; };
 		A8A700402438BC3200B2139D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A8A700422438C2B700B2139D /* BuyCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCourseVC.swift; sourceTree = "<group>"; };
 		A8A700432438C2B700B2139D /* BuyCourseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyCourseVC.xib; sourceTree = "<group>"; };
@@ -319,6 +327,7 @@
 		A80CECE1243C233E001785DC /* Receipt */ = {
 			isa = PBXGroup;
 			children = (
+				A8277D6C244DF6F40005BEE6 /* Popup */,
 				A80CECE8243C2D42001785DC /* Cell */,
 				A80CECE2243C2374001785DC /* RegisterAccountVC.swift */,
 				A80CECE3243C2374001785DC /* RegisterAccountVC.xib */,
@@ -418,6 +427,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		A8277D6C244DF6F40005BEE6 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				A8277D68244DF6EF0005BEE6 /* DeleteOrderPopup.swift */,
+				A8277D69244DF6EF0005BEE6 /* DeleteOrderPopup.xib */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
 		A837C750244B394500BC4F66 /* Video */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +443,8 @@
 				A837C752244B398000BC4F66 /* EditVideoVC.xib */,
 				A837C755244B3F3100BC4F66 /* PopupEditVideo.swift */,
 				A837C756244B3F3100BC4F66 /* PopupEditVideo.xib */,
+				A8A5E816244DFA0400C02CFF /* PopupDeleteVideo.swift */,
+				A8A5E817244DFA0400C02CFF /* PopupDeleteVideo.xib */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -657,6 +677,7 @@
 				01446DC4244952C200CE2912 /* BlockPopUpVC.xib in Resources */,
 				A8CFA694244C25B9002C50DC /* didact-gothic.regular.ttf in Resources */,
 				A85B7FFC2438268F00CC4DCC /* LaunchScreen.storyboard in Resources */,
+				A8A5E819244DFA0400C02CFF /* PopupDeleteVideo.xib in Resources */,
 				0143BBE824474B84001C57FF /* DeletePopUpVC.xib in Resources */,
 				A883495A2447672000587024 /* ProductCell.xib in Resources */,
 				A837C754244B398000BC4F66 /* EditVideoVC.xib in Resources */,
@@ -688,6 +709,7 @@
 				A88349562447508B00587024 /* OrderCell.xib in Resources */,
 				A88A42D5243A14B00013BAFB /* PopupPaymentVC.xib in Resources */,
 				01272F332445F55E001A39ED /* EditPopUpVC.xib in Resources */,
+				A8277D6B244DF6EF0005BEE6 /* DeleteOrderPopup.xib in Resources */,
 				A85FAAEB24433F0900C2F723 /* VerifyAccountVC.xib in Resources */,
 				018759B3244709DE00EAEFE9 /* EditCourseCell.xib in Resources */,
 				01272F2F2445ECED001A39ED /* EditCourseVC.xib in Resources */,
@@ -782,9 +804,11 @@
 				A821AB18243B8B1E0063A194 /* StoreVC.swift in Sources */,
 				A823C74824388A0300F749C2 /* RegisterVC.swift in Sources */,
 				A80CECE7243C23DE001785DC /* SegmentedControl.swift in Sources */,
+				A8277D6A244DF6EF0005BEE6 /* DeleteOrderPopup.swift in Sources */,
 				A837C757244B3F3100BC4F66 /* PopupEditVideo.swift in Sources */,
 				A837C753244B398000BC4F66 /* EditVideoVC.swift in Sources */,
 				01446DC3244952C200CE2912 /* BlockPopUpVC.swift in Sources */,
+				A8A5E818244DFA0400C02CFF /* PopupDeleteVideo.swift in Sources */,
 				0146B5D4243EC12B000453E7 /* PushProductVC.swift in Sources */,
 				A88A42CE2439D99A0013BAFB /* Constant.swift in Sources */,
 				A848456E244C279C006F2EC0 /* ChangePasswordPopup.swift in Sources */,
@@ -945,7 +969,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TEE8ACADEMY/TEE 8 ACADEMY.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 2J3K999PRZ;
 				INFOPLIST_FILE = TEE8ACADEMY/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -967,7 +991,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TEE8ACADEMY/TEE 8 ACADEMY.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 2J3K999PRZ;
 				INFOPLIST_FILE = TEE8ACADEMY/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

@@ -231,12 +231,19 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
     }
     
     @objc func tapOnCancelOrder(sender: UIButton) {
-        showLoading()
-        let order = arrayOrder[sender.tag]
-        databaseReference.child("Orders").child(order.orderId).removeValue()
-        
+        let vc = DeleteOrderPopup(nibName: "DeleteOrderPopup", bundle: nil)
+        vc.order = arrayOrder[sender.tag]
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
+    }
+}
+
+extension RegisterAccountVC: DeleteOrderDelegate {
+    func reloadData() {
         self.arrayOrder.removeAll()
         self.getDataOrder()
         self.pageViewProducts.reloadData()
     }
 }
+
