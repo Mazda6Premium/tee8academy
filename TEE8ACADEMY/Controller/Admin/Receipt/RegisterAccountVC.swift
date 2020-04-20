@@ -123,6 +123,13 @@ class RegisterAccountVC: BaseViewController {
     @IBAction func tapOnBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func tapOnOrderHistory(_ sender: Any) {
+        let vc = OrderHistoryVC(nibName: "OrderHistoryVC", bundle: nil)
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
 }
 
 extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
@@ -213,7 +220,14 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
     }
     
     @objc func tapOnAcceptOrder(sender: UIButton) {
+        showLoading()
+        let order = arrayOrder[sender.tag]
+        databaseReference.child("OrdersSuccess").child(order.orderId).setValue(order.asDictionary())
+        databaseReference.child("Orders").child(order.orderId).removeValue()
         
+        self.arrayOrder.removeAll()
+        self.getDataOrder()
+        self.pageViewProducts.reloadData()
     }
     
     @objc func tapOnCancelOrder(sender: UIButton) {
