@@ -94,6 +94,7 @@ class PushCourseVC: BaseViewController {
                     self.arrayCourse.sort(by: { (course1, course2) -> Bool in
                         return Int64(course1.price) > Int64(course2.price)
                     })
+                    self.arrayNameCourse.append(course.name)
                     self.showLoadingSuccess(1)
                 }
             }
@@ -175,6 +176,7 @@ class PushCourseVC: BaseViewController {
         switch txtType.text {
         case "Video":
             guard let linkVideo = txtLinkVid.text else { return }
+            print(nameCourseChoose)
             let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: linkVideo, time: time, type: type, imageUrl: "", index: index)
             
             self.arrayVideo.append(video)
@@ -236,6 +238,7 @@ class PushCourseVC: BaseViewController {
         txtIndexVideo.text = ""
         courseImage = nil
         imgCourse.image = UIImage(named: "placeholder")
+        arrayVideo.removeAll()
         
         txtLinkVid.isUserInteractionEnabled = false
         imgCourse.isUserInteractionEnabled = false
@@ -281,7 +284,7 @@ extension PushCourseVC : UITextFieldDelegate {
         
         switch textField {
         case txtType:
-            ActionSheetStringPicker.show(withTitle: "Chọn loại", rows: ["Video", "Ảnh"], initialSelection: 0, doneBlock: { (picker, index, value) in
+            ActionSheetStringPicker(title: "Chọn loại", rows: ["Video", "Ảnh"], initialSelection: 0, doneBlock: { (picker, index, value) in
                 if let type = value as? String {
                     self.txtType.text = type
                 }
@@ -300,34 +303,29 @@ extension PushCourseVC : UITextFieldDelegate {
                     self.txtLinkVid.text = ""
                     self.txtIndexVideo.text = ""
                 }
-            }, cancel: { (picker) in
-                return
-            }, origin: txtType)
+            }, cancel: nil, origin: txtType).show()
+            return false
             
         case txtChooseCourse:
-            arrayCourse.forEach { (course) in
-                arrayNameCourse.append(course.name)
-            }
             
             if let indexObject = arrayNameCourse.firstIndex(of: "ALL COURSE") {
                 arrayNameCourse.remove(at: indexObject)
             }
             
-            ActionSheetStringPicker.show(withTitle: "Chọn khoá học", rows: arrayNameCourse, initialSelection: 0, doneBlock: { (picker, index, value) in
+            ActionSheetStringPicker(title: "Chọn khoá học", rows: arrayNameCourse, initialSelection: 0, doneBlock: { (picker, index, value) in
                 if let course = value as? String {
                     self.txtChooseCourse.text = course
                     self.getDataVideo(nameCourseChoose: course)
                 }
-            }, cancel: { (picker) in
-                return
-            }, origin: txtType)
+            }, cancel: nil, origin: txtChooseCourse).show()
+            return false
+            
         default:
-            break
+            return false
         }
-        return false
     }
-    
 }
+
 extension PushCourseVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         courseImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage

@@ -36,6 +36,10 @@ class AccountVC: BaseViewController {
     @IBOutlet weak var lblH: UILabel!
     @IBOutlet weak var lblI: UILabel!
     @IBOutlet weak var topConstr: NSLayoutConstraint!
+    @IBOutlet weak var heightStack1: NSLayoutConstraint!
+    
+    @IBOutlet weak var heightStack2: NSLayoutConstraint!
+    
     
     var account: AccountType?
         
@@ -61,16 +65,19 @@ class AccountVC: BaseViewController {
             break
         case .user:
             lblA.text = "Mua khoá học"
-            lblB.text = "Thông tin ứng dụng"
-            lblC.text = "Đánh giá ứng dụng"
-            lblD.text = "Góp ý"
-            lblE.text = "Đổi mật khẩu"
-            lblF.text = "Đăng xuất"
+            lblB.text = "Góp ý"
+            lblD.text = "Đổi mật khẩu"
+            lblE.text = "Đăng xuất"
             
+            viewC.isHidden = true
+            viewF.isHidden = true
             viewG.isHidden = true
             viewH.isHidden = true
             viewI.isHidden = true
             topConstr.constant = 50
+            
+            heightStack1.constant = 180
+            heightStack2.constant = 180
         default:
             break
         }

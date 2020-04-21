@@ -156,18 +156,14 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         } else {
             let course = arrayCourse[indexPath.section / 2].video[indexPath.row]
             cell1.lblTitle.text = course.name
-            cell1.lblDescription.text = course.description
-            if course.type == "Video" {
-                cell1.lblTime.isHidden = true
-            } else {
-                cell1.lblTime.isHidden = true
-            }
+//            cell1.lblDescription.text = course.description
+
             
             switch course.type {
             case "Video":
                 if let videoId = getYoutubeId(youtubeUrl: course.linkVideo) {
                     // thumbnail
-                    let urlString = "https://i1.ytimg.com/vi/\(String(describing: videoId))/hqdefault.jpg"
+                    let urlString = "https://i1.ytimg.com/vi/\(String(describing: videoId))/maxresdefault.jpg"
                     if let url = URL(string: urlString) {
                         cell1.imgVideo.sd_setImage(with: url, completed: nil)
                     } else {

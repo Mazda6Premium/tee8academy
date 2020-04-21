@@ -358,6 +358,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Tee Account" image="user" selectedImage="user_fill" id="Y6X-Bj-4eM"/>
                     <connections>
+                        <outlet property="heightStack1" destination="aXF-jE-qsg" id="yY6-7C-adT"/>
+                        <outlet property="heightStack2" destination="MVb-Rw-ne5" id="xjA-vQ-tKg"/>
                         <outlet property="lblA" destination="Iv9-it-ziV" id="CNP-KS-E3f"/>
                         <outlet property="lblB" destination="BWx-ME-PnI" id="49t-8W-woV"/>
                         <outlet property="lblC" destination="Jq6-xN-HVb" id="4fh-IE-GGR"/>

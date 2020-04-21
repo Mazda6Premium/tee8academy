@@ -107,12 +107,7 @@ extension EditVideoVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         } else {
             let course = arrayCourse[indexPath.section / 2].video[indexPath.row]
             cell1.lblTitle.text = course.name
-            cell1.lblDescription.text = course.description
-            if course.type == "Video" {
-                cell1.lblTime.isHidden = true
-            } else {
-                cell1.lblTime.isHidden = true
-            }
+//            cell1.lblDescription.text = course.description
             
             switch course.type {
             case "Video":

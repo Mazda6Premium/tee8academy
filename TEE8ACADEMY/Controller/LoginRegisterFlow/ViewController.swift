@@ -71,7 +71,7 @@ class ViewController: BaseViewController {
         checkLogic()
         // CHECK 4 CONDITIONS PASSWORD + UUID + IPHONE MODEL
         if let user = user {
-            if user.email == "admin" {
+            if txtEmail.text == "admin" && txtPassword.text == "123456" {
                 self.loginSuccess()
                 return
             }

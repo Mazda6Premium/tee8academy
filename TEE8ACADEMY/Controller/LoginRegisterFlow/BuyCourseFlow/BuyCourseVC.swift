@@ -52,6 +52,16 @@ class BuyCourseVC: BaseViewController {
                         self.arrayCourse.sort(by: { (course1, course2) -> Bool in
                             return Int64(course1.price) > Int64(course2.price)
                         })
+                        
+                        if let buyCourse = SessionData.shared.userData?.course {
+                            if buyCourse.count > 0 {
+                                self.arrayCourse.removeAll(where: {$0.name == "ALL COURSE"})
+                                buyCourse.forEach { (value) in
+                                    self.arrayCourse.removeAll(where: {$0.name == value.name})
+                                }
+                            }
+
+                        }
                     } else {
                         self.arrayFreeCourse.append(course)
                     }
@@ -128,11 +138,18 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
         
         switch indexPath.row {
         case 0:
-            cell.viewBackground.backgroundColor = #colorLiteral(red: 0.6392156863, green: 0, blue: 0, alpha: 1)
-            cell.lblCourse.text = course.name
-            cell.lblPrice.text = "Price: \(formatMoney(course.price)) VND"
-            cell.imgDiscount.image = UIImage(named: "saving20")
-            cell.imgDiscount.isHidden = false
+            if course.name == "ALL COURSE" {
+                cell.viewBackground.backgroundColor = #colorLiteral(red: 0.6392156863, green: 0, blue: 0, alpha: 1)
+                cell.lblCourse.text = course.name
+                cell.lblPrice.text = "Price: \(formatMoney(course.price)) VND"
+                cell.imgDiscount.image = UIImage(named: "saving20")
+                cell.imgDiscount.isHidden = false
+            } else {
+                cell.viewBackground.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
+                cell.lblCourse.text = course.name
+                cell.lblPrice.text = "Price: \(formatMoney(course.price)) VND"
+                cell.imgDiscount.isHidden = true
+            }
             
         default :
             cell.viewBackground.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
@@ -170,27 +187,52 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
         
         switch indexPath.row {
         case 0: // FIRST CASE
-            if course.isSelected == true { // DIDSELECT AND REMOVE
-                course.isSelected = false
-                tableView.reloadData()
-                
-                if let indexObject = arrayChooseCourse.firstIndex(where: {$0.name == "All COURSE"}) {
-                    arrayChooseCourse.remove(at: indexObject)
-                }
-            } else { // SELECT AND APPEND
-                course.isSelected = true
-                for row in 1..<totalRows {
-                    arrayCourse[row].isSelected = false
+            if course.name == "ALL COURSE" {
+                if course.isSelected == true { // DIDSELECT AND REMOVE
+                    course.isSelected = false
                     tableView.reloadData()
+                    
+                    if let indexObject = arrayChooseCourse.firstIndex(where: {$0.name == "All COURSE"}) {
+                        arrayChooseCourse.remove(at: indexObject)
+                    }
+                } else { // SELECT AND APPEND
+                    course.isSelected = true
+                    for row in 1..<totalRows {
+                        arrayCourse[row].isSelected = false
+                        tableView.reloadData()
+                    }
+                    
+                    if arrayChooseCourse.isEmpty {
+                        arrayChooseCourse.append(chooseCourse)
+                    } else {
+                        arrayChooseCourse.removeAll()
+                        arrayChooseCourse.append(chooseCourse)
+                    }
                 }
-                
-                if arrayChooseCourse.isEmpty {
-                    arrayChooseCourse.append(chooseCourse)
-                } else {
-                    arrayChooseCourse.removeAll()
-                    arrayChooseCourse.append(chooseCourse)
+            } else {
+                if course.isSelected == true { // DIDSELECT AND REMOVE
+                    course.isSelected = false
+                    tableView.reloadData()
+                    
+                    let courseName = arrayCourse[indexPath.row].name
+                    if let indexObject = arrayChooseCourse.firstIndex(where: {$0.name == courseName}) {
+                        arrayChooseCourse.remove(at: indexObject)
+                    }
+                } else { //SELECT AND APPEND
+                    course.isSelected = true
+//                    arrayCourse[0].isSelected = false
+                    tableView.reloadData()
+                    if arrayChooseCourse.isEmpty {
+                        arrayChooseCourse.append(chooseCourse)
+                    } else {
+                        if let indexObject = arrayChooseCourse.firstIndex(where: {$0.name == "ALL COURSE"}) {
+                            arrayChooseCourse.remove(at: indexObject)
+                        }
+                        arrayChooseCourse.append(chooseCourse)
+                    }
                 }
             }
+
         default:
             if course.isSelected == true { // DIDSELECT AND REMOVE
                 course.isSelected = false
@@ -202,7 +244,9 @@ extension BuyCourseVC: UITableViewDelegate,UITableViewDataSource {
                 }
             } else { //SELECT AND APPEND
                 course.isSelected = true
-                arrayCourse[0].isSelected = false
+                if arrayCourse[0].name == "ALL COURSE" {
+                    arrayCourse[0].isSelected = false
+                }
                 tableView.reloadData()
                 if arrayChooseCourse.isEmpty {
                     arrayChooseCourse.append(chooseCourse)
