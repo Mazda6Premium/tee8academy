@@ -18,7 +18,8 @@
                 <outlet property="btnXacNhan" destination="dnH-TA-KcO" id="KRP-Zz-oH9"/>
                 <outlet property="btnXoa" destination="8HA-jz-60w" id="2rJ-Dw-5ZW"/>
                 <outlet property="tvDescription" destination="htj-0f-vn6" id="qr9-DS-aEb"/>
-                <outlet property="txtLinkVideo" destination="g3N-ap-fMM" id="7Fs-x5-ZRS"/>
+                <outlet property="txtIndex" destination="g3N-ap-fMM" id="lRr-Bv-3R5"/>
+                <outlet property="txtLinkVideo" destination="JBP-7v-tve" id="eMe-Dl-GnZ"/>
                 <outlet property="txtNameVideo" destination="DUd-sm-T7B" id="Qb8-ll-Y6f"/>
                 <outlet property="txtType" destination="7gO-0Y-5rn" id="nQA-du-Kex"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -32,7 +33,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ax3-59-tp3">
-                    <rect key="frame" x="10" y="291.5" width="394" height="313"/>
+                    <rect key="frame" x="10" y="271" width="394" height="354"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="T88-4X-c52">
                             <rect key="frame" x="5" y="45" width="384" height="36"/>
@@ -51,7 +52,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpV-Kw-BI2">
                                     <rect key="frame" x="125" y="0.0" width="259" height="36"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Link video" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g3N-ap-fMM">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Index" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g3N-ap-fMM">
                                             <rect key="frame" x="10" y="0.0" width="239" height="36"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
@@ -75,7 +76,7 @@
                             </constraints>
                         </stackView>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tên video" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DUd-sm-T7B">
-                            <rect key="frame" x="5" y="86" width="384" height="36"/>
+                            <rect key="frame" x="5" y="127" width="384" height="36"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="tPC-VY-64K"/>
@@ -84,7 +85,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="htj-0f-vn6">
-                            <rect key="frame" x="5" y="127" width="384" height="140"/>
+                            <rect key="frame" x="5" y="168" width="384" height="140"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="140" id="uQJ-0J-v5a"/>
@@ -94,7 +95,7 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="518-Pa-JyE">
-                            <rect key="frame" x="5" y="272" width="384" height="36"/>
+                            <rect key="frame" x="5" y="313" width="384" height="36"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8HA-jz-60w">
                                     <rect key="frame" x="0.0" y="0.0" width="189.5" height="36"/>
@@ -138,20 +139,33 @@
                                 <constraint firstItem="vVF-e2-DYs" firstAttribute="centerX" secondItem="QP7-Fh-xtZ" secondAttribute="centerX" id="bdy-mq-E1G"/>
                             </constraints>
                         </view>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Link video" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JBP-7v-tve">
+                            <rect key="frame" x="5" y="86" width="384" height="36"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="R1v-NN-pVb"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="T88-4X-c52" secondAttribute="trailing" constant="5" id="060-CI-SXK"/>
                         <constraint firstItem="518-Pa-JyE" firstAttribute="trailing" secondItem="htj-0f-vn6" secondAttribute="trailing" id="78t-HS-Jmf"/>
                         <constraint firstAttribute="trailing" secondItem="QP7-Fh-xtZ" secondAttribute="trailing" id="Eao-Ly-mZU"/>
+                        <constraint firstAttribute="trailing" secondItem="JBP-7v-tve" secondAttribute="trailing" constant="5" id="G1x-wg-CwO"/>
+                        <constraint firstAttribute="trailing" secondItem="g3N-ap-fMM" secondAttribute="trailing" constant="15" id="JD6-Wm-BoM"/>
                         <constraint firstItem="htj-0f-vn6" firstAttribute="top" secondItem="DUd-sm-T7B" secondAttribute="bottom" constant="5" id="Ke1-Vi-UAf"/>
+                        <constraint firstItem="JBP-7v-tve" firstAttribute="leading" secondItem="ax3-59-tp3" secondAttribute="leading" constant="5" id="Q8d-ks-oWD"/>
                         <constraint firstItem="DUd-sm-T7B" firstAttribute="leading" secondItem="T88-4X-c52" secondAttribute="leading" id="QXv-h9-g2e"/>
-                        <constraint firstItem="DUd-sm-T7B" firstAttribute="top" secondItem="T88-4X-c52" secondAttribute="bottom" constant="5" id="W4b-LJ-TWa"/>
                         <constraint firstItem="T88-4X-c52" firstAttribute="top" secondItem="QP7-Fh-xtZ" secondAttribute="bottom" constant="5" id="ZcQ-ab-baC"/>
                         <constraint firstItem="QP7-Fh-xtZ" firstAttribute="top" secondItem="ax3-59-tp3" secondAttribute="top" id="ba3-E2-QqT"/>
                         <constraint firstItem="htj-0f-vn6" firstAttribute="leading" secondItem="ax3-59-tp3" secondAttribute="leading" constant="5" id="cZF-du-sS1"/>
                         <constraint firstItem="T88-4X-c52" firstAttribute="leading" secondItem="ax3-59-tp3" secondAttribute="leading" constant="5" id="ddl-hi-pJE"/>
+                        <constraint firstItem="JBP-7v-tve" firstAttribute="top" secondItem="T88-4X-c52" secondAttribute="bottom" constant="5" id="f3r-oh-W6T"/>
                         <constraint firstAttribute="bottom" secondItem="518-Pa-JyE" secondAttribute="bottom" constant="5" id="g2F-8g-4P6"/>
+                        <constraint firstItem="DUd-sm-T7B" firstAttribute="top" secondItem="JBP-7v-tve" secondAttribute="bottom" constant="5" id="jDG-ow-g6j"/>
                         <constraint firstItem="518-Pa-JyE" firstAttribute="top" secondItem="htj-0f-vn6" secondAttribute="bottom" constant="5" id="pla-vY-f6d"/>
                         <constraint firstAttribute="trailing" secondItem="htj-0f-vn6" secondAttribute="trailing" constant="5" id="rPd-qV-ThZ"/>
                         <constraint firstItem="DUd-sm-T7B" firstAttribute="trailing" secondItem="T88-4X-c52" secondAttribute="trailing" id="t4h-of-79Y"/>

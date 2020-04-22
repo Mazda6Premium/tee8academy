@@ -63,6 +63,8 @@
 		A8277D6B244DF6EF0005BEE6 /* DeleteOrderPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8277D69244DF6EF0005BEE6 /* DeleteOrderPopup.xib */; };
 		A834C9C624508361005DD60C /* PopupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834C9C424508361005DD60C /* PopupInfo.swift */; };
 		A834C9C724508361005DD60C /* PopupInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = A834C9C524508361005DD60C /* PopupInfo.xib */; };
+		A834C9CA24508751005DD60C /* StoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834C9C824508750005DD60C /* StoreCell.swift */; };
+		A834C9CB24508751005DD60C /* StoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A834C9C924508751005DD60C /* StoreCell.xib */; };
 		A837C753244B398000BC4F66 /* EditVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A837C751244B398000BC4F66 /* EditVideoVC.swift */; };
 		A837C754244B398000BC4F66 /* EditVideoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A837C752244B398000BC4F66 /* EditVideoVC.xib */; };
 		A837C757244B3F3100BC4F66 /* PopupEditVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A837C755244B3F3100BC4F66 /* PopupEditVideo.swift */; };
@@ -171,6 +173,8 @@
 		A8277D69244DF6EF0005BEE6 /* DeleteOrderPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteOrderPopup.xib; sourceTree = "<group>"; };
 		A834C9C424508361005DD60C /* PopupInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupInfo.swift; sourceTree = "<group>"; };
 		A834C9C524508361005DD60C /* PopupInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupInfo.xib; sourceTree = "<group>"; };
+		A834C9C824508750005DD60C /* StoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreCell.swift; sourceTree = "<group>"; };
+		A834C9C924508751005DD60C /* StoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoreCell.xib; sourceTree = "<group>"; };
 		A837C751244B398000BC4F66 /* EditVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVideoVC.swift; sourceTree = "<group>"; };
 		A837C752244B398000BC4F66 /* EditVideoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditVideoVC.xib; sourceTree = "<group>"; };
 		A837C755244B3F3100BC4F66 /* PopupEditVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupEditVideo.swift; sourceTree = "<group>"; };
@@ -449,6 +453,15 @@
 			path = Popup;
 			sourceTree = "<group>";
 		};
+		A834C9CC2450878D005DD60C /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				A834C9C824508750005DD60C /* StoreCell.swift */,
+				A834C9C924508751005DD60C /* StoreCell.xib */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
 		A837C750244B394500BC4F66 /* Video */ = {
 			isa = PBXGroup;
 			children = (
@@ -566,6 +579,7 @@
 		A85B800B243827C600CC4DCC /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				A834C9CC2450878D005DD60C /* CollectionCell */,
 				01601EED24459CF900DC4F2C /* BuyProduct */,
 				A821AB17243B8B1E0063A194 /* StoreVC.swift */,
 			);
@@ -725,6 +739,7 @@
 				A88A42D5243A14B00013BAFB /* PopupPaymentVC.xib in Resources */,
 				01272F332445F55E001A39ED /* EditPopUpVC.xib in Resources */,
 				A8277D6B244DF6EF0005BEE6 /* DeleteOrderPopup.xib in Resources */,
+				A834C9CB24508751005DD60C /* StoreCell.xib in Resources */,
 				A85FAAEB24433F0900C2F723 /* VerifyAccountVC.xib in Resources */,
 				018759B3244709DE00EAEFE9 /* EditCourseCell.xib in Resources */,
 				01272F2F2445ECED001A39ED /* EditCourseVC.xib in Resources */,
@@ -789,6 +804,7 @@
 				A817068C244612A1007C9F2C /* CheckOutVC.swift in Sources */,
 				01601EF024459F9000DC4F2C /* BuyProductVC.swift in Sources */,
 				A85B7FF42438268E00CC4DCC /* ViewController.swift in Sources */,
+				A834C9CA24508751005DD60C /* StoreCell.swift in Sources */,
 				A8102250243DFCC60089AE63 /* ChangePasswordVC.swift in Sources */,
 				0143BBF024476285001C57FF /* UserManagerCell.swift in Sources */,
 				01272F2E2445ECED001A39ED /* EditCourseVC.swift in Sources */,

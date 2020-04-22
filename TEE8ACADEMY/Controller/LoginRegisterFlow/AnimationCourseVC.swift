@@ -118,6 +118,7 @@ class AnimationCourseVC: BaseViewController {
         view.endEditing(true)
         if arrayChooseCourse.count != 0 {
             user?.course.append(contentsOf: arrayChooseCourse)
+            user?.course.append(contentsOf: arrayFreeCourse)
             dump(user?.course)
             let vc = SendReceiptVC(nibName: "SendReceiptVC", bundle: nil)
             vc.modalTransitionStyle = .crossDissolve

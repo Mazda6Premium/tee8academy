@@ -55,16 +55,23 @@ class StoreVC: BaseViewController {
     }
     
     func getDataFromFirebase() {
-        showLoading()
+        
         databaseReference.child("Products").observe(.childAdded) { (snapshot) in
+            self.showLoading()
             databaseReference.child("Products").child(snapshot.key).observeSingleEvent(of: .value) { (snapshot1) in
                 if let dict = snapshot1.value as? [String: Any] {
                     let product = Product(fromDict: dict)
                     
                     if product.type == "P.M.U PLUS" {
                         self.arrayProductPMU.append(product)
+                        self.arrayProductPMU.sort(by: { (v1, v2) -> Bool in
+                            return v1.index < v2.index
+                        })
                     } else {
                         self.arrayProductTimes.append(product)
+                        self.arrayProductTimes.sort(by: { (v1, v2) -> Bool in
+                            return v1.index < v2.index
+                        })
                     }
                     
                     self.collectionView.reloadData()
@@ -82,8 +89,8 @@ class StoreVC: BaseViewController {
         let headerCell_xib = UINib(nibName: "HeaderCell", bundle: nil)
         collectionView.register(headerCell_xib, forCellWithReuseIdentifier: "headerCell")
         
-        let productCell_xib = UINib(nibName: "VideoCell", bundle: nil)
-        collectionView.register(productCell_xib, forCellWithReuseIdentifier: "videoCell")
+        let productCell_xib = UINib(nibName: "StoreCell", bundle: nil)
+        collectionView.register(productCell_xib, forCellWithReuseIdentifier: "storeCell")
     }
     
     @IBAction func tapOnCart(_ sender: Any) {
@@ -144,7 +151,7 @@ extension StoreVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell0 = collectionView.dequeueReusableCell(withReuseIdentifier: "headerCell", for: indexPath) as! HeaderCell
-        let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath) as! VideoCell
+        let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: "storeCell", for: indexPath) as! StoreCell
         cell0.backgroundColor = .clear
         cell0.imgDown.isHidden = true
         cell1.backgroundColor = .clear
@@ -158,7 +165,7 @@ extension StoreVC: UICollectionViewDelegate, UICollectionViewDataSource {
         case 1:
             let productPMU = arrayProductPMU[indexPath.row]
             cell1.lblTitle.text = productPMU.name
-//            cell1.lblDescription.text = "Giá: \(formatMoney(productPMU.price)) VND"
+            cell1.lblDescription.text = "Giá: \(formatMoney(productPMU.price)) VND"
 //            cell1.lblTime.isHidden = true
             if let url = URL(string: productPMU.imageUrl) {
                 cell1.imgVideo.sd_setImage(with: url, completed: nil)
@@ -172,7 +179,7 @@ extension StoreVC: UICollectionViewDelegate, UICollectionViewDataSource {
         case 3:
             let productTime = arrayProductTimes[indexPath.row]
             cell1.lblTitle.text = productTime.name
-//            cell1.lblDescription.text = "Giá: \(formatMoney(productTime.price)) VND"
+            cell1.lblDescription.text = "Giá: \(formatMoney(productTime.price)) VND"
 //            cell1.lblTime.isHidden = true
             if let url = URL(string: productTime.imageUrl) {
                 cell1.imgVideo.sd_setImage(with: url, completed: nil)

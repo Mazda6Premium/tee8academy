@@ -159,7 +159,14 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             cell1.lblTitle.text = course.name
 //            cell1.lblDescription.text = course.description
             cell1.btnInfo.tag = indexPath.row
-            cell1.btnInfo.addTarget(self, action: #selector(showInfo), for: .touchUpInside)
+            cell1.tapInfo = { index in
+                let title = course.name
+                let des = course.description
+                let vc = PopupInfo(nibName: "PopupInfo", bundle: nil)
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.des = "\(title)\n\n\(des)"
+                self.present(vc, animated: true, completion: nil)
+            }
             
             switch course.type {
             case "Video":
@@ -184,16 +191,6 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
 
             return cell1
         }
-    }
-    
-    @objc func showInfo(sender: UIButton) {
-        let course = arrayCourse[sender.tag]
-        let title = course.name
-        let des = course.description
-        let vc = PopupInfo(nibName: "PopupInfo", bundle: nil)
-        vc.modalPresentationStyle = .overCurrentContext
-        vc.des = "\(title)\n\n\(des)"
-        self.present(vc, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

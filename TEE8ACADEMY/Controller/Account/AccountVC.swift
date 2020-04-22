@@ -154,8 +154,15 @@ class AccountVC: BaseViewController {
             vc.modalPresentationStyle = .overFullScreen
             vc.pushVC = .course
             self.present(vc, animated: true, completion: nil)
-        case .user: // THÔNG TIN CÁ NHÂN
-            showToast(message: "Chức năng đang được xây dựng")
+        case .user: // GÓP Ý
+            let email = "nttrung254@gmail.com"
+            if let url = URL(string: "mailto:\(email)") {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
             return
         default:
             break
@@ -170,20 +177,11 @@ class AccountVC: BaseViewController {
             }
         }
         
-        switch account {
-        case .admin: // ĐĂNG VIDEO
-            let vc = PushCourseVC(nibName: "PushCourseVC", bundle: nil)
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .overFullScreen
-            vc.pushVC = .video
-            self.present(vc, animated: true, completion: nil)
-        case .user: // ĐÁNH GIÁ ỨNG DỤNG
-            showLoading()
-            SKStoreReviewController.requestReview()
-            hideLoading()
-        default:
-            break
-        }
+        let vc = PushCourseVC(nibName: "PushCourseVC", bundle: nil)
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        vc.pushVC = .video
+        self.present(vc, animated: true, completion: nil)
     }
     
     @objc func tapOnViewD() { 
@@ -200,13 +198,13 @@ class AccountVC: BaseViewController {
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
-        case .user: // GÓP Ý
-            showToast(message: "Chức năng đang được xây dựng")
-            return
+        case .user: // ĐỔI MẬT KHẨU
+            let vc = ChangePasswordPopup(nibName: "ChangePasswordPopup", bundle: nil)
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc, animated: true, completion: nil)
         default:
             break
         }
-        
     }
     
     @objc func tapOnViewE() {
@@ -223,9 +221,13 @@ class AccountVC: BaseViewController {
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
-        case .user: // ĐỔI MẬT KHẨU
-            let vc = ChangePasswordPopup(nibName: "ChangePasswordPopup", bundle: nil)
-            vc.modalPresentationStyle = .overCurrentContext
+        case .user: // ĐĂNG XUẤT
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "loginVC")
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overFullScreen
+            // DELETE CACHE IN SESSION DATA USING SINGLETON
+            SessionData.shared.userData = nil
             self.present(vc, animated: true, completion: nil)
         default:
             break
@@ -239,25 +241,11 @@ class AccountVC: BaseViewController {
                 self.viewF.alpha = 1
             }
         }
-        
-        switch account {
-        case .admin: // QUẢN LÝ VIDEO
-            let vc = EditVideoVC(nibName: "EditVideoVC", bundle: nil)
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true, completion: nil)
-        case .user: // ĐĂNG XUẤT
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "loginVC")
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .overFullScreen
-            // DELETE CACHE IN SESSION DATA USING SINGLETON
-            SessionData.shared.userData = nil
-            self.present(vc, animated: true, completion: nil)
-            return
-        default:
-            break
-        }
+
+        let vc = EditVideoVC(nibName: "EditVideoVC", bundle: nil)
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     
     @objc func tapOnViewG() {

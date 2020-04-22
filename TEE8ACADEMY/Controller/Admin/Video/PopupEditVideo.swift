@@ -23,6 +23,7 @@ class PopupEditVideo: BaseViewController {
     @IBOutlet weak var btnXoa: UIButton!
     @IBOutlet weak var btnXacNhan: UIButton!
     @IBOutlet weak var viewLinkVideo: UIView!
+    @IBOutlet weak var txtIndex: UITextField!
     
     var video: Video?
     var timer : Timer?
@@ -41,10 +42,11 @@ class PopupEditVideo: BaseViewController {
         if let data = video {
             txtType.text = data.type
             txtNameVideo.text = data.name
+            txtIndex.text = "\(data.index)"
             if data.type == "Video" {
                 txtLinkVideo.text = data.linkVideo
             } else {
-                txtLinkVideo.isHidden = true
+                txtLinkVideo.isUserInteractionEnabled = false
             }
             tvDescription.text = data.description
         }
@@ -54,7 +56,7 @@ class PopupEditVideo: BaseViewController {
         view.isOpaque = false
         view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
-        roundCorner(views: [viewDim, txtType, viewLinkVideo, txtNameVideo, tvDescription, btnXoa, btnXacNhan], radius: 8)
+        roundCorner(views: [viewDim, txtType, viewLinkVideo, txtNameVideo, txtIndex, tvDescription, btnXoa, btnXacNhan, txtLinkVideo], radius: 8)
         
         let tapGes = UITapGestureRecognizer(target: self, action: #selector(dismissView))
         view.addGestureRecognizer(tapGes)
@@ -66,11 +68,11 @@ class PopupEditVideo: BaseViewController {
     
     @IBAction func tapOnConfirm(_ sender: Any) {
         showLoading()
-        if txtLinkVideo.text == "" || txtNameVideo.text == "" || tvDescription.text == "" {
+        if txtLinkVideo.text == "" || txtNameVideo.text == "" || tvDescription.text == "" || txtIndex.text == "" {
             showToast(message: "Bạn cần điền đẩy đủ thông tin.")
             hideLoading()
         } else {
-            let values = ["description": tvDescription.text!, "name": txtNameVideo.text!, "linkVideo": txtLinkVideo.text!] as [AnyHashable : Any]
+            let values = ["description": tvDescription.text!, "name": txtNameVideo.text!, "linkVideo": txtLinkVideo.text!, "index": txtIndex.text!] as [AnyHashable : Any]
             if let vid = video {
                 databaseReference.child("Courses").child(vid.course).observe(.childAdded) { (data) in
                     databaseReference.child("Courses").child(vid.course).child(data.key).queryOrdered(byChild: "id").queryEqual(toValue: vid.id).observeSingleEvent(of: .value) { (snapshot) in

@@ -16,6 +16,7 @@ class Product {
     var price = 0.0
     var time = 0.0
     var imageUrl = ""
+    var index = 0
     
     init() {}
     
@@ -27,6 +28,7 @@ class Product {
         self.price = fromDict["price"] as? Double ?? 0.0
         self.time = fromDict["time"] as? Double ?? 0.0
         self.imageUrl = fromDict["imageUrl"] as? String ?? ""
+        self.index = fromDict["index"] as? Int ?? 0
     }
 }
 

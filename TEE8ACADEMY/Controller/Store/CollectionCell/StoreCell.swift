@@ -8,20 +8,25 @@
 
 import UIKit
 
-class VideoCell: UICollectionViewCell {
+class StoreCell: UICollectionViewCell {
     
     @IBOutlet weak var viewCell: UIView!
     @IBOutlet weak var imgVideo: UIImageView!
     @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var lblTime: UILabel!
+    
     @IBOutlet weak var viewDim: UIView!
     @IBOutlet weak var imgLock: UIImageView!
-    @IBOutlet weak var btnInfo: UIButton!
     
-    var tapInfo: ((_ index: Int) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        // ROUND CORNER
+        imgVideo.layer.cornerRadius = 10
+        imgVideo.clipsToBounds = true
+        
         addShadow(views: [viewCell])
     }
     
@@ -34,10 +39,6 @@ class VideoCell: UICollectionViewCell {
             view.clipsToBounds = true
             view.backgroundColor = .white
         }
-    }
-    
-    @IBAction func tapOnInfo(_ sender: UIButton) {
-        self.tapInfo?(sender.tag)
     }
 }
 
