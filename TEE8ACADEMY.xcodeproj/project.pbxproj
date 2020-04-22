@@ -61,6 +61,8 @@
 		A8277D67244DEBEC0005BEE6 /* OrderHistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8277D65244DEBEC0005BEE6 /* OrderHistoryVC.xib */; };
 		A8277D6A244DF6EF0005BEE6 /* DeleteOrderPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8277D68244DF6EF0005BEE6 /* DeleteOrderPopup.swift */; };
 		A8277D6B244DF6EF0005BEE6 /* DeleteOrderPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8277D69244DF6EF0005BEE6 /* DeleteOrderPopup.xib */; };
+		A834C9C624508361005DD60C /* PopupInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834C9C424508361005DD60C /* PopupInfo.swift */; };
+		A834C9C724508361005DD60C /* PopupInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = A834C9C524508361005DD60C /* PopupInfo.xib */; };
 		A837C753244B398000BC4F66 /* EditVideoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A837C751244B398000BC4F66 /* EditVideoVC.swift */; };
 		A837C754244B398000BC4F66 /* EditVideoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A837C752244B398000BC4F66 /* EditVideoVC.xib */; };
 		A837C757244B3F3100BC4F66 /* PopupEditVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A837C755244B3F3100BC4F66 /* PopupEditVideo.swift */; };
@@ -167,6 +169,8 @@
 		A8277D65244DEBEC0005BEE6 /* OrderHistoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderHistoryVC.xib; sourceTree = "<group>"; };
 		A8277D68244DF6EF0005BEE6 /* DeleteOrderPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteOrderPopup.swift; sourceTree = "<group>"; };
 		A8277D69244DF6EF0005BEE6 /* DeleteOrderPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeleteOrderPopup.xib; sourceTree = "<group>"; };
+		A834C9C424508361005DD60C /* PopupInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupInfo.swift; sourceTree = "<group>"; };
+		A834C9C524508361005DD60C /* PopupInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupInfo.xib; sourceTree = "<group>"; };
 		A837C751244B398000BC4F66 /* EditVideoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVideoVC.swift; sourceTree = "<group>"; };
 		A837C752244B398000BC4F66 /* EditVideoVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditVideoVC.xib; sourceTree = "<group>"; };
 		A837C755244B3F3100BC4F66 /* PopupEditVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupEditVideo.swift; sourceTree = "<group>"; };
@@ -436,6 +440,15 @@
 			path = Popup;
 			sourceTree = "<group>";
 		};
+		A834C9C32450834E005DD60C /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				A834C9C424508361005DD60C /* PopupInfo.swift */,
+				A834C9C524508361005DD60C /* PopupInfo.xib */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
 		A837C750244B394500BC4F66 /* Video */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,6 +555,7 @@
 		A85B800A243827BF00CC4DCC /* Academy */ = {
 			isa = PBXGroup;
 			children = (
+				A834C9C32450834E005DD60C /* Popup */,
 				A819AFDC243F5AAF009AB1A6 /* TableCell */,
 				A83ABBEE243F49230039E64C /* CollectionCell */,
 				A821AB15243B8AFB0063A194 /* AcademyVC.swift */,
@@ -682,6 +696,7 @@
 				A883495A2447672000587024 /* ProductCell.xib in Resources */,
 				A837C754244B398000BC4F66 /* EditVideoVC.xib in Resources */,
 				A837C758244B3F3100BC4F66 /* PopupEditVideo.xib in Resources */,
+				A834C9C724508361005DD60C /* PopupInfo.xib in Resources */,
 				A88A42D0243A08230013BAFB /* Tabbar.storyboard in Resources */,
 				A84C6287244C1D5900F5D770 /* GiftCourseVC.xib in Resources */,
 				01B56D40243C6B6100B0D804 /* PushCourseVC.xib in Resources */,
@@ -793,6 +808,7 @@
 				A88349592447672000587024 /* ProductCell.swift in Sources */,
 				A8170691244617A2007C9F2C /* CheckOutCell.swift in Sources */,
 				A80CECF3243C354B001785DC /* RegisterAccountCell.swift in Sources */,
+				A834C9C624508361005DD60C /* PopupInfo.swift in Sources */,
 				01B56D3F243C6B6100B0D804 /* PushCourseVC.swift in Sources */,
 				A81843E0244487F2000BF147 /* AccountVC.swift in Sources */,
 				A88349552447508B00587024 /* OrderCell.swift in Sources */,
@@ -969,7 +985,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TEE8ACADEMY/TEE 8 ACADEMY.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 2J3K999PRZ;
 				INFOPLIST_FILE = TEE8ACADEMY/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -991,7 +1007,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TEE8ACADEMY/TEE 8 ACADEMY.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 2J3K999PRZ;
 				INFOPLIST_FILE = TEE8ACADEMY/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

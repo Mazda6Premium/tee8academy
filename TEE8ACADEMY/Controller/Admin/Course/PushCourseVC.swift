@@ -143,15 +143,15 @@ class PushCourseVC: BaseViewController {
             return
         }
         
+        if txtIndexVideo.text == "" {
+            showToast(message: "Bạn chưa điền index.")
+            hideLoading()
+            return
+        }
+        
         if txtType.text == "Video" {
             if txtLinkVid.text == "" {
                 showToast(message: "Bạn chưa điền link video.")
-                hideLoading()
-                return
-            }
-            
-            if txtIndexVideo.text == "" {
-                showToast(message: "Bạn chưa điền index video.")
                 hideLoading()
                 return
             }
@@ -290,7 +290,6 @@ extension PushCourseVC : UITextFieldDelegate {
                 }
                 if self.txtType.text == "Video" {
                     self.txtLinkVid.isUserInteractionEnabled = true
-                    self.txtIndexVideo.isUserInteractionEnabled = true
                     self.imgCourse.isUserInteractionEnabled = false
                     self.courseImage = nil
                     self.imgCourse.image = UIImage(named: "placeholder")
@@ -299,7 +298,6 @@ extension PushCourseVC : UITextFieldDelegate {
                 if self.txtType.text == "Ảnh" {
                     self.imgCourse.isUserInteractionEnabled = true
                     self.txtLinkVid.isUserInteractionEnabled = false
-                    self.txtIndexVideo.isUserInteractionEnabled = false
                     self.txtLinkVid.text = ""
                     self.txtIndexVideo.text = ""
                 }

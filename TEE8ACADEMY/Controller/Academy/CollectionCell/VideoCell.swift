@@ -15,7 +15,7 @@ class VideoCell: UICollectionViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var viewDim: UIView!
     @IBOutlet weak var imgLock: UIImageView!
-    
+    @IBOutlet weak var btnInfo: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

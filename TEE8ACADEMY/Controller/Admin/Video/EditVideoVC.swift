@@ -14,7 +14,7 @@ class EditVideoVC: BaseViewController {
     
     var arrayCourse = [Course]()
     var screenWidthVideo: CGFloat = 0.1
-    
+    var screenHeightVideo: CGFloat = 0.1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,7 +113,7 @@ extension EditVideoVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             case "Video":
                 if let videoId = getYoutubeId(youtubeUrl: course.linkVideo) {
                     // thumbnail
-                    let urlString = "https://i1.ytimg.com/vi/\(String(describing: videoId))/hqdefault.jpg"
+                    let urlString = "https://i1.ytimg.com/vi/\(String(describing: videoId))/maxresdefault.jpg"
                     if let url = URL(string: urlString) {
                         cell1.imgVideo.sd_setImage(with: url, completed: nil)
                     } else {
@@ -158,11 +158,13 @@ extension EditVideoVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
             let course = arrayCourse[indexPath.section / 2]
             if course.isOpen {
                 screenWidthVideo = UIScreen.main.bounds.size.width / 2 - 15
+                screenHeightVideo = 140
             } else {
                 screenWidthVideo = 0.1
+                screenHeightVideo = 0.1
             }
             
-            return CGSize(width: screenWidthVideo, height: screenWidthVideo)
+            return CGSize(width: screenWidthVideo, height: screenHeightVideo)
         }
     }
     
@@ -171,7 +173,7 @@ extension EditVideoVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 0
     }
 }
 

@@ -24,6 +24,7 @@ class AcademyVC: BaseViewController {
     
     var arrayCourse = [Course]()
     var screenWidthVideo: CGFloat = 0.1
+    var screenHeightVideo: CGFloat = 0.1
     var courseRegisted = [Course]()
 
     let refreshControl = UIRefreshControl()
@@ -157,7 +158,8 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             let course = arrayCourse[indexPath.section / 2].video[indexPath.row]
             cell1.lblTitle.text = course.name
 //            cell1.lblDescription.text = course.description
-
+            cell1.btnInfo.tag = indexPath.row
+            cell1.btnInfo.addTarget(self, action: #selector(showInfo), for: .touchUpInside)
             
             switch course.type {
             case "Video":
@@ -182,6 +184,16 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
 
             return cell1
         }
+    }
+    
+    @objc func showInfo(sender: UIButton) {
+        let course = arrayCourse[sender.tag]
+        let title = course.name
+        let des = course.description
+        let vc = PopupInfo(nibName: "PopupInfo", bundle: nil)
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.des = "\(title)\n\n\(des)"
+        self.present(vc, animated: true, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -225,11 +237,13 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             let course = arrayCourse[indexPath.section / 2]
             if course.isOpen {
                 screenWidthVideo = UIScreen.main.bounds.size.width / 2 - 15
+                screenHeightVideo = 140
             } else {
                 screenWidthVideo = 0.1
+                screenHeightVideo = 0.1
             }
             
-            return CGSize(width: screenWidthVideo, height: screenWidthVideo)
+            return CGSize(width: screenWidthVideo, height: screenHeightVideo)
         }
     }
     
@@ -238,7 +252,7 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 0
     }
 }
 
