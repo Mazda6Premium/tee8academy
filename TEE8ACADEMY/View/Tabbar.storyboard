@@ -114,7 +114,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="YzH-OY-hWT">
-                                <rect key="frame" x="127" y="20" width="160" height="160.00000000000045"/>
+                                <rect key="frame" x="127" y="20" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="R01-Ce-KPd"/>
                                     <constraint firstAttribute="width" constant="160" id="ZZL-eR-vFQ"/>
