@@ -7,11 +7,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="didact-gothic.regular.ttf">
-            <string>DidactGothic-Regular</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -29,14 +24,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="150" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coW-kg-D9b">
-                                        <rect key="frame" x="10" y="10" width="60" height="22.5"/>
-                                        <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="17"/>
+                                        <rect key="frame" x="10" y="10" width="60" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OtP-VI-ABR">
-                                        <rect key="frame" x="10" y="44" width="28" height="16"/>
-                                        <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="12"/>
+                                        <rect key="frame" x="10" y="45.5" width="60" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -58,6 +53,7 @@
                                     <constraint firstAttribute="bottom" secondItem="OtP-VI-ABR" secondAttribute="bottom" constant="10" id="gPX-vl-JQ6"/>
                                     <constraint firstAttribute="height" constant="70" id="mga-k0-KcX"/>
                                     <constraint firstItem="coW-kg-D9b" firstAttribute="top" secondItem="CaX-jI-rd2" secondAttribute="top" constant="10" id="qbi-GG-Pn0"/>
+                                    <constraint firstItem="OtP-VI-ABR" firstAttribute="trailing" secondItem="coW-kg-D9b" secondAttribute="trailing" id="wSW-9H-t3f"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="am0-Jv-7Bg">
