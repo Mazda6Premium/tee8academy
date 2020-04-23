@@ -14,6 +14,7 @@ class AnimationCourseVC: BaseViewController {
     @IBOutlet weak var lblFrame: UILabel!
     @IBOutlet weak var btnSkip: UIButton!
     @IBOutlet weak var btnContinue: UIButton!
+    @IBOutlet weak var btnGift: UIButton!
     
     var user: User?
 
@@ -37,7 +38,7 @@ class AnimationCourseVC: BaseViewController {
     }
     
     func setupView() {
-        changeAlpha(views: [self.btnContinue, self.btnSkip, self.tableView], alpha: 0)
+        changeAlpha(views: [self.btnContinue, self.btnSkip, self.tableView, self.btnGift], alpha: 0)
         roundCorner(views: [btnContinue, btnSkip], radius: 8)
         
         lblTitle.frame = CGRect(x: 30, y: screenHeight, width: lblFrame.frame.width, height: lblFrame.frame.height)
@@ -63,7 +64,7 @@ class AnimationCourseVC: BaseViewController {
         }) { (_) in
             self.view.layoutIfNeeded()
             UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveEaseIn, animations: {
-                self.changeAlpha(views: [self.btnContinue, self.btnSkip, self.tableView], alpha: 1)
+                self.changeAlpha(views: [self.btnContinue, self.btnSkip, self.btnGift, self.tableView], alpha: 1)
                 self.view.layoutIfNeeded()
             }, completion: nil)
         }

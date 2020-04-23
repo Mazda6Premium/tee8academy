@@ -16,6 +16,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimationCourseVC" customModule="TEE_8_ACADEMY" customModuleProvider="target">
             <connections>
                 <outlet property="btnContinue" destination="lzL-MS-b76" id="qhe-7B-XPe"/>
+                <outlet property="btnGift" destination="VA5-K8-5Dk" id="IXw-Fc-vYE"/>
                 <outlet property="btnSkip" destination="V5F-1r-dv9" id="QsJ-Bs-HJL"/>
                 <outlet property="lblFrame" destination="rEk-b8-njt" id="vSW-AK-ZQq"/>
                 <outlet property="tableView" destination="X8C-W9-X6m" id="QLu-aV-lGp"/>
@@ -84,7 +85,6 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
-                        <action selector="tapOnContinue:" destination="-1" eventType="touchUpInside" id="Vhw-N0-cXV"/>
                         <action selector="tapOnGift:" destination="-1" eventType="touchUpInside" id="8aw-0D-M1O"/>
                     </connections>
                 </button>
