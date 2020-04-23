@@ -26,6 +26,7 @@ class OrderCell: FSPagerViewCell {
     @IBOutlet weak var btnCancel: UIButton!
     
     var arrayCart = [Cart]()
+    var parentVC = UIViewController()
     
     var order: Order! {
         didSet {
@@ -43,7 +44,7 @@ class OrderCell: FSPagerViewCell {
         lblPhone.text = "Phone: \(order.phone)"
         lblAddress.text = "Address: \(order.address)"
         lblNumberProduct.text = "Number product: \(order.quantity)"
-        lblTotalPayment.text = "Total payment \(formatMoney(order.totalPayment))"
+        lblTotalPayment.text = "Total payment \(formatMoney(order.totalPayment)) VND"
         
         let time = order.time
         let date = Date(timeIntervalSince1970: TimeInterval(time) / 1000)
@@ -53,7 +54,7 @@ class OrderCell: FSPagerViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        let views = [btnAccept, btnCancel, viewCell]
+        let views = [viewCell, btnAccept, btnCancel]
         views.forEach { (view) in
             view?.layer.cornerRadius = 10
             view?.layer.masksToBounds = true
@@ -75,7 +76,7 @@ extension OrderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath) as! ProductCell
         let cart = arrayCart[indexPath.row]
-        cell.lblProductName.text = cart.name
+        cell.lblProductName.text = "Sản phẩm: \(cart.name)"
         cell.lblQuantity.text = "Số lượng: \(cart.quantity)"
         let totalPrice = cart.price * Double(cart.quantity)
         cell.lblPrice.text = "Tổng tiền: \(formatMoney(totalPrice)) VND"
@@ -89,8 +90,20 @@ extension OrderCell: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! ProductCell
+        let configuration = ImageViewerConfiguration { config in
+            config.imageView = cell.imgProduct
+        }
+        parentVC.present(ImageViewerController(configuration: configuration), animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.frame.width - 30, height: 140)
+        if self.frame.width > 30 {
+            return CGSize(width: self.frame.width - 30, height: 140)
+        } else {
+            return CGSize()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

@@ -45,10 +45,7 @@ class RegisterAccountVC: BaseViewController {
                             self.arrayUser.sort(by: { (user1, user2) -> Bool in
                                 return Int64(user1.time) > Int64(user2.time)
                             })
-                            self.getDataVideo()
                             self.pageView.reloadData()
-                            
-                            self.showLoadingSuccess(1)
                         }
                     }
                 }
@@ -80,17 +77,6 @@ class RegisterAccountVC: BaseViewController {
         }
     }
     
-    func getDataVideo() {
-        databaseReference.child("Users").observe(.childAdded) { (snapshot) in
-            databaseReference.child("Users").child(snapshot.key).observeSingleEvent(of: .value) { (snapshot1) in
-                if let dict = snapshot1.value as? [String: Any] {
-                    let user = User.getUserData(dict: dict, key: snapshot1.key)
-                    self.arrayCourse = user.course
-                }
-            }
-        }
-    }
-    
     func setUpSegmentControl() {
         segmentedControl.selectedIndex = 0
         segmentedControl.items = ["Đơn hàng khoá học", "Đơn hàng sản phẩm"]
@@ -100,7 +86,7 @@ class RegisterAccountVC: BaseViewController {
         
         segmentedControl.borderColor = .clear
         segmentedControl.thumbColor = #colorLiteral(red: 0.1019607843, green: 0.3568627451, blue: 0.3921568627, alpha: 1)
-        segmentedControl.font = UIFont(name: "Quicksand-Bold", size: 16)
+        segmentedControl.font = UIFont.systemFont(ofSize: 16)
     }
     
     @IBAction func tapOnSegmented(_ sender: Any) {
@@ -128,7 +114,6 @@ class RegisterAccountVC: BaseViewController {
         pageView.register(nib, forCellWithReuseIdentifier: "registerAccountCell")
         pageView.transformer = FSPagerViewTransformer(type: .cubic)
 
-        
         pageViewProducts.isHidden = true
         let nib1 = UINib(nibName: "OrderCell", bundle: nil)
         pageViewProducts.register(nib1, forCellWithReuseIdentifier: "orderCell")
@@ -137,6 +122,13 @@ class RegisterAccountVC: BaseViewController {
     
     @IBAction func tapOnBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func tapOnOrderHistory(_ sender: Any) {
+        let vc = OrderHistoryVC(nibName: "OrderHistoryVC", bundle: nil)
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
 
@@ -154,6 +146,7 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
             let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "registerAccountCell", at: index) as! RegisterAccountCell
             cell.user = arrayUser[index]
             cell.parentVC = self
+            cell.backgroundColor = .clear
             
             cell.btnActive.addTarget(self, action: #selector(tapOnActive), for: .touchUpInside)
             cell.btnActive.tag = index
@@ -164,7 +157,16 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
             return cell
         } else {
             let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "orderCell", at: index) as! OrderCell
+            cell.backgroundColor = .clear
             cell.order = arrayOrder[index]
+            cell.parentVC = self
+            
+            cell.btnAccept.addTarget(self, action: #selector(tapOnAcceptOrder), for: .touchUpInside)
+            cell.btnAccept.tag = index
+            
+            cell.btnCancel.addTarget(self, action: #selector(tapOnCancelOrder), for: .touchUpInside)
+            cell.btnCancel.tag = index
+            
             return cell
         }
     }
@@ -173,22 +175,33 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
         showLoading()
         let user = arrayUser[sender.tag]
         self.arrayCourse.append(contentsOf: user.course)
-        let course = User(course: self.arrayCourse)
-        databaseReference.child("Users").child(user.userId).updateChildValues(course.asDictionaryVideo())
+        
+        databaseReference.child("Users").child(user.userId).observeSingleEvent(of: .value) { (snapshot) in
+            if let dict = snapshot.value as? [String: Any] {
+                let userData = User.getUserData(dict: dict, key: snapshot.key)
+                self.arrayCourse.append(contentsOf: userData.course)
+                
+                // ADD COURSE VÀO USER
+                let course = User(course: self.arrayCourse)
+                databaseReference.child("Users").child(user.userId).updateChildValues(course.asDictionaryCourse())
+                
+                self.deleteImage(index: sender.tag)
+                databaseReference.child("Receipts").child(user.receiptPostId).removeValue()
 
-        self.deleteImage(index: sender.tag)
-        databaseReference.child("Receipt").child(user.receiptPostId).removeValue()
-
-        self.arrayUser.removeAll()
-        self.getDataFromFirebase()
-        self.pageView.reloadData()
+                self.arrayUser.removeAll()
+                self.arrayCourse.removeAll()
+                self.getDataFromFirebase()
+                self.pageView.reloadData()
+                self.showLoadingSuccess(1)
+            }
+        }
     }
     
     @objc func tapOnCancel(sender: UIButton) {
         showLoading()
         let user = arrayUser[sender.tag]
         deleteImage(index: sender.tag)
-        databaseReference.child("Receipt").child(user.receiptPostId).removeValue()
+        databaseReference.child("Receipts").child(user.receiptPostId).removeValue()
 
         self.arrayUser.removeAll()
         self.getDataFromFirebase()
@@ -205,4 +218,32 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
             }
         }
     }
+    
+    @objc func tapOnAcceptOrder(sender: UIButton) {
+        showLoading()
+        let order = arrayOrder[sender.tag]
+        databaseReference.child("OrdersSuccess").child(order.orderId).setValue(order.asDictionary())
+        databaseReference.child("Orders").child(order.orderId).removeValue()
+        
+        self.arrayOrder.removeAll()
+        self.getDataOrder()
+        self.pageViewProducts.reloadData()
+    }
+    
+    @objc func tapOnCancelOrder(sender: UIButton) {
+        let vc = DeleteOrderPopup(nibName: "DeleteOrderPopup", bundle: nil)
+        vc.order = arrayOrder[sender.tag]
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
+    }
 }
+
+extension RegisterAccountVC: DeleteOrderDelegate {
+    func reloadData() {
+        self.arrayOrder.removeAll()
+        self.getDataOrder()
+        self.pageViewProducts.reloadData()
+    }
+}
+

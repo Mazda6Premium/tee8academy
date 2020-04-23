@@ -39,6 +39,8 @@ class UserManagerVC: BaseViewController {
                     let user = User(dict: dict)
                     self.arrayUser.append(user)
                     
+                    self.arrayUser.removeAll(where: {$0.email == "admin"})
+                    
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
@@ -51,7 +53,6 @@ class UserManagerVC: BaseViewController {
     @IBAction func tapOnBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
 }
 
 extension UserManagerVC : UITableViewDelegate, UITableViewDataSource {
@@ -61,9 +62,11 @@ extension UserManagerVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userManagerCell") as! UserManagerCell
+        
         let user = arrayUser[indexPath.row]
         
         cell.selectionStyle = .none
+        cell.backgroundColor = .clear
         cell.viewUser.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
         cell.viewBlock.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
         cell.user = user
@@ -72,7 +75,7 @@ extension UserManagerVC : UITableViewDelegate, UITableViewDataSource {
         if user.isBlock == true {
             cell.imgLock.image = UIImage(named: "lock")
         } else {
-            cell.imgLock.image = UIImage(named: "copy")
+            cell.imgLock.image = UIImage(named: "unlock")
         }
         
         let tapGes1 = UITapGestureRecognizer(target: self, action: #selector(tapOnViewBlock))
@@ -98,7 +101,7 @@ extension UserManagerVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 90
     }
     
 }

@@ -8,15 +8,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Quicksand-Bold.ttf">
-            <string>Quicksand-Bold</string>
-        </array>
-        <array key="Quicksand-Medium.ttf">
-            <string>Quicksand-Medium</string>
+        <array key="didact-gothic.regular.ttf">
+            <string>DidactGothic-Regular</string>
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BuyCourseVC" customModule="TEE8ACADEMY" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BuyCourseVC" customModule="TEE_8_ACADEMY" customModuleProvider="target">
             <connections>
                 <outlet property="btnBack" destination="YmJ-qV-U05" id="cxO-cQ-fab"/>
                 <outlet property="btnContinue" destination="3jW-v2-NSo" id="Vjn-zI-17K"/>
@@ -34,25 +31,25 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="ekz-s3-r4o">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome “username” to Tee 8 Academy, please choice your course belows:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHF-K1-Wgw">
-                    <rect key="frame" x="20" y="54" width="374" height="40"/>
-                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome “username” to Tee 8 Academy, please choice your course belows:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UHF-K1-Wgw">
+                    <rect key="frame" x="20" y="54" width="374" height="45"/>
+                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="17"/>
                     <color key="textColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lct-XM-cvn">
-                    <rect key="frame" x="20" y="104" width="374" height="608.5"/>
+                    <rect key="frame" x="20" y="109" width="374" height="601.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bGL-zZ-9K8">
-                    <rect key="frame" x="20" y="732.5" width="374" height="36"/>
+                    <rect key="frame" x="20" y="730.5" width="374" height="36"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YmJ-qV-U05">
                             <rect key="frame" x="0.0" y="0.0" width="182" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="rdi-de-cib"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                            <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
                             <state key="normal" title="Back" backgroundImage="bg_button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -62,7 +59,7 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jW-v2-NSo">
                             <rect key="frame" x="192" y="0.0" width="182" height="36"/>
-                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                            <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
                             <state key="normal" title="Continue" backgroundImage="bg_button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -76,35 +73,39 @@
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLh-w2-9CA">
-                    <rect key="frame" x="20" y="824.5" width="374" height="37.5"/>
+                    <rect key="frame" x="20" y="822.5" width="374" height="39.5"/>
                     <string key="text">Hotline 0919188158 - 0888777158/198
 WWW.TEE8.EDU.VN</string>
-                    <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand Medium" pointSize="15"/>
+                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjk-WI-HQK">
-                    <rect key="frame" x="20" y="778.5" width="374" height="36"/>
+                    <rect key="frame" x="20" y="776.5" width="374" height="36"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="3C6-EH-7fa"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
-                    <state key="normal" title="Contact Support" backgroundImage="bg_button">
+                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
+                    <state key="normal" title="Gift Courses" backgroundImage="bg_button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="tapOnGift:" destination="-1" eventType="touchUpInside" id="Fpe-ao-ouY"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="lct-XM-cvn" firstAttribute="top" secondItem="UHF-K1-Wgw" secondAttribute="bottom" constant="10" id="0cx-on-Fp3"/>
                 <constraint firstItem="UHF-K1-Wgw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="46N-tQ-ZQ1"/>
                 <constraint firstItem="ekz-s3-r4o" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6K3-6Q-ani"/>
                 <constraint firstItem="lct-XM-cvn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7mQ-UW-hA0"/>
                 <constraint firstItem="YLh-w2-9CA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7vv-Ie-71Q"/>
                 <constraint firstItem="lct-XM-cvn" firstAttribute="top" secondItem="UHF-K1-Wgw" secondAttribute="bottom" constant="10" id="7xU-FM-H8q"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lct-XM-cvn" secondAttribute="trailing" constant="20" id="8JM-7n-fOz"/>
                 <constraint firstItem="UHF-K1-Wgw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="9hW-p1-leG"/>
                 <constraint firstItem="YLh-w2-9CA" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="DNB-ai-3XF"/>
                 <constraint firstItem="ekz-s3-r4o" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DZ5-J4-eu0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lct-XM-cvn" secondAttribute="trailing" constant="20" id="EyI-uO-tGC"/>
                 <constraint firstItem="Wjk-WI-HQK" firstAttribute="top" secondItem="bGL-zZ-9K8" secondAttribute="bottom" constant="10" id="FVD-Ep-DOK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YLh-w2-9CA" secondAttribute="trailing" constant="20" id="Nvk-ON-sRW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bGL-zZ-9K8" secondAttribute="trailing" constant="20" id="ONB-p3-ihm"/>

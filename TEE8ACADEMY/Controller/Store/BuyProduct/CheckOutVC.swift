@@ -11,6 +11,7 @@ import SDWebImage
 
 protocol CheckOutDelegate {
     func deleteCart()
+    func refreshCart(cart: [Cart])
 }
 
 class CheckOutVC: UIViewController {
@@ -85,7 +86,9 @@ extension CheckOutVC: UITableViewDelegate, UITableViewDataSource {
             
             if cart.quantity == 0 {
                 self.arrayCart.remove(at: indexPath.row)
+                self.delegateCheckOut?.refreshCart(cart: self.arrayCart)
                 self.tableView.deleteRows(at: [IndexPath.init(row: index, section: 0)], with: .fade)
+                tableView.reloadData()
             }
         }
         

@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="didact-gothic.regular.ttf">
+            <string>DidactGothic-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BlockPopUpVC" customModule="TEE_8_ACADEMY" customModuleProvider="target">
             <connections>
@@ -18,30 +23,25 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" tag="10" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDy-i0-not">
-                    <rect key="frame" x="60" y="394.5" width="294" height="117.5"/>
+                    <rect key="frame" x="10" y="363" width="394" height="180"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thông báo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOn-YC-FI1">
-                            <rect key="frame" x="106" y="10" width="82.5" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn có chắc chắn muốn block không ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzk-J7-ZBg">
-                            <rect key="frame" x="30.5" y="40.5" width="233" height="16"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzk-J7-ZBg">
+                            <rect key="frame" x="20" y="60" width="354" height="59"/>
+                            <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="z0g-rN-KmM">
-                            <rect key="frame" x="5" y="76.5" width="284" height="36"/>
+                            <rect key="frame" x="5" y="139" width="384" height="36"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPZ-QN-TUf">
-                                    <rect key="frame" x="0.0" y="0.0" width="139.5" height="36"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="189.5" height="36"/>
+                                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
                                     <state key="normal" title="Huỷ" backgroundImage="bg_button">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -50,7 +50,8 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tr-Ru-fb4">
-                                    <rect key="frame" x="144.5" y="0.0" width="139.5" height="36"/>
+                                    <rect key="frame" x="194.5" y="0.0" width="189.5" height="36"/>
+                                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
                                     <state key="normal" title="Block" backgroundImage="bg_button">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -63,25 +64,46 @@
                                 <constraint firstAttribute="height" constant="36" id="ood-9v-q9M"/>
                             </constraints>
                         </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaM-KP-ZuQ">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Block" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AiC-cL-IQC">
+                                    <rect key="frame" x="177" y="8" width="40" height="24"/>
+                                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.49803921569999998" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="3YP-vj-d6c"/>
+                                <constraint firstItem="AiC-cL-IQC" firstAttribute="centerY" secondItem="EaM-KP-ZuQ" secondAttribute="centerY" id="qI3-Z4-okJ"/>
+                                <constraint firstItem="AiC-cL-IQC" firstAttribute="centerX" secondItem="EaM-KP-ZuQ" secondAttribute="centerX" id="yYn-2S-wkf"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="z0g-rN-KmM" firstAttribute="leading" secondItem="jDy-i0-not" secondAttribute="leading" constant="5" id="1bp-Lv-QpY"/>
                         <constraint firstItem="z0g-rN-KmM" firstAttribute="top" secondItem="dzk-J7-ZBg" secondAttribute="bottom" constant="20" id="6RS-UG-hOF"/>
                         <constraint firstAttribute="trailing" secondItem="z0g-rN-KmM" secondAttribute="trailing" constant="5" id="RC2-Kx-eSP"/>
-                        <constraint firstItem="pOn-YC-FI1" firstAttribute="centerX" secondItem="jDy-i0-not" secondAttribute="centerX" id="TOS-jw-Seh"/>
-                        <constraint firstItem="dzk-J7-ZBg" firstAttribute="top" secondItem="pOn-YC-FI1" secondAttribute="bottom" constant="10" id="oSS-1y-Zll"/>
+                        <constraint firstAttribute="trailing" secondItem="EaM-KP-ZuQ" secondAttribute="trailing" id="TMk-RF-jdn"/>
+                        <constraint firstItem="dzk-J7-ZBg" firstAttribute="leading" secondItem="jDy-i0-not" secondAttribute="leading" constant="20" id="U4b-Zd-cmf"/>
+                        <constraint firstItem="EaM-KP-ZuQ" firstAttribute="leading" secondItem="jDy-i0-not" secondAttribute="leading" id="Ybj-el-kdv"/>
+                        <constraint firstAttribute="height" constant="180" id="f73-xk-WYn"/>
+                        <constraint firstAttribute="trailing" secondItem="dzk-J7-ZBg" secondAttribute="trailing" constant="20" id="kdE-7S-4hw"/>
+                        <constraint firstItem="EaM-KP-ZuQ" firstAttribute="top" secondItem="jDy-i0-not" secondAttribute="top" id="lyX-h2-pZZ"/>
                         <constraint firstAttribute="bottom" secondItem="z0g-rN-KmM" secondAttribute="bottom" constant="5" id="qzh-vg-GK2"/>
-                        <constraint firstItem="pOn-YC-FI1" firstAttribute="top" secondItem="jDy-i0-not" secondAttribute="top" constant="10" id="rln-l8-s9j"/>
+                        <constraint firstItem="dzk-J7-ZBg" firstAttribute="top" secondItem="EaM-KP-ZuQ" secondAttribute="bottom" constant="20" id="xrW-QL-Xeo"/>
                         <constraint firstItem="dzk-J7-ZBg" firstAttribute="centerX" secondItem="jDy-i0-not" secondAttribute="centerX" id="zcQ-gg-qmx"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="jDy-i0-not" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="37z-B9-AS9"/>
+                <constraint firstItem="jDy-i0-not" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="37z-B9-AS9"/>
                 <constraint firstItem="jDy-i0-not" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="8dL-Gs-y1M"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jDy-i0-not" secondAttribute="trailing" constant="60" id="aob-TQ-Gbh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jDy-i0-not" secondAttribute="trailing" constant="10" id="aob-TQ-Gbh"/>
                 <constraint firstItem="jDy-i0-not" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="dbd-rM-0uM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

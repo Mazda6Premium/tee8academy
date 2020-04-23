@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="didact-gothic.regular.ttf">
+            <string>DidactGothic-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GiftCourseVC" customModule="TEE_8_ACADEMY" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="Vsc-8d-dwf" id="u3X-Mk-8fP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" tag="10" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uvb-Z2-Cli">
+                    <rect key="frame" x="0.0" y="586" width="414" height="310"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="82E-kg-qo3">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="310"/>
+                        </imageView>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vsc-8d-dwf">
+                            <rect key="frame" x="20" y="50" width="374" height="260"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </tableView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6P-Ur-fdg">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gift Courses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpO-Wx-I6Z">
+                                    <rect key="frame" x="161" y="8" width="92.5" height="24"/>
+                                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="LpO-Wx-I6Z" firstAttribute="centerY" secondItem="h6P-Ur-fdg" secondAttribute="centerY" id="Krd-wM-7Aw"/>
+                                <constraint firstItem="LpO-Wx-I6Z" firstAttribute="centerX" secondItem="h6P-Ur-fdg" secondAttribute="centerX" id="aiE-IZ-2us"/>
+                                <constraint firstAttribute="height" constant="40" id="oHd-dw-jVp"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="Vsc-8d-dwf" firstAttribute="leading" secondItem="uvb-Z2-Cli" secondAttribute="leading" constant="20" id="3OM-Se-RM9"/>
+                        <constraint firstItem="Vsc-8d-dwf" firstAttribute="top" secondItem="h6P-Ur-fdg" secondAttribute="bottom" constant="10" id="CLj-0S-hPQ"/>
+                        <constraint firstAttribute="height" constant="310" id="DcY-Qn-WHl"/>
+                        <constraint firstAttribute="bottom" secondItem="Vsc-8d-dwf" secondAttribute="bottom" id="IWE-he-QvR"/>
+                        <constraint firstItem="h6P-Ur-fdg" firstAttribute="top" secondItem="uvb-Z2-Cli" secondAttribute="top" id="SVV-ua-b6W"/>
+                        <constraint firstAttribute="trailing" secondItem="Vsc-8d-dwf" secondAttribute="trailing" constant="20" id="TQy-gT-PVU"/>
+                        <constraint firstAttribute="trailing" secondItem="82E-kg-qo3" secondAttribute="trailing" id="nzW-S1-dH7"/>
+                        <constraint firstItem="82E-kg-qo3" firstAttribute="top" secondItem="uvb-Z2-Cli" secondAttribute="top" id="p6E-55-7IU"/>
+                        <constraint firstItem="h6P-Ur-fdg" firstAttribute="leading" secondItem="uvb-Z2-Cli" secondAttribute="leading" id="sIn-ka-RdQ"/>
+                        <constraint firstItem="82E-kg-qo3" firstAttribute="leading" secondItem="uvb-Z2-Cli" secondAttribute="leading" id="sjb-gM-Qh5"/>
+                        <constraint firstAttribute="trailing" secondItem="h6P-Ur-fdg" secondAttribute="trailing" id="tqz-Js-2Rx"/>
+                        <constraint firstAttribute="bottom" secondItem="82E-kg-qo3" secondAttribute="bottom" id="vXO-g5-uTT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="uvb-Z2-Cli" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="K0d-WI-nMa"/>
+                <constraint firstItem="uvb-Z2-Cli" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MOX-QB-kKb"/>
+                <constraint firstAttribute="bottom" secondItem="uvb-Z2-Cli" secondAttribute="bottom" id="ggt-qL-12v"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="131.8840579710145" y="152.67857142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg" width="540" height="898"/>
+    </resources>
+</document>

@@ -8,10 +8,15 @@
 
 import UIKit
 import ActionSheetPicker_3_0
+import AVKit
+import XCDYouTubeKit
+
+enum PushVC {
+    case course
+    case video
+}
 
 class PushCourseVC: BaseViewController {
-    
-    @IBOutlet weak var segmentedControl: SegmentedControl!
     
     @IBOutlet weak var viewPush: UIView!
     @IBOutlet weak var txtName: UITextField!
@@ -26,6 +31,7 @@ class PushCourseVC: BaseViewController {
     @IBOutlet weak var txtType: UITextField!
     @IBOutlet weak var txtChooseCourse: UITextField!
     @IBOutlet weak var tvDescriptionVideo: UITextView!
+    @IBOutlet weak var txtIndexVideo: UITextField!
     @IBOutlet weak var btnPostVideo: UIButton!
     
     var arrayCourse = [Course]()
@@ -36,21 +42,28 @@ class PushCourseVC: BaseViewController {
     var allCoursePrice = 0.0
     var sale = 0.2
     
+    var pushVC: PushVC = .course
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         setUpView()
-        setUpSegmentControl()
         getDataFromFirebase()
     }
     
     func setUpView() {
+        switch pushVC {
+        case .course:
+            viewPush.isHidden = false
+            viewPushVideo.isHidden = true
+        case .video:
+            viewPush.isHidden = true
+            viewPushVideo.isHidden = false
+        }
+        
         roundCorner(views: [txtName, txtPrice, tvDescriptionCourse, btnPost, txtNameVideo, imgCourse, txtLinkVid, txtType, txtChooseCourse, tvDescriptionVideo, btnPostVideo], radius: 8)
         addShadow(views: [viewPush, viewPushVideo])
-        
-        viewPush.isHidden = false
-        viewPushVideo.isHidden = true
         
         txtLinkVid.isUserInteractionEnabled = false
         imgCourse.isUserInteractionEnabled = false
@@ -81,37 +94,12 @@ class PushCourseVC: BaseViewController {
                     self.arrayCourse.sort(by: { (course1, course2) -> Bool in
                         return Int64(course1.price) > Int64(course2.price)
                     })
+                    self.arrayNameCourse.append(course.name)
                     self.showLoadingSuccess(1)
                 }
             }
         }
     }
-    
-    func setUpSegmentControl() {
-        segmentedControl.selectedIndex = 0
-        segmentedControl.items = ["Đăng khoá học", "Đăng video"]
-        segmentedControl.backgroundColor = .groupTableViewBackground
-        segmentedControl.selectedLabelColor = .white
-        segmentedControl.unselectedLabelColor = .black
-        
-        segmentedControl.borderColor = .clear
-        segmentedControl.thumbColor = #colorLiteral(red: 0.1019607843, green: 0.3568627451, blue: 0.3921568627, alpha: 1)
-        segmentedControl.font = UIFont(name: "Quicksand-Bold", size: 16)
-    }
-    
-    @IBAction func tapOnSegment(_ sender: Any) {
-        switch segmentedControl.selectedIndex {
-        case 0:
-            viewPush.isHidden = false
-            viewPushVideo.isHidden = true
-        case 1:
-            viewPush.isHidden = true
-            viewPushVideo.isHidden = false
-        default:
-            break
-        }
-    }
-    
     
     @IBAction func tapOnPostCourse(_ sender: Any) {
         self.view.endEditing(true)
@@ -155,29 +143,42 @@ class PushCourseVC: BaseViewController {
             return
         }
         
-        if txtType.text == "Video" && txtLinkVid.text == "" {
-            showToast(message: "Bạn chưa điền link video.")
+        if txtIndexVideo.text == "" {
+            showToast(message: "Bạn chưa điền index.")
             hideLoading()
             return
         }
         
-        if txtType.text == "Ảnh" && courseImage == nil {
-            showToast(message: "Bạn chưa chọn ảnh")
-            hideLoading()
-            return
+        if txtType.text == "Video" {
+            if txtLinkVid.text == "" {
+                showToast(message: "Bạn chưa điền link video.")
+                hideLoading()
+                return
+            }
+        }
+        
+        if txtType.text == "Ảnh" {
+            if courseImage == nil {
+                showToast(message: "Bạn chưa chọn ảnh")
+                hideLoading()
+                return
+            }
         }
         
         guard let nameVideoOrImage = txtNameVideo.text else { return }
         guard let nameCourseChoose = txtChooseCourse.text else { return }
         guard let description = tvDescriptionVideo.text else { return }
         guard let type = txtType.text else { return }
+        guard let index = Int(txtIndexVideo.text!) else { return }
         let time = Date().millisecondsSince1970
         let id = databaseReference.childByAutoId().key!
 
         switch txtType.text {
         case "Video":
             guard let linkVideo = txtLinkVid.text else { return }
-            let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: linkVideo, time: time, type: type, imageUrl: "")
+            print(nameCourseChoose)
+            let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: linkVideo, time: time, type: type, imageUrl: "", index: index)
+            
             self.arrayVideo.append(video)
             let course = Course(video: arrayVideo)
             databaseReference.child("Courses").child(nameCourseChoose).updateChildValues(course.asDictionaryVideo())
@@ -198,7 +199,7 @@ class PushCourseVC: BaseViewController {
                         return
                     }
                     
-                    let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: "", time: time, type: type, imageUrl: "\(imageUrl)")
+                    let video = Video(name: nameVideoOrImage, course: nameCourseChoose, description: description, id: id, linkVideo: "", time: time, type: type, imageUrl: "\(imageUrl)", index: index)
                     self.arrayVideo.append(video)
                     let course = Course(video: self.arrayVideo)
                     databaseReference.child("Courses").child(nameCourseChoose).updateChildValues(course.asDictionaryVideo())
@@ -234,8 +235,10 @@ class PushCourseVC: BaseViewController {
         txtType.text = ""
         tvDescriptionVideo.text = ""
         txtLinkVid.text = ""
+        txtIndexVideo.text = ""
         courseImage = nil
         imgCourse.image = UIImage(named: "placeholder")
+        arrayVideo.removeAll()
         
         txtLinkVid.isUserInteractionEnabled = false
         imgCourse.isUserInteractionEnabled = false
@@ -281,7 +284,7 @@ extension PushCourseVC : UITextFieldDelegate {
         
         switch textField {
         case txtType:
-            ActionSheetStringPicker.show(withTitle: "Chọn loại", rows: ["Video", "Ảnh"], initialSelection: 0, doneBlock: { (picker, index, value) in
+            ActionSheetStringPicker(title: "Chọn loại", rows: ["Video", "Ảnh"], initialSelection: 0, doneBlock: { (picker, index, value) in
                 if let type = value as? String {
                     self.txtType.text = type
                 }
@@ -296,35 +299,31 @@ extension PushCourseVC : UITextFieldDelegate {
                     self.imgCourse.isUserInteractionEnabled = true
                     self.txtLinkVid.isUserInteractionEnabled = false
                     self.txtLinkVid.text = ""
+                    self.txtIndexVideo.text = ""
                 }
-            }, cancel: { (picker) in
-                return
-            }, origin: txtType)
+            }, cancel: nil, origin: txtType).show()
+            return false
             
         case txtChooseCourse:
-            arrayCourse.forEach { (course) in
-                arrayNameCourse.append(course.name)
-            }
             
             if let indexObject = arrayNameCourse.firstIndex(of: "ALL COURSE") {
                 arrayNameCourse.remove(at: indexObject)
             }
             
-            ActionSheetStringPicker.show(withTitle: "Chọn khoá học", rows: arrayNameCourse, initialSelection: 0, doneBlock: { (picker, index, value) in
+            ActionSheetStringPicker(title: "Chọn khoá học", rows: arrayNameCourse, initialSelection: 0, doneBlock: { (picker, index, value) in
                 if let course = value as? String {
                     self.txtChooseCourse.text = course
                     self.getDataVideo(nameCourseChoose: course)
                 }
-            }, cancel: { (picker) in
-                return
-            }, origin: txtType)
+            }, cancel: nil, origin: txtChooseCourse).show()
+            return false
+            
         default:
-            break
+            return false
         }
-        return false
     }
-    
 }
+
 extension PushCourseVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         courseImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage

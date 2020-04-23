@@ -15,14 +15,6 @@ class ProductManagerVC: BaseViewController {
     var arrayProductPMU = [Product]()
     var arrayProductTimes = [Product]()
     
-    var screenWidth: CGFloat {
-        return UIScreen.main.bounds.size.width
-    }
-    
-    var screenHeight: CGFloat {
-        return UIScreen.main.bounds.size.height
-    }
-    
     let refreshControl = UIRefreshControl()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,8 +134,8 @@ extension ProductManagerVC: UICollectionViewDelegate, UICollectionViewDataSource
         case 1:
             let productPMU = arrayProductPMU[indexPath.row]
             cell1.lblTitle.text = productPMU.name
-            cell1.lblDescription.text = "Giá: \(formatMoney(productPMU.price)) VND"
-            cell1.lblTime.isHidden = true
+//            cell1.lblDescription.text = "Giá: \(formatMoney(productPMU.price)) VND"
+//            cell1.lblTime.isHidden = true
             if let url = URL(string: productPMU.imageUrl) {
                 cell1.imgVideo.sd_setImage(with: url, completed: nil)
             } else {
@@ -156,8 +148,8 @@ extension ProductManagerVC: UICollectionViewDelegate, UICollectionViewDataSource
         case 3:
             let productTime = arrayProductTimes[indexPath.row]
             cell1.lblTitle.text = productTime.name
-            cell1.lblDescription.text = "Giá: \(formatMoney(productTime.price)) VND"
-            cell1.lblTime.isHidden = true
+//            cell1.lblDescription.text = "Giá: \(formatMoney(productTime.price)) VND"
+//            cell1.lblTime.isHidden = true
             if let url = URL(string: productTime.imageUrl) {
                 cell1.imgVideo.sd_setImage(with: url, completed: nil)
             } else {

@@ -13,6 +13,15 @@ import JGProgressHUD
 
 class BaseViewController: UIViewController {
     
+    // Screen width.
+    public var screenWidth: CGFloat {
+        return UIScreen.main.bounds.width
+    }
+    
+    public var screenHeight: CGFloat {
+        return UIScreen.main.bounds.height
+    }
+    
     let hud = JGProgressHUD(style: .dark)
 
     func roundCorner(views: [UIView], radius: CGFloat) {
@@ -33,7 +42,7 @@ class BaseViewController: UIViewController {
         var style = ToastStyle()
         style.backgroundColor = #colorLiteral(red: 0, green: 0.4980392157, blue: 0.6470588235, alpha: 1)
         style.messageColor = .white
-        style.messageFont = UIFont(name: "Quicksand-Bold", size: 16)!
+        style.messageFont = UIFont.boldSystemFont(ofSize: 16)
         self.view.makeToast(message, duration: duration, position: .bottom, style: style)
     }
     
@@ -51,6 +60,10 @@ class BaseViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+        let touch: UITouch? = touches.first
+        if touch?.view?.tag == 10 {
+            dismiss(animated: true, completion: nil)
+        }
     }
 }
 
@@ -63,11 +76,16 @@ extension BaseViewController {
     
     func showLoadingSuccess(_ delay: Double = 3) {
         hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+        hud.textLabel.text = "Success"
         hud.show(in: self.view)
         hud.dismiss(afterDelay: delay)
     }
     
     func hideLoading() {
         hud.dismiss()
+    }
+    
+    func getYoutubeId(youtubeUrl: String) -> String? {
+        return URLComponents(string: youtubeUrl)?.queryItems?.first(where: { $0.name == "v" })?.value
     }
 }

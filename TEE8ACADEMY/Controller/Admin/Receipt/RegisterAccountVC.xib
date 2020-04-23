@@ -8,8 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Quicksand-Bold.ttf">
-            <string>Quicksand-Bold</string>
+        <array key="didact-gothic.regular.ttf">
+            <string>DidactGothic-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -30,20 +30,21 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="academic" translatesAutoresizingMaskIntoConstraints="NO" id="3VI-0v-ouJ">
-                    <rect key="frame" x="10" y="14" width="176" height="100"/>
+                    <rect key="frame" x="10" y="36" width="140" height="60"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="JQe-kL-Oh9"/>
+                        <constraint firstAttribute="height" constant="60" id="JQe-kL-Oh9"/>
+                        <constraint firstAttribute="width" constant="140" id="fad-yH-BjP"/>
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_button" translatesAutoresizingMaskIntoConstraints="NO" id="hve-qF-1Ej">
-                    <rect key="frame" x="0.0" y="114" width="414" height="2"/>
+                    <rect key="frame" x="0.0" y="108" width="414" height="2"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="2" id="2RF-xS-Z5i"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="3V1-pj-VQ3" customClass="FSPagerView" customModule="FSPagerView">
-                    <rect key="frame" x="0.0" y="186" width="414" height="640"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <rect key="frame" x="0.0" y="180" width="414" height="646"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJa-JH-piG">
                     <rect key="frame" x="0.0" y="826" width="414" height="36"/>
@@ -51,7 +52,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="ucJ-VZ-wLO"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
                     <state key="normal" title="Back" backgroundImage="bg_button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -64,11 +65,11 @@
                     <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </imageView>
                 <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="4E4-NQ-iOl" customClass="FSPagerView" customModule="FSPagerView">
-                    <rect key="frame" x="0.0" y="186" width="414" height="640"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <rect key="frame" x="0.0" y="180" width="414" height="646"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3L-PM-5Ju" customClass="SegmentedControl" customModule="TEE_8_ACADEMY" customModuleProvider="target">
-                    <rect key="frame" x="20" y="136" width="374" height="40"/>
+                    <rect key="frame" x="20" y="130" width="374" height="40"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="3MO-Q1-a8P"/>
@@ -77,6 +78,17 @@
                         <action selector="tapOnSegmented:" destination="-1" eventType="valueChanged" id="KAX-Rx-yQZ"/>
                     </connections>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zb4-Gx-GLH">
+                    <rect key="frame" x="364" y="66" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="6j5-WF-UaF"/>
+                        <constraint firstAttribute="width" constant="30" id="Bg5-dB-jF3"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="history"/>
+                    <connections>
+                        <action selector="tapOnOrderHistory:" destination="-1" eventType="touchUpInside" id="SIu-AX-75K"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -92,8 +104,8 @@
                 <constraint firstItem="d3L-PM-5Ju" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="L8E-uX-54N"/>
                 <constraint firstItem="AJa-JH-piG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="QuO-4a-u9h"/>
                 <constraint firstItem="3V1-pj-VQ3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SRQ-Q4-WNx"/>
-                <constraint firstItem="hve-qF-1Ej" firstAttribute="top" secondItem="3VI-0v-ouJ" secondAttribute="bottom" id="WbN-Vy-yeq"/>
-                <constraint firstItem="3VI-0v-ouJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="14" id="Zea-B2-Yxl"/>
+                <constraint firstItem="hve-qF-1Ej" firstAttribute="top" secondItem="3VI-0v-ouJ" secondAttribute="bottom" constant="12" id="WbN-Vy-yeq"/>
+                <constraint firstItem="3VI-0v-ouJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="36" id="Zea-B2-Yxl"/>
                 <constraint firstItem="4E4-NQ-iOl" firstAttribute="top" secondItem="d3L-PM-5Ju" secondAttribute="bottom" constant="10" id="aCW-gy-sdd"/>
                 <constraint firstItem="d3L-PM-5Ju" firstAttribute="top" secondItem="hve-qF-1Ej" secondAttribute="bottom" constant="20" id="d67-wf-fdB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hve-qF-1Ej" secondAttribute="trailing" id="f4a-tO-7rl"/>
@@ -105,6 +117,8 @@
                 <constraint firstItem="AJa-JH-piG" firstAttribute="top" secondItem="3V1-pj-VQ3" secondAttribute="bottom" id="nle-JX-joX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AZ3-Yl-s9J" secondAttribute="trailing" id="ocs-Si-VgS"/>
                 <constraint firstItem="hve-qF-1Ej" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="s52-v6-QZo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zb4-Gx-GLH" secondAttribute="trailing" constant="20" id="sHC-2W-TBP"/>
+                <constraint firstItem="zb4-Gx-GLH" firstAttribute="bottom" secondItem="3VI-0v-ouJ" secondAttribute="bottom" id="upH-BP-ZJW"/>
                 <constraint firstItem="hPh-B5-pQ4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uxr-jI-h0h"/>
                 <constraint firstItem="3V1-pj-VQ3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="zbF-CO-7uH"/>
             </constraints>
@@ -116,5 +130,6 @@
         <image name="academic" width="176" height="65"/>
         <image name="bg" width="540" height="898"/>
         <image name="bg_button" width="129" height="22"/>
+        <image name="history" width="24" height="24"/>
     </resources>
 </document>

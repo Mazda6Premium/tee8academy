@@ -145,7 +145,7 @@ class SendReceiptVC: BaseViewController {
                 userData.receiptPostId = postId
                 databaseReference.child("Receipts").child(postId).setValue(userData.asDictionary())
                 self.showLoadingSuccess(5)
-                self.showToast(message: "Thanh toán của bạn đã được gửi đến quản trị viên, vui lòng chờ đợi trong ít phút để được kích hoạt tài khoản, xin chân thành cảm ơn.")
+                self.showToast(message: "Thanh toán của bạn đã được gửi đến quản trị viên, vui lòng chờ đợi trong ít phút để được kích hoạt khoá học, xin chân thành cảm ơn.")
                 _ = Timer.scheduledTimer(timeInterval: 6, target: self, selector: #selector(self.dismissView), userInfo: nil, repeats: false)
             }
         }

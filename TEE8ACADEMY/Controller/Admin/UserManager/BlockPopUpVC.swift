@@ -44,10 +44,10 @@ class BlockPopUpVC: BaseViewController {
         
         switch statusUser {
         case .block:
-            lblMessage.text = "Bạn có chắc chắn muốn bỏ chặn không ?"
+            lblMessage.text = "Bạn có chắc chắn muốn bỏ khoá user này không ?"
             btnBlock.setTitle("Bỏ chặn", for: .normal)
         case .unBlock:
-            lblMessage.text = "Bạn có chắc chắn muốn chặn không ?"
+            lblMessage.text = "Bạn có chắc chắn muốn khoá user này không ?"
             btnBlock.setTitle("Chặn", for: .normal)
         default:
             break

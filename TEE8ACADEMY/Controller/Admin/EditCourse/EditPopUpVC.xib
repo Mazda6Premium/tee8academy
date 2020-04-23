@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="didact-gothic.regular.ttf">
+            <string>DidactGothic-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditPopUpVC" customModule="TEE_8_ACADEMY" customModuleProvider="target">
             <connections>
@@ -20,46 +25,47 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" tag="10" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZN-Py-LFc">
-                    <rect key="frame" x="50" y="246" width="314" height="298"/>
+                    <rect key="frame" x="10" y="289" width="394" height="318"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tên khoá học" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cuf-zr-sVg">
-                            <rect key="frame" x="10" y="10" width="294" height="36"/>
+                            <rect key="frame" x="5" y="45" width="384" height="36"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="36" id="2pq-P8-yrC"/>
+                                <constraint firstAttribute="height" constant="36" id="aSE-R9-crZ"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Giá tiền" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFB-pQ-VkR" customClass="CurrencyTextField" customModule="TEE_8_ACADEMY" customModuleProvider="target">
-                            <rect key="frame" x="10" y="56" width="294" height="36"/>
+                            <rect key="frame" x="5" y="86" width="384" height="36"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="36" id="LD4-Ag-rgX"/>
+                                <constraint firstAttribute="height" constant="36" id="Ca1-uh-4mz"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OkP-nz-JMk">
-                            <rect key="frame" x="10" y="102" width="294" height="140"/>
+                            <rect key="frame" x="5" y="127" width="384" height="140"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="140" id="HTm-rR-e06"/>
+                                <constraint firstAttribute="height" constant="140" id="Z9D-d8-wkS"/>
                             </constraints>
                             <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="15"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zpZ-W2-MVM">
-                            <rect key="frame" x="10" y="252" width="294" height="36"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zpZ-W2-MVM">
+                            <rect key="frame" x="5" y="272" width="384" height="36"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtS-i6-0Rs">
-                                    <rect key="frame" x="0.0" y="0.0" width="142" height="36"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="189.5" height="36"/>
+                                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
                                     <state key="normal" title="Huỷ" backgroundImage="bg_button">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -68,7 +74,8 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zi-nD-DsG">
-                                    <rect key="frame" x="152" y="0.0" width="142" height="36"/>
+                                    <rect key="frame" x="194.5" y="0.0" width="189.5" height="36"/>
+                                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
                                     <state key="normal" title="Xác nhận" backgroundImage="bg_button">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
@@ -78,34 +85,55 @@
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="36" id="Ler-Fx-GT6"/>
+                                <constraint firstAttribute="height" constant="36" id="uXU-Ja-Ahd"/>
                             </constraints>
                         </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJI-g9-QC1">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO4-Oy-FjX">
+                                    <rect key="frame" x="182.5" y="8" width="29" height="24"/>
+                                    <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.49803921568627452" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="cO4-Oy-FjX" firstAttribute="centerY" secondItem="OJI-g9-QC1" secondAttribute="centerY" id="0PQ-Hl-Oya"/>
+                                <constraint firstAttribute="height" constant="40" id="V2D-Rv-SPJ"/>
+                                <constraint firstItem="cO4-Oy-FjX" firstAttribute="centerX" secondItem="OJI-g9-QC1" secondAttribute="centerX" id="Yp4-bB-d6a"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstItem="zpZ-W2-MVM" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" constant="10" id="0WH-kc-Y9M"/>
-                        <constraint firstItem="aFB-pQ-VkR" firstAttribute="top" secondItem="Cuf-zr-sVg" secondAttribute="bottom" constant="10" id="5QI-9g-dCe"/>
-                        <constraint firstItem="Cuf-zr-sVg" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" constant="10" id="GoQ-Ie-jhD"/>
-                        <constraint firstAttribute="trailing" secondItem="aFB-pQ-VkR" secondAttribute="trailing" constant="10" id="Hon-SM-MRo"/>
-                        <constraint firstItem="OkP-nz-JMk" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" constant="10" id="IZN-jj-qJA"/>
-                        <constraint firstItem="zpZ-W2-MVM" firstAttribute="top" secondItem="OkP-nz-JMk" secondAttribute="bottom" constant="10" id="Kxb-Ek-XjM"/>
-                        <constraint firstAttribute="trailing" secondItem="zpZ-W2-MVM" secondAttribute="trailing" constant="10" id="MAd-p4-69r"/>
-                        <constraint firstAttribute="bottom" secondItem="zpZ-W2-MVM" secondAttribute="bottom" constant="10" id="PWk-Mo-ZMB"/>
-                        <constraint firstItem="OkP-nz-JMk" firstAttribute="top" secondItem="aFB-pQ-VkR" secondAttribute="bottom" constant="10" id="PWz-Hy-cLq"/>
-                        <constraint firstItem="Cuf-zr-sVg" firstAttribute="top" secondItem="WZN-Py-LFc" secondAttribute="top" constant="10" id="Q9q-Vf-98a"/>
-                        <constraint firstAttribute="trailing" secondItem="OkP-nz-JMk" secondAttribute="trailing" constant="10" id="QUc-PQ-f2K"/>
-                        <constraint firstItem="aFB-pQ-VkR" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" constant="10" id="ao9-6B-acu"/>
-                        <constraint firstAttribute="trailing" secondItem="Cuf-zr-sVg" secondAttribute="trailing" constant="10" id="gGq-wY-2Zo"/>
+                        <constraint firstItem="aFB-pQ-VkR" firstAttribute="top" secondItem="Cuf-zr-sVg" secondAttribute="bottom" constant="5" id="3ER-eI-j7z"/>
+                        <constraint firstItem="zpZ-W2-MVM" firstAttribute="leading" secondItem="OkP-nz-JMk" secondAttribute="leading" id="61K-M9-Ad6"/>
+                        <constraint firstItem="Cuf-zr-sVg" firstAttribute="top" secondItem="OJI-g9-QC1" secondAttribute="bottom" constant="5" id="6lT-J1-VjQ"/>
+                        <constraint firstAttribute="trailing" secondItem="Cuf-zr-sVg" secondAttribute="trailing" constant="5" id="8zO-X5-Sna"/>
+                        <constraint firstItem="zpZ-W2-MVM" firstAttribute="trailing" secondItem="OkP-nz-JMk" secondAttribute="trailing" id="9Gk-fR-KJe"/>
+                        <constraint firstItem="aFB-pQ-VkR" firstAttribute="trailing" secondItem="Cuf-zr-sVg" secondAttribute="trailing" id="Ac9-KZ-7WR"/>
+                        <constraint firstItem="zpZ-W2-MVM" firstAttribute="top" secondItem="OkP-nz-JMk" secondAttribute="bottom" constant="5" id="G5e-eY-GPf"/>
+                        <constraint firstItem="OkP-nz-JMk" firstAttribute="top" secondItem="aFB-pQ-VkR" secondAttribute="bottom" constant="5" id="HxK-Br-ipB"/>
+                        <constraint firstAttribute="bottom" secondItem="zpZ-W2-MVM" secondAttribute="bottom" constant="10" id="KDo-Ce-1io"/>
+                        <constraint firstAttribute="trailing" secondItem="OJI-g9-QC1" secondAttribute="trailing" id="TiP-pp-uzd"/>
+                        <constraint firstItem="OJI-g9-QC1" firstAttribute="top" secondItem="WZN-Py-LFc" secondAttribute="top" id="aZr-9j-qsN"/>
+                        <constraint firstItem="aFB-pQ-VkR" firstAttribute="leading" secondItem="Cuf-zr-sVg" secondAttribute="leading" id="dJD-Q1-H7C"/>
+                        <constraint firstItem="OkP-nz-JMk" firstAttribute="trailing" secondItem="aFB-pQ-VkR" secondAttribute="trailing" id="k2O-3U-lZa"/>
+                        <constraint firstItem="OkP-nz-JMk" firstAttribute="leading" secondItem="aFB-pQ-VkR" secondAttribute="leading" id="mpa-GR-GMk"/>
+                        <constraint firstItem="Cuf-zr-sVg" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" constant="5" id="uMa-GM-Hgl"/>
+                        <constraint firstItem="OJI-g9-QC1" firstAttribute="leading" secondItem="WZN-Py-LFc" secondAttribute="leading" id="ugC-bR-hMc"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WZN-Py-LFc" secondAttribute="trailing" constant="50" id="2SK-B3-ojx"/>
-                <constraint firstItem="WZN-Py-LFc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="Gwq-XQ-thH"/>
-                <constraint firstItem="WZN-Py-LFc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="202" id="Rv1-Ps-vbh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WZN-Py-LFc" secondAttribute="trailing" constant="10" id="JEg-Td-MN2"/>
+                <constraint firstItem="WZN-Py-LFc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JQk-AT-w6o"/>
+                <constraint firstItem="WZN-Py-LFc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Kqe-la-rNf"/>
                 <constraint firstItem="WZN-Py-LFc" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="d9x-tJ-tI4"/>
+                <constraint firstItem="WZN-Py-LFc" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mcX-GU-DT0"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>

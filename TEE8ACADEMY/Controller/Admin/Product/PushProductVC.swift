@@ -19,6 +19,9 @@ class PushProductVC: BaseViewController {
     @IBOutlet weak var txtPrice: UITextField!
     @IBOutlet weak var txtPriceSale: CurrencyTextField!
     @IBOutlet weak var btnPost: UIButton!
+    @IBOutlet weak var txtIndex: UITextField!
+    
+    
     
     var imageProduct : UIImage?
     var timer : Timer?
@@ -31,7 +34,7 @@ class PushProductVC: BaseViewController {
     }
     
     func setUpView() {
-        roundCorner(views: [txtName, txtType, tvDescription, txtPrice, imgProduct, btnPost], radius: 8)
+        roundCorner(views: [txtName, txtType, tvDescription, txtPrice, txtPriceSale, txtIndex, imgProduct, btnPost], radius: 8)
         addShadow(views: [viewPush])
         
         txtType.delegate = self
@@ -87,7 +90,7 @@ class PushProductVC: BaseViewController {
         }
         
         if imageProduct == nil {
-            showToast(message: "Bạn chưa chọn ảnh")
+            showToast(message: "Bạn chưa chọn ảnh.")
             hideLoading()
             return
         }
@@ -97,10 +100,16 @@ class PushProductVC: BaseViewController {
         } else {
             let sale = Double(txtPriceSale.text!.digits)!
             if sale > 100.0 {
-                showToast(message: "% sale bạn nhập không hợp lệ")
+                showToast(message: "% sale bạn nhập không hợp lệ.")
                 hideLoading()
                 return
             }
+        }
+        
+        if txtIndex.text == "" {
+            showToast(message: "Bạn chưa nhập index sản phẩm.")
+            hideLoading()
+            return
         }
         
         guard let name = txtName.text else { return }
@@ -108,6 +117,7 @@ class PushProductVC: BaseViewController {
         guard let price = Double(txtPrice.text!.digits) else { return }
         guard let sale = Double(txtPriceSale.text!.digits) else { return }
         guard let type = txtType.text else { return }
+        guard let index = txtIndex.text else { return }
         let time = Date().millisecondsSince1970
         let id = databaseReference.childByAutoId().key!
         
@@ -124,7 +134,7 @@ class PushProductVC: BaseViewController {
                     self.showToast(message: "Có lỗi xảy ra, vui lòng thử lại sau.")
                     return
                 }
-                let value = ["type": type , "id" : id , "name": name, "description": description, "price" : price, "sale" : sale , "imageUrl" : "\(String(describing: imageUrl))" , "time" : time] as [String : Any]
+                let value = ["type": type , "id" : id , "name": name, "description": description, "price" : price, "sale" : sale , "imageUrl" : "\(String(describing: imageUrl))" , "time" : time, "index": index] as [String : Any]
                 databaseReference.child("Products").child(id).setValue(value)
                 self.startTimer()
                 self.showLoadingSuccess(1)
@@ -145,7 +155,7 @@ class PushProductVC: BaseViewController {
         txtPrice.text = ""
         txtPriceSale.text = ""
         txtType.text = ""
-        
+        txtIndex.text = ""
         imageProduct = nil
         imgProduct.image = UIImage(named: "placeholder")
         

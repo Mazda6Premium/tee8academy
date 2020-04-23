@@ -8,49 +8,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Quicksand-Bold.ttf">
-            <string>Quicksand-Bold</string>
-        </array>
-        <array key="Quicksand-Regular.ttf">
-            <string>Quicksand-Regular</string>
+        <array key="didact-gothic.regular.ttf">
+            <string>DidactGothic-Regular</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="orderCell" id="gTV-IL-0wX" customClass="OrderCell" customModule="TEE_8_ACADEMY" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="575" height="594"/>
+            <rect key="frame" x="0.0" y="0.0" width="575" height="646"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="575" height="594"/>
+                <rect key="frame" x="0.0" y="0.0" width="575" height="646"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pCP-go-Wpe">
-                        <rect key="frame" x="10" y="10" width="555" height="574"/>
+                        <rect key="frame" x="10" y="10" width="555" height="626"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mv8-hm-dtD">
-                                <rect key="frame" x="20" y="528" width="515" height="36"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tc-Iw-qiQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="247.5" height="36"/>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
-                                        <state key="normal" title="Accept" backgroundImage="bg_button">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRo-ti-ILh">
-                                        <rect key="frame" x="267.5" y="0.0" width="247.5" height="36"/>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
-                                        <state key="normal" title="Cancel" backgroundImage="bg_button">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="IRX-h5-xJt"/>
-                                </constraints>
-                            </stackView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Cwm-Xn-f0i">
                                 <rect key="frame" x="8" y="10" width="50" height="50"/>
                                 <constraints>
@@ -63,16 +37,16 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="0dX-Ck-Tmn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Nq-i8-FYO">
-                                <rect key="frame" x="89" y="42" width="23" height="15"/>
+                                <rect key="frame" x="89" y="42" width="21" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="Ct4-44-2Yy"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="10"/>
                                 <color key="textColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -88,13 +62,13 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCm-XQ-3qN">
                                         <rect key="frame" x="0.0" y="0.0" width="257.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8m3-2e-PPa">
                                         <rect key="frame" x="277.5" y="0.0" width="257.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -108,13 +82,13 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhE-R7-hDJ">
                                         <rect key="frame" x="0.0" y="0.0" width="257.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total payment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mt-uG-Uh3">
                                         <rect key="frame" x="277.5" y="0.0" width="257.5" height="20"/>
-                                        <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -128,13 +102,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="EDf-Ff-GTU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="aNd-LT-cwk">
                                 <rect key="frame" x="0.0" y="230" width="555" height="300"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="Yws-bq-LjS"/>
                                 </constraints>
@@ -150,16 +124,39 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="bev-qQ-yoA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="w6g-qk-Aek">
+                                <rect key="frame" x="20" y="580" width="515" height="36"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pm7-oR-XEV">
+                                        <rect key="frame" x="0.0" y="0.0" width="247.5" height="36"/>
+                                        <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
+                                        <state key="normal" title="Accept" backgroundImage="bg_button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvR-V9-pW5">
+                                        <rect key="frame" x="267.5" y="0.0" width="247.5" height="36"/>
+                                        <fontDescription key="fontDescription" name="DidactGothic-Regular" family="Didact Gothic" pointSize="16"/>
+                                        <state key="normal" title="Cancel" backgroundImage="bg_button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="LLW-s4-hz3"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aNd-LT-cwk" firstAttribute="top" secondItem="Bh0-jx-OEf" secondAttribute="bottom" constant="10" id="28b-oI-TCZ"/>
+                            <constraint firstAttribute="trailing" secondItem="w6g-qk-Aek" secondAttribute="trailing" constant="20" id="41u-8m-A5F"/>
                             <constraint firstItem="4TL-K0-80i" firstAttribute="leading" secondItem="Cwm-Xn-f0i" secondAttribute="trailing" constant="10" id="4w6-3v-MNG"/>
-                            <constraint firstAttribute="trailing" secondItem="mv8-hm-dtD" secondAttribute="trailing" constant="20" id="8Ed-pJ-dhA"/>
                             <constraint firstItem="Bh0-jx-OEf" firstAttribute="top" secondItem="KCB-ue-xKq" secondAttribute="bottom" constant="20" id="8dx-BZ-izS"/>
                             <constraint firstItem="Bh0-jx-OEf" firstAttribute="leading" secondItem="pCP-go-Wpe" secondAttribute="leading" constant="10" id="Lkw-zE-thr"/>
                             <constraint firstItem="KCB-ue-xKq" firstAttribute="top" secondItem="TGR-ue-l2z" secondAttribute="bottom" constant="20" id="N8d-9k-VPl"/>
@@ -167,18 +164,18 @@
                             <constraint firstItem="Cwm-Xn-f0i" firstAttribute="leading" secondItem="pCP-go-Wpe" secondAttribute="leading" constant="8" id="OJr-sQ-PQk"/>
                             <constraint firstItem="GkP-7G-bK9" firstAttribute="leading" secondItem="pCP-go-Wpe" secondAttribute="leading" constant="10" id="RkZ-le-bTy"/>
                             <constraint firstItem="B1a-bp-3Vj" firstAttribute="leading" secondItem="Cwm-Xn-f0i" secondAttribute="trailing" constant="10" id="U2J-pn-7NL"/>
+                            <constraint firstItem="w6g-qk-Aek" firstAttribute="leading" secondItem="pCP-go-Wpe" secondAttribute="leading" constant="20" id="UHh-6N-Fy0"/>
                             <constraint firstAttribute="trailing" secondItem="Bh0-jx-OEf" secondAttribute="trailing" constant="10" id="UTO-eI-B9C"/>
                             <constraint firstAttribute="trailing" secondItem="B1a-bp-3Vj" secondAttribute="trailing" constant="8" id="VOo-n6-gUi"/>
                             <constraint firstItem="KCB-ue-xKq" firstAttribute="leading" secondItem="pCP-go-Wpe" secondAttribute="leading" constant="10" id="ZSV-iV-ox2"/>
                             <constraint firstItem="TGR-ue-l2z" firstAttribute="top" secondItem="GkP-7G-bK9" secondAttribute="bottom" constant="20" id="Zh7-n4-ksi"/>
                             <constraint firstItem="Cwm-Xn-f0i" firstAttribute="top" secondItem="pCP-go-Wpe" secondAttribute="top" constant="10" id="aNf-Iw-nrX"/>
-                            <constraint firstAttribute="bottom" secondItem="mv8-hm-dtD" secondAttribute="bottom" constant="10" id="d4l-Zf-N01"/>
+                            <constraint firstAttribute="bottom" secondItem="w6g-qk-Aek" secondAttribute="bottom" constant="10" id="bU5-SO-BTL"/>
                             <constraint firstAttribute="trailing" secondItem="TGR-ue-l2z" secondAttribute="trailing" constant="10" id="fuC-Jc-iMd"/>
                             <constraint firstItem="4TL-K0-80i" firstAttribute="bottom" secondItem="Cwm-Xn-f0i" secondAttribute="bottom" constant="-3" id="hcG-uN-XCh"/>
                             <constraint firstItem="3Nq-i8-FYO" firstAttribute="leading" secondItem="4TL-K0-80i" secondAttribute="trailing" constant="6" id="nNC-Oe-puL"/>
                             <constraint firstAttribute="trailing" secondItem="GkP-7G-bK9" secondAttribute="trailing" constant="10" id="o61-cP-Sc0"/>
                             <constraint firstItem="3Nq-i8-FYO" firstAttribute="centerY" secondItem="4TL-K0-80i" secondAttribute="centerY" id="o9R-LZ-nZk"/>
-                            <constraint firstItem="mv8-hm-dtD" firstAttribute="leading" secondItem="pCP-go-Wpe" secondAttribute="leading" constant="20" id="qM8-JO-M7I"/>
                             <constraint firstAttribute="trailing" secondItem="aNd-LT-cwk" secondAttribute="trailing" id="rRO-MZ-d0l"/>
                             <constraint firstItem="TGR-ue-l2z" firstAttribute="leading" secondItem="pCP-go-Wpe" secondAttribute="leading" constant="10" id="rna-M8-sXY"/>
                             <constraint firstItem="aNd-LT-cwk" firstAttribute="leading" secondItem="pCP-go-Wpe" secondAttribute="leading" id="uv2-CN-Za4"/>
@@ -188,7 +185,7 @@
                     </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="pCP-go-Wpe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Emz-rZ-KBf"/>
                 <constraint firstItem="pCP-go-Wpe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="FxQ-Kt-DPT"/>
@@ -196,10 +193,10 @@
                 <constraint firstAttribute="bottom" secondItem="pCP-go-Wpe" secondAttribute="bottom" constant="10" id="mke-LS-S9T"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="575" height="594"/>
+            <size key="customSize" width="575" height="646"/>
             <connections>
-                <outlet property="btnAccept" destination="3Tc-Iw-qiQ" id="ZbC-KC-f4p"/>
-                <outlet property="btnCancel" destination="nRo-ti-ILh" id="f5m-CQ-mBm"/>
+                <outlet property="btnAccept" destination="pm7-oR-XEV" id="GBJ-Zs-gDa"/>
+                <outlet property="btnCancel" destination="qvR-V9-pW5" id="HLn-3g-MQo"/>
                 <outlet property="collectionView" destination="aNd-LT-cwk" id="F0p-1W-4HY"/>
                 <outlet property="lblAddress" destination="KCB-ue-xKq" id="eoC-KH-fgl"/>
                 <outlet property="lblNumberProduct" destination="8m3-2e-PPa" id="hLL-Ph-RZh"/>
@@ -210,7 +207,7 @@
                 <outlet property="lblUsername" destination="aCm-XQ-3qN" id="995-tn-1HU"/>
                 <outlet property="viewCell" destination="pCP-go-Wpe" id="bjs-nY-VVk"/>
             </connections>
-            <point key="canvasLocation" x="7.9710144927536239" y="333.48214285714283"/>
+            <point key="canvasLocation" x="7.9710144927536239" y="350.89285714285711"/>
         </collectionViewCell>
     </objects>
     <resources>
