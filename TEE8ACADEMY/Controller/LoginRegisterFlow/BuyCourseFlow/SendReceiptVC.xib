@@ -7,16 +7,8 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Quicksand-Bold.ttf">
-            <string>Quicksand-Bold</string>
-        </array>
-        <array key="Quicksand-Medium.ttf">
-            <string>Quicksand-Medium</string>
-        </array>
-    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SendReceiptVC" customModule="TEE8ACADEMY" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SendReceiptVC" customModule="TEE_8_ACADEMY" customModuleProvider="target">
             <connections>
                 <outlet property="btnBack" destination="ofv-b8-gIQ" id="IAn-Tq-nty"/>
                 <outlet property="btnContactSupport" destination="XMG-Sm-dt0" id="rZH-pq-JK7"/>
@@ -39,14 +31,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="STX-Ff-u1A">
-                    <rect key="frame" x="20" y="736.5" width="374" height="36"/>
+                    <rect key="frame" x="20" y="738" width="374" height="36"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofv-b8-gIQ">
                             <rect key="frame" x="0.0" y="0.0" width="182" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="36" id="7mE-S8-T3M"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <state key="normal" title="Back" backgroundImage="bg_button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -56,7 +48,7 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHT-iY-7uH">
                             <rect key="frame" x="192" y="0.0" width="182" height="36"/>
-                            <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <state key="normal" title="Submit" backgroundImage="bg_button">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -70,19 +62,19 @@
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4x-WT-fYc">
-                    <rect key="frame" x="20" y="54" width="374" height="20"/>
-                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                    <rect key="frame" x="20" y="54" width="374" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nq6-HO-lwx">
-                    <rect key="frame" x="0.0" y="84" width="414" height="632.5"/>
+                    <rect key="frame" x="0.0" y="82" width="414" height="636"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wK0-Vq-lMO">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="610"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XrM-ua-c2r">
-                                    <rect key="frame" x="20" y="150" width="374" height="100"/>
+                                    <rect key="frame" x="20" y="148" width="374" height="100"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="100" id="4Xt-QB-o6y"/>
                                     </constraints>
@@ -91,28 +83,26 @@
                                         <action selector="tapOnVCB:" destination="-1" eventType="touchUpInside" id="1HD-us-cNQ"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37Z-b5-OjY">
-                                    <rect key="frame" x="20" y="270" width="374" height="60"/>
-                                    <string key="text">Please send us your invoice, after payment confirm, your account will be activated.
-Thank you</string>
-                                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please send us your invoice, after payment confirm, your account will be activated. Thank you" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37Z-b5-OjY">
+                                    <rect key="frame" x="20" y="268" width="374" height="36"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gyy-MV-7pD">
-                                    <rect key="frame" x="20" y="346" width="374" height="250"/>
+                                    <rect key="frame" x="20" y="320" width="374" height="250"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="250" id="tZP-rq-HfJ"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your payment method:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u24-kR-eGY">
-                                    <rect key="frame" x="20" y="10" width="374" height="20"/>
-                                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                                    <rect key="frame" x="20" y="10" width="374" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9W0-Ya-aRv">
-                                    <rect key="frame" x="20" y="40" width="374" height="100"/>
+                                    <rect key="frame" x="20" y="38" width="374" height="100"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="100" id="dNC-dH-gzd"/>
                                     </constraints>
@@ -122,7 +112,7 @@ Thank you</string>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VK1-mO-fhT">
-                                    <rect key="frame" x="187" y="360" width="40" height="40"/>
+                                    <rect key="frame" x="187" y="334" width="40" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="GIn-H5-nJQ"/>
                                         <constraint firstAttribute="width" constant="40" id="VDb-9Z-BLh"/>
@@ -133,8 +123,8 @@ Thank you</string>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VG-J2-gI6">
-                                    <rect key="frame" x="179.5" y="408" width="55.5" height="20"/>
-                                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="16"/>
+                                    <rect key="frame" x="182.5" y="382" width="49" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.52549019610000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -171,19 +161,19 @@ Thank you</string>
                     </constraints>
                 </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeQ-K7-qmH">
-                    <rect key="frame" x="20" y="828.5" width="374" height="37.5"/>
+                    <rect key="frame" x="20" y="830" width="374" height="36"/>
                     <string key="text">Hotline 0919188158 - 0888777158/198
 WWW.TEE8.EDU.VN</string>
-                    <fontDescription key="fontDescription" name="Quicksand-Medium" family="Quicksand Medium" pointSize="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-Sm-dt0">
-                    <rect key="frame" x="20" y="782.5" width="374" height="36"/>
+                    <rect key="frame" x="20" y="784" width="374" height="36"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="2R1-52-T38"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Quicksand-Bold" family="Quicksand" pointSize="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="Contact Support" backgroundImage="bg_button">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>

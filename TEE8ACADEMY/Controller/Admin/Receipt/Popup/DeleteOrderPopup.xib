@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeleteOrderPopup" customModule="TEE_8_ACADEMY" customModuleProvider="target">
+            <connections>
+                <outlet property="btnCancel" destination="oii-jg-GFs" id="goE-w9-Z35"/>
+                <outlet property="btnDelete" destination="3zk-yh-dlD" id="agk-fK-3nr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewPopup" destination="AgE-oh-Zth" id="le3-15-Gd1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AgE-oh-Zth">
+                    <rect key="frame" x="10" y="358" width="394" height="180"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xoá đơn hàng ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRL-oD-g4a">
+                            <rect key="frame" x="10" y="60" width="374" height="59"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Q5-Mj-G5s">
+                            <rect key="frame" x="5" y="139" width="384" height="36"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oii-jg-GFs">
+                                    <rect key="frame" x="0.0" y="0.0" width="189.5" height="36"/>
+                                    <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <state key="normal" title="Huỷ" backgroundImage="bg_button">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tapOnCancel:" destination="-1" eventType="touchUpInside" id="saJ-IO-I7E"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zk-yh-dlD">
+                                    <rect key="frame" x="194.5" y="0.0" width="189.5" height="36"/>
+                                    <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <state key="normal" title="Xoá" backgroundImage="bg_button">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tapOnDelete:" destination="-1" eventType="touchUpInside" id="ttQ-Lg-7A8"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="cf1-of-aVK"/>
+                            </constraints>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDg-Af-7yM">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHb-aa-nrC">
+                                    <rect key="frame" x="168.5" y="9.5" width="57" height="21.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.49803921569999998" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="XHb-aa-nrC" firstAttribute="centerY" secondItem="IDg-Af-7yM" secondAttribute="centerY" id="Dor-qh-ze9"/>
+                                <constraint firstItem="XHb-aa-nrC" firstAttribute="centerX" secondItem="IDg-Af-7yM" secondAttribute="centerX" id="rwZ-IR-Aqd"/>
+                                <constraint firstAttribute="height" constant="40" id="t3T-Js-uHu"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="5Q5-Mj-G5s" secondAttribute="bottom" constant="5" id="2ON-tO-N0j"/>
+                        <constraint firstItem="5Q5-Mj-G5s" firstAttribute="centerX" secondItem="AgE-oh-Zth" secondAttribute="centerX" id="ESF-Q9-zQT"/>
+                        <constraint firstItem="5Q5-Mj-G5s" firstAttribute="leading" secondItem="AgE-oh-Zth" secondAttribute="leading" constant="5" id="LfI-Zb-QKJ"/>
+                        <constraint firstAttribute="trailing" secondItem="5Q5-Mj-G5s" secondAttribute="trailing" constant="5" id="OiD-xr-DHz"/>
+                        <constraint firstItem="IDg-Af-7yM" firstAttribute="leading" secondItem="AgE-oh-Zth" secondAttribute="leading" id="Pmx-Al-g62"/>
+                        <constraint firstItem="oRL-oD-g4a" firstAttribute="leading" secondItem="AgE-oh-Zth" secondAttribute="leading" constant="10" id="U6X-OQ-wsy"/>
+                        <constraint firstItem="oRL-oD-g4a" firstAttribute="top" secondItem="IDg-Af-7yM" secondAttribute="bottom" constant="20" id="UUR-8C-p7e"/>
+                        <constraint firstAttribute="height" constant="180" id="cLw-Zu-Jj4"/>
+                        <constraint firstItem="5Q5-Mj-G5s" firstAttribute="top" secondItem="oRL-oD-g4a" secondAttribute="bottom" constant="20" id="fpS-nV-hvc"/>
+                        <constraint firstAttribute="trailing" secondItem="IDg-Af-7yM" secondAttribute="trailing" id="haa-W9-XhA"/>
+                        <constraint firstItem="oRL-oD-g4a" firstAttribute="centerX" secondItem="AgE-oh-Zth" secondAttribute="centerX" id="iGX-WO-WxI"/>
+                        <constraint firstAttribute="trailing" secondItem="oRL-oD-g4a" secondAttribute="trailing" constant="10" id="ieC-qg-dE2"/>
+                        <constraint firstItem="IDg-Af-7yM" firstAttribute="top" secondItem="AgE-oh-Zth" secondAttribute="top" id="rrr-u2-YMC"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="AgE-oh-Zth" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="0ui-al-jnc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AgE-oh-Zth" secondAttribute="trailing" constant="10" id="C8t-0k-cly"/>
+                <constraint firstItem="AgE-oh-Zth" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gHQ-zk-uFf"/>
+                <constraint firstItem="AgE-oh-Zth" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pvJ-dV-jwq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="132" y="25"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_button" width="129" height="22"/>
+    </resources>
+</document>

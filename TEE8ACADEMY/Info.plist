@@ -44,10 +44,7 @@
 	<string>TEE 8 ACADEMY muốn sử dụng thư viện ảnh của bạn để gửi ảnh</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Quicksand-Bold.ttf</string>
-		<string>Quicksand-Light.ttf</string>
-		<string>Quicksand-Medium.ttf</string>
-		<string>Quicksand-Regular.ttf</string>
+		<string>didact-gothic.regular.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

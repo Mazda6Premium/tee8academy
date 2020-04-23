@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopupDeleteVideo" customModule="TEE_8_ACADEMY" customModuleProvider="target">
+            <connections>
+                <outlet property="btnCancel" destination="9XH-iQ-fI6" id="xw9-E8-vGv"/>
+                <outlet property="btnDelete" destination="wqG-hz-4DS" id="xZQ-8z-Mnb"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewPopup" destination="zrH-gI-Q2L" id="wvj-Ir-DYy"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrH-gI-Q2L">
+                    <rect key="frame" x="10" y="358" width="394" height="180"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Xoá video ?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xys-t9-QXu">
+                            <rect key="frame" x="10" y="60" width="374" height="59"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HRN-w8-yMq">
+                            <rect key="frame" x="5" y="139" width="384" height="36"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9XH-iQ-fI6">
+                                    <rect key="frame" x="0.0" y="0.0" width="189.5" height="36"/>
+                                    <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <state key="normal" title="Huỷ" backgroundImage="bg_button">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tapOnCancel:" destination="-1" eventType="touchUpInside" id="XHa-ge-byQ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqG-hz-4DS">
+                                    <rect key="frame" x="194.5" y="0.0" width="189.5" height="36"/>
+                                    <color key="backgroundColor" red="0.1019607843" green="0.35686274509999999" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <state key="normal" title="Xoá" backgroundImage="bg_button">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tapOnDelete:" destination="-1" eventType="touchUpInside" id="pgn-TO-d6e"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="6HD-Bf-eYN"/>
+                            </constraints>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lgk-cn-Yi2">
+                            <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xq0-QZ-LbX">
+                                    <rect key="frame" x="168.5" y="9.5" width="57" height="21.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.49803921569999998" blue="0.64705882349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="2r8-hd-kuH"/>
+                                <constraint firstItem="Xq0-QZ-LbX" firstAttribute="centerY" secondItem="Lgk-cn-Yi2" secondAttribute="centerY" id="PU5-gQ-6aq"/>
+                                <constraint firstItem="Xq0-QZ-LbX" firstAttribute="centerX" secondItem="Lgk-cn-Yi2" secondAttribute="centerX" id="ekj-NX-6X0"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="Lgk-cn-Yi2" firstAttribute="top" secondItem="zrH-gI-Q2L" secondAttribute="top" id="4U3-WS-ZaV"/>
+                        <constraint firstAttribute="bottom" secondItem="HRN-w8-yMq" secondAttribute="bottom" constant="5" id="9iT-5j-Ze5"/>
+                        <constraint firstItem="HRN-w8-yMq" firstAttribute="leading" secondItem="zrH-gI-Q2L" secondAttribute="leading" constant="5" id="Fb2-vn-601"/>
+                        <constraint firstAttribute="trailing" secondItem="Xys-t9-QXu" secondAttribute="trailing" constant="10" id="K0D-lR-zzX"/>
+                        <constraint firstItem="HRN-w8-yMq" firstAttribute="top" secondItem="Xys-t9-QXu" secondAttribute="bottom" constant="20" id="Mds-rX-mtX"/>
+                        <constraint firstAttribute="trailing" secondItem="HRN-w8-yMq" secondAttribute="trailing" constant="5" id="T6t-rh-Hku"/>
+                        <constraint firstAttribute="trailing" secondItem="Lgk-cn-Yi2" secondAttribute="trailing" id="Uc1-D5-aVx"/>
+                        <constraint firstItem="Lgk-cn-Yi2" firstAttribute="leading" secondItem="zrH-gI-Q2L" secondAttribute="leading" id="ZwQ-EG-xiJ"/>
+                        <constraint firstItem="Xys-t9-QXu" firstAttribute="leading" secondItem="zrH-gI-Q2L" secondAttribute="leading" constant="10" id="eRl-pv-gs7"/>
+                        <constraint firstItem="HRN-w8-yMq" firstAttribute="centerX" secondItem="zrH-gI-Q2L" secondAttribute="centerX" id="o18-O4-ghe"/>
+                        <constraint firstItem="Xys-t9-QXu" firstAttribute="centerX" secondItem="zrH-gI-Q2L" secondAttribute="centerX" id="qYT-3V-ivU"/>
+                        <constraint firstAttribute="height" constant="180" id="u6l-8d-pO6"/>
+                        <constraint firstItem="Xys-t9-QXu" firstAttribute="top" secondItem="Lgk-cn-Yi2" secondAttribute="bottom" constant="20" id="uqG-N2-BOo"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="zrH-gI-Q2L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="JLE-dC-k52"/>
+                <constraint firstItem="zrH-gI-Q2L" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="POz-32-A6J"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zrH-gI-Q2L" secondAttribute="trailing" constant="10" id="low-3l-Ewg"/>
+                <constraint firstItem="zrH-gI-Q2L" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="wvD-3H-IXS"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="132" y="153"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bg_button" width="129" height="22"/>
+    </resources>
+</document>

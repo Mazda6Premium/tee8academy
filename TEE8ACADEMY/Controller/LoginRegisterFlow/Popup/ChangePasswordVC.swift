@@ -14,6 +14,7 @@ class ChangePasswordVC: BaseViewController {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtConfirmPassword: UITextField!
     @IBOutlet weak var btnContinue: UIButton!
+    @IBOutlet weak var btnCancel: UIButton!
     
     var user: User?
     
@@ -28,7 +29,7 @@ class ChangePasswordVC: BaseViewController {
         view.isOpaque = false
         view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
-        roundCorner(views: [viewPopup, txtPassword, txtConfirmPassword, btnContinue], radius: 8)
+        roundCorner(views: [viewPopup, txtPassword, txtConfirmPassword, btnContinue, btnCancel], radius: 8)
         
         txtPassword.delegate = self
         txtConfirmPassword.delegate = self
@@ -73,6 +74,10 @@ class ChangePasswordVC: BaseViewController {
                 return
             }
         }
+    }
+    
+    @IBAction func tapOnCancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     @objc func dismissView(_ sender: Any) {

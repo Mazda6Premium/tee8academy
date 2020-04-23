@@ -12,4 +12,5 @@ class SessionData {
     
     static let shared = SessionData()
     var userData: User?
+    var cart: [Cart]?
 }

@@ -23,10 +23,8 @@ class AcademyVC: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var arrayCourse = [Course]()
-    var screenWidth: CGFloat {
-        return UIScreen.main.bounds.size.width
-    }
     var screenWidthVideo: CGFloat = 0.1
+    var screenHeightVideo: CGFloat = 0.1
     var courseRegisted = [Course]()
 
     let refreshControl = UIRefreshControl()
@@ -39,9 +37,8 @@ class AcademyVC: BaseViewController {
         bindData()
         getDataFromFirebase()
         setupRefreshControl()
-        
     }
-    
+        
     func bindData() {
         if let user = SessionData.shared.userData {
             courseRegisted = user.course
@@ -93,8 +90,21 @@ class AcademyVC: BaseViewController {
                     
                     // SO SANH 2 ARRAY
                     self.courseRegisted.forEach { (data) in
-                        if let indexObject = self.arrayCourse.firstIndex(where: {$0.name == data.name}) {
-                            self.arrayCourse[indexObject].isUnLock = true
+                        if data.name == "ALL COURSE" {
+                            self.arrayCourse.forEach { (response) in
+                                response.isUnLock = true
+                            }
+                        } else {
+                            if let indexObject = self.arrayCourse.firstIndex(where: {$0.name == data.name}) {
+                                self.arrayCourse[indexObject].isUnLock = true
+                            }
+                        }
+                    }
+                    
+                    // SOURCE VIDEO
+                    self.arrayCourse.forEach { (value) in
+                        value.video.sort { (v1, v2) -> Bool in
+                            return v1.index < v2.index
                         }
                     }
                     
@@ -142,21 +152,27 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         }
         
         if indexPath.section % 2 == 0 {
-            let course = arrayCourse[indexPath.section / 2]
-            cell0.btnTitle.setTitle("     \(course.name)", for: .normal)
-            
+            cell0.btnTitle.setTitle("     \(data.name)", for: .normal)
             return cell0
         } else {
             let course = arrayCourse[indexPath.section / 2].video[indexPath.row]
             cell1.lblTitle.text = course.name
-            cell1.lblDescription.text = course.description
-            
+//            cell1.lblDescription.text = course.description
+            cell1.btnInfo.tag = indexPath.row
+            cell1.tapInfo = { index in
+                let title = course.name
+                let des = course.description
+                let vc = PopupInfo(nibName: "PopupInfo", bundle: nil)
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.des = "\(title)\n\n\(des)"
+                self.present(vc, animated: true, completion: nil)
+            }
             
             switch course.type {
             case "Video":
                 if let videoId = getYoutubeId(youtubeUrl: course.linkVideo) {
                     // thumbnail
-                    let urlString = "https://i1.ytimg.com/vi/\(String(describing: videoId))/hqdefault.jpg"
+                    let urlString = "https://i1.ytimg.com/vi/\(String(describing: videoId))/maxresdefault.jpg"
                     if let url = URL(string: urlString) {
                         cell1.imgVideo.sd_setImage(with: url, completed: nil)
                     } else {
@@ -209,9 +225,7 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         }
     }
     
-    func getYoutubeId(youtubeUrl: String) -> String? {
-        return URLComponents(string: youtubeUrl)?.queryItems?.first(where: { $0.name == "v" })?.value
-    }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.section % 2 == 0 {
@@ -220,11 +234,13 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
             let course = arrayCourse[indexPath.section / 2]
             if course.isOpen {
                 screenWidthVideo = UIScreen.main.bounds.size.width / 2 - 15
+                screenHeightVideo = 140
             } else {
                 screenWidthVideo = 0.1
+                screenHeightVideo = 0.1
             }
             
-            return CGSize(width: screenWidthVideo, height: screenWidthVideo)
+            return CGSize(width: screenWidthVideo, height: screenHeightVideo)
         }
     }
     
@@ -233,7 +249,7 @@ extension AcademyVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 0
     }
 }
 
