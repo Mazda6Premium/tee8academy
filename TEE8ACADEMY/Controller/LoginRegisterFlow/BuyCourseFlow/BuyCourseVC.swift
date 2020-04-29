@@ -92,16 +92,24 @@ class BuyCourseVC: BaseViewController {
             user?.course.append(contentsOf: arrayChooseCourse)
             user?.course.append(contentsOf: arrayFreeCourse)
             dump(user?.course)
-            let vc = SendReceiptVC(nibName: "SendReceiptVC", bundle: nil)
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .overFullScreen
-            vc.user = self.user
-            self.present(vc, animated: true) {
-                self.arrayChooseCourse.removeAll()
-                self.arrayCourse.forEach { (course) in
-                    course.isSelected = false
+            if !arrayChooseCourse[0].isStoreCheck {
+                let vc = SendReceiptVC(nibName: "SendReceiptVC", bundle: nil)
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                vc.user = self.user
+                self.present(vc, animated: true) {
+                    self.arrayChooseCourse.removeAll()
+                    self.arrayCourse.forEach { (course) in
+                        course.isSelected = false
+                    }
+                    self.tableView.reloadData()
                 }
-                self.tableView.reloadData()
+            } else {
+                let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true, completion: nil)
             }
         } else {
             showToast(message: "Bạn cần chọn ít nhất 1 khoá học có phí")

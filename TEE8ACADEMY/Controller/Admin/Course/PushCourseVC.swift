@@ -115,8 +115,9 @@ class PushCourseVC: BaseViewController {
         guard let description = tvDescriptionCourse.text else { return }
         guard let price = Double(txtPrice.text!.digits) else { return }
         let time = Date().millisecondsSince1970
+//        var isStoreCheck = false // that means no price in course to pass store check
         
-        let value = ["name": name, "description": description, "price" : price, "time" : time] as [String : Any]
+        let value = ["name": name, "description": description, "price" : price, "time" : time, "isStoreCheck": false] as [String : Any]
         databaseReference.child("Courses").child(name).setValue(value)
         
         let priceAfterSale = (self.allCoursePrice / (1 - self.sale) + price) * (1 - self.sale)

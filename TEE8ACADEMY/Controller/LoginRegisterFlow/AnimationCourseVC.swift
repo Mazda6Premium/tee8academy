@@ -86,15 +86,23 @@ class AnimationCourseVC: BaseViewController {
             databaseReference.child("Courses").child(snapshot.key).observeSingleEvent(of: .value) { (snapshot1) in
                 if let dict = snapshot1.value as? [String: Any] {
                     let course = Course(fromDict: dict)
-                    if course.price != 0 {
+                    if !course.isStoreCheck {
+                        if course.price != 0 {
+                            self.arrayCourse.append(course)
+                            self.arrayCourse.sort(by: { (course1, course2) -> Bool in
+                                return Int64(course1.price) > Int64(course2.price)
+                            })
+                        } else {
+                            self.arrayFreeCourse.append(course)
+                        }
+                    } else {
                         self.arrayCourse.append(course)
+                        self.arrayCourse.removeAll(where: {$0.name == "ALL COURSE"})
                         self.arrayCourse.sort(by: { (course1, course2) -> Bool in
                             return Int64(course1.price) > Int64(course2.price)
                         })
-                    } else {
-                        self.arrayFreeCourse.append(course)
                     }
-                    
+
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
@@ -117,24 +125,34 @@ class AnimationCourseVC: BaseViewController {
     @IBAction func tapOnContinue(_ sender: Any) {
         user?.course.removeAll()
         view.endEditing(true)
-        if arrayChooseCourse.count != 0 {
-            user?.course.append(contentsOf: arrayChooseCourse)
-            user?.course.append(contentsOf: arrayFreeCourse)
-            dump(user?.course)
-            let vc = SendReceiptVC(nibName: "SendReceiptVC", bundle: nil)
-            vc.modalTransitionStyle = .crossDissolve
-            vc.modalPresentationStyle = .overFullScreen
-            vc.user = self.user
-            self.present(vc, animated: true) {
-                self.arrayChooseCourse.removeAll()
-                self.arrayCourse.forEach { (course) in
-                    course.isSelected = false
+        if arrayCourse[0].isStoreCheck == false {
+            if arrayChooseCourse.count != 0 {
+                user?.course.append(contentsOf: arrayChooseCourse)
+                user?.course.append(contentsOf: arrayFreeCourse)
+                dump(user?.course)
+                let vc = SendReceiptVC(nibName: "SendReceiptVC", bundle: nil)
+                vc.modalTransitionStyle = .crossDissolve
+                vc.modalPresentationStyle = .overFullScreen
+                vc.user = self.user
+                self.present(vc, animated: true) {
+                    self.arrayChooseCourse.removeAll()
+                    self.arrayCourse.forEach { (course) in
+                        course.isSelected = false
+                    }
+                    self.tableView.reloadData()
                 }
-                self.tableView.reloadData()
+            } else {
+                showToast(message: "Bạn cần chọn ít nhất 1 khoá học có phí")
             }
         } else {
-            showToast(message: "Bạn cần chọn ít nhất 1 khoá học có phí")
+            let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true, completion: nil)
         }
+        
+        
     }
     
     @IBAction func tapOnSkip(_ sender: Any) {
