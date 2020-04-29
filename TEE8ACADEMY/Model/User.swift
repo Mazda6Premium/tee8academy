@@ -18,6 +18,7 @@ class Course {
     var isOpen = false
     var isUnLock = false
     var isSwiped = true
+    var isStoreCheck = false // no price in course to pass store check
     
     init(name: String, price: Double) {
         self.name = name
@@ -33,6 +34,7 @@ class Course {
         self.price = fromDict["price"] as? Double ?? 0.0
         self.description = fromDict["description"] as? String ?? ""
         self.time = fromDict["time"] as? Double ?? 0.0
+        self.isStoreCheck = fromDict["isStoreCheck"] as? Bool ?? false
         if let video = fromDict["videos"] as? [[String: Any]] {
             self.video = video.map({Video(dict: $0)})
         }

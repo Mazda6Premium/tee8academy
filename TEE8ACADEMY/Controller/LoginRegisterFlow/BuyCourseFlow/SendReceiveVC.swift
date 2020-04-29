@@ -10,6 +10,11 @@ import UIKit
 import Firebase
 import JGProgressHUD
 
+enum CaseReceipt {
+    case register
+    case buy
+}
+
 class SendReceiptVC: BaseViewController {
     
     @IBOutlet weak var lblTitle: UILabel!
@@ -22,7 +27,7 @@ class SendReceiptVC: BaseViewController {
     @IBOutlet weak var lblUpload: UILabel!
     @IBOutlet weak var btnBack: UIButton!
     
-    
+    var caseReceipt: CaseReceipt = .register
     var user: User?
     var imagePicker = UIImagePickerController()
     var paymentMethod = ""
@@ -152,7 +157,16 @@ class SendReceiptVC: BaseViewController {
     }
     
     @objc func dismissView() {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+        switch caseReceipt {
+        case .register:
+            let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
+            vc.modalTransitionStyle = .crossDissolve
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(vc, animated: true, completion: nil)
+        case .buy:
+            self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+        }
     }
     
     @IBAction func tapOnBack(_ sender: Any) {

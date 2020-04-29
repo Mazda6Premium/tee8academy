@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseDatabase
 
 class ViewController: BaseViewController {
@@ -69,34 +70,43 @@ class ViewController: BaseViewController {
         self.view.endEditing(true)
         showLoading()
         checkLogic()
-        // CHECK 4 CONDITIONS PASSWORD + UUID + IPHONE MODEL
-        if let user = user {
-            if txtEmail.text == "admin" && txtPassword.text == "123456" {
-                self.loginSuccess()
-                return
-            }
-            guard let phoneId = UIDevice.current.identifierForVendor?.uuidString else {return}
-            let phoneModel = UIDevice.modelName
-            guard let password = txtPassword.text else {return}
-            if password == user.password { // CHECK PASSWORD
-                if phoneId == user.phoneId && phoneModel == user.phoneModel { // CHECK ID AND MODEL
-                    if !user.isBlock {
+        
+        if txtEmail.text == "admin" {
+            databaseReference.child("Users").child("Admin").observe(.value) { (respon) in
+                if let dict = respon.value as? [String: Any] {
+                    let dataUser = User(dict: dict)
+                    if self.txtPassword.text == dataUser.password {
                         self.loginSuccess()
+                        return
+                    }
+                }
+            }
+        } else {
+            // CHECK 4 CONDITIONS PASSWORD + UUID + IPHONE MODEL
+            if let user = user {
+                guard let phoneId = UIDevice.current.identifierForVendor?.uuidString else {return}
+                let phoneModel = UIDevice.modelName
+                guard let password = txtPassword.text else {return}
+                if password == user.password { // CHECK PASSWORD
+                    if phoneId == user.phoneId && phoneModel == user.phoneModel { // CHECK ID AND MODEL
+                        if !user.isBlock {
+                            self.loginSuccess()
+                        } else {
+                            self.showToast(message: "Tài khoản của bạn đã bị khoá do vi phạm quy định của ứng dụng, vui lòng liên hệ quản trị viên để biết thêm thông tin chi tiết.", duration: 5)
+                            self.hideLoading()
+                        }
                     } else {
-                        self.showToast(message: "Tài khoản của bạn đã bị khoá do vi phạm quy định của ứng dụng, vui lòng liên hệ quản trị viên để biết thêm thông tin chi tiết.", duration: 5)
+                        self.showToast(message: "Thiết bị đăng nhập không hợp lệ, mỗi tài khoản chỉ được đăng nhập trên một thiết bị duy nhất, vui lòng liên hệ quản trị viên để biết thêm thông tin chi tiết.", duration: 5)
                         self.hideLoading()
                     }
                 } else {
-                    self.showToast(message: "Thiết bị đăng nhập không hợp lệ, mỗi tài khoản chỉ được đăng nhập trên một thiết bị duy nhất, vui lòng liên hệ quản trị viên để biết thêm thông tin chi tiết.", duration: 5)
+                    self.showToast(message: "Sai mật khẩu, vui lòng nhập lại.")
                     self.hideLoading()
                 }
             } else {
-                self.showToast(message: "Sai mật khẩu, vui lòng nhập lại.")
-                self.hideLoading()
+                showToast(message: "Có lỗi xảy ra, vui lòng thử lại sau.")
+                hideLoading()
             }
-        } else {
-            showToast(message: "Có lỗi xảy ra, vui lòng thử lại sau.")
-            hideLoading()
         }
     }
     

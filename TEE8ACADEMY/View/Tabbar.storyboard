@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tee Store-->
+        <!--Store-->
         <scene sceneID="QQc-25-2Ov">
             <objects>
                 <viewController id="bWu-xH-R6a" customClass="StoreVC" customModule="TEE_8_ACADEMY" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,7 +89,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LLt-7l-YPO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tee Store" image="cart" selectedImage="cartfill" id="a7Z-3V-Bar"/>
+                    <tabBarItem key="tabBarItem" title="Store" image="cart" selectedImage="cartfill" id="a7Z-3V-Bar"/>
                     <connections>
                         <outlet property="btnCart" destination="YTM-Og-Jsg" id="DSt-Ix-WRX"/>
                         <outlet property="collectionView" destination="jRG-Fn-US9" id="ovX-zs-pw2"/>
@@ -102,7 +102,7 @@
             </objects>
             <point key="canvasLocation" x="376.81159420289856" y="-319.56521739130437"/>
         </scene>
-        <!--Tee Account-->
+        <!--Account-->
         <scene sceneID="1bB-ts-Bi4">
             <objects>
                 <viewController id="hHW-5f-Hk4" customClass="AccountVC" customModule="TEE_8_ACADEMY" customModuleProvider="target" sceneMemberID="viewController">
@@ -351,7 +351,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pMJ-mh-dJ2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tee Account" image="user" selectedImage="user_fill" id="Y6X-Bj-4eM"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="user" selectedImage="user_fill" id="Y6X-Bj-4eM"/>
                     <connections>
                         <outlet property="heightStack1" destination="aXF-jE-qsg" id="yY6-7C-adT"/>
                         <outlet property="heightStack2" destination="MVb-Rw-ne5" id="xjA-vQ-tKg"/>
@@ -380,7 +380,7 @@
             </objects>
             <point key="canvasLocation" x="1085.5999999999999" y="-320.68965517241384"/>
         </scene>
-        <!--Tee Academy-->
+        <!--Tee 8 Academy-->
         <scene sceneID="BX8-Ic-MxF">
             <objects>
                 <viewController id="eYp-Id-ccl" customClass="AcademyVC" customModule="TEE_8_ACADEMY" customModuleProvider="target" sceneMemberID="viewController">
@@ -445,7 +445,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="osz-h0-yxW"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tee Academy" image="video" selectedImage="videofill" id="Drq-Rn-5z8"/>
+                    <tabBarItem key="tabBarItem" title="Tee 8 Academy" image="video" selectedImage="videofill" id="Drq-Rn-5z8"/>
                     <connections>
                         <outlet property="collectionView" destination="rD4-3N-2B0" id="S77-U0-XEF"/>
                     </connections>
