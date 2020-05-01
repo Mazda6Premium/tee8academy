@@ -127,13 +127,16 @@ class AnimationCourseVC: BaseViewController {
         view.endEditing(true)
         if arrayCourse[0].isStoreCheck == false {
             if arrayChooseCourse.count != 0 {
+//                if (user?.course.count)! == 0 {
+//                    user?.course.append(contentsOf: arrayFreeCourse)
+//                }
                 user?.course.append(contentsOf: arrayChooseCourse)
-                user?.course.append(contentsOf: arrayFreeCourse)
                 dump(user?.course)
                 let vc = SendReceiptVC(nibName: "SendReceiptVC", bundle: nil)
                 vc.modalTransitionStyle = .crossDissolve
                 vc.modalPresentationStyle = .overFullScreen
                 vc.user = self.user
+                vc.caseReceipt = .register
                 self.present(vc, animated: true) {
                     self.arrayChooseCourse.removeAll()
                     self.arrayCourse.forEach { (course) in

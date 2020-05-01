@@ -44,7 +44,7 @@ class OrderCell: FSPagerViewCell {
         lblPhone.text = "Phone: \(order.phone)"
         lblAddress.text = "Address: \(order.address)"
         lblNumberProduct.text = "Number product: \(order.quantity)"
-        lblTotalPayment.text = "Total payment \(formatMoney(order.totalPayment)) VND"
+        lblTotalPayment.text = "Total payment: \(formatMoney(order.totalPayment)) VND"
         
         let time = order.time
         let date = Date(timeIntervalSince1970: TimeInterval(time) / 1000)

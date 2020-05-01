@@ -121,9 +121,6 @@ import UIKit
         thumbView.frame = selectFrame
         thumbView.backgroundColor = thumbColor
         thumbView.layer.cornerRadius = thumbView.frame.height / 2
-        
-//        displayNewSelectedIndex()
-        
     }
     
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {

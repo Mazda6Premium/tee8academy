@@ -78,6 +78,9 @@ class ViewController: BaseViewController {
                     if self.txtPassword.text == dataUser.password {
                         self.loginSuccess()
                         return
+                    } else {
+                        self.showToast(message: "Sai mật khẩu, vui lòng nhập lại.")
+                        self.hideLoading()
                     }
                 }
             }
