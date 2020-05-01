@@ -174,6 +174,8 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
     @objc func tapOnActive(sender: UIButton) {
         showLoading()
         let user = arrayUser[sender.tag]
+        databaseReference.child("ReceiptSuccess").child(user.receiptPostId).setValue(user.asDictionary())
+
         self.arrayCourse.append(contentsOf: user.course)
         
         databaseReference.child("Users").child(user.userId).observeSingleEvent(of: .value) { (snapshot) in

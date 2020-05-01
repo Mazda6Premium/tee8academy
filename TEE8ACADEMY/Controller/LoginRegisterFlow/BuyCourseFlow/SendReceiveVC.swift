@@ -161,12 +161,22 @@ class SendReceiptVC: BaseViewController {
         case .register:
             let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
             let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
+            // ASSIGN COURSE FOR USER
             user?.course = [Course]()
             vc.modalTransitionStyle = .crossDissolve
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
         case .buy:
-            self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+            if let data = user {
+                databaseReference.child("Users").child(data.userId).observe(.value) { (snapshot) in
+                    if let dict = snapshot.value as? [String: Any] {
+                        let userData = User.getUserData(dict: dict, key: snapshot.key)
+                        // UPDATE SESSION DATA
+                        SessionData.shared.userData = userData
+                        self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+                    }
+                }
+            }
         }
     }
     

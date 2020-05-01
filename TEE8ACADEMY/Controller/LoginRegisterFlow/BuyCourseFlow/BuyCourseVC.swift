@@ -89,14 +89,17 @@ class BuyCourseVC: BaseViewController {
         user?.course.removeAll()
         view.endEditing(true)
         if arrayChooseCourse.count != 0 {
+//            if (user?.course.count)! == 0 {
+//                user?.course.append(contentsOf: arrayFreeCourse)
+//            }
             user?.course.append(contentsOf: arrayChooseCourse)
-            user?.course.append(contentsOf: arrayFreeCourse)
             dump(user?.course)
             if !arrayChooseCourse[0].isStoreCheck {
                 let vc = SendReceiptVC(nibName: "SendReceiptVC", bundle: nil)
                 vc.modalTransitionStyle = .crossDissolve
                 vc.modalPresentationStyle = .overFullScreen
                 vc.user = self.user
+                vc.caseReceipt = .buy
                 self.present(vc, animated: true) {
                     self.arrayChooseCourse.removeAll()
                     self.arrayCourse.forEach { (course) in
