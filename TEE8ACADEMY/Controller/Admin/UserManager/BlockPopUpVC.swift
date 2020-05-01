@@ -53,6 +53,7 @@ class BlockPopUpVC: BaseViewController {
             break
         }
     }
+    
     @IBAction func tapOnBlock(_ sender: Any) {
         switch statusUser {
         case .block:

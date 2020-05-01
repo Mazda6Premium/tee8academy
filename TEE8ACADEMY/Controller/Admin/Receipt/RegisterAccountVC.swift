@@ -204,7 +204,7 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
         let user = arrayUser[sender.tag]
         deleteImage(index: sender.tag)
         databaseReference.child("Receipts").child(user.receiptPostId).removeValue()
-
+        hideLoading()
         self.arrayUser.removeAll()
         self.getDataFromFirebase()
         self.pageView.reloadData()
