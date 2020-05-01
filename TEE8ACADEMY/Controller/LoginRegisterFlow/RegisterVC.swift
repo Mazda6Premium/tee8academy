@@ -97,12 +97,12 @@ class RegisterVC: BaseViewController {
                 return
             }
             
-            if !txtPhone.text!.hasPrefix("0") || txtPhone.text!.hasPrefix("00") {
-                txtPhone.textColor = .red
-                showToast(message: "Số điện thoại không đúng định dạng.")
-                hideLoading()
-                return
-            }
+//            if !txtPhone.text!.hasPrefix("0") || txtPhone.text!.hasPrefix("00") {
+//                txtPhone.textColor = .red
+//                showToast(message: "Số điện thoại không đúng định dạng.")
+//                hideLoading()
+//                return
+//            }
             
             guard let phoneId = UIDevice.current.identifierForVendor?.uuidString else {return}
             let phoneModel = UIDevice.modelName

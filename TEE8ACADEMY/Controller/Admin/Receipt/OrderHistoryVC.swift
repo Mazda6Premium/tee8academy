@@ -12,6 +12,9 @@ import FSPagerView
 class OrderHistoryVC: BaseViewController {
     
     @IBOutlet weak var pageView: FSPagerView!
+    @IBOutlet weak var pageViewCourse: FSPagerView!
+    
+    @IBOutlet weak var segmentedControl: SegmentedControl!
     
     var arrayOrder = [Order]()
     
@@ -21,6 +24,7 @@ class OrderHistoryVC: BaseViewController {
         // Do any additional setup after loading the view.
         setupPageView()
         getDataOrder()
+        setUpSegmentControl()
     }
     
     func getDataOrder() {
@@ -58,6 +62,31 @@ class OrderHistoryVC: BaseViewController {
     
     @IBAction func tapOnBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    func setUpSegmentControl() {
+        segmentedControl.selectedIndex = 0
+        segmentedControl.items = ["Đơn hàng khoá học", "Đơn hàng sản phẩm"]
+        segmentedControl.backgroundColor = .groupTableViewBackground
+        segmentedControl.selectedLabelColor = .white
+        segmentedControl.unselectedLabelColor = .black
+        
+        segmentedControl.borderColor = .clear
+        segmentedControl.thumbColor = #colorLiteral(red: 0.1019607843, green: 0.3568627451, blue: 0.3921568627, alpha: 1)
+        segmentedControl.font = UIFont.systemFont(ofSize: 16)
+    }
+    
+    @IBAction func tapOnSegmented(_ sender: Any) {
+        switch segmentedControl.selectedIndex {
+        case 0:
+            pageView.isHidden = true
+            pageViewCourse.isHidden = false
+        case 1:
+            pageView.isHidden = false
+            pageViewCourse.isHidden = true
+        default:
+            break
+        }
     }
 }
 

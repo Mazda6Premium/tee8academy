@@ -89,19 +89,21 @@ class AcademyVC: BaseViewController {
                     }
                     
                     // SO SANH 2 ARRAY
-                    self.courseRegisted.forEach { (data) in
-                        if data.name == "ALL COURSE" {
-                            self.arrayCourse.forEach { (response) in
-                                response.isUnLock = true
-                            }
-                        } else {
-                            if let indexObject = self.arrayCourse.firstIndex(where: {$0.name == data.name}) {
-                                self.arrayCourse[indexObject].isUnLock = true
+                    if self.courseRegisted.count > 0 {
+                        self.courseRegisted.forEach { (data) in
+                            if data.name == "ALL COURSE" {
+                                self.arrayCourse.forEach { (response) in
+                                    response.isUnLock = true
+                                }
+                            } else {
+                                if let indexObject = self.arrayCourse.firstIndex(where: {$0.name == data.name}) {
+                                    self.arrayCourse[indexObject].isUnLock = true
+                                }
                             }
                         }
                     }
                     
-                    // SOURCE VIDEO
+                    // SORT VIDEO
                     self.arrayCourse.forEach { (value) in
                         value.video.sort { (v1, v2) -> Bool in
                             return v1.index < v2.index

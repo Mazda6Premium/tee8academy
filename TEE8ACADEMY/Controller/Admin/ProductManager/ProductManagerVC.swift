@@ -126,6 +126,7 @@ extension ProductManagerVC: UICollectionViewDelegate, UICollectionViewDataSource
         cell1.backgroundColor = .clear
         cell1.viewDim.isHidden = true
         cell1.imgLock.isHidden = true
+        cell0.imgDown.isHidden = true
         
         switch indexPath.section {
         case 0:
