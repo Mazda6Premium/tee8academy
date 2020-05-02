@@ -21,6 +21,7 @@ class BuyCourseVC: BaseViewController {
     var arrayCourse = [Course]()
     var arrayFreeCourse = [Course]()
     var arrayChooseCourse = [Course]()
+    var alreadyBuyCourse = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,9 @@ class BuyCourseVC: BaseViewController {
         user = SessionData.shared.userData
         if let user = user {
             lblTitle.text = "Welcome \(user.realName) to Tee 8 Academy, please choice your course belows:"
-
+            if user.course.count > 0 {
+                alreadyBuyCourse = true
+            }
         }
     }
     
@@ -89,9 +92,9 @@ class BuyCourseVC: BaseViewController {
         user?.course.removeAll()
         view.endEditing(true)
         if arrayChooseCourse.count != 0 {
-//            if (user?.course.count)! == 0 {
-//                user?.course.append(contentsOf: arrayFreeCourse)
-//            }
+            if !alreadyBuyCourse {
+                user?.course.append(contentsOf: arrayFreeCourse)
+            }
             user?.course.append(contentsOf: arrayChooseCourse)
             dump(user?.course)
             if !arrayChooseCourse[0].isStoreCheck {

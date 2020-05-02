@@ -110,6 +110,8 @@
 		A8CFA694244C25B9002C50DC /* didact-gothic.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A8CFA693244C25B9002C50DC /* didact-gothic.regular.ttf */; };
 		A8D91CF6243F4C240087A86E /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D91CF4243F4C240087A86E /* VideoCell.swift */; };
 		A8D91CF7243F4C240087A86E /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8D91CF5243F4C240087A86E /* VideoCell.xib */; };
+		CD99CC5D245C4211001578D4 /* ForceUpdateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD99CC5B245C4211001578D4 /* ForceUpdateVC.swift */; };
+		CD99CC5E245C4211001578D4 /* ForceUpdateVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD99CC5C245C4211001578D4 /* ForceUpdateVC.xib */; };
 		DC2DC9B24EA360C2984C95A3 /* Pods_TEE8ACADEMY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D77AEEF61AD4E30056EE1D3 /* Pods_TEE8ACADEMY.framework */; };
 /* End PBXBuildFile section */
 
@@ -222,6 +224,8 @@
 		A8CFA693244C25B9002C50DC /* didact-gothic.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "didact-gothic.regular.ttf"; sourceTree = "<group>"; };
 		A8D91CF4243F4C240087A86E /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		A8D91CF5243F4C240087A86E /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
+		CD99CC5B245C4211001578D4 /* ForceUpdateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceUpdateVC.swift; sourceTree = "<group>"; };
+		CD99CC5C245C4211001578D4 /* ForceUpdateVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForceUpdateVC.xib; sourceTree = "<group>"; };
 		EAAD0E2A462139679C3A5074 /* Pods-TEE8ACADEMY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TEE8ACADEMY.release.xcconfig"; path = "Target Support Files/Pods-TEE8ACADEMY/Pods-TEE8ACADEMY.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -410,19 +414,10 @@
 		A823C73B2438832E00F749C2 /* LoginRegisterFlow */ = {
 			isa = PBXGroup;
 			children = (
+				CD99CC5A245C41F2001578D4 /* ForceUpdate */,
+				CD99CC59245C41C6001578D4 /* LoginFlow */,
 				A85FAAE724433E4200C2F723 /* BuyCourseFlow */,
 				A88A42D1243A14720013BAFB /* Popup */,
-				A85B7FF32438268E00CC4DCC /* ViewController.swift */,
-				A823C74624388A0300F749C2 /* RegisterVC.swift */,
-				A823C74724388A0300F749C2 /* RegisterVC.xib */,
-				A810224A243DDC250089AE63 /* ForgetPasswordVC.swift */,
-				A810224B243DDC250089AE63 /* ForgetPasswordVC.xib */,
-				A85FAAE824433F0900C2F723 /* VerifyAccountVC.swift */,
-				A85FAAE924433F0900C2F723 /* VerifyAccountVC.xib */,
-				A85FAAEC24434E2C00C2F723 /* CreatePasswordVC.swift */,
-				A85FAAED24434E2C00C2F723 /* CreatePasswordVC.xib */,
-				A849BFF7244AE099002537D0 /* AnimationCourseVC.swift */,
-				A849BFF8244AE099002537D0 /* AnimationCourseVC.xib */,
 			);
 			path = LoginRegisterFlow;
 			sourceTree = "<group>";
@@ -640,6 +635,33 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CD99CC59245C41C6001578D4 /* LoginFlow */ = {
+			isa = PBXGroup;
+			children = (
+				A85B7FF32438268E00CC4DCC /* ViewController.swift */,
+				A823C74624388A0300F749C2 /* RegisterVC.swift */,
+				A823C74724388A0300F749C2 /* RegisterVC.xib */,
+				A810224A243DDC250089AE63 /* ForgetPasswordVC.swift */,
+				A810224B243DDC250089AE63 /* ForgetPasswordVC.xib */,
+				A85FAAE824433F0900C2F723 /* VerifyAccountVC.swift */,
+				A85FAAE924433F0900C2F723 /* VerifyAccountVC.xib */,
+				A85FAAEC24434E2C00C2F723 /* CreatePasswordVC.swift */,
+				A85FAAED24434E2C00C2F723 /* CreatePasswordVC.xib */,
+				A849BFF7244AE099002537D0 /* AnimationCourseVC.swift */,
+				A849BFF8244AE099002537D0 /* AnimationCourseVC.xib */,
+			);
+			path = LoginFlow;
+			sourceTree = "<group>";
+		};
+		CD99CC5A245C41F2001578D4 /* ForceUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				CD99CC5B245C4211001578D4 /* ForceUpdateVC.swift */,
+				CD99CC5C245C4211001578D4 /* ForceUpdateVC.xib */,
+			);
+			path = ForceUpdate;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -729,6 +751,7 @@
 				A8D91CF7243F4C240087A86E /* VideoCell.xib in Resources */,
 				A8170692244617A2007C9F2C /* CheckOutCell.xib in Resources */,
 				A817068D244612A1007C9F2C /* CheckOutVC.xib in Resources */,
+				CD99CC5E245C4211001578D4 /* ForceUpdateVC.xib in Resources */,
 				A8A700492438C62600B2139D /* SendReceiptVC.xib in Resources */,
 				A8102251243DFCC60089AE63 /* ChangePasswordVC.xib in Resources */,
 				A849BFFA244AE099002537D0 /* AnimationCourseVC.xib in Resources */,
@@ -847,6 +870,7 @@
 				0144C2182449B44200D003DC /* ProductManagerVC.swift in Sources */,
 				A8A7004B2438C6EF00B2139D /* Extensions.swift in Sources */,
 				A85FAAEE24434E2C00C2F723 /* CreatePasswordVC.swift in Sources */,
+				CD99CC5D245C4211001578D4 /* ForceUpdateVC.swift in Sources */,
 				0146B5E1243F1550000453E7 /* Product.swift in Sources */,
 				A899AA23243E2AF80032DCDA /* SessionData.swift in Sources */,
 				A85B7FF22438268E00CC4DCC /* SceneDelegate.swift in Sources */,
@@ -1001,7 +1025,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TEE8ACADEMY/TEE 8 ACADEMY.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2J3K999PRZ;
 				INFOPLIST_FILE = TEE8ACADEMY/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1009,6 +1033,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Fighting.TEE8ACADEMY;
 				PRODUCT_NAME = "TEE 8 ACADEMY";
 				SWIFT_VERSION = 5.0;
@@ -1023,7 +1048,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TEE8ACADEMY/TEE 8 ACADEMY.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 16;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2J3K999PRZ;
 				INFOPLIST_FILE = TEE8ACADEMY/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1031,6 +1056,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Fighting.TEE8ACADEMY;
 				PRODUCT_NAME = "TEE 8 ACADEMY";
 				SWIFT_VERSION = 5.0;
