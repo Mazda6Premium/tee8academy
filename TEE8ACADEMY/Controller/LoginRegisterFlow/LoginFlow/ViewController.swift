@@ -106,11 +106,11 @@ class ViewController: BaseViewController {
         } else {
             // CHECK 4 CONDITIONS PASSWORD + UUID + IPHONE MODEL
             if let user = user {
-                guard let phoneId = UIDevice.current.identifierForVendor?.uuidString else {return}
+//                guard let phoneId = UIDevice.current.identifierForVendor?.uuidString else {return}
                 let phoneModel = UIDevice.modelName
                 guard let password = txtPassword.text else {return}
                 if password == user.password { // CHECK PASSWORD
-                    if phoneId == user.phoneId && phoneModel == user.phoneModel { // CHECK ID AND MODEL
+                    if phoneModel == user.phoneModel { // CHECK MODEL
                         if !user.isBlock {
                             self.loginSuccess()
                         } else {
@@ -141,17 +141,31 @@ class ViewController: BaseViewController {
     }
     
     func loginSuccess() {
-        self.showLoadingSuccess(1)
-        let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
-        vc.modalTransitionStyle = .crossDissolve
-        vc.modalPresentationStyle = .overFullScreen
-        // CACHE IN SESSION DATA USING SINGLETON
-        SessionData.shared.userData = user
-        
-        self.present(vc, animated: true) {
-            self.clearData()
+        databaseReference.child("Server").observeSingleEvent(of: .value) { (snapshot) in
+            if let dict = snapshot.value as? [String: Any] {
+                if let online = dict["Online"] as? Bool {
+                    if online {
+                        self.showLoadingSuccess(1)
+                        let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
+                        let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
+                        vc.modalTransitionStyle = .crossDissolve
+                        vc.modalPresentationStyle = .overFullScreen
+                        // CACHE IN SESSION DATA USING SINGLETON
+                        SessionData.shared.userData = self.user
+                        
+                        self.present(vc, animated: true) {
+                            self.clearData()
+                        }
+                    } else {
+                        self.showToast(message: "Server Tee 8 Academy đang được bảo trì để phục vụ Quý khách hàng tốt hơn, xin vui lòng quay lại sau.")
+                        self.hideLoading()
+                        return
+                    }
+                }
+            }
         }
+        
+
     }
     
     @IBAction func tapOnRegister(_ sender: Any) {

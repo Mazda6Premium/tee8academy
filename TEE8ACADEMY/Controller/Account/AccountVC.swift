@@ -155,7 +155,7 @@ class AccountVC: BaseViewController {
             vc.pushVC = .course
             self.present(vc, animated: true, completion: nil)
         case .user: // GÓP Ý
-            let email = "nttrung254@gmail.com"
+            let email = "mastermaituongvy@gmail.com"
             if let url = URL(string: "mailto:\(email)") {
                 if #available(iOS 10.0, *) {
                     UIApplication.shared.open(url)

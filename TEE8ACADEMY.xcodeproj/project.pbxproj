@@ -1033,7 +1033,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Fighting.TEE8ACADEMY;
 				PRODUCT_NAME = "TEE 8 ACADEMY";
 				SWIFT_VERSION = 5.0;
@@ -1056,7 +1056,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Fighting.TEE8ACADEMY;
 				PRODUCT_NAME = "TEE 8 ACADEMY";
 				SWIFT_VERSION = 5.0;
