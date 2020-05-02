@@ -106,13 +106,26 @@ class ViewController: BaseViewController {
         } else {
             // CHECK 4 CONDITIONS PASSWORD + UUID + IPHONE MODEL
             if let user = user {
-//                guard let phoneId = UIDevice.current.identifierForVendor?.uuidString else {return}
+                //                guard let phoneId = UIDevice.current.identifierForVendor?.uuidString else {return}
                 let phoneModel = UIDevice.modelName
                 guard let password = txtPassword.text else {return}
                 if password == user.password { // CHECK PASSWORD
                     if phoneModel == user.phoneModel { // CHECK MODEL
                         if !user.isBlock {
-                            self.loginSuccess()
+                            databaseReference.child("Server").observeSingleEvent(of: .value) { (snapshot) in
+                                if let dict = snapshot.value as? [String: Any] {
+                                    if let online = dict["Online"] as? Bool {
+                                        if online {
+                                            self.loginSuccess()
+                                        } else {
+                                            self.showToast(message: "Server Tee 8 Academy đang được bảo trì để phục vụ Quý khách hàng tốt hơn, xin vui lòng quay lại sau.")
+                                            self.hideLoading()
+                                            return
+                                        }
+                                    }
+                                }
+                            }
+                            
                         } else {
                             self.showToast(message: "Tài khoản của bạn đã bị khoá do vi phạm quy định của ứng dụng, vui lòng liên hệ quản trị viên để biết thêm thông tin chi tiết.", duration: 5)
                             self.hideLoading()
@@ -141,31 +154,17 @@ class ViewController: BaseViewController {
     }
     
     func loginSuccess() {
-        databaseReference.child("Server").observeSingleEvent(of: .value) { (snapshot) in
-            if let dict = snapshot.value as? [String: Any] {
-                if let online = dict["Online"] as? Bool {
-                    if online {
-                        self.showLoadingSuccess(1)
-                        let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
-                        let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
-                        vc.modalTransitionStyle = .crossDissolve
-                        vc.modalPresentationStyle = .overFullScreen
-                        // CACHE IN SESSION DATA USING SINGLETON
-                        SessionData.shared.userData = self.user
-                        
-                        self.present(vc, animated: true) {
-                            self.clearData()
-                        }
-                    } else {
-                        self.showToast(message: "Server Tee 8 Academy đang được bảo trì để phục vụ Quý khách hàng tốt hơn, xin vui lòng quay lại sau.")
-                        self.hideLoading()
-                        return
-                    }
-                }
-            }
-        }
+        self.showLoadingSuccess(1)
+        let storyBoard = UIStoryboard(name: "Tabbar", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "tabbarVC")
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overFullScreen
+        // CACHE IN SESSION DATA USING SINGLETON
+        SessionData.shared.userData = self.user
         
-
+        self.present(vc, animated: true) {
+            self.clearData()
+        }
     }
     
     @IBAction func tapOnRegister(_ sender: Any) {
