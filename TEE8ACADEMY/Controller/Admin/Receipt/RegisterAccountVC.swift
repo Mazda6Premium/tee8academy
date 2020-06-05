@@ -187,7 +187,7 @@ extension RegisterAccountVC: FSPagerViewDelegate, FSPagerViewDataSource {
                 let course = User(course: self.arrayCourse)
                 databaseReference.child("Users").child(user.userId).updateChildValues(course.asDictionaryCourse())
                 
-                self.deleteImage(index: sender.tag)
+//                self.deleteImage(index: sender.tag)
                 databaseReference.child("Receipts").child(user.receiptPostId).removeValue()
 
                 self.arrayUser.removeAll()

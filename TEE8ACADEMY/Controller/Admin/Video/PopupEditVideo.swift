@@ -72,7 +72,7 @@ class PopupEditVideo: BaseViewController {
             showToast(message: "Bạn cần điền đẩy đủ thông tin.")
             hideLoading()
         } else {
-            let values = ["description": tvDescription.text!, "name": txtNameVideo.text!, "linkVideo": txtLinkVideo.text!, "index": txtIndex.text!] as [AnyHashable : Any]
+            let values = ["description": tvDescription.text!, "name": txtNameVideo.text!, "linkVideo": txtLinkVideo.text!, "index": Int(txtIndex.text!)!] as [AnyHashable : Any]
             if let vid = video {
                 databaseReference.child("Courses").child(vid.course).observe(.childAdded) { (data) in
                     databaseReference.child("Courses").child(vid.course).child(data.key).queryOrdered(byChild: "id").queryEqual(toValue: vid.id).observeSingleEvent(of: .value) { (snapshot) in

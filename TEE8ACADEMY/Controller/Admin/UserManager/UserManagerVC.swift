@@ -104,6 +104,10 @@ extension UserManagerVC : UITableViewDelegate, UITableViewDataSource {
         return 90
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(arrayUser[indexPath.row].userId)
+    }
+    
 }
 
 extension UserManagerVC : BlockPopUpDelegate {
